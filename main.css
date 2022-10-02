@@ -17,3 +17,8 @@ footer{
 	text-align: center;
 	background-color:white;
 }
+
+button{
+	height: 66px;
+	border-radius: 8px;
+}
