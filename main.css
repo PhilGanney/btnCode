@@ -15,10 +15,17 @@ footer{
 	bottom: 0px;
 	width: 100%;
 	text-align: center;
-	background-color:white;
+	background-color:#EEFEEE;
+	
 }
 
 button{
 	height: 66px;
 	border-radius: 8px;
+}
+
+textarea{
+	width: 100%;
+	height: 300px;
+	
 }
