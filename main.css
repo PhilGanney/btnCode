@@ -1,0 +1,19 @@
+header{
+	position: sticky;
+	top: 0px;
+	width: 100%;
+	text-align: center;
+	background-color:white;
+}
+
+main{
+	padding-bottom: 60px;
+}
+
+footer{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	background-color:white;
+}

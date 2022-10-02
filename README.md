@@ -1,7 +1,9 @@
 # btnCode
+
  Button Code - a very different UI for coding.
 
 #Why
+
 Text editors and IDEs are pretty great for coding if all of these conditions are true:
  - You are working at a device with a good keyboard
  - You are physically able to type at a reasonable speed
