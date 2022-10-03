@@ -24,10 +24,12 @@ function pageLoad(){
 
 function addLangBtns(lang){
 	console.group("addLangBtns:" + lang);
-	//HERE Todo: get the buttons for lang
+	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
+	var langBtns = Object.keys(savedCode[lang]);
+	
 	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("makeCode", lang, ["Function", "Variable", "SomeButton"], "btn" + lang, "", document.getElementById("philsJSBtnsInner"));
+	addButtons("makeCode", lang, langBtns, "btn" + lang, "", document.getElementById("philsJSBtnsInner"));
 	console.groupEnd();
 }
 
