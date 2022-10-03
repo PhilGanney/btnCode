@@ -24,14 +24,16 @@ function pageLoad(){
 
 function addLangBtns(lang){
 	console.group("addLangBtns:" + lang);
+	//HERE Todo: get the buttons for lang
+	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("makeCode", "JS", ["Function", "Variable", "SomeButton"], "btn" + "JS", "", document.getElementById("philsJSBtnsInner"));
+	addButtons("makeCode", lang, ["Function", "Variable", "SomeButton"], "btn" + lang, "", document.getElementById("philsJSBtnsInner"));
 	console.groupEnd();
 }
 
 function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv){
     console.group("addButtons");
-	//Logging the arguments
+	//Logging the arguments TODO: remove this debug code
 	console.group("arguments");
 	for (let i = 0; i < arguments.length; i++) {
 		console.log(arguments[i]);
