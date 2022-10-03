@@ -9,7 +9,7 @@ var savedCode = {
 }
 
 function pageLoad(){
-	console.group("page load");
+	console.groupCollapsed("page load");
 	
 	
 	/*btnJSFunc.addEventListener("click", function(){ makeCode('Function')});
@@ -63,8 +63,13 @@ function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSu
 }
 
 function makeCode(key){
-	console.groupCollapsed("makeCode: " + key);
-	
+	console.group("makeCode: " + key);
+	//get the button that was clicked
+	var btnClicked = event.target || event.srcElement;
+	//get the lang from the class
+	console.log(btnClicked.className);
+	//get the text
+	console.log(savedCode[btnClicked.className][key]);
 	
 	
 	
