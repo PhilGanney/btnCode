@@ -1,4 +1,8 @@
-alert("experimental work in progress: JS is working");
+function pageLoad(){
+	console.groupCollapsed("page load");
+	console.groupEnd();
+}
+
 
 function someFunction(){
 
