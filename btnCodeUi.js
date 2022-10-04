@@ -1,9 +1,9 @@
 var savedCode = {
 	"JS": {
-		"Function": "function changeMe1(){}",
+		"Function": "function changeMe1(){\r\n}",
 		"Variable": "var changeMe1;",
 		"Constant": "const changeMe1;",
-		"IfElse": "if(){} else {}"
+		"IfElse": "if(){\r\n} else {\r\n}"
 	}
 	
 }
