@@ -114,8 +114,11 @@ function insertTextAtCursor(el, text) {
 }
 
 
-function someFunction(){
-
+function copyText(){
+	console.group("copyText");
+	console.log(codeTA.value);
+	
+	console.groupEnd();
 }
 function someFunction(){
 
