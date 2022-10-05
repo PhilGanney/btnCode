@@ -1,9 +1,9 @@
 var savedCode = {
 	"JS": {
-		"Function": "function changeMe1(){\r\n}",
+		"Function": "function changeMe1(){\r\n	\r\n}",
 		"Variable": "var changeMe1;",
 		"Constant": "const changeMe1;",
-		"IfElse": "if(){\r\n} else {\r\n}"
+		"IfElse": "if(){\r\n	\r\n} else {\r\n	\r\n}"
 	}
 	
 }
@@ -78,7 +78,7 @@ function makeCode(key){
 }
 
 
-/*I had no idea how to find the cursor so searched online and got this entire function that was doing what I wanted to do ultimately:
+/*I had no idea how to find the cursor so searched online and got an entire function for inserting text at a cursor, it didnt account for code whitespace conventions though:
 https://stackoverflow.com/questions/7404366/how-do-i-insert-some-text-where-the-cursor-is
 
 Notes:
@@ -93,12 +93,18 @@ function insertTextAtCursor(el, text) {
     var val = el.value, endIndex, range, doc = el.ownerDocument;
     if (typeof el.selectionStart == "number"
             && typeof el.selectionEnd == "number") {
-		//Not IE
-        endIndex = el.selectionEnd;
+		//Not IE (everything else)
+        
+		endIndex = el.selectionEnd;
+		
+		//findout what the last character was
+		var lastChar = val.slice(endIndex - 1, endIndex);
+		console.log(lastChar);
+		
         el.value = val.slice(0, endIndex) + text + val.slice(endIndex);
         el.selectionStart = el.selectionEnd = endIndex + text.length;
     } else if (doc.selection != "undefined" && doc.selection.createRange) {
-		//IE
+		//VERY BASIC SUPPORT FOR IE - (edge uses the top part anyway. There is little point supporting IE for this project beyond that)
         el.focus();
         range = doc.selection.createRange();
         range.collapse(false);
