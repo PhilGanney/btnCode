@@ -117,7 +117,25 @@ function insertTextAtCursor(el, text) {
 function copyText(){
 	console.group("copyText");
 	console.log(codeTA.value);
-	navigator.clipboard.writeText(codeTA.value);
+	
+	navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
+		console.log(result);
+		console.log(result.state);
+	});
+	
+	/*navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
+		//in the case of the permissions API the main thing in result is result.state which can have the value "granted", "prompt" or "denied" depending on if the user has already granted permission, denied it or has not been asked. more info at https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API/Using_the_Permissions_API
+		if (result.state === 'granted') {
+			navigator.clipboard.writeText(codeTA.value);
+		} else if (result.state === 'prompt') {
+			conf
+		} else if (result.state === 'denied') {
+			
+		}
+	}*/
+	
+	
+
 	console.groupEnd();
 }
 function someFunction(){
@@ -128,10 +146,3 @@ function changeMe1(){
 	var philsVar;
 }
 
-function changeMe2(){
-	var someVar;
-}
-
-function changeMe3(){
-	var varMvVarFace;
-}
