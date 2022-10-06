@@ -16,7 +16,7 @@
 		</header>
 		<main>
 			<div id="intro">
-			Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on this in October 2022, and intend to continue adding to it regularly for the rest of 2022, maybe into 2023 if other people use it. It is an experimental work in progress. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>.
+			Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on this in October 2022, and intend to continue adding to fairly regularly for the rest of 2022, maybe into 2023 if other people use it. It is an experimental work in progress. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>.
 			</div>
 			<div id="latest">
 			<h3>Progress: barely functional demo</h3>
@@ -24,8 +24,9 @@
 			Monday 3rd October 2022: basic, barely functional JS demo.<br/>
 			Tuesday 4th October 2022: code now goes on multiple lines - made some progress on whitespace, but turned out to be more complex than it first looked.<br/>
 			Wednesday 5th October 2022: tabs are now only 4 spaces - for some reason textarea default is 8.<br/>
-			Currently working on: Making the JS demo nicer to use <br/>
-			Copy all text button should be a fairly easy win. I believe getting inserted text to respect padding will require inserting each line of a stub individually under the hood - and that will be non-trivial to code.
+			<h3>Currently working on:</h3> Making the JS demo nicer to use! <br/>
+			I believe getting inserted text to respect padding will require inserting each line of a stub individually under the hood - and that will be non-trivial to code.<br/>
+			I had wanted a copy-all button, but adding to clipboard via JS requires HTTPS if not run locally, so while this is a fun little pet project that isnt going to happen. 
 			</div>
 			<div id="defaultBtns">
 				<h2>Site buttons:</h2>
@@ -33,7 +34,8 @@
 				<button id="btnCreateBtn">(coming soon) Create a button</button>
 				<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
 				<button id="btnStyleBtns">(coming soon) Style ya buttons!</button>
-				<button id="btnCopyText" onclick="copyText()">(working on) Copy all text</button>
+				<!-- Functionality requires SSL/HTTPS or running locally
+				<button id="btnCopyText" onclick="copyText()">(Not yet) Copy all text</button>-->
 			</div>
 			<div id="philsJSBtnsOuter">
 				<h2>(All works but needs UX improvements) Phils JavaScript buttons:</h2>
