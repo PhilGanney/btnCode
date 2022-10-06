@@ -117,9 +117,21 @@ function insertTextAtCursor(el, text) {
 function copyText(){
 	console.group("copyText");
 	console.log(codeTA.value);
-	
+	navigator.clipboard.writeText(codeTA.value);
 	console.groupEnd();
 }
 function someFunction(){
 
+}
+
+function changeMe1(){
+	var philsVar;
+}
+
+function changeMe2(){
+	var someVar;
+}
+
+function changeMe3(){
+	var varMvVarFace;
 }
