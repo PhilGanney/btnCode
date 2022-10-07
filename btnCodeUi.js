@@ -99,7 +99,18 @@ function insertTextAtCursor(el, text) {
 		
 		//findout what the last character was
 		var lastChar = val.slice(endIndex - 1, endIndex);
-		console.log(lastChar);
+		console.log("Last Char:" + lastChar);
+		
+		var precedingTabs = 0;
+		var indexToCheck = endIndex - 1;
+		while(val.slice(indexToCheck, indexToCheck + 1) == "	"){//tab
+			console.log("tab found");
+			precedingTabs++;
+			indexToCheck--;
+			//Todo: there are probably flaws with this approach that will need ironing out
+		}
+		console.log("tabs found:" + precedingTabs);
+		
 		
         el.value = val.slice(0, endIndex) + text + val.slice(endIndex);
         el.selectionStart = el.selectionEnd = endIndex + text.length;
