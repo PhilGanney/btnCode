@@ -103,14 +103,18 @@ function insertTextAtCursor(el, text) {
 		
 		var precedingTabs = 0;
 		var indexToCheck = endIndex - 1;
+		var tabString = "";
 		while(val.slice(indexToCheck, indexToCheck + 1) == "	"){//tab
 			console.log("tab found");
 			precedingTabs++;
+			tabString += "	";
 			indexToCheck--;
 			//Todo: there are probably flaws with this approach that will need ironing out
 		}
 		console.log("tabs found:" + precedingTabs);
 		
+		//add tabs into the text we are about to insert
+		text = text.replaceAll("\r\n", "\r\n" + tabString);
 		
         el.value = val.slice(0, endIndex) + text + val.slice(endIndex);
         el.selectionStart = el.selectionEnd = endIndex + text.length;
