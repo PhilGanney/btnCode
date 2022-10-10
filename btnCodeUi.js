@@ -97,10 +97,31 @@ function insertTextAtCursor(el, text) {
         
 		endIndex = el.selectionEnd;
 		
+		//we need to separate off all the text before the cursor for two things: 1) so that we can search just that bit for the last new line 2)later on when we merge the new text into the old text at the cursor
+		var beforeCursor = val.slice(0, endIndex);
+		console.log(beforeCursor);
+		
 		//findout what the last character was
 		var lastChar = val.slice(endIndex - 1, endIndex);
 		console.log("Last Char:" + lastChar);
 		
+		//Work on better indentation 
+		//1) find the last newline DOESNT WORK!
+		/*const searchTerm = '\r\n';
+		console.log(`The index of the first "${searchTerm}" from the end is ${val.lastIndexOf(searchTerm)}`);*/
+		
+		//DEBUGGING - This MDN code works, even now I adapted it to finding new line
+		const paragraph = 'The quick brown fox jumps over the lazy dog.\r\nIf The dog barked, was it really lazy?';
+
+		const searchTerm = '\r\n';
+		const searchTerm2 = '\n';
+
+		console.log(`The index of the first "${searchTerm}" from the end of the MDN paragraph is ${paragraph.lastIndexOf(searchTerm)}`);
+		console.log(`The index of the first "${searchTerm2}" from the end of beforeCursor is ${beforeCursor.lastIndexOf(searchTerm2)}`);
+		
+
+		
+		//currently working, but flawed indentation code. Todo: better approach would be to find the last newline (\r\n) and count the tabs after. I tried for about 30 mins to get that to work but I got into a huge tangle and the best course at that point was to discard my changes and start the process in little steps
 		var precedingTabs = 0;
 		var indexToCheck = endIndex - 1;
 		var tabString = "";
@@ -109,14 +130,14 @@ function insertTextAtCursor(el, text) {
 			precedingTabs++;
 			tabString += "	";
 			indexToCheck--;
-			//Todo: there are probably flaws with this approach that will need ironing out
+			
 		}
 		console.log("tabs found:" + precedingTabs);
 		
 		//add tabs into the text we are about to insert
 		text = text.replaceAll("\r\n", "\r\n" + tabString);
 		
-        el.value = val.slice(0, endIndex) + text + val.slice(endIndex);
+        el.value = beforeCursor + text + val.slice(endIndex);
         el.selectionStart = el.selectionEnd = endIndex + text.length;
     } else if (doc.selection != "undefined" && doc.selection.createRange) {
 		//VERY BASIC SUPPORT FOR IE - (edge uses the top part anyway. There is little point supporting IE for this project beyond that)
