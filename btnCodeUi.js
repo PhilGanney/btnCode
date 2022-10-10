@@ -105,34 +105,34 @@ function insertTextAtCursor(el, text) {
 		var lastChar = val.slice(endIndex - 1, endIndex);
 		console.log("Last Char:" + lastChar);
 		
-		//Work on better indentation 
-		//1) find the last newline DOESNT WORK!
-		/*const searchTerm = '\r\n';
-		console.log(`The index of the first "${searchTerm}" from the end is ${val.lastIndexOf(searchTerm)}`);*/
-		
-		//DEBUGGING - This MDN code works, even now I adapted it to finding new line
-		const paragraph = 'The quick brown fox jumps over the lazy dog.\r\nIf The dog barked, was it really lazy?';
+		//Work on better indentation
+		//1) find the last newline - textarea value has newlines as \n not \r\n
+		const searchTerm = '\n';
+		console.log(`The index of the first "${searchTerm}" from the end is ${beforeCursor.lastIndexOf(searchTerm)}`);
+		var lastNewLinePos = beforeCursor.lastIndexOf(searchTerm);
 
-		const searchTerm = '\r\n';
-		const searchTerm2 = '\n';
-
-		console.log(`The index of the first "${searchTerm}" from the end of the MDN paragraph is ${paragraph.lastIndexOf(searchTerm)}`);
-		console.log(`The index of the first "${searchTerm2}" from the end of beforeCursor is ${beforeCursor.lastIndexOf(searchTerm2)}`);
 		
 
 		
-		//currently working, but flawed indentation code. Todo: better approach would be to find the last newline (\r\n) and count the tabs after. I tried for about 30 mins to get that to work but I got into a huge tangle and the best course at that point was to discard my changes and start the process in little steps
-		var precedingTabs = 0;
-		var indexToCheck = endIndex - 1;
+		//2)count the tabs after. 
+		var tabsFromNewLine = 0;
+		//initial value of indexToCheck is 1 more than the lastNewLinePos - when coding I thought it would be 2 more since lastNewLinePos would indicate the \ so this would need to count over the n, but after a bit of debugging I found this was not the case
+		var indexToCheck = lastNewLinePos +1;
 		var tabString = "";
-		while(val.slice(indexToCheck, indexToCheck + 1) == "	"){//tab
+		
+		/* Some console log lines that I used to help sus out 
+		console.log(val.charAt(indexToCheck));
+		console.log(val.charAt(indexToCheck-1));
+		console.log(val.charAt(indexToCheck+1));*/
+		
+		//val.charAt... means we check for indentation on that line even after the cursor, giving subtly different behaviour to if we used beforeCursor.charAt
+		while(val.charAt(indexToCheck) == "	"){//tab
 			console.log("tab found");
-			precedingTabs++;
+			tabsFromNewLine++;
 			tabString += "	";
-			indexToCheck--;
-			
+			indexToCheck++;
 		}
-		console.log("tabs found:" + precedingTabs);
+		console.log("tabs found:" + tabsFromNewLine);
 		
 		//add tabs into the text we are about to insert
 		text = text.replaceAll("\r\n", "\r\n" + tabString);
