@@ -5,7 +5,7 @@ var savedCode = {
 		"Let": "let blahblah = 0;",
 		"Constant": "const changeMe1;",
 		"IfElse": "if(){\r\n	\r\n} else {\r\n	\r\n}",
-		"SwitchCase": "switch(expression) {\r\n	case x:\r\n    	\r\n 		break;\r\n	case y:\r\n		\r\n    	break;\r\n	default:\r\n	\r\n}",
+		"SwitchCase": "switch(expression) {\r\n	case x:\r\n		\r\n		break;\r\n	case y:\r\n		\r\n		break;\r\n	default:\r\n	\r\n}",
 		"For": "for (let i = 0; i < someAmount; i++) {\r\n	\r\n}",
 		"ForKeyInObject": "for (keyName in objectName) {\r\n	\r\n}",
 		"Break": "break;",
