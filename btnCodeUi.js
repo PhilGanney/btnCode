@@ -11,6 +11,16 @@ var savedCode = {
 		"Break": "break;",
 		"ConsoleGroup": "console.group(\"\");\r\nconsole.groupEnd();",
 		"ConsoleLog":"console.log();"
+	},
+	"CSS": {
+		"P": "p {\r\n	\r\n	\r\n}",
+		"Button": "button {\r\n	\r\n	\r\n}",
+		"Class": ".className {\r\n	\r\n	\r\n}",
+		"ByID": "#elementID {\r\n	\r\n	\r\n}",
+		"Comment": "/* Comment */",
+		"BackgroundColour": "background-color: DodgerBlue;",
+		"TextColour": "color: Tomato;",
+		
 	}
 	
 }
@@ -25,6 +35,7 @@ function pageLoad(){
 	btnJSIfElse.addEventListener("click", function(){ makeCode('IfElse')});*/
 	
 	addLangBtns("JS");
+	addLangBtns("CSS");//Todo: set this to whatever you want the default to be. Todo: (B) add ability to choose code block
 	
 	console.groupEnd();
 }
