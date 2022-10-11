@@ -23,6 +23,15 @@ button{
 	height: 66px;
 	border-radius: 8px;
 }
+.JS{
+	background-color: DodgerBlue;
+	
+}
+.CSS{
+	background-color: PaleGreen;
+	
+}
+
 
 textarea{
 	width: 100%;
