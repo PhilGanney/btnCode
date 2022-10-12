@@ -14,9 +14,13 @@ var savedCode = {
 		"ForKeyInObject": "for (keyName in objectName) {\r\n	\r\n}",
 		"Break": "break;",
 		"ConsoleGroup": "console.group(\"\");\r\nconsole.groupEnd();",
-		"ConsoleLog":"console.log();"
+		"ConsoleLog":"console.log();",
+		"/*Comment*/": "/* Comment */",
+		"//Comment": "//Comment"
+		
 	},
 	"CSS": {
+		"MediaQuery": "@media only screen and (min-width: 768px) {\r\n	\r\n}",
 		"P": "p {\r\n	\r\n	\r\n}",
 		"Button": "button {\r\n	\r\n	\r\n}",
 		"Class": ".className {\r\n	\r\n	\r\n}",
