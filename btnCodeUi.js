@@ -1,6 +1,7 @@
 var savedCode = {
 	"General": {
-		"Tab": "	"
+		"Tab": "	",
+		"NewLine": "\r\n"
 	},
 	"JS": {
 		"Function": "function changeMe1(){\r\n	\r\n}",
