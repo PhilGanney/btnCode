@@ -47,7 +47,8 @@ function pageLoad(){
 	addLangBtns("CSS");//Todo: set this to whatever you want the default to be. Todo: (B) add ability to choose code block
 	
 	if(isRunningLocally()){
-		//TODO: code to create the copyText button will go here once I have checked isRunningLocally works as expected in live as well
+		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
+		addButtons("copyText", "", ["Copy all text"], "btn", "", document.getElementById("defaultBtns"));
 	}
 	
 	console.groupEnd();
@@ -183,12 +184,16 @@ function insertTextAtCursor(el, text) {
 
 function copyText(){
 	console.group("copyText");
+	console.log("Attempting to copy:");
 	console.log(codeTA.value);
 	
+	console.log("Checking permissions:");
 	navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
 		console.log(result);
-		console.log(result.state);
+		console.log("Permission: " + result.state);
 	});
+	
+	navigator.clipboard.writeText(codeTA.value);
 	
 	/*navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
 		//in the case of the permissions API the main thing in result is result.state which can have the value "granted", "prompt" or "denied" depending on if the user has already granted permission, denied it or has not been asked. more info at https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API/Using_the_Permissions_API
