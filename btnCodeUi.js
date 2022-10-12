@@ -206,6 +206,16 @@ function languageChange(triggerEl){
 	console.group("languageChange");
 	console.log(triggerEl);
 	
+	philsJSBtnsInner.innerHTML = "";
+	if(triggerEl.value == "All"){
+		for (const lang in savedCode) {
+			addLangBtns(lang);
+		}
+	} else {
+		addLangBtns(triggerEl.value);
+	}
+	
+	
 	console.groupEnd();
 }
 
