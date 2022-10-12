@@ -212,6 +212,7 @@ function languageChange(triggerEl){
 			addLangBtns(lang);
 		}
 	} else {
+		addLangBtns("General");
 		addLangBtns(triggerEl.value);
 	}
 	
