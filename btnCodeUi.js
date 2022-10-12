@@ -1,4 +1,7 @@
 var savedCode = {
+	"General": {
+		"Tab": "	"
+	},
 	"JS": {
 		"Function": "function changeMe1(){\r\n	\r\n}",
 		"Variable": "var someVar = 0;",
@@ -34,6 +37,7 @@ function pageLoad(){
 	btnJSConst.addEventListener("click", function(){ makeCode('Constant')});
 	btnJSIfElse.addEventListener("click", function(){ makeCode('IfElse')});*/
 	
+	addLangBtns("General");
 	addLangBtns("JS");
 	addLangBtns("CSS");//Todo: set this to whatever you want the default to be. Todo: (B) add ability to choose code block
 	
@@ -192,8 +196,12 @@ function copyText(){
 
 	console.groupEnd();
 }
-function someFunction(){
 
+function languageChange(triggerEl){
+	console.group("languageChange");
+	console.log(triggerEl);
+	
+	console.groupEnd();
 }
 
 function changeMe1(){
