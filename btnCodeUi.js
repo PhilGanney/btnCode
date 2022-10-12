@@ -46,6 +46,10 @@ function pageLoad(){
 	addLangBtns("JS");
 	addLangBtns("CSS");//Todo: set this to whatever you want the default to be. Todo: (B) add ability to choose code block
 	
+	if(isRunningLocally()){
+		//TODO: code to create the copyText button will go here once I have checked isRunningLocally works as expected in live as well
+	}
+	
 	console.groupEnd();
 }
 
@@ -220,7 +224,13 @@ function languageChange(triggerEl){
 	console.groupEnd();
 }
 
-function changeMe1(){
-	var philsVar;
+function isRunningLocally(){
+	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
+		console.log("Detected running locally");
+		return true;
+	} else {
+		console.log("btnCode seems to be running from a server");
+		return false;
+	}
 }
 
