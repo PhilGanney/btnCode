@@ -10,6 +10,7 @@ var savedCode = {
 		"Div": "<div>\r\n	\r\n</div>",
 		"id": "id=\"\"",
 		"class": "class=\"\"",
+		"LinkNewTab": "<a href=\"url\"  target=\"_blank\">link text</a>",
 		"Button": "<button id=\"\">Text</button>",
 		"onclick": "onclick=\"\"",
 		"Select": "<select>\r\n	\r\n</select>",
