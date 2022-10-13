@@ -16,8 +16,9 @@ var savedCode = {
 		"ConsoleGroup": "console.group(\"\");\r\nconsole.groupEnd();",
 		"ConsoleLog":"console.log();",
 		"/*Comment*/": "/* Comment */",
-		"//Comment": "//Comment"
-		
+		"//Comment": "//Comment",
+		"JSONKeyValue": "\"key\": \"value\"",
+		"JSONKeyObject": "\"key\": {\r\n	\r\n	\r\n}",
 	},
 	"CSS": {
 		"MediaQuery": "@media only screen and (min-width: 768px) {\r\n	\r\n}",
@@ -29,6 +30,25 @@ var savedCode = {
 		"BackgroundColour": "background-color: DodgerBlue;",
 		"TextColour": "color: Tomato;",
 		
+	},
+	"HTML": {
+		"BoilerPlateBasic": "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>",
+		"Stylesheet": "<link rel=\"stylesheet\" href=\"main.css\"> </link>",
+		"Script": "<script src=\"btnCodeUi.js\"></script>",
+		"Button": "<button></button>",
+		"Select": "<select>\r\n	\r\n</select>"
+		
+	},
+	"Python": {
+		"DefineFunction": "def my_function():\r\n  ",
+		"Print": "print(\"\")",
+		"Class": "class MyClass",
+		"Divide": " / ",
+		"Remainder": " % ",
+		"FloorDivision": " // ",
+		"ToThePowerOf": " ** ",
+		"MultilineString": "\"\"\"\r\n\r\n\"\"\"",
+		"Slice": "[x:y]"
 	}
 	
 }
@@ -42,9 +62,7 @@ function pageLoad(){
 	btnJSConst.addEventListener("click", function(){ makeCode('Constant')});
 	btnJSIfElse.addEventListener("click", function(){ makeCode('IfElse')});*/
 	
-	addLangBtns("General");
-	addLangBtns("JS");
-	addLangBtns("CSS");//Todo: set this to whatever you want the default to be. Todo: (B) add ability to choose code block
+	addAllLangBtns();
 	
 	if(isRunningLocally()){
 		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
@@ -217,16 +235,26 @@ function languageChange(triggerEl){
 	
 	philsJSBtnsInner.innerHTML = "";
 	if(triggerEl.value == "All"){
-		for (const lang in savedCode) {
-			addLangBtns(lang);
-		}
-	} else {
+		addAllLangBtns();
+	} else if(triggerEl.value == "JS, CSS, HTML"){
+		addLangBtns("General");
+		addLangBtns("JS");
+		addLangBtns("CSS");
+		addLangBtns("HTML");
+	}
+	else {
 		addLangBtns("General");
 		addLangBtns(triggerEl.value);
 	}
 	
 	
 	console.groupEnd();
+}
+
+function addAllLangBtns(){
+	for (const lang in savedCode) {
+		addLangBtns(lang);
+	}
 }
 
 function isRunningLocally(){

@@ -25,13 +25,24 @@ button{
 }
 .JS{
 	background-color: DodgerBlue;
-	
+	/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
 }
 .CSS{
 	background-color: PaleGreen;
 	
 }
 
+.HTML{
+	background-color: #3c790a;
+	color: white;
+}
+.Python{
+	/*Styling taken from Python.org homepage*/
+	background: #1c3b56;
+	color: #ffd343;
+	/*font-size: 1.3125em;*/
+	font-family: SourceSansProBold, Arial, sans-serif;
+}
 
 textarea{
 	width: 100%;
