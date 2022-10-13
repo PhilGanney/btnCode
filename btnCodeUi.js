@@ -71,7 +71,7 @@ function pageLoad(){
 		console.log("Permission: " + result.state);
 		if(result.state === "granted"){
 			//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-			addButtons("copyText", "", ["Copy all text"], "btn", "", document.getElementById("defaultBtns"));	
+			addButtons("copyText", "", ["Copy all text"], "btn", "", document.getElementById("otherControlBtns"));	
 		}
 		console.groupEnd();
 	});
