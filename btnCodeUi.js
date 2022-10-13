@@ -64,16 +64,22 @@ function pageLoad(){
 	
 	addAllLangBtns();
 	
-	if(isRunningLocally()){
-		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-		addButtons("copyText", "", ["Copy all text"], "btn", "", document.getElementById("defaultBtns"));
-	}
+	console.log("Checking permissions for clipboard-write:");
+	navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
+		console.log(result);
+		console.log("Permission: " + result.state);
+		if(result.state === "granted"){
+			//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
+			addButtons("copyText", "", ["Copy all text"], "btn", "", document.getElementById("defaultBtns"));	
+		}
+		console.groupEnd();
+	});
 	
-	console.groupEnd();
+	
 }
 
 function addLangBtns(lang){
-	console.group("addLangBtns:" + lang);
+	console.groupCollapsed("addLangBtns:" + lang);
 	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
 	var langBtns = Object.keys(savedCode[lang]);
 	
