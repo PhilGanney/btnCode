@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>btnCode</title>
 		<meta name="description" content="btnCode: a very different UI for coding"></meta>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 		<!-- Favourites Icon - also the tab icon 
 		TODO: make a favicon!!
 		<link rel="icon" href="favicon.png" type="image/x-icon"></link>-->
@@ -31,21 +32,10 @@
 				<!--<h3>Currently working on:</h3> Making the JS demo nicer to use! <br/>
 				I had wanted a copy-all button, but adding to clipboard via JS requires HTTPS if not run locally, so while this is a fun little pet project that isnt going to happen. -->
 			</div>
-			<div id="defaultBtns">
-				<h2>Site buttons:</h2>
-				<button id="btnAddLang">(coming soon) Add Language</button>
-				<button id="btnCreateBtn">(coming soon) Create a button</button>
-				<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
-				<button id="btnStyleBtns">(coming soon) Style ya buttons!</button>
-				
-				
-				<!-- Functionality requires SSL/HTTPS or running locally - button is created in JS on startup if navigator.permissions.query comes back with result.state === "granted"
-				<button id="btnCopyText" onclick="copyText()">(Not yet) Copy all text</button>-->
-			</div>
+
 			<div id="philsJSBtnsOuter">
-				<h2>Code Buttons: (colour coded by language)</h2>
 				<select id="langChange" onchange="languageChange(this)">
-					<option>All</option>
+					<option>All Langs</option>
 					<option>HTML, JS, CSS</option>
 					<option>HTML</option>
 					<option>JS</option>
@@ -55,8 +45,15 @@
 				<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
 				<span id="otherControlBtns">
 				</span>
+				<span id="defaultBtns">
+					<button id="btnAddLang">(coming soon) Add Language</button>
+					<button id="btnCreateBtn">(coming soon) Create a button</button>
+					<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
+					<button id="btnStyleBtns">(coming soon) Style ya buttons!</button>
+				</span>
 				<div id="philsJSBtnsInner">
 				</div>
+
 			</div>
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>

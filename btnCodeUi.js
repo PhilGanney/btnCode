@@ -247,7 +247,7 @@ function languageChange(triggerEl){
 	console.log(triggerEl);
 	
 	philsJSBtnsInner.innerHTML = "";
-	if(triggerEl.value == "All"){
+	if(triggerEl.value == "All Langs"){
 		addAllLangBtns();
 	} else if(triggerEl.value == "HTML, JS, CSS"){
 		addLangBtns("General");
