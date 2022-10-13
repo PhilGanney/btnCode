@@ -7,9 +7,15 @@ var savedCode = {
 		"BoilerPlateBasic": "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>",
 		"Stylesheet": "<link rel=\"stylesheet\" href=\"main.css\"> </link>",
 		"Script": "<script src=\"btnCodeUi.js\"></script>",
+		"Div": "<div>\r\n	\r\n</div>",
+		"id": "id=\"\"",
+		"class": "class=\"\"",
 		"Button": "<button id=\"\">Text</button>",
 		"onclick": "onclick=\"\"",
-		"Select": "<select>\r\n	\r\n</select>"
+		"Select": "<select>\r\n	\r\n</select>",
+		"Option": "<option></option>",
+		"value": "value=\"\""
+		
 		
 	},
 	"JS": {
