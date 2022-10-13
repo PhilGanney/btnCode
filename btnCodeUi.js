@@ -35,7 +35,8 @@ var savedCode = {
 		"BoilerPlateBasic": "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>",
 		"Stylesheet": "<link rel=\"stylesheet\" href=\"main.css\"> </link>",
 		"Script": "<script src=\"btnCodeUi.js\"></script>",
-		"Button": "<button></button>",
+		"Button": "<button id=\"\">Text</button>",
+		"onclick": "onclick=\"\"",
 		"Select": "<select>\r\n	\r\n</select>"
 		
 	},
@@ -262,6 +263,12 @@ function addAllLangBtns(){
 		addLangBtns(lang);
 	}
 }
+
+function emptyEditor(){
+	codeTA.value = "";
+}
+
+
 
 function isRunningLocally(){
 	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
