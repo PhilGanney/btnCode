@@ -3,6 +3,15 @@ var savedCode = {
 		"Tab": "	",
 		"NewLine": "\r\n"
 	},
+	"HTML": {
+		"BoilerPlateBasic": "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>",
+		"Stylesheet": "<link rel=\"stylesheet\" href=\"main.css\"> </link>",
+		"Script": "<script src=\"btnCodeUi.js\"></script>",
+		"Button": "<button id=\"\">Text</button>",
+		"onclick": "onclick=\"\"",
+		"Select": "<select>\r\n	\r\n</select>"
+		
+	},
 	"JS": {
 		"Function": "function changeMe1(){\r\n	\r\n}",
 		"Variable": "var someVar = 0;",
@@ -31,17 +40,8 @@ var savedCode = {
 		"TextColour": "color: Tomato;",
 		
 	},
-	"HTML": {
-		"BoilerPlateBasic": "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>",
-		"Stylesheet": "<link rel=\"stylesheet\" href=\"main.css\"> </link>",
-		"Script": "<script src=\"btnCodeUi.js\"></script>",
-		"Button": "<button id=\"\">Text</button>",
-		"onclick": "onclick=\"\"",
-		"Select": "<select>\r\n	\r\n</select>"
-		
-	},
 	"Python": {
-		"DefineFunction": "def my_function():\r\n  ",
+		"DefFunction": "def my_function():\r\n  ",
 		"Print": "print(\"\")",
 		"Class": "class MyClass",
 		"Divide": " / ",
@@ -243,17 +243,16 @@ function languageChange(triggerEl){
 	philsJSBtnsInner.innerHTML = "";
 	if(triggerEl.value == "All"){
 		addAllLangBtns();
-	} else if(triggerEl.value == "JS, CSS, HTML"){
+	} else if(triggerEl.value == "HTML, JS, CSS"){
 		addLangBtns("General");
+		addLangBtns("HTML");
 		addLangBtns("JS");
 		addLangBtns("CSS");
-		addLangBtns("HTML");
 	}
 	else {
 		addLangBtns("General");
 		addLangBtns(triggerEl.value);
 	}
-	
 	
 	console.groupEnd();
 }
