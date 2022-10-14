@@ -61,16 +61,17 @@ var savedCode = {
 	
 }
 
+var controlBtns = {
+	"ChangeLanguage": {
+		"btnText": "Change Language",
+		"showTrigger": "pageLoad"
+	}
+}
+
 function pageLoad(){
 	console.groupCollapsed("page load");
 	
-	
-	/*btnJSFunc.addEventListener("click", function(){ makeCode('Function')});
-	btnJSVar.addEventListener("click", function(){ makeCode('Variable')});
-	btnJSConst.addEventListener("click", function(){ makeCode('Constant')});
-	btnJSIfElse.addEventListener("click", function(){ makeCode('IfElse')});*/
-	
-	addAllLangBtns();
+	showLangBtns();
 	
 	console.log("Checking permissions for clipboard-write:");
 	navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
@@ -86,6 +87,22 @@ function pageLoad(){
 	
 }
 
+//Coder beware: This func (and the UX change it was added to help create) introduces a new meaning of "LangBtn": a button with a name of a coding language on it that triggers showing the code btns (previouslty called LangBtns) for that particular language.
+function showLangBtns(){
+	console.groupCollapsed("showLangBtns");
+	
+	const allLangs = Object.keys(savedCode);
+	console.log(allLangs);
+	
+	for (i in allLangs){
+		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
+		addButtons("languageChange", allLangs[i], [allLangs[i]], "btn", "", document.getElementById("otherControlBtns"));
+		
+	}
+	console.groupEnd;
+}
+
+//CONFUSING CODE HERE: "LangBtn" here refers to the code btns for a particular language. I have just introduced a button per language that sets the code btns to the btns for that language. todo: fix this confusion
 function addLangBtns(lang){
 	console.groupCollapsed("addLangBtns:" + lang);
 	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
@@ -243,22 +260,17 @@ function copyText(){
 	console.groupEnd();
 }
 
-function languageChange(triggerEl){
+function languageChange(lang){
 	console.group("languageChange");
-	console.log(triggerEl);
+	console.log(lang);
 	
 	codeBtns.innerHTML = "";
-	if(triggerEl.value == "All Langs"){
-		addAllLangBtns();
-	} else if(triggerEl.value == "HTML, JS, CSS"){
+	if(lang == "General"){
 		addLangBtns("General");
-		addLangBtns("HTML");
-		addLangBtns("JS");
-		addLangBtns("CSS");
 	}
 	else {
 		addLangBtns("General");
-		addLangBtns(triggerEl.value);
+		addLangBtns(lang);
 	}
 	
 	console.groupEnd();
