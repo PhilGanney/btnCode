@@ -285,8 +285,18 @@ function openFullscreen() {
 	} else if (elem.msRequestFullscreen) { /* IE11 */
 		elem.msRequestFullscreen();
 	}
+	document.getElementById("btnFullScreen").addEventListener("click", closeFullscreen);
 }
-
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+  document.getElementById("btnFullScreen").addEventListener("click", openFullscreen);
+}
 
 function isRunningLocally(){
 	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
