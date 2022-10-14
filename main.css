@@ -19,6 +19,12 @@ footer{
 	
 }
 
+#btnsOuter{
+	height: 88px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
 button{
 	height: 66px;
 	border-radius: 8px;
@@ -64,5 +70,19 @@ select{
 	
 	footer{
 		position: fixed;
+	}
+	
+	#btnsOuter{
+		height: 168px;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+
+}
+@media only screen and (min-height: 900px) {
+	#btnsOuter{
+		height: auto;
+		overflow-x: hidden;
+		overflow-y: hidden;
 	}
 }
