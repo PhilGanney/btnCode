@@ -274,6 +274,18 @@ function emptyEditor(){
 	codeTA.value = "";
 }
 
+function toggleFullscreen(){
+	if(is_fullscreen()){
+		closeFullscreen();
+	} else {
+		openFullscreen();
+	}
+}
+
+function is_fullscreen(){
+    return document.fullscreenElement != null;
+}
+
 function openFullscreen() {
 //opens the browser in full screen - particularly wanted on mobile so that we have a bit more screen to work with
 //found on https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_fullscreen
@@ -285,7 +297,6 @@ function openFullscreen() {
 	} else if (elem.msRequestFullscreen) { /* IE11 */
 		elem.msRequestFullscreen();
 	}
-	document.getElementById("btnFullScreen").addEventListener("click", closeFullscreen);
 }
 function closeFullscreen() {
   if (document.exitFullscreen) {
@@ -295,7 +306,6 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) { /* IE11 */
     document.msExitFullscreen();
   }
-  document.getElementById("btnFullScreen").addEventListener("click", openFullscreen);
 }
 
 function isRunningLocally(){
