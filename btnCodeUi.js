@@ -93,7 +93,7 @@ function addLangBtns(lang){
 	
 	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("makeCode", lang, langBtns, "btn" + lang, "", document.getElementById("philsJSBtnsInner"));
+	addButtons("makeCode", lang, langBtns, "btn" + lang, "", document.getElementById("codeBtns"));
 	console.groupEnd();
 }
 
@@ -247,7 +247,7 @@ function languageChange(triggerEl){
 	console.group("languageChange");
 	console.log(triggerEl);
 	
-	philsJSBtnsInner.innerHTML = "";
+	codeBtns.innerHTML = "";
 	if(triggerEl.value == "All Langs"){
 		addAllLangBtns();
 	} else if(triggerEl.value == "HTML, JS, CSS"){
