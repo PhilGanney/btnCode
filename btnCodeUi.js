@@ -48,6 +48,7 @@ var savedCode = {
 		
 	},
 	"Python": {
+		"4Spaces": "    ",
 		"DefFunction": "def my_function():\r\n  ",
 		"Print": "print(\"\")",
 		"Class": "class MyClass",
@@ -93,7 +94,7 @@ function pageLoad(){
 		console.groupEnd();
 	});
 	
-	
+	console.groupEnd();
 }
 
 //Coder beware: This func (and the UX change it was added to help create) introduces a new meaning of "LangBtn": a button with a name of a coding language on it that triggers showing the code btns (previouslty called LangBtns) for that particular language.
@@ -197,20 +198,19 @@ function insertTextAtCursor(el, text) {
 		var lastChar = val.slice(endIndex - 1, endIndex);
 		console.log("Last Char:" + lastChar);
 		
-		//Work on better indentation
+		//indentation
+		var indentString = "";
 		//1) find the last newline - textarea value has newlines as \n not \r\n
 		const searchTerm = '\n';
 		console.log(`The index of the first "${searchTerm}" from the end is ${beforeCursor.lastIndexOf(searchTerm)}`);
 		var lastNewLinePos = beforeCursor.lastIndexOf(searchTerm);
-
-		
-
-		
-		//2)count the tabs after. 
+	
+		//2)count the tabs or spaces after. 
 		var tabsFromNewLine = 0;
+		var spacesFromNewLine = 0;
 		//initial value of indexToCheck is 1 more than the lastNewLinePos - when coding I thought it would be 2 more since lastNewLinePos would indicate the \ so this would need to count over the n, but after a bit of debugging I found this was not the case
 		var indexToCheck = lastNewLinePos +1;
-		var tabString = "";
+		
 		
 		/* Some console log lines that I used to help sus out 
 		console.log(val.charAt(indexToCheck));
@@ -218,16 +218,26 @@ function insertTextAtCursor(el, text) {
 		console.log(val.charAt(indexToCheck+1));*/
 		
 		//val.charAt... means we check for indentation on that line even after the cursor, giving subtly different behaviour to if we used beforeCursor.charAt
-		while(val.charAt(indexToCheck) == "	"){//tab
-			console.log("tab found");
-			tabsFromNewLine++;
-			tabString += "	";
-			indexToCheck++;
+		console.log(val.charAt(indexToCheck));
+		if (val.charAt(indexToCheck) == "	"){ //tab
+			while(val.charAt(indexToCheck) == "	"){//tab
+				console.log("tab found");
+				tabsFromNewLine++;
+				indentString += "	";
+				indexToCheck++;
+			}
+			console.log("tabs found:" + tabsFromNewLine);
+		} else if(val.charAt(indexToCheck) == " "){//space
+			while(val.charAt(indexToCheck) == " "){//space
+				console.log("space found");
+				spacesFromNewLine++;
+				indentString += " ";
+				indexToCheck++;
+			}
+			console.log("spaces found:" + spacesFromNewLine);
 		}
-		console.log("tabs found:" + tabsFromNewLine);
-		
-		//add tabs into the text we are about to insert
-		text = text.replaceAll("\r\n", "\r\n" + tabString);
+		//add tabs/spaces into the text we are about to insert
+		text = text.replaceAll("\r\n", "\r\n" + indentString);
 		
         el.value = beforeCursor + text + val.slice(endIndex);
         el.selectionStart = el.selectionEnd = endIndex + text.length;
