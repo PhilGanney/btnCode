@@ -57,7 +57,16 @@ var savedCode = {
 		"ToThePowerOf": " ** ",
 		"MultilineString": "\"\"\"\r\n\r\n\"\"\"",
 		"Slice": "[x:y]"
-	}
+	}/*,
+	"PHP": {
+		
+	},
+	"MySQL": {
+		
+	},
+	"QBASIC": {
+		
+	},*/
 	
 }
 
@@ -93,6 +102,8 @@ function showLangBtns(){
 	
 	const allLangs = Object.keys(savedCode);
 	console.log(allLangs);
+	
+	document.getElementById("codeBtns").innerHTML = "";
 	
 	for (i in allLangs){
 		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
@@ -265,6 +276,11 @@ function languageChange(lang){
 	console.log(lang);
 	
 	codeBtns.innerHTML = "";
+	
+	//Add a button that can show the languages again
+	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
+	addButtons("showLangBtns", "PickLang", ["Change Lang"], "btn", "", codeBtns)
+	
 	if(lang == "General"){
 		addLangBtns("General");
 	}

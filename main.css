@@ -21,13 +21,18 @@ footer{
 
 #codeBtns{
 	height: 68px;
-	overflow-x: hidden;
-	overflow-y: scroll;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
+
 #controlBtns{
 	height: 88px;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     flex-direction: row;
     align-items: flex-start;
@@ -85,11 +90,6 @@ select{
 		position: fixed;
 	}
 	
-	#codeBtns{
-		height: 88px;
-		overflow-x: hidden;
-		overflow-y: scroll;
-	}
 
 }
 @media only screen and (min-height: 900px) {
