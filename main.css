@@ -19,10 +19,23 @@ footer{
 	
 }
 
-#btnsOuter{
-	height: 88px;
+#codeBtns{
+	height: 68px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+}
+#controlBtns{
+	height: 88px;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#controlBtns *{
+	height: 86px;
 }
 
 button{
@@ -72,17 +85,13 @@ select{
 		position: fixed;
 	}
 	
-	#btnsOuter{
-		height: 168px;
+	#codeBtns{
+		height: 88px;
 		overflow-x: hidden;
 		overflow-y: scroll;
 	}
 
 }
 @media only screen and (min-height: 900px) {
-	#btnsOuter{
-		height: auto;
-		overflow-x: hidden;
-		overflow-y: hidden;
-	}
+
 }

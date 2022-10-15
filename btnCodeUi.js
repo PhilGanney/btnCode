@@ -96,7 +96,7 @@ function showLangBtns(){
 	
 	for (i in allLangs){
 		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-		addButtons("languageChange", allLangs[i], [allLangs[i]], "btn", "", document.getElementById("otherControlBtns"));
+		addButtons("languageChange", allLangs[i], [allLangs[i]], "btn", "", document.getElementById("codeBtns"));
 		
 	}
 	console.groupEnd;
