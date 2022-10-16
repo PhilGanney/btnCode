@@ -84,6 +84,14 @@ select{
 	height: 66px;
 }
 
+/*Javascript is used to apply .hidden and .showing as appropriate*/
+.hide {
+	display: none !important;
+}
+.show {
+	display: block;
+}
+
 @media only screen and (min-height: 468px) {
 	header{
 		position: sticky;

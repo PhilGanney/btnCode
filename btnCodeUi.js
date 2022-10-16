@@ -350,6 +350,42 @@ function closeFullscreen() {
   }
 }
 
+function showStyler(){
+	applyHideClass("codeTA");
+	applyHideClass("btnMkr");
+	applyHideClass("newLangScrn");
+	applyShowClass("styler");
+}
+function showBtnMkr(){
+	applyHideClass("codeTA");
+	applyHideClass("styler");
+	applyHideClass("newLangScrn");
+	applyShowClass("btnMkr");
+}
+function showNewLangScrn(){
+	applyHideClass("codeTA");
+	applyHideClass("btnMkr");
+	applyHideClass("styler");
+	applyShowClass("newLangScrn");
+}
+function showEditor(){
+	applyHideClass("newLangScrn");
+	applyHideClass("btnMkr");
+	applyHideClass("styler");
+	applyShowClass("codeTA");
+}
+
+//Nabbed and tweaked from my TeaRounder project 
+function applyHideClass(id){
+  document.getElementById(id).classList.remove("show");
+  document.getElementById(id).classList.add("hide");
+}
+//Nabbed and tweaked from my TeaRounder project 
+function applyShowClass(id){
+  document.getElementById(id).classList.remove("hide");
+  document.getElementById(id).classList.add("show");
+}
+
 function isRunningLocally(){
 	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
 		console.log("Detected running locally");

@@ -28,10 +28,12 @@
 					</span>
 					<button id="btnFullScreen" onclick="toggleFullscreen()">FullScreen</button>
 					<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
-					<button id="btnCreateBtn">(coming v soon) Create a button</button>
-					<button id="btnAddLang">(coming soon) Add Language</button>
+					<button id="btnCreateBtn" onclick="showBtnMkr()">(coming v soon) Create a button</button>
+					<button id="btnAddLang" onclick="showNewLangScrn()">(coming soon) Add Language</button>
 					<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
-					<button id="btnStyleBtns">(coming soon) Style ya buttons!</button>
+					<button id="btnStyleBtns" onclick="showStyler()">(coming soon) Style ya buttons!</button>
+					<button id="btnShowEditor" onclick="showEditor()">Back to editor</button>
+					
 				</div>
 				<div id="codeBtns">
 				</div>
@@ -39,6 +41,15 @@
 			</div>
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
+			<div id="styler" class="hide">
+				<p>Stylr goez ere yo!</p>
+			</div>
+			<div id="btnMkr" class="hide">
+				<p>btn mkr goez ere peeps!</p>
+			</div>
+			<div id="newLangScrn" class="hide">
+				<p>Oy! Ya gotta wait a bit to make a new lang</p>
+			</div>
 		</main>
 		<footer>
 			<p>btnCode, © 2022 Phil Ganney. 
