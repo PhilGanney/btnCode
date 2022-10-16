@@ -89,7 +89,10 @@ select{
 	footer{
 		position: fixed;
 	}
-	
+	#codeBtns{
+		/*Space for a scrollbar*/
+		height: 86px;
+	}
 
 }
 @media only screen and (min-height: 900px) {
