@@ -241,6 +241,7 @@ function insertTextAtCursor(el, text) {
 		
         el.value = beforeCursor + text + val.slice(endIndex);
         el.selectionStart = el.selectionEnd = endIndex + text.length;
+		el.focus();
     } else if (doc.selection != "undefined" && doc.selection.createRange) {
 		//VERY BASIC SUPPORT FOR IE - (edge uses the top part anyway. There is little point supporting IE for this project beyond that)
         el.focus();
