@@ -240,8 +240,10 @@ function insertTextAtCursor(el, text) {
 		text = text.replaceAll("\r\n", "\r\n" + indentString);
 		
         el.value = beforeCursor + text + val.slice(endIndex);
-        el.selectionStart = el.selectionEnd = endIndex + text.length;
 		el.focus();
+		//place the cursor at the end of what was just inserted, by placing it at the position found at number of characters in the text box - number of characters in the bit that went after the inserted text
+        el.selectionStart = el.selectionEnd = el.value.length - val.slice(endIndex).length;
+		
     } else if (doc.selection != "undefined" && doc.selection.createRange) {
 		//VERY BASIC SUPPORT FOR IE - (edge uses the top part anyway. There is little point supporting IE for this project beyond that)
         el.focus();
