@@ -29,6 +29,7 @@ var savedCode = {
 		"For": "for (let i = 0; i < someAmount; i++) {\r\n	\r\n}",
 		"ForKeyInObject": "for (keyName in objectName) {\r\n	\r\n}",
 		"Break": "break;",
+		"GetElByID": "document.getElementById(\"codeBtns\")",
 		"ConsoleGroup": "console.group(\"\");\r\nconsole.groupEnd();",
 		"ConsoleLog":"console.log();",
 		"/*Comment*/": "/* Comment */",
