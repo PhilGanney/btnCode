@@ -2,7 +2,7 @@
 
  Button Code - a very different UI for coding.
 
-## Why
+## Why?
 
 Text editors and IDEs are pretty great for coding if all of these conditions are true:
  - You are working at a device with a good keyboard
@@ -17,15 +17,15 @@ What if you're using an unfamiliar language? A UI with buttons of core coding co
 
 What about people with injuries or disabilities that make large amounts of typing painful, difficult or impossible? Maybe btnCode can help?
 
-# How ...
-## ..does one start using this?
+## How ...
+### ..does one start using this?
 btnCode is designed to be easy to use from the moment you get to btncode.com and since the editor is all client side JS, you can also just have all the files locally and open index.html in a modern browser. 
 
 Pick a coding language from the choices available and the language options will be replaced with buttons ("btns"), that either insert text into the coding area or they might toggle showing a selection of btns. Use the "Change Lang" btn to see the list of languages ("Langs") again.
 
-## ..do I exit btnCode?
+### ..do I exit btnCode?
 Close the tab.
 
-# What ...
-## ..are the differences between running btnCode locally, and going to btncode.com?
+## What ...
+### ..are the differences between running btnCode locally, and going to btncode.com?
 One difference between the two options, at least while the website is http rather than https, is that running locally should give you a "Copy all text" button. (Browsers only allow the JS for add to clipboard in secure contexts, we only show the button if we detect we have permission to write to clipboard)
