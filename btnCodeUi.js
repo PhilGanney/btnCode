@@ -253,9 +253,11 @@ function langTopClick(langTop){
 		console.log("Btn not a codeBtn");
 		for (indexes in btn[3]) {
 			console.log(btn[3][indexes]);
-			//drawBtn(id, btnClass, btnText, click, position, elRelativeTo)
-			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], "", "afterend", btnClicked);
-			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text
+			/*Call drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
+			turns out we could pass in this same function 
+			*/
+			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], langTopClick, [btn[3][indexes]], "afterend", btnClicked);
+			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text params will need updating to match changes since writing that, but I had tested this call worked with how drawBtn was at the time
 			//drawBtn("btn" + btn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][btn[3][indexes]][2], "", "afterend", btnClicked);
 		}
 		
@@ -278,17 +280,23 @@ function showGroupOfBtns(group){
 	console.groupEnd();
 }
 
-function drawBtn(id, btnClass, btnText, click, position, elRelativeTo){
+function runEvent(callback, args){
+	callback.apply(this, args);
+}
+
+function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo){
 	console.groupCollapsed("drawBtn");
 	let btn = document.createElement("button");
 	btn.id = id;
 	btn.innerHTML = btnText;
 	console.log(btnClass);
+	console.log(clickFunc);
+	console.log(clickArgs);
 	//using className since there is no need to play nice with existing classes
 	btn.className = btnClass;
 	btn.addEventListener ("click", function() {
 		//Todo: actually pass the event
-		alert("did something");
+		runEvent(clickFunc, clickArgs);
 	});
 	
 	elRelativeTo.insertAdjacentElement(position, btn)
@@ -358,7 +366,9 @@ selectionStart
 
 */
 function insertTextAtCursor(el, text) {
-    var val = el.value, endIndex, range, doc = el.ownerDocument;
+    console.log(el);
+    console.log(text);
+	var val = el.value, endIndex, range, doc = el.ownerDocument;
     if (typeof el.selectionStart == "number"
             && typeof el.selectionEnd == "number") {
 		//Not IE (everything else)
