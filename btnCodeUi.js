@@ -267,7 +267,12 @@ function langDescendantClick(btnDataIdentifier){
 		}
 		
 	} else if (btn[1] == "openGroup"){
-		console.log("It works ya!");
+		console.log("btn represents a group that has already been opened");
+		for (indexes in btn[3]) {
+			console.log(btn[3][indexes]);
+			removeElementById("btn" + btn[3][indexes]);
+		}
+		btn[1] = "group";
 	} else { //Just in case I ever have a dumb moment when altering this code, or make a typo in a btn type in the data
 		console.error("no pathway in the code for the value: " + btn[1]);
 	}
@@ -316,6 +321,11 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
 		parentEl.appendChild(btn);
 	}*/
 	console.groupEnd();
+}
+
+function removeElementById(id){
+	console.log("removing element with id:" + id);
+	document.getElementById(id).remove();
 }
 
 function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv){
