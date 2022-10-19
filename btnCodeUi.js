@@ -82,8 +82,9 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"HTML": {
 		"BoilerPlateBasic": [0, "codeBtn", "BoilerPlateBasic", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
-		"Stylesheet": [0, "codeBtn", "ExternalStylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
-		"Script": [0, "codeBtn", "Script", "<script src=\"btnCodeUi.js\"></script>"],//ere
+		"HeadElementsGrp": [2, "group", "HeadElementsGrp", ["Stylesheet", "Script"]], /*WORKING HERE*/
+		"Stylesheet": [1, "codeBtn", "ExternalStylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
+		"Script": [1, "codeBtn", "Script", "<script src=\"btnCodeUi.js\"></script>"],
 		"Div": [0, "codeBtn", "Div", "<div>\r\n	\r\n</div>"],
 		"id": [0, "codeBtn", "id", "id=\"\""],
 		"class": [0, "codeBtn", "class", "class=\"\""],
@@ -249,6 +250,9 @@ function langTopClick(langTop){
 		insertTextAtCursor(codeTA, btn[3]);
 	} else {
 		console.log("Btn not a codeBtn");
+		//drawBtn(id, btnClass, btnText, click, parentEl, insertBeforeEl = "")
+		drawBtn("test2", btnClicked.className, "test1b", "", codeBtns, document.getElementById("btnPython"));
+		
 	}
 	
 	console.groupEnd();
@@ -265,6 +269,26 @@ function showGroupOfBtns(group){
 	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
 	addButtons("makeCode", lang, langBtns, "btn" + lang, "", document.getElementById("codeBtns"));
+	console.groupEnd();
+}
+
+function drawBtn(id, btnClass, btnText, click, parentEl, insertBeforeEl = ""){
+	console.groupCollapsed("drawBtn");
+	let btn = document.createElement("button");
+	btn.id = id;
+	btn.innerHTML = btnText;
+	console.log(btnClass);
+	//using className since there is no need to play nice with existing classes
+	btn.className = btnClass;
+	btn.addEventListener ("click", function() {
+		//Todo: actually pass the event
+		alert("did something");
+	});
+	if (insertBeforeEl != ""){
+		parentEl.insertBefore(btn, insertBeforeEl);
+	} else {
+		parentEl.appendChild(btn);
+	}
 	console.groupEnd();
 }
 
