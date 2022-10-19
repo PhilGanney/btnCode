@@ -193,31 +193,22 @@ function showLangTop(lang){
 	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead. This var previously called langBtns but that became horribly confusing as context changed
 	var langDescendantKeys = Object.keys(savedCodeWithGroupsConcept1[lang]);
 	console.log(langDescendantKeys);
-	
 	console.log(savedCodeWithGroupsConcept1[lang]);
-	/*	 cannot use the new btn text values until we have a more flexible addButtons function that allows for different text on the button to name of the id
-		BUT we can still grab the just ones that are top level btns!
-	*/
-	var btnTexts = [];
+	
+	var btnKey = "";
 	for (val in langDescendantKeys) {
 		console.log(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]]);
 		
 		if(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][0] == 0){
-			//Todo: (when possible) Get the more flexible button text value
-			//btnTexts.push(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2]);
-			//For now: use the keys
-			btnTexts.push(langDescendantKeys[val]);
+			//Todo: (might be possible now?) Get the more flexible button text value
+			//savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2];
+
+			btnKey = langDescendantKeys[val];
 			
-			//Todo: I believe I can use the new drawBtn func within this loop instead of creating the btnTexts array to take to the old not-so-great button creation code. I will get onto doing that right after I have fixed up some other things in this func that are going to confuse me as I do this
 			//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
-			//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
+			drawBtn("btn" + lang + btnKey, lang, btnKey, langDescendantClick, [btnKey], "beforeend", document.getElementById("codeBtns"))
 		}
 	}
-	
-	console.log(btnTexts);
-	
-	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("langDescendantClick", lang, btnTexts, "btn" + lang, "", document.getElementById("codeBtns"));
 	console.groupEnd();
 }
 
@@ -256,7 +247,7 @@ function langDescendantClick(btnDataIdentifier){
 		console.log("Btn is a codeBtn");
 		//the old makeCode function did not seem worthwhile adapting for this
 		insertTextAtCursor(codeTA, btn[3]);
-	} else if (btn[1] == "group") {
+	} else if (btn[1] == "group") { //TODO: bugfix needed here abouts, if user changes lang, while a group is open, the next time they come back to the lang, the btns within the group will be non-existant in the DOM, but btn[1] will still be "openGroup" so the branch for removing buttons gets errors. Better to identify if group is open or closed by having a 2nd class on the element for open or closed. This extra class would also be useful for making UI more clear.
 		console.log("Btn is a group that has not been opened yet");
 		for (indexes in btn[3]) {
 			console.log(btn[3][indexes]);
@@ -299,10 +290,21 @@ function showGroupOfBtns(group){
 	console.groupEnd();
 }
 
+//used in eventlisteners for elements created via JS, to get round the issue of passing functions in at element creation, with their params, but without calling those functions at the moment.
 function runEvent(callback, args){
 	callback.apply(this, args);
 }
 
+/* About the "position" param below - 
+	There are four acceptable inputs, directly from the Element Web API, basically setting which side of the opening or closing tags of the element you are placing the new btn in relation to:
+		'beforebegin': Before the element in elRelativeTo itself.
+		'afterbegin': Just inside the element in elRelativeTo, before its first child.
+		'beforeend': Just inside the element in elRelativeTo, after its last child.
+		'afterend': After the element in elRelativeTo itself.
+	The key to understanding that param is understanding insertAdjacentElement()
+	https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+
+*/
 function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo){
 	console.groupCollapsed("drawBtn");
 	let btn = document.createElement("button");
@@ -314,7 +316,6 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
 	//using className since there is no need to play nice with existing classes
 	btn.className = btnClass;
 	btn.addEventListener ("click", function() {
-		//Todo: actually pass the event
 		runEvent(clickFunc, clickArgs);
 	});
 	
