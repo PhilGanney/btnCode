@@ -218,7 +218,8 @@ function showLangTop(lang){
 
 
 /* Formally langTopClick(langTop) but then I found I could use it for levels below that
-langTops can be either codeGroupBtns or codeBtns
+
+langTops could be either codeGroupBtns or codeBtns, but at the top level of a lang
 
 codeGroupBtn is a btn that represents a group of code, when clicked displays an amount of associated codeBtns. For example in HTML you might group anything that only goes inside a head tag into one group and all the form elements into another, click on codeGroupBtn marked HeadElements to get codeBtns marked Stylesheet, RobotsMeta, ExternalScript etc.
 A codeBtn actually places text into the text area
@@ -250,8 +251,8 @@ function langDescendantClick(btnDataIdentifier){
 		console.log("Btn is a codeBtn");
 		//the old makeCode function did not seem worthwhile adapting for this
 		insertTextAtCursor(codeTA, btn[3]);
-	} else {
-		console.log("Btn not a codeBtn");
+	} else if (btn[1] == "group") {
+		console.log("Btn is a group that has not been opened yet");
 		for (indexes in btn[3]) {
 			console.log(btn[3][indexes]);
 			/*Call drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
@@ -260,8 +261,15 @@ function langDescendantClick(btnDataIdentifier){
 			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], langDescendantClick, [btn[3][indexes]], "afterend", btnClicked);
 			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text params will need updating to match changes since writing that, but I had tested this call worked with how drawBtn was at the time
 			//drawBtn("btn" + btn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][btn[3][indexes]][2], "", "afterend", btnClicked);
+			
+			//set the btn type to openGroup, so that when it is next click it will take the correct pathway
+			btn[1] = "openGroup";
 		}
 		
+	} else if (btn[1] == "openGroup"){
+		console.log("It works ya!");
+	} else { //Just in case I ever have a dumb moment when altering this code, or make a typo in a btn type in the data
+		console.error("no pathway in the code for the value: " + btn[1]);
 	}
 	
 	console.groupEnd();
