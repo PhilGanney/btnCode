@@ -192,8 +192,18 @@ function showLangTop(lang){
 	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
 	var langBtns = Object.keys(savedCodeWithGroupsConcept1[lang]);
 	
+	console.log(savedCodeWithGroupsConcept1[lang]);
+	/* Working code for finding the more flexible button text from the new data set
+	HOWEVER cannot use that text until we have a more flexible addButtons function that allows for different text on the button to name of the id
+	var btnTexts = [];
+	for (val in langBtns) {
+		console.log(savedCodeWithGroupsConcept1[lang][langBtns[val]]);
+		btnTexts.push(savedCodeWithGroupsConcept1[lang][langBtns[val]][2]);
+	}
 	
+	console.log(btnTexts);
 	
+	*/
 	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
 	addButtons("langTopClick", lang, langBtns, "btn" + lang, "", document.getElementById("codeBtns"));
