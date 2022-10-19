@@ -193,20 +193,25 @@ function showLangTop(lang){
 	var langBtns = Object.keys(savedCodeWithGroupsConcept1[lang]);
 	
 	console.log(savedCodeWithGroupsConcept1[lang]);
-	/* Working code for finding the more flexible button text from the new data set
-	HOWEVER cannot use that text until we have a more flexible addButtons function that allows for different text on the button to name of the id
+	/*	 cannot use the new btn text values until we have a more flexible addButtons function that allows for different text on the button to name of the id
+		BUT we can still grab the just ones that are top level btns!
+	*/
 	var btnTexts = [];
 	for (val in langBtns) {
 		console.log(savedCodeWithGroupsConcept1[lang][langBtns[val]]);
-		btnTexts.push(savedCodeWithGroupsConcept1[lang][langBtns[val]][2]);
+		
+		if(savedCodeWithGroupsConcept1[lang][langBtns[val]][0] == 0){
+			//Todo: (when possible) Get the more flexible button text value
+			//btnTexts.push(savedCodeWithGroupsConcept1[lang][langBtns[val]][2]);
+			//For now: use the keys
+			btnTexts.push(langBtns[val]);
+		}
 	}
 	
 	console.log(btnTexts);
 	
-	*/
-	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("langTopClick", lang, langBtns, "btn" + lang, "", document.getElementById("codeBtns"));
+	addButtons("langTopClick", lang, btnTexts, "btn" + lang, "", document.getElementById("codeBtns"));
 	console.groupEnd();
 }
 
