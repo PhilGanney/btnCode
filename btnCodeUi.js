@@ -186,11 +186,11 @@ function showLangBtns(){
 
 	Adding concept of groups in that top level
 */
-//TODO: working here -- changing this in stages for ease of development, with stages that I can commit to github, so will be creating langBtns from the original savedCode var for a bit
+//TODO: working here -- changing this in stages for ease of development, with stages that I can commit to github
 function showLangTop(lang){
 	console.groupCollapsed("showLangTop:" + lang);
 	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
-	var langBtns = Object.keys(savedCode[lang]);
+	var langBtns = Object.keys(savedCodeWithGroupsConcept1[lang]);
 	
 	
 	
