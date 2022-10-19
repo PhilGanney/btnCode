@@ -242,10 +242,6 @@ function langTopClick(langTop){
 	//find the button or group within savedCodeWithGroupsConcept1
 	var btn = savedCodeWithGroupsConcept1[btnClicked.className][langTop];
 	
-	//var btnIndex = savedCodeWithGroupsConcept1[btnClicked.className].indexOf(btn);
-	//console.log(btnIndex);
-	
-	//var btnAfter = savedCodeWithGroupsConcept1[btnClicked.className][langTop];
 	console.log(btn);
 	
 	//branching pathway for codeBtn or group
