@@ -190,22 +190,27 @@ function showLangBtns(){
 //TODO: working here -- changing this in stages for ease of development, with stages that I can commit to github
 function showLangTop(lang){
 	console.groupCollapsed("showLangTop:" + lang);
-	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
-	var langBtns = Object.keys(savedCodeWithGroupsConcept1[lang]);
+	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead. This var previously called langBtns but that became horribly confusing as context changed
+	var langDescendantKeys = Object.keys(savedCodeWithGroupsConcept1[lang]);
+	console.log(langDescendantKeys);
 	
 	console.log(savedCodeWithGroupsConcept1[lang]);
 	/*	 cannot use the new btn text values until we have a more flexible addButtons function that allows for different text on the button to name of the id
 		BUT we can still grab the just ones that are top level btns!
 	*/
 	var btnTexts = [];
-	for (val in langBtns) {
-		console.log(savedCodeWithGroupsConcept1[lang][langBtns[val]]);
+	for (val in langDescendantKeys) {
+		console.log(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]]);
 		
-		if(savedCodeWithGroupsConcept1[lang][langBtns[val]][0] == 0){
+		if(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][0] == 0){
 			//Todo: (when possible) Get the more flexible button text value
-			//btnTexts.push(savedCodeWithGroupsConcept1[lang][langBtns[val]][2]);
+			//btnTexts.push(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2]);
 			//For now: use the keys
-			btnTexts.push(langBtns[val]);
+			btnTexts.push(langDescendantKeys[val]);
+			
+			//Todo: I believe I can use the new drawBtn func within this loop instead of creating the btnTexts array to take to the old not-so-great button creation code. I will get onto doing that right after I have fixed up some other things in this func that are going to confuse me as I do this
+			//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
+			//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
 		}
 	}
 	
