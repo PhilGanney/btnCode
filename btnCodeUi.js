@@ -212,18 +212,19 @@ function showLangTop(lang){
 	console.log(btnTexts);
 	
 	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("langTopClick", lang, btnTexts, "btn" + lang, "", document.getElementById("codeBtns"));
+	addButtons("langDescendantClick", lang, btnTexts, "btn" + lang, "", document.getElementById("codeBtns"));
 	console.groupEnd();
 }
 
 
-/* langTops can be either codeGroupBtns or codeBtns
+/* Formally langTopClick(langTop) but then I found I could use it for levels below that
+langTops can be either codeGroupBtns or codeBtns
 
 codeGroupBtn is a btn that represents a group of code, when clicked displays an amount of associated codeBtns. For example in HTML you might group anything that only goes inside a head tag into one group and all the form elements into another, click on codeGroupBtn marked HeadElements to get codeBtns marked Stylesheet, RobotsMeta, ExternalScript etc.
 A codeBtn actually places text into the text area
 */
-function langTopClick(langTop){
-	console.groupCollapsed("langTopClick: " + langTop);
+function langDescendantClick(langTop){
+	console.groupCollapsed("langDescendantClick: " + langTop);
 	
 	/*Existing (soon to be amended) code from makeCode for reference while coding
 	//get the button that was clicked
@@ -256,7 +257,7 @@ function langTopClick(langTop){
 			/*Call drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
 			turns out we could pass in this same function 
 			*/
-			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], langTopClick, [btn[3][indexes]], "afterend", btnClicked);
+			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], langDescendantClick, [btn[3][indexes]], "afterend", btnClicked);
 			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text params will need updating to match changes since writing that, but I had tested this call worked with how drawBtn was at the time
 			//drawBtn("btn" + btn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][btn[3][indexes]][2], "", "afterend", btnClicked);
 		}
