@@ -255,6 +255,8 @@ function langTopClick(langTop){
 			console.log(btn[3][indexes]);
 			//drawBtn(id, btnClass, btnText, click, position, elRelativeTo)
 			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], "", "afterend", btnClicked);
+			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text
+			//drawBtn("btn" + btn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][btn[3][indexes]][2], "", "afterend", btnClicked);
 		}
 		
 	}
