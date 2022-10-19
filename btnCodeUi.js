@@ -82,7 +82,7 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"HTML": {
 		"BoilerPlateBasic": [0, "codeBtn", "BoilerPlateBasic", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
-		"HeadElementsGrp": [2, "group", "HeadElementsGrp", ["Stylesheet", "Script"]], /*WORKING HERE*/
+		"HeadElementsGrp": [2, "group", "HeadElementsGrp", ["Stylesheet", "Script"]], /*WORKING HERE first value set to 2 to hide it for commit*/
 		"Stylesheet": [1, "codeBtn", "ExternalStylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
 		"Script": [1, "codeBtn", "Script", "<script src=\"btnCodeUi.js\"></script>"],
 		"Div": [0, "codeBtn", "Div", "<div>\r\n	\r\n</div>"],
@@ -241,6 +241,11 @@ function langTopClick(langTop){
 	
 	//find the button or group within savedCodeWithGroupsConcept1
 	var btn = savedCodeWithGroupsConcept1[btnClicked.className][langTop];
+	
+	//var btnIndex = savedCodeWithGroupsConcept1[btnClicked.className].indexOf(btn);
+	//console.log(btnIndex);
+	
+	//var btnAfter = savedCodeWithGroupsConcept1[btnClicked.className][langTop];
 	console.log(btn);
 	
 	//branching pathway for codeBtn or group
@@ -250,8 +255,8 @@ function langTopClick(langTop){
 		insertTextAtCursor(codeTA, btn[3]);
 	} else {
 		console.log("Btn not a codeBtn");
-		//drawBtn(id, btnClass, btnText, click, parentEl, insertBeforeEl = "")
-		drawBtn("test2", btnClicked.className, "test1b", "", codeBtns, document.getElementById("btnPython"));
+		//drawBtn(id, btnClass, btnText, click, position, elRelativeTo)
+		drawBtn("test2", btnClicked.className, "test1b", "", "afterend", btnClicked);
 		
 	}
 	
@@ -272,7 +277,7 @@ function showGroupOfBtns(group){
 	console.groupEnd();
 }
 
-function drawBtn(id, btnClass, btnText, click, parentEl, insertBeforeEl = ""){
+function drawBtn(id, btnClass, btnText, click, position, elRelativeTo){
 	console.groupCollapsed("drawBtn");
 	let btn = document.createElement("button");
 	btn.id = id;
@@ -284,11 +289,14 @@ function drawBtn(id, btnClass, btnText, click, parentEl, insertBeforeEl = ""){
 		//Todo: actually pass the event
 		alert("did something");
 	});
-	if (insertBeforeEl != ""){
-		parentEl.insertBefore(btn, insertBeforeEl);
+	
+	elRelativeTo.insertAdjacentElement(position, btn)
+	
+	/*if (insertAfterEl != ""){
+		parentEl.after(btn);
 	} else {
 		parentEl.appendChild(btn);
-	}
+	}*/
 	console.groupEnd();
 }
 
