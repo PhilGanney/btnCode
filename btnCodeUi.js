@@ -255,8 +255,11 @@ function langTopClick(langTop){
 		insertTextAtCursor(codeTA, btn[3]);
 	} else {
 		console.log("Btn not a codeBtn");
-		//drawBtn(id, btnClass, btnText, click, position, elRelativeTo)
-		drawBtn("test2", btnClicked.className, "test1b", "", "afterend", btnClicked);
+		for (indexes in btn[3]) {
+			console.log(btn[3][indexes]);
+			//drawBtn(id, btnClass, btnText, click, position, elRelativeTo)
+			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], "", "afterend", btnClicked);
+		}
 		
 	}
 	
