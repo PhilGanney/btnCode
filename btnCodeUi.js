@@ -223,8 +223,8 @@ langTops can be either codeGroupBtns or codeBtns
 codeGroupBtn is a btn that represents a group of code, when clicked displays an amount of associated codeBtns. For example in HTML you might group anything that only goes inside a head tag into one group and all the form elements into another, click on codeGroupBtn marked HeadElements to get codeBtns marked Stylesheet, RobotsMeta, ExternalScript etc.
 A codeBtn actually places text into the text area
 */
-function langDescendantClick(langTop){
-	console.groupCollapsed("langDescendantClick: " + langTop);
+function langDescendantClick(btnDataIdentifier){
+	console.groupCollapsed("langDescendantClick: " + btnDataIdentifier);
 	
 	/*Existing (soon to be amended) code from makeCode for reference while coding
 	//get the button that was clicked
@@ -241,7 +241,7 @@ function langDescendantClick(langTop){
 	console.log("lang derived from btns class: " + btnClicked.className);
 	
 	//find the button or group within savedCodeWithGroupsConcept1
-	var btn = savedCodeWithGroupsConcept1[btnClicked.className][langTop];
+	var btn = savedCodeWithGroupsConcept1[btnClicked.className][btnDataIdentifier];
 	
 	console.log(btn);
 	
