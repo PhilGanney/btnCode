@@ -288,6 +288,7 @@ function createLangDescendantBtn(lang, btnKey, position, elRelativeTo){
 	//Todo: (might be possible now?) Get the more flexible button text value
 	//savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2];
 	
+	//swap openGroups to regular groups, since we are not also drawing the buttons within the group that would be on show
 	if(btnType == "openGroup"){
 		//maybe todo: could be good to have a user option that if activated  show the btns within the group instead of reverting openGroups to groups,
 		btnType = "group";
@@ -337,8 +338,14 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
 }
 
 function removeElementById(id){
-	console.log("removing element with id:" + id);
-	document.getElementById(id).remove();
+	console.groupCollapsed("removeElementById: " + id);
+	if (!!document.getElementById(id)){
+		console.log("Found element with id: " + id + " removing it now.");
+		document.getElementById(id).remove();
+	} else {
+		console.warn("Could not find element with id: " + id);
+	}
+	console.groupEnd();
 }
 
 function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv){
