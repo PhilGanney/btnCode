@@ -82,7 +82,7 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"HTML": {
 		"BoilerPlateBasic": [0, "codeBtn", "BoilerPlateBasic", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
-		"HeadElementsGrp": [2, "group", "HeadElementsGrp", ["Stylesheet", "Script"]], /*WORKING HERE first value set to 2 to hide it for commit*/
+		"HeadElementsGrp": [0, "group", "HeadElementsGrp", ["Stylesheet", "Script"]], /*WORKING HERE first value set to 2 to hide it for commit*/
 		"Stylesheet": [1, "codeBtn", "ExternalStylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
 		"Script": [1, "codeBtn", "Script", "<script src=\"btnCodeUi.js\"></script>"],
 		"Div": [0, "codeBtn", "Div", "<div>\r\n	\r\n</div>"],
@@ -196,24 +196,25 @@ function showLangTop(lang){
 	console.log(savedCodeWithGroupsConcept1[lang]);
 	
 	var btnKey = "";
+	var btnType = "";
+	var btnClass = "";
 	for (val in langDescendantKeys) {
-		console.log(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]]);
+		btnKey = langDescendantKeys[val];
+		console.log(savedCodeWithGroupsConcept1[lang][btnKey]);
 		
-		if(savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][0] == 0){
-			//Todo: (might be possible now?) Get the more flexible button text value
-			//savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2];
-
-			btnKey = langDescendantKeys[val];
+		
+		//we store what level of nesting the btn is in index 0 of the btns outer array
+		//so to find btns that by UX seem in the "top" of a lang, match with 0
+		if(savedCodeWithGroupsConcept1[lang][btnKey][0] == 0){
 			
-			//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
-			drawBtn("btn" + lang + btnKey, lang, btnKey, langDescendantClick, [btnKey], "beforeend", document.getElementById("codeBtns"))
+			createLangDescendantBtn(lang, btnKey, "beforeend", document.getElementById("codeBtns"));
 		}
 	}
 	console.groupEnd();
 }
 
 
-/* Formally langTopClick(langTop) but then I found I could use it for levels below that
+/* Formerly langTopClick(langTop) but then I found I could use it for levels below that
 
 langTops could be either codeGroupBtns or codeBtns, but at the top level of a lang
 
@@ -234,41 +235,47 @@ function langDescendantClick(btnDataIdentifier){
 	//get the button that was clicked
 	var btnClicked = event.target || event.srcElement;
 	
-	//get the lang from the class
-	console.log("lang derived from btns class: " + btnClicked.className);
+	//get the lang and btnType from the class
+	var lang = btnClicked.classList[0];
+	console.log("lang taken from btnClicked.classList[0]: " + lang);
+	var btnType = btnClicked.classList[1];
+	console.log("btnType taken from btnClicked.classList[1]: " + btnType);
 	
 	//find the button or group within savedCodeWithGroupsConcept1
-	var btn = savedCodeWithGroupsConcept1[btnClicked.className][btnDataIdentifier];
+	var btn = savedCodeWithGroupsConcept1[lang][btnDataIdentifier];
 	
 	console.log(btn);
 	
 	//branching pathway for codeBtn or group
-	if (btn[1] == "codeBtn"){
+	if (btnType == "codeBtn"){
 		console.log("Btn is a codeBtn");
 		//the old makeCode function did not seem worthwhile adapting for this
 		insertTextAtCursor(codeTA, btn[3]);
-	} else if (btn[1] == "group") { //TODO: bugfix needed here abouts, if user changes lang, while a group is open, the next time they come back to the lang, the btns within the group will be non-existant in the DOM, but btn[1] will still be "openGroup" so the branch for removing buttons gets errors. Better to identify if group is open or closed by having a 2nd class on the element for open or closed. This extra class would also be useful for making UI more clear.
+	} else if (btnType == "group") { //TODO: bugfix needed here abouts, if user changes lang, while a group is open, the next time they come back to the lang, the btns within the group will be non-existant in the DOM, but btn[1] will still be "openGroup" so the branch for removing buttons gets errors. Better to identify if group is open or closed by having a 2nd class on the element for open or closed. This extra class would also be useful for making UI more clear.
 		console.log("Btn is a group that has not been opened yet");
+		//showGroupDescendants(btn);
+		
 		for (indexes in btn[3]) {
 			console.log(btn[3][indexes]);
-			/*Call drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
-			turns out we could pass in this same function 
-			*/
-			drawBtn("btn" + btn[3][indexes], btnClicked.className, btn[3][indexes], langDescendantClick, [btn[3][indexes]], "afterend", btnClicked);
+			createLangDescendantBtn(lang, btn[3][indexes], "afterend", btnClicked)
+
 			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text params will need updating to match changes since writing that, but I had tested this call worked with how drawBtn was at the time
-			//drawBtn("btn" + btn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][btn[3][indexes]][2], "", "afterend", btnClicked);
-			
-			//set the btn type to openGroup, so that when it is next click it will take the correct pathway
-			btn[1] = "openGroup";
+			//drawBtn("btn" + groupBtn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][groupBtn[3][indexes]][2], "", "afterend", btnClicked);
+
 		}
-		
-	} else if (btn[1] == "openGroup"){
+		//set the btn type to openGroup, so that when it is next click it will take the correct pathway
+		btn[1] = "openGroup";
+		btnClicked.classList.remove("group");
+		btnClicked.classList.add("openGroup");
+	} else if (btnType == "openGroup"){
 		console.log("btn represents a group that has already been opened");
 		for (indexes in btn[3]) {
 			console.log(btn[3][indexes]);
-			removeElementById("btn" + btn[3][indexes]);
+			removeElementById("btn" + lang + btn[3][indexes]);
 		}
 		btn[1] = "group";
+		btnClicked.classList.remove("openGroup");
+		btnClicked.classList.add("group");
 	} else { //Just in case I ever have a dumb moment when altering this code, or make a typo in a btn type in the data
 		console.error("no pathway in the code for the value: " + btn[1]);
 	}
@@ -276,18 +283,23 @@ function langDescendantClick(btnDataIdentifier){
 	console.groupEnd();
 }
 
-//TODO: Barely started, duplicated from old addLangBtns
-function showGroupOfBtns(group){
-	console.groupCollapsed("addLangBtns:" + lang);
-	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead
-	var langBtns = Object.keys(savedCode[lang]);
+function createLangDescendantBtn(lang, btnKey, position, elRelativeTo){
+	var btnType = savedCodeWithGroupsConcept1[lang][btnKey][1];
+	//Todo: (might be possible now?) Get the more flexible button text value
+	//savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2];
+	
+	if(btnType == "openGroup"){
+		//maybe todo: could be good to have a user option that if activated  show the btns within the group instead of reverting openGroups to groups,
+		btnType = "group";
+		savedCodeWithGroupsConcept1[lang][btnKey][1] = btnType;
+	}
+	//I was going to only apply an extra class for groups, but I think it may benefit us to assign each btn types from data as class on btns
+	var btnClass = lang + " " + btnType;
 	
 	
-	
-	
-	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("makeCode", lang, langBtns, "btn" + lang, "", document.getElementById("codeBtns"));
-	console.groupEnd();
+	//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
+	drawBtn("btn" + lang + btnKey, btnClass, btnKey, langDescendantClick, [btnKey], position, elRelativeTo)
+
 }
 
 //used in eventlisteners for elements created via JS, to get round the issue of passing functions in at element creation, with their params, but without calling those functions at the moment.
@@ -321,11 +333,6 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
 	
 	elRelativeTo.insertAdjacentElement(position, btn)
 	
-	/*if (insertAfterEl != ""){
-		parentEl.after(btn);
-	} else {
-		parentEl.appendChild(btn);
-	}*/
 	console.groupEnd();
 }
 
