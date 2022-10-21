@@ -69,6 +69,19 @@ button{
 	font-family: SourceSansProBold, Arial, sans-serif;
 }
 
+.group{
+	background-image: url("arrow.png");
+	background-repeat: no-repeat;
+	background-position: right;
+    background-size: 29px;
+}
+.openGroup{
+	background-image: url("arrowDwn.png");
+	background-repeat: no-repeat;
+	background-position: right;
+    background-size: 29px;
+}
+
 #codeTA{
 	width: 96%;
 	height: 300px;
