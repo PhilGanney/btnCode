@@ -82,9 +82,13 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"HTML": {
 		"BoilerPlateBasic": [0, "codeBtn", "BoilerPlateBasic", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
-		"HeadElementsGrp": [0, "group", "HeadElementsGrp", ["Stylesheet", "Script"]], /*WORKING HERE first value set to 2 to hide it for commit*/
-		"Stylesheet": [1, "codeBtn", "ExternalStylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
+		"HeadElementsGrp": [0, "group", "Head<br/>Elements", ["Stylesheet", "Script", "LinkBase", "MetaOther", "MetaCharset", "MetaViewport"]], /*WORKING HERE first value set to 2 to hide it for commit*/
+		"Stylesheet": [1, "codeBtn", "Stylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
 		"Script": [1, "codeBtn", "Script", "<script src=\"btnCodeUi.js\"></script>"],
+		"LinkBase": [1, "codeBtn", "link<br/>base", "<base href=\"\" target=\"_blank\">"],
+		"MetaCharset": [1, "codeBtn", "meta:<br/>charset", "<meta charset=\"UTF-8\">"],
+		"MetaViewport": [1, "codeBtn", "meta:<br/>viewport", "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"],
+		"MetaOther": [1, "codeBtn", "meta: desc,<br/>keywords, author", "<meta name=\"description\" content=\"\">\r\n<meta name=\"keywords\" content=\"HTML, CSS, JavaScript\">\r\n<meta name=\"author\" content=\"Grace Hopper\">"],
 		"Div": [0, "codeBtn", "Div", "<div>\r\n	\r\n</div>"],
 		"id": [0, "codeBtn", "id", "id=\"\""],
 		"class": [0, "codeBtn", "class", "class=\"\""],
@@ -286,7 +290,7 @@ function langDescendantClick(btnDataIdentifier){
 function createLangDescendantBtn(lang, btnKey, position, elRelativeTo){
 	var btnType = savedCodeWithGroupsConcept1[lang][btnKey][1];
 	//Todo: (might be possible now?) Get the more flexible button text value
-	//savedCodeWithGroupsConcept1[lang][langDescendantKeys[val]][2];
+	var btnText = savedCodeWithGroupsConcept1[lang][btnKey][2];
 	
 	//swap openGroups to regular groups, since we are not also drawing the buttons within the group that would be on show
 	if(btnType == "openGroup"){
@@ -299,7 +303,7 @@ function createLangDescendantBtn(lang, btnKey, position, elRelativeTo){
 	
 	
 	//drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo)
-	drawBtn("btn" + lang + btnKey, btnClass, btnKey, langDescendantClick, [btnKey], position, elRelativeTo)
+	drawBtn("btn" + lang + btnKey, btnClass, btnText, langDescendantClick, [btnKey], position, elRelativeTo)
 
 }
 
