@@ -269,16 +269,13 @@ function langDescendantClick(btnDataIdentifier){
 		console.log("Btn is a codeBtn");
 		//the old makeCode function did not seem worthwhile adapting for this
 		insertTextAtCursor(codeTA, btn[3]);
-	} else if (btnType == "group") { //TODO: bugfix needed here abouts, if user changes lang, while a group is open, the next time they come back to the lang, the btns within the group will be non-existant in the DOM, but btn[1] will still be "openGroup" so the branch for removing buttons gets errors. Better to identify if group is open or closed by having a 2nd class on the element for open or closed. This extra class would also be useful for making UI more clear.
+	} else if (btnType == "group") { 
 		console.log("Btn is a group that has not been opened yet");
 		//showGroupDescendants(btn);
 		
 		for (indexes in btn[3]) {
 			console.log(btn[3][indexes]);
 			createLangDescendantBtn(lang, btn[3][indexes], "afterend", btnClicked)
-
-			//Todo: swap above for below when ready for using separate btn text, rather than using the key for the text params will need updating to match changes since writing that, but I had tested this call worked with how drawBtn was at the time
-			//drawBtn("btn" + groupBtn[3][indexes], btnClicked.className, savedCodeWithGroupsConcept1[btnClicked.className][groupBtn[3][indexes]][2], "", "afterend", btnClicked);
 
 		}
 		//set the btn type to openGroup, so that when it is next click it will take the correct pathway
