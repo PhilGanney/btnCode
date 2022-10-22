@@ -273,7 +273,7 @@ function langDescendantClick(btnDataIdentifier){
 		console.log("Btn is a group that has not been opened yet");
 		//showGroupDescendants(btn);
 		
-		for (indexes in btn[3]) {
+		for (indexes in btn[3].reverse()) { //reverse needed since create...Btn will place each new btn next to the group btn
 			console.log(btn[3][indexes]);
 			createLangDescendantBtn(lang, btn[3][indexes], "afterend", btnClicked)
 
