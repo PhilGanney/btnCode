@@ -272,10 +272,10 @@ function langDescendantClick(btnDataIdentifier){
 	} else if (btnType == "group") { 
 		console.log("Btn is a group that has not been opened yet");
 		//showGroupDescendants(btn);
-		
-		for (indexes in btn[3].reverse()) { //reverse needed since create...Btn will place each new btn next to the group btn
-			console.log(btn[3][indexes]);
-			createLangDescendantBtn(lang, btn[3][indexes], "afterend", btnClicked)
+		var btnsToDraw = btn[3].slice().reverse();//reverse needed since create...Btn will place each new btn next to the group btn, slice needed because otherwise reverse will mutate the original array (which gives the UX of btns appearing in reverse every other time the group opens), doing this as a new var as doing this reversal in the for condition would just get ignored for actual logging or creating and we would not want to do that reversal every go through the loop - getting indexes backward instead would work, but this implementation seemed easier to do at this point
+		for (indexes in btnsToDraw) { 
+			console.log(btnsToDraw[indexes]);
+			createLangDescendantBtn(lang, btnsToDraw[indexes], "afterend", btnClicked)
 
 		}
 		//set the btn type to openGroup, so that when it is next click it will take the correct pathway
