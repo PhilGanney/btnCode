@@ -1,74 +1,4 @@
-var savedCode = {
-	"General": {
-		"Tab": "	",
-		"NewLine": "\r\n"
-	},
-	"HTML": {
-		"BoilerPlateBasic": "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>",
-		"Stylesheet": "<link rel=\"stylesheet\" href=\"main.css\"> </link>",
-		"Script": "<script src=\"btnCodeUi.js\"></script>",
-		"Div": "<div>\r\n	\r\n</div>",
-		"id": "id=\"\"",
-		"class": "class=\"\"",
-		"LinkNewTab": "<a href=\"url\"  target=\"_blank\">link text</a>",
-		"Button": "<button id=\"\">Text</button>",
-		"onclick": "onclick=\"\"",
-		"Select": "<select>\r\n	\r\n</select>",
-		"Option": "<option></option>",
-		"value": "value=\"\""
-	},
-	"JS": {
-		"Function": "function changeMe1(){\r\n	\r\n}",
-		"Variable": "var someVar = 0;",
-		"Let": "let blahblah = 0;",
-		"Constant": "const changeMe1;",
-		"IfElse": "if(){\r\n	\r\n} else {\r\n	\r\n}",
-		"SwitchCase": "switch(expression) {\r\n	case x:\r\n		\r\n		break;\r\n	case y:\r\n		\r\n		break;\r\n	default:\r\n	\r\n}",
-		"For": "for (let i = 0; i < someAmount; i++) {\r\n	\r\n}",
-		"ForKeyInObject": "for (keyName in objectName) {\r\n	\r\n}",
-		"Break": "break;",
-		"GetElByID": "document.getElementById(\"codeBtns\")",
-		"ConsoleGroup": "console.group(\"\");\r\nconsole.groupEnd();",
-		"ConsoleLog":"console.log();",
-		"/*Comment*/": "/* Comment */",
-		"//Comment": "//Comment",
-		"JSONKeyValue": "\"key\": \"value\"",
-		"JSONKeyObject": "\"key\": {\r\n	\r\n	\r\n}",
-	},
-	"CSS": {
-		"MediaQuery": "@media only screen and (min-width: 768px) {\r\n	\r\n}",
-		"P": "p {\r\n	\r\n	\r\n}",
-		"Button": "button {\r\n	\r\n	\r\n}",
-		"Class": ".className {\r\n	\r\n	\r\n}",
-		"ByID": "#elementID {\r\n	\r\n	\r\n}",
-		"Comment": "/* Comment */",
-		"BackgroundColour": "background-color: DodgerBlue;",
-		"TextColour": "color: Tomato;",
-		
-	},
-	"Python": {
-		"4Spaces": "    ",
-		"DefFunction": "def my_function():\r\n  ",
-		"Print": "print(\"\")",
-		"Class": "class MyClass",
-		"Divide": " / ",
-		"Remainder": " % ",
-		"FloorDivision": " // ",
-		"ToThePowerOf": " ** ",
-		"MultilineString": "\"\"\"\r\n\r\n\"\"\"",
-		"Slice": "[x:y]"
-	}/*,
-	"PHP": {
-		
-	},
-	"MySQL": {
-		
-	},
-	"QBASIC": {
-		
-	},*/
-	
-}
+
 
 /* Replacement for savedCode, which has a format that does not allow for groups within langs or any other data. It also created some limitations on the button text that are probably not ideal
 
@@ -153,7 +83,16 @@ var savedCodeWithGroupsConcept1 = {
 		"ToThePowerOf": [0, "codeBtn", "ToThePowerOf", " ** "],
 		"MultilineString": [0, "codeBtn", "MultilineString", "\"\"\"\r\n\r\n\"\"\""],
 		"Slice": [0, "codeBtn", "Slice", "[x:y]"]
-	}
+	}/*,
+	"PHP": {
+		
+	},
+	"MySQL": {
+		
+	},
+	"QBASIC": {
+		
+	},*/
 }
 
 /* Todo: actually store controlBtns like this
@@ -187,7 +126,7 @@ function pageLoad(){
 function showLangBtns(){
 	console.groupCollapsed("showLangBtns");
 	
-	const allLangs = Object.keys(savedCode);
+	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
 	console.log(allLangs);
 	
 	document.getElementById("codeBtns").innerHTML = "";
