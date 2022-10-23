@@ -6,6 +6,16 @@ header{
 	background-color:white;
 }
 
+/* For making the favicon (it still needs some work, so I am leaving this temporary code here)
+
+#btnCodeLogo{
+	height: 190px;
+	width: 190px;
+	font-size: 32pt;
+	border-radius: 24px;
+}*/
+
+
 main{
 	padding-bottom: 70px;
 }
