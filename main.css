@@ -83,13 +83,15 @@ button{
 	background-image: url("arrow.png");
 	background-repeat: no-repeat;
 	background-position: right;
-    background-size: 29px;
+    background-size: 19px;
+	padding-right: 19px;
 }
 .openGroup{
 	background-image: url("arrowDwn.png");
 	background-repeat: no-repeat;
 	background-position: right;
-    background-size: 29px;
+    background-size: 19px;
+	padding-right: 19px;
 }
 
 #codeTA{

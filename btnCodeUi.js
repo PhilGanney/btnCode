@@ -9,12 +9,16 @@ var savedCodeWithGroupsConcept1 = {
 	"General": {
 		"Tab": [0, "codeBtn", "Tab", "	"],
 		"NewLine": [0, "codeBtn", "New Line", "\r\n"],
-		"Symbols": [0, "group", "@<&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>>$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", ["singleQuote", "at", "lessThanSymbol", "moreThanSymbol", "dollarSymbol"]],
+		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "at", "lessThanSymbol", "moreThanSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol"]],
 		"singleQuote": [1, "codeBtn", "'", "'"],
+		"doubleQuote": [1, "codeBtn", "\"", "\""],
 		"at": [1, "codeBtn", "@", "@"],
 		"lessThanSymbol": [1, "codeBtn", "<", "<"],
 		"moreThanSymbol": [1, "codeBtn", ">", ">"],
 		"dollarSymbol": [1, "codeBtn", "$", "$"],
+		"poundSymbol": [1, "codeBtn", "£", "£"],
+		"euroSymbol": [1, "codeBtn", "€", "€"],
+		"yenSymbol": [1, "codeBtn", "¥", "¥"],
 	},
 	"HTML": {
 		"BoilerplateBasic": [0, "codeBtn", "Basic Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
