@@ -8,7 +8,13 @@ opened groups would probably need to have a flag in the data to show that it is 
 var savedCodeWithGroupsConcept1 = {
 	"General": {
 		"Tab": [0, "codeBtn", "Tab", "	"],
-		"NewLine": [0, "codeBtn", "New Line", "\r\n"]
+		"NewLine": [0, "codeBtn", "New Line", "\r\n"],
+		"Symbols": [0, "group", "@<&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>>$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", ["singleQuote", "at", "lessThanSymbol", "moreThanSymbol", "dollarSymbol"]],
+		"singleQuote": [1, "codeBtn", "'", "'"],
+		"at": [1, "codeBtn", "@", "@"],
+		"lessThanSymbol": [1, "codeBtn", "<", "<"],
+		"moreThanSymbol": [1, "codeBtn", ">", ">"],
+		"dollarSymbol": [1, "codeBtn", "$", "$"],
 	},
 	"HTML": {
 		"BoilerplateBasic": [0, "codeBtn", "Basic Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
