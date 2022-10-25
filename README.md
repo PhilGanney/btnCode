@@ -9,7 +9,7 @@ Text editors and IDEs are pretty great for coding if all of these conditions are
  - You are physically able to type at a reasonable speed
  - Knowing what to type, comes quickly to you for that particular language
  
-I am building btnCode to be the next best thing when a condition above is false, to be used alongside existing tools and editors. Early stage focus is on assisting productivity when non-fluent in a language, with the UI working much like a reference, but with buttons that put a matching code snippet into the editor. 
+I am building btnCode to be the next best thing when a condition above is false; another tool in your developer toolkit, to be used alongside existing tools and editors. Early stage focus is on assisting productivity when non-fluent in a language, with the UI working much like a reference, but with buttons that put a matching code snippet into the editor. 
 
 I have also put some time into making the editor usable on phones. Now btnCode.com is a good way to think through ideas wherever they strike.
 
