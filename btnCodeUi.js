@@ -22,7 +22,8 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"HTML": {
 		"BoilerplateBasic": [0, "codeBtn", "Basic Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		<h1>Heading</h1>\r\n		\r\n	</body>\r\n</html>"],
-		"HeadElementsGrp": [0, "group", "Head<br/>Elements", ["Stylesheet", "Script", "LinkBase", "MetaOther", "MetaCharset", "MetaViewport"]],
+		"HeadElementsGrp": [0, "group", "Head<br/>Elements", ["Stylesheet", "Script", "Title", "LinkBase", "MetaOther", "MetaCharset", "MetaViewport"]],
+		"Title": [1, "codeBtn", "&lt;title&gt; (of the Tab/Page)", "<title>Title</title>"],
 		"Stylesheet": [1, "codeBtn", "&lt;link&gt; stylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
 		"Script": [1, "codeBtn", "&lt;script&gt;", "<script src=\"btnCodeUi.js\"></script>"],
 		"LinkBase": [1, "codeBtn", "&lt;base&gt;(for all links)", "<base href=\"\" target=\"_blank\">"],
