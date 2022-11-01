@@ -36,7 +36,7 @@
 					<button id="btnCreateBtn" onclick="showBtnMkr()">(coming v soon) Create a button</button>
 					<button id="btnAddLang" onclick="showNewLangScrn()">(coming soon) Add Language</button>
 					<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
-					<button id="btnStyleBtns" onclick="showStyler()">(coming soon) Style ya buttons!</button>
+					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
 					<button id="btnShowEditor" onclick="showEditor()">Back to editor</button>
 					
 				</div>
@@ -47,13 +47,28 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<p>Stylr goez ere yo!</p>
+				<h3>Styler: 🚧dev work on this feature not started🚧</h3>
+				<p></p>
 			</div>
 			<div id="btnMkr" class="hide">
-				<p>btn mkr goez ere peeps!</p>
+				<h2>Create a button</h2>
+				<h3>🚧Work in progress / prototyping🚧</h3>
+				<p>This is at an early stage of development, figuring out what the HTML might be, what the needs are, what is a useful first version of this</p>
+				<p>We need some way to choose between making a groupBtn or a codeBtn (maybe also "functionBtn" / "macroBtn" or something like that). Going with a select for now</p>
+				<label for="btnType">btnType:</label>
+				<select id="btnType">
+					<option selected>group</option>
+					<option>codeBtn</option>
+				</select>
+				<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
+				<p>groups use "jsKey": [lvlInt, "group", "Some text for the btn here", ["keyForBtn1", "keyForBtn2" etc]]<br/>
+				codeBtns use "jsKey": [lvlInt, "codeBtn", "Some text for the btn here", "text to insert here"]<br/>
+				lvlInt should be set to 0 if you want this btn showing when the lang has been chosen. For showing only when a groupBtn has been tapped, any other value could be used, but by convention I use 1. At least by current implementation, at time of writing (and seems unlikely to change), lvlInt is only checked when a lang is chosen (as a way of knowing which btns need to be shown). If we were to have nested groups, that could probably be achieved by simply setting the nested group btns to lvlInt 1 (or any lvlInt that isnt 0) and listing the nested group keys in their parent group, just like any codeBtn in that group
+				</p>
 			</div>
 			<div id="newLangScrn" class="hide">
-				<p>Oy! Ya gotta wait a bit to make a new lang</p>
+				<h3>New lang screen: 🚧dev work on this feature not started🚧</h3>
+				<p></p>
 			</div>
 		</main>
 		<footer>
