@@ -46,17 +46,19 @@ var savedCodeWithGroupsConcept1 = {
 		"Link": [1, "codeBtn", "&lt;a&gt; (regular link)", "<a href=\"\">visible text</a>"],
 		"LinkNewTab": [1, "codeBtn", "&lt;a&nbsp;_blank&gt; (link new tab)", "<a href=\"url\" target=\"_blank\">link text</a>"],
 		"ImageLink": [1, "codeBtn", "(image link)", "<a href=\"\"><img border=\"0\" alt=\"\" src=\"\" width=\"100\" height=\"100\"></a>"],
-		"FormsUIGrp": [0, "group", "Forms and UI", ["Label","Button", "Select", "Option", "OptionSelected"]],
+		"FormsUIGrp": [0, "group", "Forms and UI", ["Label","Input","Button", "Select", "Option", "OptionSelected"]],
 		"Label": [1, "codeBtn", "&lt;label&gt;", "<label for=\"controlID\">Label text here</label>"],
+		"Input": [1, "codeBtn", "&lt;input&gt; type=\"text\"", "<input type=\"text\" id=\"\" name=\"\"/>"],
 		"Button": [1, "codeBtn", "&lt;button&gt;", "<button id=\"\">Text</button>"],
 		"Select": [1, "codeBtn", "&lt;select&gt;", "<select id=\"\">\r\n	\r\n</select>"],
 		"Option": [1, "codeBtn", "&lt;option&gt;", "<option></option>\r\n"],
 		"OptionSelected": [1, "codeBtn", "&lt;option selected&gt;", "<option selected></option>\r\n"],
-		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick"]],
+		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "placeholder"]],
 		"id": [1, "codeBtn", "id=", "id=\"\""],
 		"class": [1, "codeBtn", "class=", "class=\"\""],
 		"value": [1, "codeBtn", "value=", "value=\"\""],
 		"onclick": [1, "codeBtn", "onclick=", "onclick=\"\""],		
+		"placeholder": [1, "codeBtn", "placeholder=", "placeholder=\"\""],		
 		"HtmlEntitiesGrp": [0, "group", "HTML<br/>Entities", ["nonBreakingSpace", "lessThanEntity", "greaterThanEntity"]],
 		"nonBreakingSpace": [1, "codeBtn", "non-breaking space", "&nbsp;"],
 		"lessThanEntity": [1, "codeBtn", "< entity", "&lt;"],
@@ -564,6 +566,11 @@ function showBtnMkr(){
 	applyHideClass("newLangScrn");
 	applyShowClass("btnMkr");
 }
+
+function makeBtnJS(){
+	alert("This button does nothing right now, check back later tonight for the next commit of btnCode");
+}
+
 function showNewLangScrn(){
 	applyHideClass("codeTA");
 	applyHideClass("btnMkr");

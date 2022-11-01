@@ -33,7 +33,7 @@
 					</span>
 					<button id="btnFullScreen" onclick="toggleFullscreen()">FullScreen</button>
 					<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
-					<button id="btnCreateBtn" onclick="showBtnMkr()">(coming v soon) Create a button</button>
+					<button id="btnCreateBtn" onclick="showBtnMkr()">(work in progress) Create a button</button>
 					<button id="btnAddLang" onclick="showNewLangScrn()">(coming soon) Add Language</button>
 					<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
 					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
@@ -54,17 +54,33 @@
 				<h2>Create a button</h2>
 				<h3>🚧Work in progress / prototyping🚧</h3>
 				<p>This is at an early stage of development, figuring out what the HTML might be, what the needs are, what is a useful first version of this</p>
-				<p>We need some way to choose between making a groupBtn or a codeBtn (maybe also "functionBtn" / "macroBtn" or something like that). Going with a select for now</p>
+				<label for="jsKey">jsKey:</label>
+				<input type="text" id="jsKey" name="jsKey"/>
+				<label for="lvlInt">lvlInt:</label>
+				<select id="lvlInt">
+					<option selected value="0">0 (top)</option>
+					<option value="1">1 (in a group)</option>
+				</select>
 				<label for="btnType">btnType:</label>
 				<select id="btnType">
 					<option selected>group</option>
 					<option>codeBtn</option>
 				</select>
+				<label for="btnTextInput">Text to go on the btn:</label>
+				<input type="text" id="btnTextInput" name="btnTextInput"/>
+				<label class="show" for="textToInsert">EITHER: 1) an array of jsKeys (empty array if no keys yet) OR 2) text to be inserted when clicked:</label>
+				<label class="hide" for="textToInsert">Text to be inserted when clicked:</label>
+				<input type="text" id="textToInsert" name="textToInsert" value="[]"/>
+				<button id="makeBtnJS" onclick="makeBtnJS()">MAKE THE JS OBJECT</button>
+				
+				<h2>Notes</h2>
 				<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
-				<p>groups use "jsKey": [lvlInt, "group", "Some text for the btn here", ["keyForBtn1", "keyForBtn2" etc]]<br/>
-				codeBtns use "jsKey": [lvlInt, "codeBtn", "Some text for the btn here", "text to insert here"]<br/>
+				<p>There are two variations of the format:<br/>groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]<br/>
+				codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]</p>
+				<p>
 				lvlInt should be set to 0 if you want this btn showing when the lang has been chosen. For showing only when a groupBtn has been tapped, any other value could be used, but by convention I use 1. At least by current implementation, at time of writing (and seems unlikely to change), lvlInt is only checked when a lang is chosen (as a way of knowing which btns need to be shown). If we were to have nested groups, that could probably be achieved by simply setting the nested group btns to lvlInt 1 (or any lvlInt that isnt 0) and listing the nested group keys in their parent group, just like any codeBtn in that group
 				</p>
+				<p>Though there are only really two btn types in the codeBtn div at the moment, I have thoughts for this btnMkr doing more than those types in the maybe not so distant future. </p>
 			</div>
 			<div id="newLangScrn" class="hide">
 				<h3>New lang screen: 🚧dev work on this feature not started🚧</h3>
