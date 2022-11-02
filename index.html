@@ -53,7 +53,7 @@
 			<div id="btnMkr" class="hide">
 				<h2>Create a button</h2>
 				<h3>🚧Work in progress / prototyping🚧</h3>
-				<p>This is at an early stage of development, figuring out what the HTML might be, what the needs are, what is a useful first version of this</p>
+				<p>This is at an early stage of development, useful currently only to people adding buttons to the main codebase, by pasting the produced text into the source code of btnCode.</p>
 				<label for="jsKey">jsKey:</label>
 				<input type="text" id="jsKey" name="jsKey"/>
 				<label for="lvlInt">lvlInt:</label>
@@ -68,9 +68,9 @@
 				</select>
 				<label for="btnTextInput">Text to go on the btn:</label>
 				<input type="text" id="btnTextInput" name="btnTextInput"/>
-				<label class="show" for="textToInsert">EITHER: 1) an array of jsKeys (empty array if no keys yet) OR 2) text to be inserted when clicked:</label>
+				<label class="show" for="textToInsert">If this is a codeBtn, put the text to be inserted when clicked here (for now btns must be added into groups manually):</label>
 				<label class="hide" for="textToInsert">Text to be inserted when clicked:</label>
-				<input type="text" id="textToInsert" name="textToInsert" value="[]"/>
+				<input type="text" id="textToInsert" name="textToInsert" value=""/>
 				<button id="makeBtnJS" onclick="makeBtnJS()">MAKE THE JS OBJECT</button>
 				
 				<h2>Notes</h2>

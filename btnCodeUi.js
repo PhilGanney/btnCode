@@ -63,6 +63,8 @@ var savedCodeWithGroupsConcept1 = {
 		"nonBreakingSpace": [1, "codeBtn", "non-breaking space", "&nbsp;"],
 		"lessThanEntity": [1, "codeBtn", "< entity", "&lt;"],
 		"greaterThanEntity": [1, "codeBtn", "> entity", "&gt;"],
+		"ImagesGrp":[0,"group","Images and Graphics",[]],
+		"ProgrammingGrp":[0,"group","Programming",[]]
 	},
 	"JS": {
 		"Function": [0, "codeBtn", "Function", "function changeMe1(){\r\n	\r\n}"],
@@ -568,7 +570,35 @@ function showBtnMkr(){
 }
 
 function makeBtnJS(){
-	alert("This button does nothing right now, check back later tonight for the next commit of btnCode");
+	//groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]
+	//codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]
+	/*	Some examples of what we are making:
+	"Span": [1, "codeBtn", "&lt;span&gt;", "<span></span>"],
+	
+	*/
+	//.replace(/[<]/g,"&lt;")
+	var outputObj = {};
+	var textOnBtn = btnTextInput.value; //need to process input: no < or >
+	
+	textOnBtn = textOnBtn.replace(/[<]/g,"&lt;");
+	textOnBtn = textOnBtn.replace(/[>]/g,"&gt;");
+	
+	var lastPart = "";
+	if(btnType.value == "group"){
+		lastPart = [];
+	} else if (btnType.value == "codeBtn"){
+		lastPart = textToInsert.value;
+	} else {
+		alert("code pathway not found for that value of btnType");
+	}
+	
+
+	outputObj[jsKey.value] = [parseInt(lvlInt.value), btnType.value, textOnBtn, lastPart];
+	
+	var stringified = JSON.stringify(outputObj);
+	alert(stringified.slice(1, stringified.length - 1));
+	
+	
 }
 
 function showNewLangScrn(){
