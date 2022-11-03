@@ -8,7 +8,7 @@ opened groups would probably need to have a flag in the data to show that it is 
 var savedCodeWithGroupsConcept1 = {
 	"General": {
 		"Tab": [0, "codeBtn", "Tab", "	"],
-		"NewLine": [0, "codeBtn", "New Line", "\r\n"],
+		"NewLine": [0, "codeBtn", "New<br/>Line", "\r\n"],
 		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "at", "lessThanSymbol", "moreThanSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol"]],
 		"singleQuote": [1, "codeBtn", "'", "'"],
 		"doubleQuote": [1, "codeBtn", "\"", "\""],
@@ -46,25 +46,27 @@ var savedCodeWithGroupsConcept1 = {
 		"Link": [1, "codeBtn", "&lt;a&gt; (regular link)", "<a href=\"\">visible text</a>"],
 		"LinkNewTab": [1, "codeBtn", "&lt;a&nbsp;_blank&gt; (link new tab)", "<a href=\"url\" target=\"_blank\">link text</a>"],
 		"ImageLink": [1, "codeBtn", "(image link)", "<a href=\"\"><img border=\"0\" alt=\"\" src=\"\" width=\"100\" height=\"100\"></a>"],
-		"FormsUIGrp": [0, "group", "Forms and UI", ["Label","Input","Button", "Select", "Option", "OptionSelected"]],
+		"FormsUIGrp": [0, "group", "Forms & UI", ["Label","Input","Button", "Select", "Option", "OptionSelected"]],
 		"Label": [1, "codeBtn", "&lt;label&gt;", "<label for=\"controlID\">Label text here</label>"],
 		"Input": [1, "codeBtn", "&lt;input&gt; type=\"text\"", "<input type=\"text\" id=\"\" name=\"\"/>"],
 		"Button": [1, "codeBtn", "&lt;button&gt;", "<button id=\"\">Text</button>"],
 		"Select": [1, "codeBtn", "&lt;select&gt;", "<select id=\"\">\r\n	\r\n</select>"],
 		"Option": [1, "codeBtn", "&lt;option&gt;", "<option></option>\r\n"],
 		"OptionSelected": [1, "codeBtn", "&lt;option selected&gt;", "<option selected></option>\r\n"],
+		"ImagesGrp":[0,"group","Images &<br/>Graphics",["img"]],
+		"img":[1,"codeBtn","&lt;img&gt;","<img src=\"filepath\" alt=\"Text to show, if cannot show image\">"],
+		"ProgrammingGrp":[0,"group","Programming",[]],
 		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "placeholder"]],
 		"id": [1, "codeBtn", "id=", "id=\"\""],
 		"class": [1, "codeBtn", "class=", "class=\"\""],
 		"value": [1, "codeBtn", "value=", "value=\"\""],
 		"onclick": [1, "codeBtn", "onclick=", "onclick=\"\""],		
-		"placeholder": [1, "codeBtn", "placeholder=", "placeholder=\"\""],		
+		"placeholder": [1, "codeBtn", "placeholder=", "placeholder=\"\""],	
 		"HtmlEntitiesGrp": [0, "group", "HTML<br/>Entities", ["nonBreakingSpace", "lessThanEntity", "greaterThanEntity"]],
 		"nonBreakingSpace": [1, "codeBtn", "non-breaking space", "&nbsp;"],
 		"lessThanEntity": [1, "codeBtn", "< entity", "&lt;"],
 		"greaterThanEntity": [1, "codeBtn", "> entity", "&gt;"],
-		"ImagesGrp":[0,"group","Images and Graphics",[]],
-		"ProgrammingGrp":[0,"group","Programming",[]]
+		
 	},
 	"JS": {
 		"Function": [0, "codeBtn", "Function", "function changeMe1(){\r\n	\r\n}"],
@@ -360,6 +362,16 @@ function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSu
 	console.groupEnd();
 }
 
+function addToSelect(items, selectId){
+	//Pasted in from my tearounder codebase
+//<option value="item">item</option>
+    var selectElement = document.getElementById(selectId);
+    var indexes;
+    for (indexes in items){
+        selectElement.innerHTML += "<option value=\"" + items[indexes] + "\">" + items[indexes] + "</option>" ;
+    }
+}
+
 function makeCode(key){
 	console.group("makeCode: " + key);
 	//get the button that was clicked
@@ -567,6 +579,9 @@ function showBtnMkr(){
 	applyHideClass("styler");
 	applyHideClass("newLangScrn");
 	applyShowClass("btnMkr");
+	
+	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
+	addToSelect(allLangs,"addBtnToLang");
 }
 
 function makeBtnJS(){
@@ -591,22 +606,17 @@ function makeBtnJS(){
 	} else {
 		alert("code pathway not found for that value of btnType");
 	}
-	
 
 	outputObj[jsKey.value] = [parseInt(lvlInt.value), btnType.value, textOnBtn, lastPart];
 	
 	var stringified = JSON.stringify(outputObj);
 	alert(stringified.slice(1, stringified.length - 1));
-	
-	
 }
 
-function showNewLangScrn(){
-	applyHideClass("codeTA");
-	applyHideClass("btnMkr");
-	applyHideClass("styler");
-	applyShowClass("newLangScrn");
+function addToSavedCodeObject(){
+	alert("not built yet");
 }
+
 function showEditor(){
 	applyHideClass("newLangScrn");
 	applyHideClass("btnMkr");
