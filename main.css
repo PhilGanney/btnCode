@@ -39,6 +39,10 @@ footer{
     justify-content: flex-start;
 }
 
+#codeBtns button{
+	width: min-content;
+}
+
 #controlBtns{
 	height: 88px;
     display: flex;
@@ -56,6 +60,10 @@ footer{
 button{
 	height: 66px;
 	border-radius: 8px;
+}
+
+.oddStripe{
+	background-color: #9999FF;
 }
 
 .JS{
