@@ -73,10 +73,10 @@
 					<input type="text" id="textToInsert" name="textToInsert" value=""/>
 					<button id="makeBtnJS" onclick="makeBtnJS()">a) SHOW BTN JS OBJECT</button>
 					<label for="controlID"></label>
-					<select id="addBtnToLang">
+					<select id="addBtnToLang" onchange="addBtnToLangChange(this)">
 						<option selected>Add to new lang</option>
 					</select>
-					<input type="text" id="newLangInput" name=""/>
+					<input type="text" id="newLangInput" name=""class="show"/>
 					<button id="makeBtnJS" onclick="addToSavedCodeObject()">b)🚧 ADD TO btnCode LOCALLY🚧</button>
 				</div>
 				<h2>Starting notes and assumptions</h2>

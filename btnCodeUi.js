@@ -56,11 +56,12 @@ var savedCodeWithGroupsConcept1 = {
 		"ImagesGrp":[0,"group","Images &<br/>Graphics",["img"]],
 		"img":[1,"codeBtn","&lt;img&gt;","<img src=\"filepath\" alt=\"Text to show, if cannot show image\">"],
 		"ProgrammingGrp":[0,"group","Programming",[]],
-		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "placeholder"]],
+		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "onchange", "placeholder"]],
 		"id": [1, "codeBtn", "id=", "id=\"\""],
 		"class": [1, "codeBtn", "class=", "class=\"\""],
 		"value": [1, "codeBtn", "value=", "value=\"\""],
 		"onclick": [1, "codeBtn", "onclick=", "onclick=\"\""],		
+		"onchange":[1,"codeBtn","onchange=","onchange=\"\""],
 		"placeholder": [1, "codeBtn", "placeholder=", "placeholder=\"\""],	
 		"HtmlEntitiesGrp": [0, "group", "HTML<br/>Entities", ["nonBreakingSpace", "lessThanEntity", "greaterThanEntity"]],
 		"nonBreakingSpace": [1, "codeBtn", "non-breaking space", "&nbsp;"],
@@ -582,6 +583,16 @@ function showBtnMkr(){
 	
 	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
 	addToSelect(allLangs,"addBtnToLang");
+}
+
+function addBtnToLangChange(el){
+	//the function that runs when the onchange event fires for the select addBtnToLang 
+	console.log(el.value);
+	if (el.value == "Add to new lang"){
+		applyShowClass("newLangInput");
+	} else {
+		applyHideClass("newLangInput");
+	}
 }
 
 function makeBtnJS(){
