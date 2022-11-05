@@ -78,6 +78,7 @@
 					<label id="newLangInputlbl" for="newLangInput" class="show">New lang name:</label>
 					<input type="text" id="newLangInput" name=""class="show"/>
 					<button id="makeBtnJS" onclick="addToSavedCodeObject()">b)🚧 ADD TO btnCode LOCALLY🚧</button>
+					<button id="showSavedCodeObject" onclick="showSavedCodeObject()">b)🚧 SHOW YOUR CURRENT JS savedCode OBJECT🚧</button>
 				</div>
 				<h2>Starting notes and assumptions</h2>
 				<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
@@ -88,9 +89,13 @@
 				</p>
 				<p>Though there are only really two btn types in the codeBtn div at the moment, I have thoughts for this btnMkr doing more than those types in the maybe not so distant future. </p>
 				<h2>First prototype learnings, thoughts, verdict</h2>
-				<p>I initially tested this prototype by using it to create a couple of group btns as well as a few btns during dev. This prototype doesn't really inspire much usage - I immediately wish I was adding a bunch at a time, later thoughts add that maybe one at a time could be alright to use but only if they were immediately in the UI. It feels silly to do one at a time. Prototype 2 will look into an editable table approach. It is also seems intuitive at this point, that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. 
-				
+				<p>I initially tested this prototype by using it to create a couple of group btns as well as a few btns during dev. This prototype doesn't really inspire much usage - I immediately wish this did a bunch at a time, then later on I started to mull that maybe one at a time could be alright if they were immediately in the UI. It feels non-optimal to do one at a time and it is still a long, clunky process to get a lang really fleshed out. It is an improvement over making them in notepad++ but a less clear cut win over making btns in Google sheets, which is great for bulk text conversion, when formulaes work as thought.
+				</p><p>
+				Prototype 2 will look into an editable table approach, but before I start on that I will add a bit more to prototype 1 so that I can try out adding to the JS object powering btnCode directly. Another insight that seems intuitive at this point, is that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. There's adding a lang in terms of adding another top level key in the JS object, and then theres adding a lang in terms of adding a big collection of btns under the name of one language. 
 				</p>
+				<h3>"prototype 1b", adding and showing the btnCode js object</h3>
+				<p>This will let me, and anyone else, temporarily add btns to the current instance of btnCode, and then be able to copy all of those btns, for either pasting into the codebase to permanently add a batch of btns after they have been tested, or potentially allow other people to email me / message me with their suggestions.</p>
+				
 			</div>
 			<div id="newLangScrn" class="hide">
 				<h3>New lang screen: 🚧dev work on this feature not started🚧</h3>

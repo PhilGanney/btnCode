@@ -647,6 +647,15 @@ function addToSavedCodeObject(){
 	alert("not finished yet");
 }
 
+function showSavedCodeObject(){
+	
+	
+	var stringified = JSON.stringify(savedCodeWithGroupsConcept1);
+	console.log(savedCodeWithGroupsConcept1);
+	//alert(stringified.slice(1, stringified.length - 1));
+	alert("It turns out the object is more text than alerts can show, so I used console.log to place them in the console. At least in chrome you can right click the object from the console and select copy object, format a bit more whitespaced than I was coding, but when copied that way is in same order as code - whereas it may show in alphabetic order in the console");
+}
+
 function showEditor(){
 	applyHideClass("newLangScrn");
 	applyHideClass("btnMkr");
