@@ -55,7 +55,11 @@ var savedCodeWithGroupsConcept1 = {
 		"OptionSelected": [1, "codeBtn", "&lt;option selected&gt;", "<option selected></option>\r\n"],
 		"ImagesGrp":[0,"group","Images &<br/>Graphics",["img"]],
 		"img":[1,"codeBtn","&lt;img&gt;","<img src=\"filepath\" alt=\"Text to show, if cannot show image\">"],
-		"ProgrammingGrp":[0,"group","Programming",[]],
+		"ProgrammingGrp":[0,"group","Programming",["HtmlComment","ScriptTag", "NoscriptTag", "NoscriptBrowserWarn"]],
+		"ScriptTag":[1,"codeBtn","&lt;script&gt;","<script>\r\n</script>"],
+		"NoscriptTag":[1,"codeBtn","&lt;noscript&gt; (tag only)","<noscript></noscript>"],
+		"NoscriptBrowserWarn":[1,"codeBtn","&lt;noscript&gt; (scripts needed text)","<noscript>Looks like scripts are disabled, some functionality will not be able to work</noscript>"],
+		"HtmlComment":[1,"codeBtn","&lt;!-- html comment --&gt;","<!-- comment -->"],
 		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "onchange", "placeholder"]],
 		"id": [1, "codeBtn", "id=", "id=\"\""],
 		"class": [1, "codeBtn", "class=", "class=\"\""],
@@ -589,8 +593,10 @@ function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 
 	console.log(el.value);
 	if (el.value == "Add to new lang"){
+		applyShowClass("newLangInputlbl");
 		applyShowClass("newLangInput");
 	} else {
+		applyHideClass("newLangInputlbl");
 		applyHideClass("newLangInput");
 	}
 }
@@ -625,7 +631,18 @@ function makeBtnJS(){
 }
 
 function addToSavedCodeObject(){
-	alert("not built yet");
+	var langToAssignTo = "";
+	if (addBtnToLang.value == "Add to new lang"){
+		if (newLangInput.value == ""){
+			alert("Can't add a btn without a lang, but the text box for 'New lang name' seems to be empty, while 'Add to new lang' seems selected.");
+			return;
+		}
+		langToAssignTo = newLangInput.value;
+	} else {
+		langToAssignTo = addBtnToLang.value;
+	}
+	console.log("Assigning new btn to: " + langToAssignTo);
+	alert("not finished yet");
 }
 
 function showEditor(){
