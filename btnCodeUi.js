@@ -576,15 +576,11 @@ function closeFullscreen() {
 }
 
 function showStyler(){
-	applyHideClass("codeTA");
-	applyHideClass("btnMkr");
-	applyHideClass("newLangScrn");
+	hideBottomStuff();
 	applyShowClass("styler");
 }
 function showBtnMkr(){
-	applyHideClass("codeTA");
-	applyHideClass("styler");
-	applyHideClass("newLangScrn");
+	hideBottomStuff();
 	applyShowClass("btnMkr");
 	
 	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
@@ -657,11 +653,31 @@ function showSavedCodeObject(){
 }
 
 function showEditor(){
+	hideBottomStuff();
+	applyShowClass("codeTA");
+}
+
+function showWebDisplayer(){
+	hideBottomStuff();
+	applyShowClass("webDisplayer");
+}
+
+function displayInIframe(){
+	alert("not coded yet");
+}
+function displayInDiv(){
+	alert("not coded yet");
+}
+
+function hideBottomStuff(){
 	applyHideClass("newLangScrn");
 	applyHideClass("btnMkr");
 	applyHideClass("styler");
-	applyShowClass("codeTA");
+	applyHideClass("codeTA");
+	applyHideClass("webDisplayer");
 }
+
+
 
 //Nabbed and tweaked from my TeaRounder project 
 function applyHideClass(id){
