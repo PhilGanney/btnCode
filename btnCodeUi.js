@@ -578,10 +578,12 @@ function closeFullscreen() {
 function showStyler(){
 	hideBottomStuff();
 	applyShowClass("styler");
+	togglePanelSwitcherBtns("btnStyleBtns");
 }
 function showBtnMkr(){
 	hideBottomStuff();
 	applyShowClass("btnMkr");
+	togglePanelSwitcherBtns("btnCreateBtn");
 	
 	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
 	addToSelect(allLangs,"addBtnToLang");
@@ -655,11 +657,13 @@ function showSavedCodeObject(){
 function showEditor(){
 	hideBottomStuff();
 	applyShowClass("codeTA");
+	togglePanelSwitcherBtns("btnShowEditor");
 }
 
 function showWebDisplayer(){
 	hideBottomStuff();
 	applyShowClass("webDisplayer");
+	togglePanelSwitcherBtns("btnShowWebDisplayer");
 }
 
 function displayInIframe(){
@@ -670,6 +674,15 @@ function displayInIframe(){
 }
 function displayInDiv(){
 	webDisplayDiv.innerHTML = codeTA.value;
+}
+
+function togglePanelSwitcherBtns(hideBtnID){
+	let panelSwitchers = ["btnShowEditor", "btnCreateBtn", "btnJoinMailingList", "btnStyleBtns", "btnShowWebDisplayer"];
+	let showThese = panelSwitchers.filter(item => item !== hideBtnID);
+	for (index in showThese) {
+		applyShowClass(showThese[index]);
+	}
+	applyHideClass(hideBtnID);
 }
 
 function hideBottomStuff(){
