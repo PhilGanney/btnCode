@@ -666,6 +666,12 @@ function showWebDisplayer(){
 	togglePanelSwitcherBtns("btnShowWebDisplayer");
 }
 
+function showContactInfo(){
+	hideBottomStuff();
+	applyShowClass("contactInfo");
+	togglePanelSwitcherBtns("btnContactInfo");
+}
+
 function displayInIframe(){
 	//iframeDisplay.src = "google.com";
 	//iframeDisplay.srcdoc = codeTA.value;
@@ -677,7 +683,7 @@ function displayInDiv(){
 }
 
 function togglePanelSwitcherBtns(hideBtnID){
-	let panelSwitchers = ["btnShowEditor", "btnCreateBtn", "btnJoinMailingList", "btnStyleBtns", "btnShowWebDisplayer"];
+	let panelSwitchers = ["btnShowEditor", "btnCreateBtn", "btnContactInfo", "btnStyleBtns", "btnShowWebDisplayer"];
 	let showThese = panelSwitchers.filter(item => item !== hideBtnID);
 	for (index in showThese) {
 		applyShowClass(showThese[index]);
