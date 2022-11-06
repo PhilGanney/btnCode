@@ -19,6 +19,12 @@ btnCode is designed to be easy to use from the moment you get to btncode.com and
 
 Pick a coding language from the choices available and the language options will be replaced with buttons ("btns"), that either insert text into the coding area or they might toggle showing a selection of btns. Use the "Change Lang" btn to see the list of languages ("Langs") again.
 
+
+### ..do I run my code? How does btnCode dev Phil use btnCode?
+Currently, you have to copy code elsewhere to run it. When coding on my laptop, I have btnCode open in a tab in a browser on my extra monitor, while notepad++ is open on the laptop screen. I will draft stubs of code out in btnCode, and then copy to notepad++ or, if I'm editing existing code, I just use btnCode as a quick reference - but btnCode is really good for that purpose too. Of course you can use whatever editor or IDE you wish to use.
+
+If I fancy coding on my phone, it's generally just for a few minutes, to think through an idea that has popped in my head. In those instances just seeing the code I had in mind is enough to confirm or throw out the idea I was thinking of. I typically wait til I'm at my laptop to code the idea up properly. So far the best experience on mobile I have found, for coding HTML, JS and CSS; beyond just checking an idea; is to draft it out on btnCode.com then paste into playcode.io and just use btnCode for a reference from then on. 
+
 ### ..do I exit btnCode?
 Close the tab.
 
