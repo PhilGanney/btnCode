@@ -663,10 +663,13 @@ function showWebDisplayer(){
 }
 
 function displayInIframe(){
-	alert("not coded yet");
+	//iframeDisplay.src = "google.com";
+	//iframeDisplay.srcdoc = codeTA.value;
+	//document.getElementById('webDisplayDiv').src = "data:text/html;charset=utf-8," + escape(codeTA.value);
+	alert("This btn does not work yet, I have tried a bunch of different solutions but none work!!");
 }
 function displayInDiv(){
-	alert("not coded yet");
+	webDisplayDiv.innerHTML = codeTA.value;
 }
 
 function hideBottomStuff(){

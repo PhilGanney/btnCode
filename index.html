@@ -37,7 +37,7 @@
 					<button id="btnJoinMailingList">(coming soon) Join mailing list</button>
 					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
 					<button id="btnShowEditor" onclick="showEditor()">Back to editor</button>
-					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">(coming v soon) Display your HTML</button>
+					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">(Basic prototype) Display your HTML</button>
 				</div>
 				<div id="codeBtns">
 				</div>
@@ -50,11 +50,13 @@
 				<p></p>
 			</div>
 			<div id="webDisplayer" class="hide">
-				<h3>webDisplayer: 🚧dev work on this feature barely started🚧</h3>
-				<p></p>
+				<h3>webDisplayer: 🚧Some basic prototyping🚧</h3>
+				<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
+				I made attempts at "Show in the iFrame" but none have worked, so the code is commented until I next decide to bang my head up against the wall of that particular roadblock.
+				</p>
 				<button id="btnDisplayInIframe" onclick="displayInIframe()">(coming soon) Show in the iFrame</button>
-				<button id="btnDisplayInDiv" onclick="displayInDiv()">(prototype) Show in a div</button>
-				<iframe id="iframeDisplay" name="iframeDisplay" allowfullscreen="true">
+				<button id="btnDisplayInDiv" onclick="displayInDiv()">(prototype) Show in a div below</button>
+				<iframe id="iframeDisplay" name="iframeDisplay" allowfullscreen="true" >
 				</iframe>
 				<!-- a potential alternative to using an iFrame for HTML stubs -->
 				<div id="webDisplayDiv">
