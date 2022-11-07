@@ -1,9 +1,14 @@
+body{
+	width:100%;
+	margin: 0px;
+}
+
 header{
 	position: absolute;
 	top: 0px;
 	width: 100%;
 	text-align: center;
-	background-color:white;
+	background-color: #FFFFFFF1;
 }
 
 /* For making the favicon (it still needs some work, so I am leaving this temporary code here)
@@ -18,6 +23,10 @@ header{
 
 main{
 	padding-bottom: 70px;
+	width: 98%;
+	padding-left: 1%;
+	padding-right: 1%;
+	background-color: lightGreen;
 }
 
 footer{
@@ -66,13 +75,17 @@ button{
 	background-color: #9999FF;
 }
 
+#btnJS{
+	font-size: 1em;
+}
 .JS{
 	background-color: DodgerBlue;
 	/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
 }
 .CSS{
-	background-color: PaleGreen;
-	
+
+	background-image: linear-gradient(to top, green, blue);
+	color: white;
 }
 
 .HTML{
@@ -85,6 +98,16 @@ button{
 	color: #ffd343;
 	/*font-size: 1.3125em;*/
 	font-family: SourceSansProBold, Arial, sans-serif;
+}
+
+#btnEmoji{
+	font-size: 1em;
+}
+
+.Emoji{
+    background-color: #3344ED;
+    color: Tomato;
+	font-size: 1.75em;
 }
 
 .group{
@@ -103,7 +126,7 @@ button{
 }
 
 #codeTA{
-	width: 96%;
+	width: 100%;
 	height: 300px;
 	-moz-tab-size : 4;
     -o-tab-size : 4;

@@ -94,14 +94,15 @@ var savedCodeWithGroupsConcept1 = {
 		"JSONKeyObject": [0, "codeBtn", "JSONKeyObject", "\"key\": {\r\n	\r\n	\r\n}"],
 	},
 	"CSS": {
-		"MediaQuery": [0, "codeBtn", "MediaQuery", "@media only screen and (min-width: 768px) {\r\n	\r\n}"],
+		"MediaQuery": [0, "codeBtn", "Media Query", "@media only screen and (min-width: 768px) {\r\n	\r\n}"],
 		"P": [0, "codeBtn", "P", "p {\r\n	\r\n	\r\n}"],
 		"Button": [0, "codeBtn", "Button", "button {\r\n	\r\n	\r\n}"],
 		"Class": [0, "codeBtn", "Class", ".className {\r\n	\r\n	\r\n}"],
 		"ByID": [0, "codeBtn", "ByID", "#elementID {\r\n	\r\n	\r\n}"],
 		"Comment": [0, "codeBtn", "Comment", "/* Comment */"],
-		"BackgroundColour": [0, "codeBtn", "BackgroundColour", "background-color: DodgerBlue;"],
-		"TextColour": [0, "codeBtn", "TextColour", "color: Tomato;"],
+		"BackgroundColour": [0, "codeBtn", "background-color", "background-color: DodgerBlue;"],
+		"BackgroundLinearGradient":[0,"codeBtn","background-image: linear-gradient","background-image: linear-gradient(to top, green, blue);"],
+		"TextColour": [0, "codeBtn", "color (text)", "color: Tomato;"],
 		
 	},
 	"Python": {
@@ -538,7 +539,10 @@ function addAllLangBtns(){
 }
 
 function emptyEditor(){
-	codeTA.value = "";
+	//this confirm wrapper is here because every now and then I would miss-click on the empty editor button when meaning to go back to the editor from another panel. Todo: it may be better to have a facility for saving the contents of the editor temporarily and switching the empty editor button for a restore contents button until there are say twenty characters in the editor, instead of or as well as the confirm.
+	if(confirm("Empty editor?")){
+		codeTA.value = "";
+	}
 }
 
 function toggleFullscreen(){
