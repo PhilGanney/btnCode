@@ -697,6 +697,7 @@ function hideBottomStuff(){
 	applyHideClass("styler");
 	applyHideClass("codeTA");
 	applyHideClass("webDisplayer");
+	applyHideClass("contactInfo");
 }
 
 
