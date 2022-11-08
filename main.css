@@ -68,6 +68,7 @@ footer{
 
 button{
 	height: 66px;
+	/*Todo: min-width without messing btns up*/
 	border-radius: 8px;
 }
 

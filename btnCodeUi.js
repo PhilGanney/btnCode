@@ -9,16 +9,19 @@ var savedCodeWithGroupsConcept1 = {
 	"General": {
 		"Tab": [0, "codeBtn", "Tab", "	"],
 		"NewLine": [0, "codeBtn", "New<br/>Line", "\r\n"],
-		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "at", "lessThanSymbol", "moreThanSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol"]],
+		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol", "copyrightSymbol"]],
 		"singleQuote": [1, "codeBtn", "'", "'"],
 		"doubleQuote": [1, "codeBtn", "\"", "\""],
 		"at": [1, "codeBtn", "@", "@"],
 		"lessThanSymbol": [1, "codeBtn", "<", "<"],
 		"moreThanSymbol": [1, "codeBtn", ">", ">"],
+		"fslashSymbol": [1, "codeBtn", "/", "/"],
+		"bslashSymbol": [1, "codeBtn", "\\", "\\"],
 		"dollarSymbol": [1, "codeBtn", "$", "$"],
 		"poundSymbol": [1, "codeBtn", "£", "£"],
 		"euroSymbol": [1, "codeBtn", "€", "€"],
 		"yenSymbol": [1, "codeBtn", "¥", "¥"],
+		"copyrightSymbol": [1, "codeBtn", "©", "©"],
 	},
 	"HTML": {
 		"BoilerplateBasic": [0, "codeBtn", "Basic Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n	</body>\r\n</html>"],
@@ -106,23 +109,30 @@ var savedCodeWithGroupsConcept1 = {
 		
 	},
 	"Python": {
-		"4Spaces": [0, "codeBtn", "4Spaces", "    "],
-		"DefFunction": [0, "codeBtn", "DefFunction", "def my_function():\r\n  "],
-		"Print": [0, "codeBtn", "Print", "print(\"\")"],
-		"Class": [0, "codeBtn", "Class", "class MyClass"],
-		"Divide": [0, "codeBtn", "Divide", " / "],
-		"Remainder": [0, "codeBtn", "Remainder", " % "],
-		"FloorDivision": [0, "codeBtn", "FloorDivision", " // "],
-		"ToThePowerOf": [0, "codeBtn", "ToThePowerOf", " ** "],
-		"MultilineString": [0, "codeBtn", "MultilineString", "\"\"\"\r\n\r\n\"\"\""],
-		"Slice": [0, "codeBtn", "Slice", "[x:y]"]
+		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
+		"DefFunction": [0, "codeBtn", "def my_function():", "def my_function():\r\n    "],
+		"Print": [0, "codeBtn", "output print()", "print(\"\")"],
+		"Class": [0, "codeBtn", "class", "class MyClass"],
+		"ArithmeticOperators": [0, "group", "Arithmetic Operators", ["Divide", "Remainder", "FloorDivision", "ToThePowerOf"]],
+		"Divide": [1, "codeBtn", "divide", " / "],
+		"Remainder": [1, "codeBtn", "remainder", " % "],
+		"FloorDivision": [1, "codeBtn", "floor division", " // "],
+		"ToThePowerOf": [1, "codeBtn", "to the power of", " ** "],
+		"MultilineString": [0, "codeBtn", "\"\"\"Multiline String\"\"\"", "\"\"\"\r\n\r\n\"\"\""],
+		"Slice": [0, "codeBtn", "Slice [x:y]", "[x:y]"]
 	},
 	"Emoji": {
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
 		"🏗": [0, "codeBtn", "🏗", "🏗"],
 		"🆕": [0, "codeBtn", "🆕", "🆕"],
 		"🎨": [0, "codeBtn", "🎨", "🎨"],
-	}/*,	
+	},
+	"MiscSnippets": {
+		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15\r\n123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
+		"alphabet": [0, "codeBtn", "english alphabet", "abcdefghijklmnopqrstuvwxyz"],
+		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+	},/*,	
+	
 	"PHP": {
 		
 	},
