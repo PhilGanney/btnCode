@@ -85,9 +85,21 @@ button{
 	color: #000000;
 }
 .CSS{
-
 	background-image: linear-gradient(to top, green, blue);
 	color: white;
+}
+
+.CSS.group{
+	/*need two background images simulataneously, rather than having the .group rules wipe over the .CSS background rules*/
+	background-image:  url("arrow.png"), linear-gradient(to top, green, blue);
+	background-repeat: no-repeat, repeat;
+	background-position: right, right;
+}
+.CSS.openGroup{
+	/*need two background images simulataneously, rather than having the .openGroup rules wipe over the .CSS background rules*/
+	background-image:  url("arrowDwn.png"), linear-gradient(to top, green, blue);
+	background-repeat: no-repeat, repeat;
+	background-position: right, right;
 }
 
 .HTML{
@@ -100,6 +112,16 @@ button{
 	color: #ffd343;
 	/*font-size: 1.3125em;*/
 	font-family: SourceSansProBold, Arial, sans-serif;
+}
+
+#btnphp{
+	font-style: italic;
+}
+.php{
+	/*Styling taken from php.net homepage*/
+	background-color: #7A86B8;
+	color: #1f222e;
+	font-weight: 700;
 }
 
 #btnEmoji{
@@ -136,13 +158,14 @@ button{
 	white-space: pre;
 	overflow-wrap: normal;
 	overflow-x: auto;
+	font-family: monospace; /*seems to be the default in most browsers anyway, but for some languages like Python it is very useful to have a monospace font. Haven't specified an exact font because that particular rabbit hole doesn't seem to be very important to the goal of btncode, in fact that might be something cool for users to choose in the styler*/
 }
 
 select{
 	height: 66px;
 }
 
-/*Javascript is used to apply .hidden and .showing as appropriate*/
+/*Javascript is used to apply .hide and .show as appropriate*/
 .hide {
 	display: none !important;
 }
@@ -151,6 +174,7 @@ select{
 }
 
 @media only screen and (min-height: 468px) {
+	/*Responsive breakpoints are normally done on min-widths, but in this case it is the height that is the main thing we are working around - most of the outer elements have % widths so the design is pretty responsive even before mediaQueries, but we had a specific issue when typing on mobile - when the onscreen keyboard comes in, the viewport is too short to display the header and footer and still have room to see the btns and the textarea at the same time*/
 	header{
 		position: sticky;
 	}
@@ -162,8 +186,5 @@ select{
 		/*Space for a scrollbar*/
 		height: 86px;
 	}
-
-}
-@media only screen and (min-height: 900px) {
 
 }
