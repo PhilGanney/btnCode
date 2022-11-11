@@ -110,12 +110,15 @@ button{
     font-family: Flux-Regular;
     src: url("fonts/FluxRegular.otf") format("opentype");
 }
+#btnpython{
+	font-size: 1.2em;
+}
 .python{
 	/*Styling taken from python.org homepage*/
 	background: #1c3b56;
 	color: #ffd343;
 	/*color: #fff*/
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-family: Flux-Regular, SourceSansProBold, Arial, sans-serif;
 }
 
