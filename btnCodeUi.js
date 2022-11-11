@@ -163,7 +163,9 @@ var savedCodeWithGroupsConcept1 = {
 		"😄": [0, "codeBtn", "😄", "😄"],
 	},
 	"MiscSnippets": {
-		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15\r\n123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
+		"LoremIpsum": [0, "codeBtn", "Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
+		"QuickBrownFox": [0, "codeBtn", "Quick brown fox", "The quick brown fox jumps over the lazy dog."],
+		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15        16\r\n1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
 		"digits": [0, "codeBtn", "digits", "0123456789"],
 		"alphabet": [0, "codeBtn", "english alphabet", "abcdefghijklmnopqrstuvwxyz"],
 		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
