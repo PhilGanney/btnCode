@@ -116,7 +116,7 @@ var savedCodeWithGroupsConcept1 = {
 		"TextColour": [1, "codeBtn", "color (text)", "color: Tomato;"],
 		"Comment": [0, "codeBtn", "/*Comment*/", "/* Comment */"],
 	},
-	"Python": {
+	"python": {
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
 		"DefFunction": [0, "codeBtn", "def my_function():", "def my_function():\r\n    "],
 		"Print": [0, "codeBtn", "output print()", "print(\"\")"],

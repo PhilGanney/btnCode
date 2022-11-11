@@ -106,12 +106,17 @@ button{
 	background-color: #3c790a;
 	color: white;
 }
-.Python{
-	/*Styling taken from Python.org homepage*/
+@font-face {
+    font-family: Flux-Regular;
+    src: url("fonts/FluxRegular.otf") format("opentype");
+}
+.python{
+	/*Styling taken from python.org homepage*/
 	background: #1c3b56;
 	color: #ffd343;
-	/*font-size: 1.3125em;*/
-	font-family: SourceSansProBold, Arial, sans-serif;
+	/*color: #fff*/
+	font-size: 1.2em;
+	font-family: Flux-Regular, SourceSansProBold, Arial, sans-serif;
 }
 
 #btnphp{
