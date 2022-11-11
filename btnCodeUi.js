@@ -130,12 +130,14 @@ var savedCodeWithGroupsConcept1 = {
 		"Slice": [0, "codeBtn", "Slice [x:y]", "[x:y]"]
 	},
 	"php": {
+		/* logo uses lowercase php, wheras elsewhere they use PHP */
 		"PHPTag":[0,"codeBtn","&lt;?php  ?&gt;","<?php\r\n\r\n?>"],
 		"Echo":[0,"codeBtn","echo \"Hello World!\";","echo \"Hello World!\";"],
 		"DoubleSlashComment":[0,"codeBtn","//single-line comment","//"],
 		"HashComment":[0,"codeBtn","#single-line comment","#"],
 		"MultilineComment":[0,"codeBtn","/*Multiline comment*/","/* comment */"],
 		"var":[0,"codeBtn","$var","$var_name = '';"],
+		/* Having a "Coming Soon" btn allows btncode to have clearly incomplete languages, without looking ridiculous in the meantime. Gives us a way of saying "don't worry, there is more coming*/
 		"ComingSoon":[0,"group","🚧 Coming Soon",["Array", "Calendar", "Date", "Directory", "Error"]],
 		"Array":[1,"group","Array",[]],
 		"Calendar":[1,"group","Calendar",[]],
@@ -145,10 +147,20 @@ var savedCodeWithGroupsConcept1 = {
 		"🎨": [1, "codeBtn", "🎨", "🎨"],
 	},
 	"Emoji": {
+		/* because why not?*/
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
 		"🏗": [0, "codeBtn", "🏗", "🏗"],
 		"🆕": [0, "codeBtn", "🆕", "🆕"],
+		"✏️": [0, "codeBtn", "✏️", "✏️"],
 		"🎨": [0, "codeBtn", "🎨", "🎨"],
+		"🔔": [0, "codeBtn", "🔔", "🔔"],
+		"🔇": [0, "codeBtn", "🔇", "🔇"],
+		"🔈": [0, "codeBtn", "🔈", "🔈"],
+		"🔉": [0, "codeBtn", "🔉", "🔉"],
+		"🔊": [0, "codeBtn", "🔊", "🔊"],
+		"⚙️": [0, "codeBtn", "⚙️", "⚙️"],
+		"💾": [0, "codeBtn", "💾", "💾"],
+		"😄": [0, "codeBtn", "😄", "😄"],
 	},
 	"MiscSnippets": {
 		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15\r\n123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
