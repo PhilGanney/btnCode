@@ -100,16 +100,16 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"CSS": {
 		"mediaQueriesGrp":[0,"group","Media Queries",["MqMinwidth576px", "MqMinwidth768px", "MqMinwidth992px", "MqMinwidth1200px", "PointerFine"]],
-		"MqMinwidth576px": [1, "codeBtn", "screen width 576px", "@media only screen and (min-width: 576px) {\r\n	\r\n}"],
-		"MqMinwidth768px": [1, "codeBtn", "screen width 768px", "@media only screen and (min-width: 768px) {\r\n	\r\n}"],
-		"MqMinwidth992px": [1, "codeBtn", "screen width 992px", "@media only screen and (min-width: 992px) {\r\n	\r\n}"],
-		"MqMinwidth1200px": [1, "codeBtn", "screen width 1200px", "@media only screen and (min-width: 1200px) {\r\n	\r\n}"],
-		"PointerFine":[1,"codeBtn","pointer: fine","@media (pointer: fine) {\r\n	\r\n}"],
+		"MqMinwidth576px": [1, "codeBtn", "screen width 576px", "@media only screen and (min-width: 576px) {\r\n	\r\n}\r\n"],
+		"MqMinwidth768px": [1, "codeBtn", "screen width 768px", "@media only screen and (min-width: 768px) {\r\n	\r\n}\r\n"],
+		"MqMinwidth992px": [1, "codeBtn", "screen width 992px", "@media only screen and (min-width: 992px) {\r\n	\r\n}\r\n"],
+		"MqMinwidth1200px": [1, "codeBtn", "screen width 1200px", "@media only screen and (min-width: 1200px) {\r\n	\r\n}\r\n"],
+		"PointerFine":[1,"codeBtn","pointer: fine","@media (pointer: fine) {\r\n	\r\n}\r\n"],
 		"SelectorsGrp":[0,"group","Selectors",["P", "Button", "Class", "ByID"]],
-		"P": [1, "codeBtn", "P", "p {\r\n	\r\n	\r\n}"],
-		"Button": [1, "codeBtn", "Button", "button {\r\n	\r\n	\r\n}"],
-		"Class": [1, "codeBtn", "Class", ".className {\r\n	\r\n	\r\n}"],
-		"ByID": [1, "codeBtn", "ByID", "#elementID {\r\n	\r\n	\r\n}"],
+		"P": [1, "codeBtn", "p", "p {\r\n	\r\n	\r\n}\r\n"],
+		"Button": [1, "codeBtn", "button", "button {\r\n	\r\n	\r\n}\r\n"],
+		"Class": [1, "codeBtn", ".class", ".className {\r\n	\r\n	\r\n}\r\n"],
+		"ByID": [1, "codeBtn", "#ID", "#elementID {\r\n	\r\n	\r\n}\r\n"],
 		"ColoursBackgroundsGrp":[0,"group","colours & backgrounds",["BackgroundColour", "BackgroundLinearGradient", "TextColour"]],
 		"BackgroundColour": [1, "codeBtn", "background-color", "background-color: DodgerBlue;"],
 		"BackgroundLinearGradient":[1,"codeBtn","background-image: linear-gradient","background-image: linear-gradient(to top, green, blue);"],
@@ -145,7 +145,11 @@ var savedCodeWithGroupsConcept1 = {
 		"Directory":[1,"group","Directory",[]],
 		"Error":[1,"group","Error",[]],
 		"🎨": [1, "codeBtn", "🎨", "🎨"],
-	},
+	},/*
+	"Csharp": {
+		"🚧": [0, "codeBtn", "🚧", "🚧"],
+		"🏗": [0, "codeBtn", "🏗", "🏗"],
+	},*/
 	"Emoji": {
 		/* because why not?*/
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
@@ -170,7 +174,6 @@ var savedCodeWithGroupsConcept1 = {
 		"alphabet": [0, "codeBtn", "english alphabet", "abcdefghijklmnopqrstuvwxyz"],
 		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
 	},/*,	
-	
 
 	"MySQL": {
 		
