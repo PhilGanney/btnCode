@@ -785,3 +785,20 @@ function isRunningLocally(){
 	}
 }
 
+function createDownloadFile(){
+	
+	const file = new Blob(
+		[document.getElementById("codeTA").value], //codeTA is the code Text Area
+		{ type: 'text/html' } //Mime type. For now hardcoded as html just to get going with this. Todo: add on to this functionality to allow creating other file types
+	);
+	
+	const fileURL = URL.createObjectURL(file);
+	
+	//create link
+	const linkElement = document.createElement("a");
+	linkElement.setAttribute('href', fileURL);
+	linkElement.setAttribute('download', 'btnCodeGoodness.html');
+	linkElement.innerText = "Get your file";
+	document.getElementById("webDisplayer").appendChild(linkElement);
+}
+
