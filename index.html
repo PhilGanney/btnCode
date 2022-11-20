@@ -34,7 +34,7 @@
 					<button id="btnFullScreen" onclick="toggleFullscreen()">FullScreen</button>
 					<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
 					<button id="btnShowEditor" class="hide" onclick="showEditor()">Show Editor</button>
-					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">(Basic prototype) Display your HTML</button>
+					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">HTML Downloader</button>
 					<button id="btnCreateBtn" onclick="showBtnMkr()">(work in progress) Add buttons</button>
 					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
 					<button id="btnContactInfo" onclick="showContactInfo()">Follow me / contact me</button>
@@ -52,17 +52,18 @@
 				</style>
 			</div>
 			<div id="webDisplayer" class="hide">
-				<h3>webDisplayer: 🚧Some basic prototyping🚧</h3>
-				<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
+				<h3>You can download the contents of the editor, as an HTML file here.</h3>
+				<p> First tap the button to create a downloadable file, and then click the link that will show next to the button to actually download it.</p>
+				<!--<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
 				I've made attempts at "Show in the iFrame", which in theory is the better way to do this, but nothing worked, so the code is commented until I next decide to bang my head up against the wall of that particular roadblock.
 				</p>
 				<button id="btnDisplayInIframe" onclick="displayInIframe()">(coming soon) Show in the iFrame</button>
 				<button id="btnDisplayInDiv" onclick="displayInDiv()">(prototype) Show in a div below</button>
 				<iframe id="iframeDisplay" name="iframeDisplay" allowfullscreen="true" >
 				</iframe>
-				<!-- a potential alternative to using an iFrame for HTML stubs -->
+				
 				<div id="webDisplayDiv">
-				</div>
+				</div> -->
 				<button id="btnMakeHtmlFile" onclick="createDownloadFile()">Make a downloadable file</button>
 			</div>
 			<div id="btnMkr" class="hide">
