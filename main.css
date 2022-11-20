@@ -173,6 +173,24 @@ select{
 	height: 66px;
 }
 
+th, td{
+	margin-left: 1px;
+	margin-right: 6px;
+	border-left: burlywood 2px dashed; /*A nice light brown colour*/
+}
+th:first-child, td:first-child{
+	border-left: none;
+}
+
+th:last-child, td:last-child{
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+tbody tr td{
+	border-top: burlywood 2px dashed;
+}
+
 /*Javascript is used to apply .hide and .show as appropriate*/
 .hide {
 	display: none !important;
