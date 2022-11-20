@@ -34,7 +34,7 @@
 					<button id="btnFullScreen" onclick="toggleFullscreen()">FullScreen</button>
 					<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
 					<button id="btnShowEditor" class="hide" onclick="showEditor()">Show Editor</button>
-					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">HTML Downloader</button>
+					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">Downloader</button>
 					<button id="btnCreateBtn" onclick="showBtnMkr()">(work in progress) Add buttons</button>
 					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
 					<button id="btnContactInfo" onclick="showContactInfo()">Follow me / contact me</button>
@@ -53,7 +53,7 @@
 			</div>
 			<div id="webDisplayer" class="hide">
 				<h3>You can download the contents of the editor.</h3>
-				<p> Link will appear once you tap the "Make a downloadable file" button. (currently ignores file name and mime type and just does HTML but another commit, hopefully today, will add that support</p>
+				<p> Link will appear once you tap the "Make a downloadable file" button. <br/>(if file name blank, file will be named renameMe.txt<br/> if MIME type blank, it'll reject.)</p>
 				<!--<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
 				I've made attempts at "Show in the iFrame", which in theory is the better way to do this, but nothing worked, so the code is commented until I next decide to bang my head up against the wall of that particular roadblock.
 				</p>

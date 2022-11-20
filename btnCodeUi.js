@@ -788,10 +788,22 @@ function isRunningLocally(){
 }
 
 function createDownloadFile(){
+	var fileName = "renameMe.txt"; //using a default fileName since users can easily spot that and edit it later, and it might be intentional to not think about the filename before download
+	if (document.getElementById("fileName").value){
+		fileName = document.getElementById("fileName").value;
+	}
+	
+	var mimeType = ""; //no default, since that is more awkward to fix after and they do need to think about it at download creation
+	if (document.getElementById("mimeType").value){
+		mimeType = document.getElementById("mimeType").value ;
+	} else {
+		alert("Mime type is needed");
+		return;
+	}
 	
 	const file = new Blob(
 		[document.getElementById("codeTA").value], //codeTA is the code Text Area
-		{ type: 'text/html' } //Mime type. For now hardcoded as html just to get going with this. Todo: add on to this functionality to allow creating other file types
+		{ type: mimeType} //type wants the MIME type 
 	);
 	
 	const fileURL = URL.createObjectURL(file);
@@ -799,8 +811,8 @@ function createDownloadFile(){
 	//create link
 	const linkElement = document.createElement("a");
 	linkElement.setAttribute('href', fileURL);
-	linkElement.setAttribute('download', 'btnCodeGoodness.html');
-	linkElement.innerText = "Get your file";
+	linkElement.setAttribute('download', fileName);
+	linkElement.innerText = "Get your file " + fileName;
 	document.getElementById("webDisplayer").appendChild(linkElement);
 }
 
