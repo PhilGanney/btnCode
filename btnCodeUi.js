@@ -810,11 +810,27 @@ function createDownloadFile(){
 	
 	const fileURL = URL.createObjectURL(file);
 	
+	//create a table row
+	const rowElement = document.createElement("tr");
+	document.getElementById("downloadsTbody").appendChild(rowElement);
+	//create cells within the row
+	const cellElement1 = document.createElement("td");
+	const cellElement2 = document.createElement("td");
+	const cellElement3 = document.createElement("td");
+	const cellElement4 = document.createElement("td");
+	rowElement.appendChild(cellElement1);
+	rowElement.appendChild(cellElement2);
+	rowElement.appendChild(cellElement3);
+	rowElement.appendChild(cellElement4);
+	
 	//create link
 	const linkElement = document.createElement("a");
 	linkElement.setAttribute('href', fileURL);
 	linkElement.setAttribute('download', fileName);
-	linkElement.innerText = "Get your file " + fileName;
-	document.getElementById("webDisplayer").appendChild(linkElement);
+	linkElement.innerText = "Download: " + fileName;
+	cellElement1.appendChild(linkElement);
+	cellElement2.innerText = document.getElementById("fileName").value;
+	cellElement3.innerText = mimeType;
+	cellElement4.innerText = new Date().toLocaleString();
 }
 
