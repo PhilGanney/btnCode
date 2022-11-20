@@ -818,19 +818,28 @@ function createDownloadFile(){
 	const cellElement2 = document.createElement("td");
 	const cellElement3 = document.createElement("td");
 	const cellElement4 = document.createElement("td");
+	const cellElement5 = document.createElement("td");
 	rowElement.appendChild(cellElement1);
 	rowElement.appendChild(cellElement2);
 	rowElement.appendChild(cellElement3);
 	rowElement.appendChild(cellElement4);
+	rowElement.appendChild(cellElement5);
 	
-	//create link
-	const linkElement = document.createElement("a");
-	linkElement.setAttribute('href', fileURL);
-	linkElement.setAttribute('download', fileName);
-	linkElement.innerText = "Download: " + fileName;
-	cellElement1.appendChild(linkElement);
-	cellElement2.innerText = document.getElementById("fileName").value;
-	cellElement3.innerText = mimeType;
-	cellElement4.innerText = new Date().toLocaleString();
+	//create new tab link
+	const newTabLinkElement = document.createElement("a");
+	newTabLinkElement.setAttribute('href', fileURL);
+	newTabLinkElement.setAttribute("target", "_blank");
+	newTabLinkElement.innerText = "New tab for: " + fileName;
+	cellElement1.appendChild(newTabLinkElement);
+	//create download link
+	const downloadLinkElement = document.createElement("a");
+	downloadLinkElement.setAttribute('href', fileURL);
+	downloadLinkElement.setAttribute('download', fileName);
+	downloadLinkElement.innerText = "Download: " + fileName;
+	cellElement2.appendChild(downloadLinkElement);
+	//set other table text
+	cellElement3.innerText = document.getElementById("fileName").value;
+	cellElement4.innerText = mimeType;
+	cellElement5.innerText = new Date().toLocaleString();
 }
 
