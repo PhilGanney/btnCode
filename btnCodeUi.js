@@ -66,6 +66,8 @@ var savedCodeWithGroupsConcept1 = {
 		"NoscriptTag":[1,"codeBtn","&lt;noscript&gt; (tag only)","<noscript></noscript>"],
 		"NoscriptBrowserWarn":[1,"codeBtn","&lt;noscript&gt; (scripts needed text)","<noscript>Looks like scripts are disabled, some functionality will not be able to work</noscript>"],
 		"HtmlComment":[1,"codeBtn","&lt;!-- html comment --&gt;","<!-- comment -->"],
+		"TableGrp":[0,"group","Tables",["Table"]],
+		"Table":[1,"codeBtn","&lt;table&gt;","<table>\r\n\t<tr>\r\n\t\t<th>header1</th>\r\n\t\t<th>header2</th>\r\n\t\t<th>header3</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>row1 col1</td>\r\n\t\t<td>row1 col2</td>\r\n\t\t<td>row1 col3</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>row2 col1</td>\r\n\t\t<td>row2 col2</td>\r\n\t\t<td>row2 col3</td> \r\n\t</tr>\r\n\t\r\n</table>"],
 		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "onchange", "placeholder", "List"]],
 		"id": [1, "codeBtn", "id=", "id=\"\""],
 		"class": [1, "codeBtn", "class=", "class=\"\""],
