@@ -17,14 +17,14 @@
 		</header>
 		<main>
 			<div id="intro">
-			Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on this in October 2022, and intend to continue adding to fairly regularly for the rest of 2022, maybe into 2023 if other people use it. It is, intentionally, a very different way of creating code - another tool in the software developers toolkit. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>.
-			<br/><!-- Todo: actual padding/margin here-->
-			<br/>
-			<div id="assets" class="hide">
-				<!-- This div exists so that assets will be downloaded and cached at page load -->
-				<img border="0" alt="" src="arrow.png" width="0" height="0">
-				<img border="0" alt="" src="arrowDwn.png" width="0" height="0">
-			</div>
+				Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on this in October 2022, and intend to continue adding to fairly regularly for the rest of 2022, maybe into 2023 if other people use it. It is, intentionally, a very different way of creating code - another tool in the software developers toolkit. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>.
+				<br/><!-- Todo: actual padding/margin here-->
+				<br/>
+				<div id="assets" class="hide">
+					<!-- This div exists so that assets will be downloaded and cached at page load -->
+					<img border="0" alt="" src="arrow.png" width="0" height="0">
+					<img border="0" alt="" src="arrowDwn.png" width="0" height="0">
+				</div>
 			</div>
 
 			<div id="btnsOuter">
@@ -93,7 +93,7 @@
 							<th>Date and time created</th>
 						</tr>
 					</thead>
-					<tbody id="downloadsTbody">
+					<tbody id="downloadsTbody"><!-- download links and info get put here inside rows by JS -->
 					
 					</tbody>
 				</table>
@@ -139,8 +139,8 @@
 				<p>Though there are only really two btn types in the codeBtn div at the moment, I have thoughts for this btnMkr doing more than those types in the maybe not so distant future. </p>
 				<h2>First prototype learnings, thoughts, verdict</h2>
 				<p>I initially tested this prototype by using it to create a couple of group btns as well as a few btns during dev. This prototype doesn't really inspire much usage - I immediately wish this did a bunch at a time, then later on I started to mull that maybe one at a time could be alright if they were immediately in the UI. It feels non-optimal to do one at a time and it is still a long, clunky process to get a lang really fleshed out. It is an improvement over making them in notepad++ but a less clear cut win over making btns in Google sheets, which is great for bulk text conversion, when formulaes work as thought.
-				</p><p>
-				Prototype 2 will look into an editable table approach, but before I start on that I will add a bit more to prototype 1 so that I can try out adding to the JS object powering btnCode directly. Another insight that seems intuitive at this point, is that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. There's adding a lang in terms of adding another top level key in the JS object, and then theres adding a lang in terms of adding a big collection of btns under the name of one language. 
+				</p>
+				<p>Prototype 2 will look into an editable table approach, but before I start on that I will add a bit more to prototype 1 so that I can try out adding to the JS object powering btnCode directly. Another insight that seems intuitive at this point, is that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. There's adding a lang in terms of adding another top level key in the JS object, and then theres adding a lang in terms of adding a big collection of btns under the name of one language. 
 				</p>
 				<h3>"prototype 1b", adding and showing the btnCode js object</h3>
 				<p>This will let me, and anyone else, temporarily add btns to the current instance of btnCode, and then be able to copy all of those btns, for either pasting into the codebase to permanently add a batch of btns after they have been tested, or potentially allow other people to email me / message me with their suggestions.</p>
@@ -153,15 +153,16 @@
 			<div id="contactInfo" class="hide">
 				<p>Find me:</p>
 				<ul>
-				<li><a href="https://www.reddit.com/user/PGDesign" target="_blank">Reddit as PGDesign</a></li>
-				<li><a href="https://news.ycombinator.com/user?id=PhillyG" target="_blank">HN as PhillyG</a></li>
-				<li><a rel="me" href="https://fosstodon.org/@PhillyG" target="_blank">Mastodon as PhillyG</a></li>
+					<li><a href="https://www.reddit.com/user/PGDesign" target="_blank">Reddit as PGDesign</a></li>
+					<li><a href="https://news.ycombinator.com/user?id=PhillyG" target="_blank">HN as PhillyG</a></li>
+					<li><a rel="me" href="https://fosstodon.org/@PhillyG" target="_blank">Mastodon as PhillyG</a></li>
 				</ul>
 			</div>
 		</main>
 		<footer>
 			<p>btnCode, © 2022 Phil Ganney. 
-			<a href="https://github.com/PhilGanney/btnCode" target="_blank">Code available on github</a> (MIT licensed)<p/>
+				<a href="https://github.com/PhilGanney/btnCode" target="_blank">Code available on github</a> (MIT licensed)
+			<p/>
 		</footer>
 	</body>
 </html>
