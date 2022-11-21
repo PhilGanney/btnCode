@@ -24,7 +24,7 @@ var savedCodeWithGroupsConcept1 = {
 		"copyrightSymbol": [1, "codeBtn", "©", "©"],
 	},
 	"HTML": {
-		"BoilerplateBasic": [0, "codeBtn", "Basic Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n	</body>\r\n</html>"],
+		"BoilerplateBasic": [0, "codeBtn", "Basic Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset=\"utf-8\">\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n	</body>\r\n</html>"],
 		"HeadElementsGrp": [0, "group", "Head<br/>Elements", ["Stylesheet", "Script", "Title", "LinkBase", "MetaOther", "MetaCharset", "MetaViewport"]],
 		"Title": [1, "codeBtn", "&lt;title&gt; (of the Tab/Page)", "<title>Title</title>"],
 		"Stylesheet": [1, "codeBtn", "&lt;link&gt; stylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
@@ -819,11 +819,13 @@ function createDownloadFile(){
 	const cellElement3 = document.createElement("td");
 	const cellElement4 = document.createElement("td");
 	const cellElement5 = document.createElement("td");
+	const cellElement6 = document.createElement("td");
 	rowElement.appendChild(cellElement1);
 	rowElement.appendChild(cellElement2);
 	rowElement.appendChild(cellElement3);
 	rowElement.appendChild(cellElement4);
 	rowElement.appendChild(cellElement5);
+	rowElement.appendChild(cellElement6);
 	
 	//create new tab link
 	const newTabLinkElement = document.createElement("a");
@@ -841,5 +843,11 @@ function createDownloadFile(){
 	cellElement3.innerText = document.getElementById("fileName").value;
 	cellElement4.innerText = mimeType;
 	cellElement5.innerText = new Date().toLocaleString();
+	//create iframe link
+	const iframeLinkElement = document.createElement("a");
+	iframeLinkElement.setAttribute('href', fileURL);
+	iframeLinkElement.setAttribute('target', "iframeDisplay");
+	iframeLinkElement.innerText = "view in iframe: " + fileName;
+	cellElement6.appendChild(iframeLinkElement);
 }
 
