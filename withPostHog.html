@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html id="btnCodeHTML">
+	<head>
+		<meta charset="utf-8">
+		<title>btnCode</title>
+		<meta name="description" content="btnCode: a very different UI for coding"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon"></link>
+		<link rel="stylesheet" href="main.css?20221120"> </link>
+		<script src="btnCodeUi.js?20221120"></script>
+		<!--PostHog-->
+		<script>
+			
+			!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+			posthog.init('phc_BCkjGwi9vAPXoqgMMrmkhFx6rqVvuObrjuVdIeIAJ80',{api_host:'https://eu.posthog.com'})
+		</script>
+	</head>
+	<body onload="pageLoad()">
+		<header>
+			<!--<button id="btnCodeLogo" class="HTML">btnCode</button>-->
+			<h1>btnCode - Button Code, by Phil Ganney</h1>
+		</header>
+		<main>
+			<div id="intro">
+				Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on this in October 2022, and intend to continue adding to fairly regularly for the rest of 2022, maybe into 2023 if other people use it. It is, intentionally, a very different way of creating code - another tool in the software developers toolkit. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>.
+				<br/><!-- Todo: actual padding/margin here-->
+				<br/>
+				<div id="assets" class="hide">
+					<!-- This div exists so that assets will be downloaded and cached at page load -->
+					<img border="0" alt="" src="arrow.png" width="0" height="0">
+					<img border="0" alt="" src="arrowDwn.png" width="0" height="0">
+				</div>
+			</div>
+
+			<div id="btnsOuter">
+				<div id="controlBtns">
+					<span id="otherControlBtns">
+					</span>
+					<button id="btnFullScreen" onclick="toggleFullscreen()">FullScreen</button>
+					<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
+					<button id="btnShowEditor" class="hide" onclick="showEditor()">Show Editor</button>
+					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">Show / download</button>
+					<button id="btnCreateBtn" onclick="showBtnMkr()">(work in progress) Add buttons</button>
+					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
+					<button id="btnContactInfo" onclick="showContactInfo()">Follow me / contact me</button>
+				</div>
+				<div id="codeBtns">
+				</div>
+
+			</div>
+			<div id="vars"></div>
+			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
+			<div id="styler" class="hide">
+				<h3>Styler: 🚧work on this feature will start soon🚧</h3>
+				<p></p>
+				<style>
+				</style>
+			</div>
+			<div id="webDisplayer" class="hide">
+				<h3>Show/ download contents of the editor.</h3>
+				<p> Links will appear in table below, once you tap the "Make a downloadable file" button. <br/>(if file name blank, file will be named renameMe.txt<br/> if MIME type blank, it'll reject.)</p>
+				<!--<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
+				I've made attempts at "Show in the iFrame", which in theory is the better way to do this, but nothing worked, so the code is commented until I next decide to bang my head up against the wall of that particular roadblock.
+				</p>
+				<button id="btnDisplayInIframe" onclick="displayInIframe()">(coming soon) Show in the iFrame</button>
+				<button id="btnDisplayInDiv" onclick="displayInDiv()">(prototype) Show in a div below</button>
+				
+				
+				<div id="webDisplayDiv">
+				</div> -->
+				<label for="controlID">File Name</label>
+				<input type="text" id="fileName" name="fileName" list="fileNames"/>
+				<datalist id="fileNames">
+					<option value="index.html"></option>
+					<option value="about.html"></option>
+					<option value="script.js"></option>
+					<option value="index.js"></option>
+					<option value="404.php"></option>
+					<option value="README.md"></option>
+				</datalist>
+				<label for="mimeType">MIME type</label>
+				<input type="text" id="mimeType" name="mimeType" list="mimeTypes"/>
+				<datalist id="mimeTypes">
+					<option value="text/html"></option>
+					<option value="text/css"></option>
+					<option value="text/javascript"></option>
+					<option value="text/plain"></option>
+				</datalist>
+				<button id="btnMakeHtmlFile" onclick="createDownloadFile()">Make a downloadable file</button>
+				<table>
+					<thead>
+						<tr>
+							<th>New tab link</th>
+							<th>Download Link</th>
+							<th>Filename entered</th>
+							<th>MIME type given</th>
+							<th>Date and time created</th>
+							<th>iframe link</th>
+						</tr>
+					</thead>
+					<tbody id="downloadsTbody"><!-- download links and info get put here inside rows by JS -->
+					
+					</tbody>
+				</table>
+				<iframe id="iframeDisplay" name="iframeDisplay" allowfullscreen="true" >
+				</iframe>
+			</div>
+			<div id="btnMkr" class="hide">
+				<h2>Add buttons - 🚧Work in progress / prototyping🚧</h2>
+				<p>This is in development, with multiple prototypes at different stages of working. Prototypes in different coloured sections below</p>
+				<div class="oddStripe">
+					<h2>1 - Simplist prototype: alert out the js for one btn, ready to copy and paste into the source code of btnCode. No facility to add btns to groups through this tool - is simple to do via other text editor/IDE. Functional</h2>
+					<label for="jsKey">jsKey (use Grp suffix if a group, by convention):</label>
+					<input type="text" id="jsKey" name="jsKey"/>
+					<label for="lvlInt">lvlInt:</label>
+					<select id="lvlInt">
+						<option selected value="0">0 (top)</option>
+						<option value="1">1 (in a group)</option>
+					</select>
+					<label for="btnType">btnType:</label>
+					<select id="btnType">
+						<option selected>group</option>
+						<option>codeBtn</option>
+					</select>
+					<label for="btnTextInput">Text to go on the btn:</label>
+					<input type="text" id="btnTextInput" name="btnTextInput"/>
+					<label class="show" for="textToInsert">If this is a codeBtn, put the text to be inserted when clicked here (for now btns must be added into groups manually):</label>
+					<label class="hide" for="textToInsert">Text to be inserted when clicked:</label>
+					<input type="text" id="textToInsert" name="textToInsert" value=""/>
+					<button id="makeBtnJS" onclick="makeBtnJS()">a) SHOW BTN JS OBJECT</button>
+					<select id="addBtnToLang" onchange="addBtnToLangChange(this)">
+						<option selected>Add to new lang</option>
+					</select>
+					<label id="newLangInputlbl" for="newLangInput" class="show">New lang name:</label>
+					<input type="text" id="newLangInput" name=""class="show"/>
+					<button id="makeBtnJS" onclick="addToSavedCodeObject()">b)🚧 ADD TO btnCode LOCALLY🚧</button>
+					<button id="showSavedCodeObject" onclick="showSavedCodeObject()">b)🚧 SHOW YOUR CURRENT JS savedCode OBJECT🚧</button>
+				</div>
+				<h2>Starting notes and assumptions</h2>
+				<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
+				<p>There are two variations of the format:<br/>groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]<br/>
+				codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]</p>
+				<p>
+				lvlInt should be set to 0 if you want this btn showing when the lang has been chosen. For showing only when a groupBtn has been tapped, any other value could be used, but by convention I use 1. At least by current implementation, at time of writing (and seems unlikely to change), lvlInt is only checked when a lang is chosen (as a way of knowing which btns need to be shown). If we were to have nested groups, that could probably be achieved by simply setting the nested group btns to lvlInt 1 (or any lvlInt that isnt 0) and listing the nested group keys in their parent group, just like any codeBtn in that group
+				</p>
+				<p>Though there are only really two btn types in the codeBtn div at the moment, I have thoughts for this btnMkr doing more than those types in the maybe not so distant future. </p>
+				<h2>First prototype learnings, thoughts, verdict</h2>
+				<p>I initially tested this prototype by using it to create a couple of group btns as well as a few btns during dev. This prototype doesn't really inspire much usage - I immediately wish this did a bunch at a time, then later on I started to mull that maybe one at a time could be alright if they were immediately in the UI. It feels non-optimal to do one at a time and it is still a long, clunky process to get a lang really fleshed out. It is an improvement over making them in notepad++ but a less clear cut win over making btns in Google sheets, which is great for bulk text conversion, when formulaes work as thought.
+				</p>
+				<p>Prototype 2 will look into an editable table approach, but before I start on that I will add a bit more to prototype 1 so that I can try out adding to the JS object powering btnCode directly. Another insight that seems intuitive at this point, is that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. There's adding a lang in terms of adding another top level key in the JS object, and then theres adding a lang in terms of adding a big collection of btns under the name of one language. 
+				</p>
+				<h3>"prototype 1b", adding and showing the btnCode js object</h3>
+				<p>This will let me, and anyone else, temporarily add btns to the current instance of btnCode, and then be able to copy all of those btns, for either pasting into the codebase to permanently add a batch of btns after they have been tested, or potentially allow other people to email me / message me with their suggestions.</p>
+				
+			</div>
+			<div id="newLangScrn" class="hide">
+				<h3>New lang screen: 🚧dev work on this feature not started🚧</h3>
+				<p></p>
+			</div>
+			<div id="contactInfo" class="hide">
+				<p>Find me:</p>
+				<ul>
+					<li><a href="https://www.reddit.com/user/PGDesign" target="_blank">Reddit as PGDesign</a></li>
+					<li><a href="https://news.ycombinator.com/user?id=PhillyG" target="_blank">HN as PhillyG</a></li>
+					<li><a rel="me" href="https://fosstodon.org/@PhillyG" target="_blank">Mastodon as @PhillyG@fosstodon.org</a></li>
+				</ul>
+			</div>
+		</main>
+		<footer>
+			<p>btnCode, © 2022 Phil Ganney. 
+				<a href="https://github.com/PhilGanney/btnCode" target="_blank">Code available on github</a> (MIT licensed)
+			<p/>
+		</footer>
+	</body>
+</html>
