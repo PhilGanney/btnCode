@@ -7,6 +7,7 @@ opened groups would probably need to have a flag in the data to show that it is 
 */
 var savedCodeWithGroupsConcept1 = {
 	"General": {
+		"langName": "General",
 		"Tab": [0, "codeBtn", "Tab", "	"],
 		"NewLine": [0, "codeBtn", "New<br/>Line", "\r\n"],
 		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol", "copyrightSymbol"]],
@@ -24,6 +25,7 @@ var savedCodeWithGroupsConcept1 = {
 		"copyrightSymbol": [1, "codeBtn", "©", "©"],
 	},
 	"HTML": {
+		"langName": "HTML",
 		"BoilerplateTemplatesGrp":[0,"group","Boilerplate & Templates",["BoilerplateBasic", "OneFileBoilerplate", "FreeCodeCamp"]],
 		"BoilerplateBasic": [1, "codeBtn", "Minimal Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset=\"utf-8\">\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n	</body>\r\n</html>"],
 		"OneFileBoilerplate": [1, "codeBtn", "Minimal + JS & CSS in body", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset=\"utf-8\">\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n		<script>\r\n			\r\n		</script>\r\n		<style>\r\n			\r\n		</style>\r\n	</body>\r\n</html>"],
@@ -91,6 +93,7 @@ var savedCodeWithGroupsConcept1 = {
 		
 	},
 	"JS": {
+		"langName": "JS",
 		"Core":[0,"group","Core",["Function", "Variable", "Let", "Constant", "IfElse", "SwitchCase"]],
 		"Function": [1, "codeBtn", "Function", "function changeMe1(){\r\n	\r\n}"],
 		"Variable": [1, "codeBtn", "var variable", "var someVar = 0;"],
@@ -111,6 +114,7 @@ var savedCodeWithGroupsConcept1 = {
 		"JSONKeyObject": [0, "codeBtn", "JSONKeyObject", "\"key\": {\r\n	\r\n	\r\n}"],
 	},
 	"CSS": {
+		"langName": "CSS",
 		"mediaQueriesGrp":[0,"group","Media Queries",["MqMinwidth576px", "MqMinwidth768px", "MqMinwidth992px", "MqMinwidth1200px", "PointerFine"]],
 		"MqMinwidth576px": [1, "codeBtn", "screen width 576px", "@media only screen and (min-width: 576px) {\r\n	\r\n}\r\n"],
 		"MqMinwidth768px": [1, "codeBtn", "screen width 768px", "@media only screen and (min-width: 768px) {\r\n	\r\n}\r\n"],
@@ -138,6 +142,7 @@ var savedCodeWithGroupsConcept1 = {
 		"Comment": [0, "codeBtn", "/*Comment*/", "/* Comment */"],
 	},
 	"python": {
+		"langName": "python",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
 		"DefFunction": [0, "codeBtn", "def my_function():", "def my_function():\r\n    "],
 		"Print": [0, "codeBtn", "output print()", "print(\"\")"],
@@ -151,6 +156,7 @@ var savedCodeWithGroupsConcept1 = {
 		"Slice": [0, "codeBtn", "Slice [x:y]", "[x:y]"]
 	},
 	"php": {
+		"langName": "php",
 		/* logo uses lowercase php, wheras elsewhere they use PHP */
 		"PHPTag":[0,"codeBtn","&lt;?php  ?&gt;","<?php\r\n\r\n?>"],
 		"Echo":[0,"codeBtn","echo \"Hello World!\";","echo \"Hello World!\";"],
@@ -166,13 +172,15 @@ var savedCodeWithGroupsConcept1 = {
 		"Directory":[1,"group","Directory",[]],
 		"Error":[1,"group","Error",[]],
 		"🎨": [1, "codeBtn", "🎨", "🎨"],
-	},/*
-	"Csharp": {
+	},
+	"CSharp": {
+		"langName": "C#",
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
-		"🏗": [0, "codeBtn", "🏗", "🏗"],
-	},*/
+		"HelloWorld":[0,"codeBtn","Console.WriteLine Hello World","Console.WriteLine(\"Hello World!\");"],
+	},
 	"Emoji": {
 		/* because why not?*/
+		"langName": "Emoji",
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
 		"🏗": [0, "codeBtn", "🏗", "🏗"],
 		"🆕": [0, "codeBtn", "🆕", "🆕"],
@@ -188,6 +196,7 @@ var savedCodeWithGroupsConcept1 = {
 		"😄": [0, "codeBtn", "😄", "😄"],
 	},
 	"MiscSnippets": {
+		"langName": "Misc Snippets",
 		"LoremIpsum": [0, "codeBtn", "Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
 		"QuickBrownFox": [0, "codeBtn", "Quick brown fox", "The quick brown fox jumps over the lazy dog."],
 		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15        16\r\n1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
@@ -241,8 +250,10 @@ function showLangBtns(){
 	document.getElementById("codeBtns").innerHTML = "";
 	
 	for (i in allLangs){
+		console.log(savedCodeWithGroupsConcept1[allLangs[i]]["langName"]);
+		
 		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-		addButtons("languageChange", allLangs[i], [allLangs[i]], "btn", "", document.getElementById("codeBtns"));
+		addButtons("languageChange", allLangs[i], [savedCodeWithGroupsConcept1[allLangs[i]]["langName"]], "btn", "", document.getElementById("codeBtns"));
 		
 	}
 	console.groupEnd;
@@ -271,6 +282,7 @@ function showLangTop(lang){
 		
 		//we store what level of nesting the btn is in index 0 of the btns outer array
 		//so to find btns that by UX seem in the "top" of a lang, match with 0
+		//interestingly, this if also means the addition of a langName child within each lang, did not cause any issues to fix up with erroneously trying to create btns for the langName. Unless the first letter of the langName value is 0 the condition is false. Without the if and just the contents always calling here, as well as making hidden buttons at top level you also get a btn for the third letter of the langName which would cause JS errors when clicked.
 		if(savedCodeWithGroupsConcept1[lang][btnKey][0] == 0){
 			
 			createLangDescendantBtn(lang, btnKey, "beforeend", document.getElementById("codeBtns"));
@@ -593,8 +605,13 @@ function languageChange(lang){
 	
 	if(lang == "General"){
 		showLangTop("General");
-	}
-	else {
+	} else if (lang == "C%23"){ //C#
+		showLangTop("General");
+		showLangTop("CSharp");
+	} else if (lang == "Misc%20Snippets"){//Misc Snippets
+		showLangTop("General");
+		showLangTop("MiscSnippets");
+	} else {//all the langs with names that have no spaces or other characters that get escaped, or any other special cases
 		showLangTop("General");
 		showLangTop(lang);
 	}
