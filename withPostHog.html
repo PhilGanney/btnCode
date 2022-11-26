@@ -52,212 +52,211 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<h3>Styler: 🚧Works, but yeahhhhh, some whitespace issues🚧</h3>
-				<p>Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside</p>
-				<style contenteditable style="display: block; height: 200px;">
+				<h3>Styler: 🚧Works - temporarily, needs styling itself!🚧</h3>
+				<p>Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside - so you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
+				<style contenteditable style="display: block; min-height: 200px; background-color: white; white-space: pre;">
 				body{
 					width:100%;
 					margin: 0px;
 				}
 
-header{
-	position: absolute;
-	top: 0px;
-	width: 100%;
-	text-align: center;
-	background-color: #FFFFFFF1;
-}
+				header{
+					position: absolute;
+					top: 0px;
+					width: 100%;
+					text-align: center;
+					background-color: #FFFFFFF1;
+				}
 
+				main{
+					padding-bottom: 70px;
+					width: 98%;
+					padding-left: 1%;
+					padding-right: 1%;
+					background-color: lightGreen;
+				}
 
-main{
-	padding-bottom: 70px;
-	width: 98%;
-	padding-left: 1%;
-	padding-right: 1%;
-	background-color: lightGreen;
-}
+				footer{
+					position: relative;
+					bottom: 0px;
+					width: 100%;
+					text-align: center;
+					background-color:#9EFEFE;
+				}
 
-footer{
-	position: relative;
-	bottom: 0px;
-	width: 100%;
-	text-align: center;
-	background-color:#EEFEEE;
-}
+				#codeBtns{
+					height: 68px;
+					display: flex;
+					overflow-x: auto;
+					overflow-y: hidden;
+					flex-direction: row;
+					align-items: flex-start;
+					justify-content: flex-start;
+				}
 
-#codeBtns{
-	height: 68px;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
+				#codeBtns button{
+					width: min-content;
+				}
 
-#codeBtns button{
-	width: min-content;
-}
+				#controlBtns{
+					height: 88px;
+					display: flex;
+					overflow-x: auto;
+					overflow-y: hidden;
+					flex-direction: row;
+					align-items: flex-start;
+					justify-content: flex-start;
+				}
 
-#controlBtns{
-	height: 88px;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
+				#controlBtns *{
+					height: 86px;
+				}
 
-#controlBtns *{
-	height: 86px;
-}
+				button{
+					height: 66px;
+					/*Todo: min-width without messing btns up*/
+					border-radius: 8px;
+				}
 
-button{
-	height: 66px;
-	/*Todo: min-width without messing btns up*/
-	border-radius: 8px;
-}
+				.oddStripe{
+					background-color: #9999FF;
+				}
 
-.oddStripe{
-	background-color: #9999FF;
-}
+				#btnJS{
+					font-size: 1em;
+				}
+				.JS{
+					background-color: DodgerBlue;
+					/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
+					color: #000000;
+				}
+				.CSS{
+					background-image: linear-gradient(to top, green, blue);
+					color: white;
+				}
 
-#btnJS{
-	font-size: 1em;
-}
-.JS{
-	background-color: DodgerBlue;
-	/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
-	color: #000000;
-}
-.CSS{
-	background-image: linear-gradient(to top, green, blue);
-	color: white;
-}
+				.CSS.group{
+					/*need two background images simulataneously, rather than having the .group rules wipe over the .CSS background rules*/
+					background-image:  url("arrow.png"), linear-gradient(to top, green, blue);
+					background-repeat: no-repeat, repeat;
+					background-position: right, right;
+				}
+				.CSS.openGroup{
+					/*need two background images simulataneously, rather than having the .openGroup rules wipe over the .CSS background rules*/
+					background-image:  url("arrowDwn.png"), linear-gradient(to top, green, blue);
+					background-repeat: no-repeat, repeat;
+					background-position: right, right;
+				}
 
-.CSS.group{
-	/*need two background images simulataneously, rather than having the .group rules wipe over the .CSS background rules*/
-	background-image:  url("arrow.png"), linear-gradient(to top, green, blue);
-	background-repeat: no-repeat, repeat;
-	background-position: right, right;
-}
-.CSS.openGroup{
-	/*need two background images simulataneously, rather than having the .openGroup rules wipe over the .CSS background rules*/
-	background-image:  url("arrowDwn.png"), linear-gradient(to top, green, blue);
-	background-repeat: no-repeat, repeat;
-	background-position: right, right;
-}
+				.HTML{
+					background-color: #3c790a;
+					color: white;
+				}
+				@font-face {
+					font-family: Flux-Regular;
+					src: url("fonts/FluxRegular.otf") format("opentype");
+				}
+				#btnpython{
+					font-size: 1.2em;
+				}
+				.python{
+					/*Styling taken from python.org homepage*/
+					background: #1c3b56;
+					color: #ffd343;
+					/*color: #fff*/
+					font-size: 1.1em;
+					font-family: Flux-Regular, SourceSansProBold, Arial, sans-serif;
+				}
 
-.HTML{
-	background-color: #3c790a;
-	color: white;
-}
-@font-face {
-    font-family: Flux-Regular;
-    src: url("fonts/FluxRegular.otf") format("opentype");
-}
-#btnpython{
-	font-size: 1.2em;
-}
-.python{
-	/*Styling taken from python.org homepage*/
-	background: #1c3b56;
-	color: #ffd343;
-	/*color: #fff*/
-	font-size: 1.1em;
-	font-family: Flux-Regular, SourceSansProBold, Arial, sans-serif;
-}
+				#btnphp{
+					font-style: italic;
+				}
+				.php{
+					/*Styling taken from php.net homepage*/
+					background-color: #7A86B8;
+					color: #1f222e;
+					font-weight: 700;
+				}
 
-#btnphp{
-	font-style: italic;
-}
-.php{
-	/*Styling taken from php.net homepage*/
-	background-color: #7A86B8;
-	color: #1f222e;
-	font-weight: 700;
-}
+				.CSharp{
+					background-color: #009404;
+					color: #ffffff;
+				}
 
-.CSharp{
-	background-color: #009404;
-	color: #ffffff;
-}
+				#btnEmoji{
+					font-size: 1em;
+				}
 
-#btnEmoji{
-	font-size: 1em;
-}
+				.Emoji{
+					background-color: #3344ED;
+					color: Tomato;
+					font-size: 1.75em;
+				}
 
-.Emoji{
-    background-color: #3344ED;
-    color: Tomato;
-	font-size: 1.75em;
-}
+				.group{
+					background-image: url("arrow.png");
+					background-repeat: no-repeat;
+					background-position: right;
+					background-size: 19px;
+					padding-right: 19px;
+				}
+				.openGroup{
+					background-image: url("arrowDwn.png");
+					background-repeat: no-repeat;
+					background-position: right;
+					background-size: 19px;
+					padding-right: 19px;
+				}
 
-.group{
-	background-image: url("arrow.png");
-	background-repeat: no-repeat;
-	background-position: right;
-    background-size: 19px;
-	padding-right: 19px;
-}
-.openGroup{
-	background-image: url("arrowDwn.png");
-	background-repeat: no-repeat;
-	background-position: right;
-    background-size: 19px;
-	padding-right: 19px;
-}
+				#codeTA{
+					width: 100%;
+					height: 300px;
+					-moz-tab-size : 4;
+					-o-tab-size : 4;
+					tab-size : 4;
+					white-space: pre;
+					overflow-wrap: normal;
+					overflow-x: auto;
+					font-family: monospace; /*seems to be the default in most browsers anyway, but for some languages like Python it is very useful to have a monospace font. Haven't specified an exact font because that particular rabbit hole doesn't seem to be very important to the goal of btncode, in fact that might be something cool for users to choose in the styler*/
+				}
 
-#codeTA{
-	width: 100%;
-	height: 300px;
-	-moz-tab-size : 4;
-    -o-tab-size : 4;
-    tab-size : 4;
-	white-space: pre;
-	overflow-wrap: normal;
-	overflow-x: auto;
-	font-family: monospace; /*seems to be the default in most browsers anyway, but for some languages like Python it is very useful to have a monospace font. Haven't specified an exact font because that particular rabbit hole doesn't seem to be very important to the goal of btncode, in fact that might be something cool for users to choose in the styler*/
-}
+				select{
+					height: 66px;
+				}
 
-select{
-	height: 66px;
-}
+				th, td{
+					margin-left: 1px;
+					margin-right: 6px;
+					border-left: burlywood 2px dashed; /*A nice light brown colour*/
+				}
+				th:first-child, td:first-child{
+					border-left: none;
+				}
 
-th, td{
-	margin-left: 1px;
-	margin-right: 6px;
-	border-left: burlywood 2px dashed; /*A nice light brown colour*/
-}
-th:first-child, td:first-child{
-	border-left: none;
-}
+				th:last-child, td:last-child{
+					margin-left: 1px;
+					margin-right: 1px;
+				}
 
-th:last-child, td:last-child{
-	margin-left: 1px;
-	margin-right: 1px;
-}
+				tbody tr td{
+					border-top: burlywood 2px dashed;
+				}
 
-tbody tr td{
-	border-top: burlywood 2px dashed;
-}
+				@media only screen and (min-height: 468px) {
+					/*Responsive breakpoints are normally done on min-widths, but in this case it is the height that is the main thing we are working around - most of the outer elements have % widths so the design is pretty responsive even before mediaQueries, but we had a specific issue when typing on mobile - when the onscreen keyboard comes in, the viewport is too short to display the header and footer and still have room to see the btns and the textarea at the same time*/
+					header{
+						position: sticky;
+					}
+					
+					footer{
+						position: fixed;
+					}
+					#codeBtns{
+						/*Space for a scrollbar*/
+						height: 86px;
+					}
 
-@media only screen and (min-height: 468px) {
-	/*Responsive breakpoints are normally done on min-widths, but in this case it is the height that is the main thing we are working around - most of the outer elements have % widths so the design is pretty responsive even before mediaQueries, but we had a specific issue when typing on mobile - when the onscreen keyboard comes in, the viewport is too short to display the header and footer and still have room to see the btns and the textarea at the same time*/
-	header{
-		position: sticky;
-	}
-	
-	footer{
-		position: fixed;
-	}
-	#codeBtns{
-		/*Space for a scrollbar*/
-		height: 86px;
-	}
-
-}
+				}
 				</style>
 			</div>
 			<div id="webDisplayer" class="hide">
