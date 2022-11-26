@@ -156,7 +156,7 @@ var savedCodeWithGroupsConcept1 = {
 		"Slice": [0, "codeBtn", "Slice [x:y]", "[x:y]"]
 	},
 	"php": {
-		"langName": "php",
+		"langName": "🚧php🚧",
 		/* logo uses lowercase php, wheras elsewhere they use PHP */
 		"PHPTag":[0,"codeBtn","&lt;?php  ?&gt;","<?php\r\n\r\n?>"],
 		"Echo":[0,"codeBtn","echo \"Hello World!\";","echo \"Hello World!\";"],
@@ -174,7 +174,7 @@ var savedCodeWithGroupsConcept1 = {
 		"🎨": [1, "codeBtn", "🎨", "🎨"],
 	},
 	"CSharp": {
-		"langName": "C#",
+		"langName": "🚧C#🚧",
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
 		"HelloWorld":[0,"codeBtn","Console.WriteLine Hello World","Console.WriteLine(\"Hello World!\");"],
 	},
@@ -605,6 +605,12 @@ function languageChange(lang){
 	
 	if(lang == "General"){
 		showLangTop("General");
+	} else if (lang == "%uD83D%uDEA7php%uD83D%uDEA7"){ //🚧php🚧
+		showLangTop("General");
+		showLangTop("php");
+	} else if (lang == "%uD83D%uDEA7C%23%uD83D%uDEA7"){ //🚧C#🚧
+		showLangTop("General");
+		showLangTop("CSharp");
 	} else if (lang == "C%23"){ //C#
 		showLangTop("General");
 		showLangTop("CSharp");
