@@ -52,14 +52,9 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<h3>Styler: 🚧Works - temporarily, needs styling itself!🚧</h3>
+				<h3>Styler: 🚧Works - temporarily (not attempting to save it yet)</h3>
 				<p>Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside - so you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
 				<style contenteditable style="display: block; height: 300px; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
-				body{
-					width:100%;
-					margin: 0px;
-				}
-
 				header{
 					position: absolute;
 					top: 0px;
@@ -84,7 +79,7 @@
 					background-color:#9EFEFE;
 				}
 
-				#codeBtns{
+				#codeBtns{ /*The container div for the row of buttons that add code to the editor*/
 					height: 68px;
 					display: flex;
 					overflow-x: auto;
@@ -98,7 +93,7 @@
 					width: min-content;
 				}
 
-				#controlBtns{
+				#controlBtns{ /*The container div for the row of buttons with controls like Full screen, Empty Editor etc*/
 					height: 88px;
 					display: flex;
 					overflow-x: auto;
@@ -116,10 +111,21 @@
 					height: 66px;
 					/*Todo: min-width without messing btns up*/
 					border-radius: 8px;
+					border-width: 2px;
+					margin-right: 0px;
 				}
-
-				.oddStripe{
-					background-color: #9999FF;
+/*TextArea in the code editor*/
+				#codeTA{
+					width: 100%;
+					height: 300px;
+					-moz-tab-size : 4;
+					-o-tab-size : 4;
+					tab-size : 4; /*number of spaces tabs are equal to. Some/all browsers use 8 as a default*/
+					font-size: 10pt;
+					white-space: pre;
+					overflow-wrap: normal;
+					overflow-x: auto;
+					font-family: monospace; /*USER pick your own editor font here!! Some options: Courier New, arial, Flux-Regular (the python font here via @font-face), (Phil intentionally only specified a monospace font, leaving font choice to the user whilst )*/
 				}
 
 				#btnJS{
@@ -130,11 +136,11 @@
 					/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
 					color: #000000;
 				}
+				
 				.CSS{
 					background-image: linear-gradient(to top, green, blue);
 					color: white;
 				}
-
 				.CSS.group{
 					/*need two background images simulataneously, rather than having the .group rules wipe over the .CSS background rules*/
 					background-image:  url("arrow.png"), linear-gradient(to top, green, blue);
@@ -148,18 +154,18 @@
 					background-position: right, right;
 				}
 
-				.HTML{
+				.HTML{ /*note the full stop to denote class - this styles the btns for the HTML lang*/
 					background-color: #3c790a;
 					color: white;
 				}
-				@font-face {
+				@font-face { /*get that sweet python typeface*/
 					font-family: Flux-Regular;
 					src: url("fonts/FluxRegular.otf") format("opentype");
 				}
-				#btnpython{
+				#btnpython{ /*style the main button for Python*/
 					font-size: 1.2em;
 				}
-				.python{
+				.python{ /*Style all the python elements*/
 					/*Styling taken from python.org homepage*/
 					background: #1c3b56;
 					color: #ffd343;
@@ -192,7 +198,7 @@
 					color: Tomato;
 					font-size: 1.75em;
 				}
-
+/*Applying arrow imgs to group buttons, to indicate openable or already open, Note that if something already has a background image (eg btns for the CSS lang with .CSS class using a gradient background) you will need a selector for that + .group and another selector for that + .openGroup and in each selector assign the two relevant background-images in one background-image rule. Use what I did for CSS as a starting point!*/
 				.group{
 					background-image: url("arrow.png");
 					background-repeat: no-repeat;
@@ -207,23 +213,11 @@
 					background-size: 19px;
 					padding-right: 19px;
 				}
-
-				#codeTA{
-					width: 100%;
-					height: 300px;
-					-moz-tab-size : 4;
-					-o-tab-size : 4;
-					tab-size : 4;
-					white-space: pre;
-					overflow-wrap: normal;
-					overflow-x: auto;
-					font-family: monospace; /*seems to be the default in most browsers anyway, but for some languages like Python it is very useful to have a monospace font. Haven't specified an exact font because that particular rabbit hole doesn't seem to be very important to the goal of btncode, in fact that might be something cool for users to choose in the styler*/
-				}
-
+/*Selects (dropdowns, eg in "Add buttons")*/
 				select{
 					height: 66px;
 				}
-
+/*Tables (eg the one in show/download) */
 				th, td{
 					margin-left: 1px;
 					margin-right: 6px;
@@ -241,7 +235,7 @@
 				tbody tr td{
 					border-top: burlywood 2px dashed;
 				}
-
+/*Media Queries at the bottom, so they overwrite*/
 				@media only screen and (min-height: 468px) {
 					/*Responsive breakpoints are normally done on min-widths, but in this case it is the height that is the main thing we are working around - most of the outer elements have % widths so the design is pretty responsive even before mediaQueries, but we had a specific issue when typing on mobile - when the onscreen keyboard comes in, the viewport is too short to display the header and footer and still have room to see the btns and the textarea at the same time*/
 					header{
