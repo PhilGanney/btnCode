@@ -228,7 +228,7 @@
 					border-top: burlywood 2px dashed;
 				}
 				
-/*Media Queries at the bottom, so they overwrite*/
+/*Media Queries at the bottom, so that they overwrite*/
 				@media only screen and (min-height: 468px) {
 					/*Responsive breakpoints are normally done on min-widths, but in this case it is the height that is the main thing we are working around - most of the outer elements have % widths so the design is pretty responsive even before mediaQueries, but we had a specific issue when typing on mobile - when the onscreen keyboard comes in, the viewport is too short to display the header and footer and still have room to see the btns and the textarea at the same time*/
 					header{
@@ -250,9 +250,8 @@
 				<h3>Show/ download contents of the editor.</h3>
 				<p> Links will appear in table below, once you tap the "Make a downloadable file" button. <br/>(if file name blank, file will be named renameMe.txt<br/> if MIME type blank, it'll reject.)</p>
 				<!--<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
-				I've made attempts at "Show in the iFrame", which in theory is the better way to do this, but nothing worked, so the code is commented until I next decide to bang my head up against the wall of that particular roadblock.
 				</p>
-				<button id="btnDisplayInIframe" onclick="displayInIframe()">(coming soon) Show in the iFrame</button>
+				
 				<button id="btnDisplayInDiv" onclick="displayInDiv()">(prototype) Show in a div below</button>
 				
 				

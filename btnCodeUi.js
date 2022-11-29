@@ -465,7 +465,7 @@ function addToSelect(items, selectId){
 function makeCode(key){
 	console.group("makeCode: " + key);
 	//get the button that was clicked
-	var btnClicked = event.target || event.srcElement;
+	var btnClicked = event.target || event.srcElement; //linter in VS Code marks parts of this line as deprecated: event is still in use according to MDN and I believe the || event.srcElement part is there for backwards compatibility with IE, probably not strictlye necy for btnCode since there is no real requirement for IE support, but I don't think this line can hurt
 	//get the lang from the class
 	console.log(btnClicked.className);
 	//get the text
@@ -478,7 +478,7 @@ function makeCode(key){
 }
 
 
-/*I had no idea how to find the cursor so searched online and got an entire function for inserting text at a cursor, it didnt account for code whitespace conventions though:
+/*I had no idea how to find the cursor so searched online and got an entire function for inserting text at a cursor, it didn't account for code whitespace conventions though:
 https://stackoverflow.com/questions/7404366/how-do-i-insert-some-text-where-the-cursor-is
 
 Notes:
@@ -587,8 +587,6 @@ function copyText(){
 			
 		}
 	}*/
-	
-	
 
 	console.groupEnd();
 }
@@ -743,8 +741,6 @@ function addToSavedCodeObject(){
 }
 
 function showSavedCodeObject(){
-	
-	
 	var stringified = JSON.stringify(savedCodeWithGroupsConcept1);
 	console.log(savedCodeWithGroupsConcept1);
 	//alert(stringified.slice(1, stringified.length - 1));
@@ -769,12 +765,6 @@ function showContactInfo(){
 	togglePanelSwitcherBtns("btnContactInfo");
 }
 
-function displayInIframe(){
-	//iframeDisplay.src = "google.com";
-	//iframeDisplay.srcdoc = codeTA.value;
-	//document.getElementById('webDisplayDiv').src = "data:text/html;charset=utf-8," + escape(codeTA.value);
-	alert("This btn does not work yet, I have tried a bunch of different solutions but none work!!");
-}
 function displayInDiv(){
 	webDisplayDiv.innerHTML = codeTA.value;
 }
@@ -796,8 +786,6 @@ function hideBottomStuff(){
 	applyHideClass("webDisplayer");
 	applyHideClass("contactInfo");
 }
-
-
 
 //Nabbed and tweaked from my TeaRounder project 
 function applyHideClass(id){
@@ -881,4 +869,3 @@ function createDownloadFile(){
 	iframeLinkElement.innerText = "view in iframe: " + fileName;
 	cellElement6.appendChild(iframeLinkElement);
 }
-
