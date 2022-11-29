@@ -1,3 +1,5 @@
+/*Todo: make this as easy to understand as the improved on subset of this, found in the styler <style> tag*/
+
 body{
 	width:100%;
 	margin: 0px;
@@ -48,7 +50,7 @@ footer{
     justify-content: flex-start;
 }
 
-#codeBtns button{
+#codeBtns button{ /*Each button inside the #codeBtns container div*/
 	width: min-content;
 }
 
@@ -62,7 +64,7 @@ footer{
     justify-content: flex-start;
 }
 
-#controlBtns *{
+#controlBtns button{ /*Each button inside the #controlBtns container div*/
 	height: 86px;
 }
 
@@ -90,13 +92,13 @@ button{
 }
 
 .CSS.group{
-	/*need two background images simulataneously, rather than having the .group rules wipe over the .CSS background rules*/
+	/*need two background images simultaneously, rather than having the .group rules wipe over the .CSS background rules*/
 	background-image:  url("arrow.png"), linear-gradient(to top, green, blue);
 	background-repeat: no-repeat, repeat;
 	background-position: right, right;
 }
 .CSS.openGroup{
-	/*need two background images simulataneously, rather than having the .openGroup rules wipe over the .CSS background rules*/
+	/*need two background images simultaneously, rather than having the .openGroup rules wipe over the .CSS background rules*/
 	background-image:  url("arrowDwn.png"), linear-gradient(to top, green, blue);
 	background-repeat: no-repeat, repeat;
 	background-position: right, right;
