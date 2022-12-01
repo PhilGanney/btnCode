@@ -21,9 +21,19 @@ Pick a coding language from the choices available and the language options will 
 
 
 ### ..do I run my code? How does btnCode dev Phil use btnCode?
-Currently, you have to copy code elsewhere to run it. When coding on my laptop, I have btnCode open in a tab in a browser on my extra monitor, while notepad++ is open on the laptop screen. I will draft stubs of code out in btnCode, and then copy to notepad++ or, if I'm editing existing code, I just use btnCode as a quick reference - but btnCode is really good for that purpose too. Of course you can use whatever editor or IDE you wish to use.
+BtnCode doesn't have an interpreter, compiler or command line shell, but you can create downloadable files, show HTML content in a new tab or copy your code to the clipboard.
 
-If I fancy coding on my phone, it's generally just for a few minutes, to think through an idea that has popped in my head. In those instances just seeing the code I had in mind is enough to confirm or throw out the idea I was thinking of. I typically wait til I'm at my laptop to code the idea up properly. So far the best experience on mobile I have found, for coding HTML, JS and CSS; beyond just checking an idea; is to draft it out on btnCode.com then paste into either w3schools.com/tryit  or playcode.io and just use btnCode for a reference from then on. (no affiliation with either playcode or w3schools - they are just the most mobile-friendly of the online editors I have tried.  Playcode has the more advanced editor of the two though it seems to have issues getting the whitespace of pasted code correct)
+#### show/download area
+BtnCode now has a show/download area that you can use to create a file from the current text in the editor. You need to know the MIME type for the type of file you are making, though the input box has suggestions. After a file is created, links for opening in new tab, downloading or showing in an iframe will appear in a table below. Each click of "Make a downloadable file" creates a new file and a new table row for that file. (The file table and all the links are not saved anywhere and will be gone if you reload the browser tab, so make sure you download any files you wish to keep)
+
+#### Copying to clipboard
+Alternatively you can copy code elsewhere to run it. If you use btnCode locally, you should see a "Copy all text" button on the top row to the left of the full screen button, otherwise good old ctrl+a ctrl+c are your freinds.
+
+#### How Phil uses btnCode
+When coding on my laptop, I have btnCode open in a tab in a browser on my extra monitor, while VS Code is open on the laptop screen. I will draft stubs of code out in btnCode, and then copy to VS Code or, if I'm editing existing code, I just use btnCode as a quick reference - but btnCode is really good for that purpose too. Of course you can use whatever editor or IDE you wish to use. (Initially I used notepad++ but switched to VS Code)
+
+If I fancy coding on my phone, it's generally just for a few minutes, to think through an idea that has popped in my head. In those instances just seeing the code I had in mind is enough to confirm or throw out the idea I was thinking of; then when I'm next at my laptop I code the idea up properly. Beyond just checking an idea, the best experience on mobile I have found, for HTML, JS and CSS; is to draft it out on btnCode.com then paste into codepen.io and just use btnCode for a reference from then on. (no affiliation with codepen - they are just the most mobile-friendly of the online editors I have tried.  playcode.io and w3schools.com/tryit are two others that are ok on mobile. Playcode has a nice and advanced editor but seems to have issues getting the whitespace of pasted code correct, w3schools has a "front end" editor and a "back end" editor that covers quite a good range of languages, but has less features)
+
 
 ### ..do I exit btnCode?
 Close the tab.
