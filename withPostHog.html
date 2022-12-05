@@ -53,8 +53,10 @@
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
 				<h3>Styler: 🚧Works - temporarily (not attempting to save it yet)</h3>
-				<p>Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside - so you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
-				<style contenteditable style="display: block; height: 300px; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
+				<button id="saveStyle" onclick="saveStyle()">Save styles to local storage</button>
+				<p id="stylerExplainer">Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside - so you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
+				
+				<style id="styleyStyle" contenteditable style="display: block; height: 300px; width: 100%; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
 				header{
 					position: absolute; /*This rule overruled by a media query when the screen is tall enough to have it set to sticky*/
 					top: 0px;
@@ -77,6 +79,12 @@
 					background-color:#9EFEFE;
 				}
 				
+				
+				#saveStyle{/*Styler save button*/
+					width: 100px;
+					float: left;
+				}
+
 				button{ /*all buttons*/
 					height: 66px;
 					border-radius: 8px;
@@ -178,8 +186,13 @@
 				}
 
 				.CSharp{ /*Style all the elements for coding C# (interestingly we could use .C\# to get things with class C# but we avoid that symbol within the JS that applies classes anyway)*/
-					background-color: #009404;
+					background: linear-gradient(45deg, #189f20 50%, #009404 50%); /*the 1st 50% stops that first colour at 50% and the 2nd starts the 2nd colour at 50%, effectively turning the gradient effect into that sweet sudden two tone effect that the C# logo has. Inspired by https://blog.prototypr.io/css-only-multi-color-backgrounds-4d96a5569a20*/
 					color: #ffffff;
+				}
+
+				.Ada{ /*(Lang coming soon) anyone who can find an exciting colour scheme from Ada gets, I dunno, free lifetime btnCode usage??. Cool looking language, bland as anything logo!*/
+					background-color: #ffffff;
+					color: #000000;
 				}
 
 				#btnEmoji{ /*style the main button for Emoji - if you think having Emoji on here is a travesty you could try display: none to hide the button*/

@@ -112,6 +112,8 @@ var savedCodeWithGroupsConcept1 = {
 		"//Comment": [1, "codeBtn", "//Comment", "//Comment"],
 		"JSONKeyValue": [0, "codeBtn", "JSONKeyValue", "\"key\": \"value\""],
 		"JSONKeyObject": [0, "codeBtn", "JSONKeyObject", "\"key\": {\r\n	\r\n	\r\n}"],
+		"LocalStorageGrp":[0,"group","Local Storage",["SaveToLocalStorageFunc"]],
+		"SaveToLocalStorageFunc":[1,"codeBtn","function: saveToLocalStorage","function saveToLocalStorage(key,value){ \r\n\t/*Returns true if successful, alerts if not*/\r\n\t//Before using web storage, check browser support for Storage (covers both localStorage and sessionStorage)\r\n\tif (typeof(Storage) !== \"undefined\") {\r\n\t//Storage is there, so we'll save it\r\n\t\tlocalStorage.setItem(key, value);\r\n\t\treturn true; //lets us display a relevant success message or carry on doing things\r\n\t} else {//No Web Storage support\r\n\t\t//TODO: is this a good experience??\r\n\t\talert(\"couldn't save, browser doesn't support local storage\");\r\n\t\treturn false;\r\n\t}\r\n}"],
 	},
 	"CSS": {
 		"langName": "CSS",
@@ -236,7 +238,7 @@ function pageLoad(){
 		}
 		console.groupEnd();
 	});
-	
+	loadStyle(); //attempt to load styles into the editable <style> from localStorage
 	console.groupEnd();
 }
 
@@ -868,4 +870,39 @@ function createDownloadFile(){
 	iframeLinkElement.setAttribute('target', "iframeDisplay");
 	iframeLinkElement.innerText = "view in iframe: " + fileName;
 	cellElement6.appendChild(iframeLinkElement);
+}
+
+function saveStyle(){
+	console.log(document.getElementById("styleyStyle").innerText);
+	saveToLocalStorage("btnCodeStyle", document.getElementById("styleyStyle").innerText)
+}
+function loadStyle(){
+	let value = loadFromLocalStorage("btnCodeStyle");
+	if (value == ""){//guard against loading nothing. Todo: this seems flimsy - do we need to check for valid CSS going in? Probably need a reset styles button
+		return; //no need to log here if already logged during loadFromLocalStorage
+	}
+	document.getElementById("styleyStyle").innerText = value;
+}
+
+function saveToLocalStorage(key,value){ 
+	/*Checks if browser supports Storage, and if it does, sets one Local Storage Key and Value*/
+	//checking browser support for Storage (covers both localStorage and sessionStorage)
+	if (typeof(Storage) !== "undefined") { //Storage is there, so we'll save it
+		localStorage.setItem(key, value);
+		return true; //For use in functions that called this function
+	} else {//No Web Storage support
+		//TODO: is this a good experience??
+		alert("couldn't save, browser doesn't support local storage");
+		return false; //For use in functions that called this function
+	}
+}
+
+function loadFromLocalStorage(key){ //general purpose localStorage loading function (it is often more useful to have more specific functions for loading particular keys)
+	let value = localStorage.getItem(key);
+	if(value == ""){
+		console.log(`tried to load: ${key} but found nothing`);
+		return "";
+	} else {
+		return value;
+	}
 }
