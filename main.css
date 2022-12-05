@@ -135,7 +135,7 @@ button{
 }
 
 .CSharp{
-	background-color: #009404;
+	background: linear-gradient(45deg, #189f20 50%, #009404 50%);
 	color: #ffffff;
 }
 
