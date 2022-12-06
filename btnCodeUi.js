@@ -878,7 +878,8 @@ function saveStyle(){
 }
 function loadStyle(){
 	let value = loadFromLocalStorage("btnCodeStyle");
-	if (value == ""){//guard against loading nothing. Todo: this seems flimsy - do we need to check for valid CSS going in? Probably need a reset styles button
+	//console.log(`btnCodeStyle loaded from localStorage, value = :${value}`)
+	if (value == "" || value == null){//guard against loading nothing. Todo: this seems flimsy - do we need to check for valid CSS going in? Probably need a reset styles button
 		return; //no need to log here if already logged during loadFromLocalStorage
 	}
 	document.getElementById("styleyStyle").innerText = value;
