@@ -68,6 +68,11 @@ footer{
 	height: 86px;
 }
 
+#saveStyle{/*Styler save button*/
+	width: 100px;
+	float: left;
+	margin: 2px;
+}
 button{
 	height: 66px;
 	/*Todo: min-width without messing btns up*/

@@ -52,11 +52,11 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<h3>Styler: 🚧Works - temporarily (not attempting to save it yet)</h3>
+				<p id="stylerImprovementsNeeded">🚧 Only fully works in some browsers (and even then btnCode could do with a theme picker). Some, such as Firefox, will not show initial CSS in the box, but if you can guess some CSS to apply, it will work - try: <code>button{border-radius: 0px; border-width: 0px; margin-right: 2px;}</code> (but make sure you paste without any formatting)</p>
 				<button id="saveStyle" onclick="saveStyle()">Save styles to local storage</button>
-				<p id="stylerExplainer">Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside - so you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
+				<p id="stylerExplainer">Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside (only in some browsers) - if it is there, you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
 				
-				<style id="styleyStyle" contenteditable style="display: block; height: 300px; width: 100%; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
+				<style id="styleyStyle" contenteditable spellcheck="false" style="display: block; height: 300px; width: 100%; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
 				header{
 					position: absolute; /*This rule overruled by a media query when the screen is tall enough to have it set to sticky*/
 					top: 0px;
@@ -83,6 +83,7 @@
 				#saveStyle{/*Styler save button*/
 					width: 100px;
 					float: left;
+					margin: 2px;
 				}
 
 				button{ /*all buttons*/
@@ -128,7 +129,7 @@
 					white-space: pre; /*pre = preserve white-space and only break lines at br elements or newline characters. Use pre-wrap if you want text to wrap. "Normal" or "nowrap" will collapse sequences of spaces into once space*/
 					overflow-wrap: normal;
 					overflow-x: auto;
-					font-family: monospace; /*USER pick your own editor font here!! Some options: Courier New, arial, Flux-Regular (the python font here via @font-face), (Phil intentionally only specified a monospace font, leaving font choice to the user whilst )*/
+					font-family: monospace; /*USER pick your own editor font here!! Some options: Courier New, arial, Flux-Regular (the python font here via @font-face), (Phil intentionally only specified a monospace font, leaving font choice to the user)*/
 				}
 
 				#btnJS{ /*Button marked JS*/
