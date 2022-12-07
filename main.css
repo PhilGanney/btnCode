@@ -68,11 +68,13 @@ footer{
 	height: 86px;
 }
 
-#saveStyle{/*Styler save button*/
+.stylerBtns{/*Styler btns*/
 	width: 100px;
 	float: left;
 	margin: 2px;
 }
+
+
 button{
 	height: 66px;
 	/*Todo: min-width without messing btns up*/
@@ -215,6 +217,8 @@ tbody tr td{
 	max-height: 50px;
 	overflow-y: auto;
 	background-color: burlywood;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 @media only screen and (min-height: 468px) {

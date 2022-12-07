@@ -53,7 +53,8 @@
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
 				<p id="stylerImprovementsNeeded" class="improvementsText">🚧 Styler mostly works, but 3 known issues: 1) A theme picker would be nicer UX to get started with 2) Pasted CSS needs to be pasted without any formatting (use ctrl shift v or your OSs equiv) 3)I had an issue recently, that I think I have fixed now but not completely sure, with initial CSS not showing in the styler box - it still worked when I typed some valid CSS in - for example: <code>button{border-radius: 0px; border-width: 0px; margin-right: 2px;}</code></p>
-				<button id="saveStyle" onclick="saveStyle()">Save styles to local storage</button>
+				<button id="defaultStyle" class="stylerBtns" onclick="pickStyle('default')">Set to default style</button>
+				<button id="saveStyle" class="stylerBtns" onclick="saveStyle()">Save styles to local storage</button>
 				<p id="stylerExplainer">Below is a contenteditable style element, that is itself styled via style attribute to display: block, with most of the sites CSS copied inside (only in some browsers) - if it is there, you can overwrite most of the standard CSS on btnCode by finding the relevant rule here and changing the rule values, but removing rules will not remove rules being used</p>
 				
 				<style id="styleyStyle" contenteditable spellcheck="false" style="display: block; height: 300px; width: 100%; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
@@ -80,7 +81,7 @@
 				}
 				
 				
-				#saveStyle{/*Styler save button*/
+				.stylerBtns{/*Styler btns*/
 					width: 100px;
 					float: left;
 					margin: 2px;
@@ -246,6 +247,7 @@
 					overflow-y: auto;
 					background-color: burlywood;
 					margin-top: 0px;
+					margin-bottom: 0px;
 				}
 				
 /*Media Queries at the bottom, so that they overwrite*/
