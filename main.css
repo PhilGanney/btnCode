@@ -211,6 +211,12 @@ tbody tr td{
 	display: block;
 }
 
+.improvementsText{
+	max-height: 50px;
+	overflow-y: auto;
+	background-color: burlywood;
+}
+
 @media only screen and (min-height: 468px) {
 	/*Responsive breakpoints are normally done on min-widths, but in this case it is the height that is the main thing we are working around - most of the outer elements have % widths so the design is pretty responsive even before mediaQueries, but we had a specific issue when typing on mobile - when the onscreen keyboard comes in, the viewport is too short to display the header and footer and still have room to see the btns and the textarea at the same time*/
 	header{
