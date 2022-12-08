@@ -128,7 +128,7 @@ button{ /*all buttons*/
 	font-weight: 700;
 }
 
-.CSharp{ /*Style all the elements for coding C# (interestingly we could use .C\# to get things with class C# but we avoid that symbol within the JS that applies classes anyway)*/
+.CSharp{ /*Style all the elements for coding C# (interestingly we could escape the # with a slash like .C\\# to get things with class C# but we avoid the # symbol within the JS that applies classes anyway)*/
 	background-color: #009404;
 	color: #ffffff;
 }
