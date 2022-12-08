@@ -39,6 +39,7 @@ var greenOnBlackStylez = `
         border-radius: 0px;
         border-width: 0px;
         margin-right: 2px;
+        filter: brightness(0.7); /*Make all the buttons a bit dimmer*/
     }
     #controlBtns{ /*The container div for the row of buttons with controls like Full screen, Empty Editor etc*/
         height: 88px;

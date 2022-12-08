@@ -1,6 +1,7 @@
 var greenOnBlackExtremeStylez = `
 body{
     background-color: black; /*Needed for unstyled margin gaps, eg around the header*/
+    font-family:  terminal, monospace;
 }
 header{
     position: absolute; /*This rule overruled by a media query when the screen is tall enough to have it set to sticky*/
@@ -39,9 +40,9 @@ button, .HTML,.JS, .CSS, .python, .php, .CSharp, .Emoji{ /*all buttons and even 
     border-radius: 0px;
     border-width: 0px;
     margin-right: 2px;
-background: black;
-color: green;
-border: green solid 1px;
+    background: black;
+    color: green;
+    border: green solid 1px;
 }
 #controlBtns{ /*The container div for the row of buttons with controls like Full screen, Empty Editor etc*/
     height: 88px;
@@ -54,7 +55,6 @@ border: green solid 1px;
 }
 #controlBtns button{ /*Each button inside the #controlBtns container div*/
     height: 86px;
-
 }
 #codeBtns{ /*The container div for the row of buttons that add code to the editor*/
     height: 68px; /*This rule overwritten in a media query when screen tall enough that we can afford this container to have space for a chunky scrollbar under the buttons (mobile browsers have skinny scrollbars)*/
@@ -81,7 +81,7 @@ border: green solid 1px;
     white-space: pre; /*pre = preserve white-space and only break lines at br elements or newline characters. Use pre-wrap if you want text to wrap. "Normal" or "nowrap" will collapse sequences of spaces into once space*/
     overflow-wrap: normal;
     overflow-x: auto;
-    font-family: monospace; /*USER pick your own editor font here!! Some options: Courier New, arial, Flux-Regular (the python font here via @font-face), (Phil intentionally only specified a monospace font, leaving font choice to the user whilst )*/
+    font-family:  terminal, monospace; /*USER pick your own editor font here!! Some options: Courier New, arial, Flux-Regular (the python font here via @font-face), (Phil intentionally only specified a monospace font, leaving font choice to the user whilst )*/
 }
 
 #btnJS{ /*Button marked JS*/
@@ -128,7 +128,7 @@ border: green solid 1px;
     font-weight: 700;
 }
 
-.CSharp{ /*Style all the elements for coding C# (interestingly we could escape the # with a slash like .C\# to get things with class C# but we avoid the # symbol within the JS that applies classes anyway)*/
+.CSharp{ /*Style all the elements for coding C# (interestingly we could escape the # with a slash like .C# to get things with class C# but we avoid the # symbol within the JS that applies classes anyway)*/
 
 }
 
@@ -141,10 +141,10 @@ border: green solid 1px;
 
 /*Applying arrow imgs to group buttons, to indicate openable or already open, Note that if something already has a background image (eg btns for the CSS lang with .CSS class using a gradient background) you will need a selector for that + .group and another selector for that + .openGroup and in each selector assign the two relevant background-images in one background-image rule. Use what I did for CSS as a starting point!*/
 .group{
-border-right: green dashed 2px;
+    border-right: green dashed 2px;
 }
 .openGroup{
-border-right: green dotted 2px;
+    border-right: green dotted 2px;
 }
 /*Selects (dropdowns, eg in "Add buttons")*/
 select{
@@ -191,5 +191,4 @@ tbody tr td{
     .improvementsText{
         max-height: 80px;
     }
-}
-`;
+}`;
