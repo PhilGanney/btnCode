@@ -896,6 +896,8 @@ function pickStyle(styleName){
 		value = roundThreeDStylez;
 	} else if (styleName == "greenOnBlack"){
 		value = greenOnBlackStylez;
+	}else if (styleName == "greenOnBlackExtreme"){
+		value = greenOnBlackExtremeStylez;
 	}
 	document.getElementById("styleyStyle").innerText = value;
 }
