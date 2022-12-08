@@ -78,9 +78,9 @@ button{ /*all buttons*/
 	font-size: 1em;
 }
 .JS{/*All of the buttons/elements for coding JS*/
-	background-color: DodgerBlue;
-	/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
+	background-color: #f7e018;  /*this colour was taken from an unofficial (but fairly widely used) logo by Chris Williams. w3C logo colour is #005a9c*/
 	color: #000000;
+	font-weight: 700;
 }
 
 .CSS{/*All of the buttons/elements for coding CSS*/
