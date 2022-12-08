@@ -11,6 +11,8 @@
 		<script src="btnCodeUi.js?20221207"></script>
 		<script src="stylePick\default.js?20221207"></script>
 		<script src="stylePick\rectangular.js?20221207"></script>
+		<script src="stylePick\roundThreeD.js?20221207"></script>
+		<script src="stylePick\greenOnBlack.js?20221207"></script>
 		<!--PostHog-->
 		<script>
 			
@@ -54,13 +56,15 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<p id="stylerImprovementsNeeded" class="improvementsText">🚧 Styler mostly works, but 2 known issues remaining: 1) Could do with 1 or 2 more themes 2) Pasted CSS needs to be pasted without any formatting (use ctrl shift v or your OSs equiv for now) </p>
+				<p id="stylerImprovementsNeeded" class="improvementsText">🚧 Styler mostly works, but 1 known issue remaining:  Pasted CSS needs to be pasted without any formatting (use ctrl shift v or your OSs equiv for now) </p>
 				<button id="defaultStyle" class="stylerBtns" onclick="pickStyle('default')">default style</button>
 				<button id="rectangular" class="stylerBtns" onclick="pickStyle('rectangular')">rectangular style</button>
+				<button id="roundThreeD" class="stylerBtns" onclick="pickStyle('roundThreeD')">round & 3D style</button>
+				<button id="greenOnBlack" class="stylerBtns" onclick="pickStyle('greenOnBlack')">Green Text on Black</button>
 				<button id="saveStyle" class="stylerBtns" onclick="saveStyle()">Save to local storage</button>
 				<p id="stylerExplainer">Below is a contenteditable style element, that is itself styled via style attribute to display: block,  - you can overwrite most of the standard CSS on btnCode by finding the relevant rule and changing values, but removing rules will not remove default rules</p>
 				
-				<style id="styleyStyle" contenteditable spellcheck="false" style="display: block; height: 300px; width: 100%; background-color: white; white-space: pre; overflow: scroll; resize: auto;">
+				<style id="styleyStyle" contenteditable spellcheck="false" style="display: block; height: 300px; width: 100%; white-space: pre; overflow: scroll; resize: auto;">
 				</style>
 			</div>
 			<div id="webDisplayer" class="hide">

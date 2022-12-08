@@ -892,6 +892,10 @@ function pickStyle(styleName){
 		value = defaultStylez;//using z's to differentiate from btns of the same names
 	} else if (styleName == "rectangular"){
 		value = rectangularStylez;
+	} else if (styleName == "roundThreeD"){
+		value = roundThreeDStylez;
+	} else if (styleName == "greenOnBlack"){
+		value = greenOnBlackStylez;
 	}
 	document.getElementById("styleyStyle").innerText = value;
 }
