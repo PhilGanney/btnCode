@@ -27,9 +27,7 @@ footer{
     background-color:#021E1E;
     color: pink;
 }
-h1, h2, h3{
-color: pruple;
-}
+
 
 .stylerBtns{/*Styler btns*/
     width: 100px;
