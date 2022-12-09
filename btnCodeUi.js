@@ -1,5 +1,4 @@
 
-
 /* Replacement for savedCode, which has a format that does not allow for groups within langs or any other data. It also created some limitations on the button text that are probably not ideal
 
 concept 1: all codeBtns and codeGroupBtns of a lang (including codeBtns only to be shown after clicking a codeGroupBtn) are nested right in the lang with keys that do not need to have meaning within code. Values are always an array [int displayNestLevel, str codeBtn/Group, str displayText, either str insertValue OR [codeBtnKeys]]
@@ -239,6 +238,7 @@ function pageLoad(){
 		console.groupEnd();
 	});
 	loadStyle(); //attempt to load styles into the editable <style> from localStorage
+	overwritePasteEvent('#styleyStyle'); //replaces the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
 	console.groupEnd();
 }
 
@@ -672,11 +672,28 @@ function closeFullscreen() {
   }
 }
 
+function overwritePasteEvent(querySelection){
+	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
+	const target = document.querySelector(querySelection);
+
+	target.addEventListener('paste', (event) => {
+		event.preventDefault();
+
+		let paste = (event.clipboardData || window.clipboardData).getData('text/plain'); //NOTE WHERE THE BRACKETS ARE!!
+		const selection = window.getSelection();
+		if (!selection.rangeCount) return;
+		selection.deleteFromDocument();
+		selection.getRangeAt(0).insertNode(document.createTextNode(paste));
+		selection.collapseToEnd();
+	});
+}
+
 function showStyler(){
 	hideBottomStuff();
 	applyShowClass("styler");
 	togglePanelSwitcherBtns("btnStyleBtns");
 }
+
 function showBtnMkr(){
 	hideBottomStuff();
 	applyShowClass("btnMkr");
