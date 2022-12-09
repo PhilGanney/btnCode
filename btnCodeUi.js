@@ -898,6 +898,8 @@ function pickStyle(styleName){
 		value = greenOnBlackStylez;
 	}else if (styleName == "greenOnBlackExtreme"){
 		value = greenOnBlackExtremeStylez;
+	}else if (styleName == "pinkOnBlack"){
+		value = pinkOnBlackStylez;
 	}
 	document.getElementById("styleyStyle").innerText = value;
 }

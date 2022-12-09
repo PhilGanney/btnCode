@@ -9,6 +9,7 @@ var greenOnBlackStylez = `
         text-align: center;
         background-color: #000000F1;
         color: green;
+        z-index: 2; /*Otherwise for some reason, buttons with brightness filters show over the header if scrolling overlaps (at least in Chrome)*/
     }
     main{
         padding-bottom: 70px;
