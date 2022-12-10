@@ -239,6 +239,13 @@ function pageLoad(){
 	});
 	loadStyle(); //attempt to load styles into the editable <style> from localStorage
 	overwritePasteEvent('#styleyStyle'); //replaces the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
+	if(loadFromLocalStorage("usePostHog") == "true"){
+		//if PostHog flag is set to "true" show the disable btn
+		applyShowClass("btnPostHogOff");
+	} else {
+		//if not then show the enable btn
+		applyShowClass("btnPostHogOn");
+	}
 	console.groupEnd();
 }
 
@@ -941,5 +948,34 @@ function loadFromLocalStorage(key){ //general purpose localStorage loading funct
 		return "";
 	} else {
 		return value;
+	}
+}
+
+function enablePostHog(){
+	//This is run either when users start the enable post hog process, or they might come back to finish the process if say they had to save some stuff before the page reload
+	if(loadFromLocalStorage("usePostHog") != "true"){ //only ask about recording if the flag shows they have not already agreed
+		if(confirm("Let PostHog record how you use btnCode? (you can disable it again, whenever you like, as easily as enabling it)")){
+			saveToLocalStorage("usePostHog", "true");
+		} else {
+			return;
+		}
+	}
+
+	if (confirm("To finish activating PostHog, we will need to reload the page. If you have unsaved work you need to copy or download, please choose cancel and manually reload the page later. Is it safe to reload?")){
+		alert("To disable PostHog on btnCode at any time: either click the button marked disable PostHog... or in developer tools remove the local storage item \"usePostHog\" or set the value of it to anything other than true, then reload the page");
+		location.reload();
+	} else {
+		document.getElementById("btnPostHogOn").innerText = "Reload page (to finish activating PostHog)";
+	}
+
+}
+function disablePostHog(){
+	saveToLocalStorage("usePostHog", "false");
+
+	if(confirm("You will need to reload the page to finish disabling it. Reload now??")){
+		alert("Thanks again for letting me see how you use btnCode!");
+		location.reload();
+	} else {
+		alert("PostHog will not run next time you reload the page or in new browser tabs of btnCode, but will continue here for now. Thanks again for letting me see how you use btnCode!");
 	}
 }

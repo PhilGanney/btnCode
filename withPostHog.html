@@ -15,11 +15,12 @@
 		<script src="stylePick\greenOnBlack.js?20221207"></script>
 		<script src="stylePick\greenOnBlackExtreme.js?20221207"></script>
 		<script src="stylePick\pinkOnBlack.js?20221207"></script>
-		<!--PostHog-->
+		
 		<script>
-			
-			!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
-			posthog.init('phc_BCkjGwi9vAPXoqgMMrmkhFx6rqVvuObrjuVdIeIAJ80',{api_host:'https://eu.posthog.com'})
+			if (loadFromLocalStorage("usePostHog") == "true")	{  //Only run this script if the user has opted in for posthog
+				!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+				posthog.init('phc_BCkjGwi9vAPXoqgMMrmkhFx6rqVvuObrjuVdIeIAJ80',{api_host:'https://eu.posthog.com'})
+			}
 		</script>
 	</head>
 	<body onload="pageLoad()">
@@ -50,6 +51,9 @@
 					<button id="btnCreateBtn" onclick="showBtnMkr()">(🚧work in progress) Add buttons</button>
 					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
 					<button id="btnContactInfo" onclick="showContactInfo()">Follow me / contact me</button>
+					<!-- during pageLoad, we switch one of these two PostHog buttons class to "show"-->
+					<button id="btnPostHogOn" class="hide" onclick="enablePostHog()">Enable PostHog product analysis</button>
+					<button id="btnPostHogOff" class="hide" onclick="disablePostHog()">Disable PostHog product analysis</button>
 				</div>
 				<div id="codeBtns">
 				</div>
