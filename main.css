@@ -1,7 +1,11 @@
 /*Todo: make this as easy to understand as the improved on subset of this, found in the styler <style> tag*/
 *{
-	transition: 0.5s;  /*The magic that makes changing style (including when loading the page), a graceful and pleasant change, rather than a sudden, and sometimes jarring thing*/
-	transition: resize 0s; /*But we do not want transitions to slow down reacting to users resizing things like the code area or the style area, as that makes it hard to accurately get the size you want first try*/
+	transition: all 0.5s;  /*The magic that makes changing style (including when loading the page), a graceful and pleasant change, rather than a sudden, and sometimes jarring thing */
+}
+[resize="both"], [resize="horizontal"], [resize="vertical"],
+[style*="resize: both"], [style*="resize: horizontal"], [style*="resize: vertical"],
+textarea{/*Selectors for things that can be resized*/
+	transition: all 0.5s, height 0s, width 0s; /* we do not want transitions to slow down reacting to users resizing things like the code area or the style area, as that makes it hard to accurately get the size you want first try*/
 }
 
 body{
