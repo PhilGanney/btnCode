@@ -5,10 +5,22 @@
 		<title>btnCode</title>
 		<meta name="description" content="btnCode: a very different UI for coding"></meta>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
 		<link rel="icon" href="favicon.ico" type="image/x-icon"></link>
 		<link rel="stylesheet" href="main.css?20221120"> </link>
-		<script src="btnCodeUi.js?20221120"></script>
+		<script src="btnCodeUi.js?20221207"></script>
+		<script src="stylePick\default.js?20221207"></script>
+		<script src="stylePick\rectangular.js?20221207"></script>
+		<script src="stylePick\roundThreeD.js?20221207"></script>
+		<script src="stylePick\greenOnBlack.js?20221207"></script>
+		<script src="stylePick\greenOnBlackExtreme.js?20221207"></script>
+		<script src="stylePick\pinkOnBlack.js?20221207"></script>
+		
+		<script>
+			if (loadFromLocalStorage("usePostHog") == "true")	{  //Only run this script if the user has opted in for posthog
+				!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+				posthog.init('phc_BCkjGwi9vAPXoqgMMrmkhFx6rqVvuObrjuVdIeIAJ80',{api_host:'https://eu.posthog.com'})
+			}
+		</script>
 	</head>
 	<body onload="pageLoad()">
 		<header>
@@ -17,7 +29,7 @@
 		</header>
 		<main>
 			<div id="intro">
-				Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on it in October 2022, inspired by the idea that this UI concept could solve a couple of web dev bugbears of mine. It is, intentionally, a very different way of creating code - another tool in the software developers toolkit. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>. If you'd like to do me a massive favour and let me see how you use this (via PostHog Cloud EU) <a href="withPostHog.html">go here</a>
+				Welcome to btnCode, a pet project by Ipswich based web developer Phil Ganney. I started work on it in October 2022, inspired by the idea that this UI concept could solve a couple of web dev bugbears of mine. It is, intentionally, a very different way of creating code - another tool in the software developers toolkit. If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>. If you'd like to do me a favour and let me see how you use this (via PostHog Cloud EU) use the button marked Enable PostHog product Analysis.
 				<br/><!-- Todo: actual padding/margin here-->
 				<br/>
 				<div id="assets" class="hide">
@@ -38,6 +50,9 @@
 					<button id="btnCreateBtn" onclick="showBtnMkr()">(🚧work in progress) Add buttons</button>
 					<button id="btnStyleBtns" onclick="showStyler()">(coming v soon) Style btnCode 🎨</button>
 					<button id="btnContactInfo" onclick="showContactInfo()">Follow me / contact me</button>
+					<!-- during pageLoad, we switch one of these two PostHog buttons class to "show"-->
+					<button id="btnPostHogOn" class="hide" onclick="enablePostHog()">Enable PostHog product analysis</button>
+					<button id="btnPostHogOff" class="hide" onclick="disablePostHog()">Disable PostHog product analysis</button>
 				</div>
 				<div id="codeBtns">
 				</div>
@@ -46,18 +61,24 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<h3>Styler: 🚧work on this feature has started over in the PostHog beta area🚧</h3>
-				<p>(</p>
-				<style>
+				<button id="defaultStyle" class="stylerBtns" onclick="pickStyle('default')">default style</button>
+				<button id="rectangular" class="stylerBtns" onclick="pickStyle('rectangular')">rectangular style</button>
+				<button id="roundThreeD" class="stylerBtns" onclick="pickStyle('roundThreeD')">round & 3D style</button>
+				<button id="greenOnBlack" class="stylerBtns" onclick="pickStyle('greenOnBlack')">Green Text on Black</button>
+				<button id="greenOnBlackExtreme" class="stylerBtns" onclick="pickStyle('greenOnBlackExtreme')">Green Text on Black Extreme</button>
+				<button id="pinkOnBlackStyle" class="stylerBtns" onclick="pickStyle('pinkOnBlack')">Pink Text on Black</button>				
+				<button id="saveStyle" class="stylerBtns" onclick="saveStyle()">Save to local storage</button>
+				<p id="stylerExplainer">Below is a contenteditable style element, styled via style attribute to display: block,  - you can overwrite most CSS on btnCode by finding the relevant rule and changing values, but removing rules will not remove default rules</p>
+				
+				<style id="styleyStyle" contenteditable spellcheck="false" style="display: block; height: 300px; width: 100%; white-space: pre; overflow: scroll; resize: auto;">
 				</style>
 			</div>
 			<div id="webDisplayer" class="hide">
 				<h3>Show/ download contents of the editor.</h3>
 				<p> Links will appear in table below, once you tap the "Make a downloadable file" button. <br/>(if file name blank, file will be named renameMe.txt<br/> if MIME type blank, it'll reject.)</p>
 				<!--<p>"Show in a div below" will display valid HTML though any CSS within style tags will bleed out to the rest of the page that makes up btnCode, and JS does not seem to run.<br/>
-				I've made attempts at "Show in the iFrame", which in theory is the better way to do this, but nothing worked, so the code is commented until I next decide to bang my head up against the wall of that particular roadblock.
 				</p>
-				<button id="btnDisplayInIframe" onclick="displayInIframe()">(coming soon) Show in the iFrame</button>
+				
 				<button id="btnDisplayInDiv" onclick="displayInDiv()">(prototype) Show in a div below</button>
 				
 				
