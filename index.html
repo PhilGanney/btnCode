@@ -16,6 +16,7 @@
 		<script src="stylePick\greenOnBlack.js?20221207" async></script>
 		<script src="stylePick\greenOnBlackExtreme.js?20221207" async></script>
 		<script src="stylePick\pinkOnBlack.js?20221207" async></script>
+		<script src="stylePick\ghostly.js?20221207" async></script>
 		
 		<script>
 			if (loadFromLocalStorage("usePostHog") == "true")	{ //Only run the PostHog script if the user has opted in for posthog
@@ -74,6 +75,7 @@
 				<button id="greenOnBlack" class="stylerBtns" onclick="pickStyle('greenOnBlack')">Green Text on Black</button>
 				<button id="greenOnBlackExtreme" class="stylerBtns" onclick="pickStyle('greenOnBlackExtreme')">Green Text on Black Extreme</button>
 				<button id="pinkOnBlackStyle" class="stylerBtns" onclick="pickStyle('pinkOnBlack')">Pink Text on Black</button>				
+				<button id="ghostly" class="stylerBtns" onclick="pickStyle('ghostly')">Ghostly</button>	
 				<button id="saveStyle" class="stylerBtns" onclick="saveStyle()">Save to local storage</button>
 				<p id="stylerExplainer">Below is a contenteditable style element, styled via style attribute to display: block,  - you can overwrite most CSS on btnCode by finding the relevant rule and changing values, but removing rules will not remove default rules</p>
 				

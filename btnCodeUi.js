@@ -915,20 +915,17 @@ function loadStyle(){
 
 function pickStyle(styleName){
 	console.log(`style picked: ${styleName}`);
-	//todo: make this good code (Phil brain going brr right now! Code works but yeah..)
-	if (styleName == "default"){
-		value = defaultStylez;//using z's to differentiate from btns of the same names
-	} else if (styleName == "rectangular"){
-		value = rectangularStylez;
-	} else if (styleName == "roundThreeD"){
-		value = roundThreeDStylez;
-	} else if (styleName == "greenOnBlack"){
-		value = greenOnBlackStylez;
-	}else if (styleName == "greenOnBlackExtreme"){
-		value = greenOnBlackExtremeStylez;
-	}else if (styleName == "pinkOnBlack"){
-		value = pinkOnBlackStylez;
-	}
+
+	/*Next line explanation:
+		take the styleName param as a string, 
+		append "Stylez" (our suffix for differentiating styles stored in JS string vars) to it
+		get a var with window scope (a global) with that name
+		and bung the contents of that var into value
+	(thanks to https://stackoverflow.com/a/5613859 for the window[] part)
+	Now this does mean that all of these styles must be a var that fits this pattern, but I think that is likely better than maintaining a switch case or if/else here
+	At time of writing this, all these Stylez vars where in external JS files, in the stylePick directory, linked into the head of index.html
+	*/
+	var value = window[styleName + "Stylez"]; 
 	document.getElementById("styleyStyle").innerText = value;
 }
 
