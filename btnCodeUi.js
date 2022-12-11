@@ -242,9 +242,13 @@ function pageLoad(){
 	if(loadFromLocalStorage("usePostHog") == "true"){
 		//if PostHog flag is set to "true" show the disable btn
 		applyShowClass("btnPostHogOff");
+		//show a thanks message
+		applyShowClass("thanksForUsingPostHogText");
 	} else {
 		//if not then show the enable btn
 		applyShowClass("btnPostHogOn");
+		//show the default message about PostHog
+		applyShowClass("pleaseUsePostHogText");
 	}
 	console.groupEnd();
 }
