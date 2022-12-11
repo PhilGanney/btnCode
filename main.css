@@ -1,4 +1,7 @@
 /*Todo: make this as easy to understand as the improved on subset of this, found in the styler <style> tag*/
+*{
+	transition: 0.5s;  /*The magic that makes changing style (including when loading the page), a graceful and pleasant change, rather than a sudden, and sometimes jarring thing*/
+}
 
 body{
 	width:100%;
@@ -162,6 +165,7 @@ button{
 	background-position: right;
     background-size: 19px;
 	padding-right: 19px;
+	transition: initial; /*The transition effect applied generally, causes toggling group - opengroup and vice versa to look like poor performance*/
 }
 .openGroup{
 	background-image: url("arrowDwn.png");
@@ -169,6 +173,7 @@ button{
 	background-position: right;
     background-size: 19px;
 	padding-right: 19px;
+	transition: initial; /*The transition effect applied generally, causes toggling group - opengroup and vice versa to look like poor performance*/
 }
 
 #codeTA{
