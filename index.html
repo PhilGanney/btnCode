@@ -7,13 +7,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"></link>
 		<link rel="stylesheet" href="main.css?20221120"> </link>
-		<script src="btnCodeUi.js?20221207"></script>
-		<script src="stylePick\default.js?20221207"></script>
-		<script src="stylePick\rectangular.js?20221207"></script>
-		<script src="stylePick\roundThreeD.js?20221207"></script>
-		<script src="stylePick\greenOnBlack.js?20221207"></script>
-		<script src="stylePick\greenOnBlackExtreme.js?20221207"></script>
-		<script src="stylePick\pinkOnBlack.js?20221207"></script>
+		<script src="btnCodeUi.js?20221207"></script><!--The main js file. Hard to tell if this script can safely be async or defer, so until we need to eek out some more performance, or I really feel like getting stuck into that, I am keeping this as is-->
+		<!-- stylePick scripts just have a JS variable holding the CSS for that style, to be copied into the styler if the user tries out that style
+				As such, it is safe for them to be async-->
+		<script src="stylePick\default.js?20221207" async></script>
+		<script src="stylePick\rectangular.js?20221207" async></script>
+		<script src="stylePick\roundThreeD.js?20221207" async></script>
+		<script src="stylePick\greenOnBlack.js?20221207" async></script>
+		<script src="stylePick\greenOnBlackExtreme.js?20221207" async></script>
+		<script src="stylePick\pinkOnBlack.js?20221207" async></script>
 		
 		<script>
 			if (loadFromLocalStorage("usePostHog") == "true")	{ //Only run the PostHog script if the user has opted in for posthog
