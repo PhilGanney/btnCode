@@ -178,7 +178,14 @@ var savedCodeWithGroupsConcept1 = {
 		"langName": "🚧C#🚧",
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
 		"HelloWorld":[0,"codeBtn","Console.WriteLine Hello World","Console.WriteLine(\"Hello World!\");"],
-	},
+	},/*
+	"Ada": {
+		"langName": "🚧Ada🚧",
+		"infoLine": "Phil is adding this gradually as he learns this language, and will uncomment this when it feels ready to show online",
+		"withGrp":[0,"group","with",["withText_IO"]],
+		"withText_IO":[1,"codeBtn","with Ada.Text_IO;","with Ada.Text_IO;"],
+
+	},*/
 	"Emoji": {
 		/* because why not?*/
 		"langName": "Emoji",
@@ -270,6 +277,35 @@ function showLangBtns(){
 		
 	}
 	console.groupEnd;
+}
+
+function languageChange(lang){
+	console.group("languageChange");
+	console.log(lang);
+	
+	codeBtns.innerHTML = "";
+	
+	//Add a button that can show the languages again
+	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
+	addButtons("showLangBtns", "PickLang", ["Change Lang"], "btn", "", codeBtns)
+
+	//remove any 🚧 (used to signify to users the language only has a limited amount of btns in btnCode)
+	lang = lang.replaceAll("%uD83D%uDEA7", "");
+
+	if(lang == "General"){
+		showLangTop("General");
+	} else if (lang == "C%23"){ //C#
+		showLangTop("General");
+		showLangTop("CSharp");
+	} else if (lang == "Misc%20Snippets"){//Misc Snippets
+		showLangTop("General");
+		showLangTop("MiscSnippets");
+	} else {//all the langs that have not been given special cases		
+		showLangTop("General");
+		showLangTop(lang);
+	}
+	
+	console.groupEnd();
 }
 
 /*
@@ -601,38 +637,6 @@ function copyText(){
 		}
 	}*/
 
-	console.groupEnd();
-}
-
-function languageChange(lang){
-	console.group("languageChange");
-	console.log(lang);
-	
-	codeBtns.innerHTML = "";
-	
-	//Add a button that can show the languages again
-	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("showLangBtns", "PickLang", ["Change Lang"], "btn", "", codeBtns)
-	
-	if(lang == "General"){
-		showLangTop("General");
-	} else if (lang == "%uD83D%uDEA7php%uD83D%uDEA7"){ //🚧php🚧
-		showLangTop("General");
-		showLangTop("php");
-	} else if (lang == "%uD83D%uDEA7C%23%uD83D%uDEA7"){ //🚧C#🚧
-		showLangTop("General");
-		showLangTop("CSharp");
-	} else if (lang == "C%23"){ //C#
-		showLangTop("General");
-		showLangTop("CSharp");
-	} else if (lang == "Misc%20Snippets"){//Misc Snippets
-		showLangTop("General");
-		showLangTop("MiscSnippets");
-	} else {//all the langs with names that have no spaces or other characters that get escaped, or any other special cases
-		showLangTop("General");
-		showLangTop(lang);
-	}
-	
 	console.groupEnd();
 }
 

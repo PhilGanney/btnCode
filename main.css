@@ -153,6 +153,11 @@ button{
 	color: #ffffff;
 }
 
+.Ada{ /*(Lang coming soon)*/
+	background-color: #001ec8; /*The blue colour in the larger heart of the bird in the logo (less bland than using black and white, though is it readable?)*/
+	color: #000000;
+}
+
 #btnEmoji{
 	font-size: 1em;
 }

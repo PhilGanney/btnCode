@@ -133,8 +133,8 @@ button{ /*all buttons*/
 	color: #ffffff;
 }
 
-.Ada{ /*(Lang coming soon) anyone who can find an exciting colour scheme from Ada gets, I dunno, free lifetime btnCode usage??. Cool looking language, bland as anything logo!*/
-	background-color: #ffffff;
+.Ada{ /*(Lang coming soon)*/
+	background-color: #001ec8; /*The blue colour in the larger heart of the bird in the logo (less bland than using black and white, though is it readable?)*/
 	color: #000000;
 }
 
