@@ -1,4 +1,4 @@
-/*Todo: make this as easy to understand as the improved on subset of this, found in the styler <style> tag*/
+/*Todo: make this stylesheet as easy to understand as the improved on subset of this, found in stylePick\default.js*/
 *{
 	transition: all 0.5s;  /*The magic that makes changing style (including when loading the page), a graceful and pleasant change, rather than a sudden, and sometimes jarring thing */
 }
@@ -19,6 +19,23 @@ header{
 	width: 100%;
 	text-align: center;
 	background-color: #FFFFFFF1;
+	z-index: 2;
+}
+main{
+	padding-bottom: 70px;
+	width: 98%;
+	padding-left: 1%;
+	padding-right: 1%;
+	background-color: lightGreen;
+	/*z-index:1;  z-index does not take effect when position is static. Phil experimented with this as a potential solution for some themes not working as expected, but overhauling the position of main feels unpractical right now*/
+}
+footer{
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	background-color:#9EFEFE;
+	z-index: 2;
 }
 
 /* For making the favicon (it still needs some work, so I am leaving this temporary code here)
@@ -29,24 +46,6 @@ header{
 	font-size: 32pt;
 	border-radius: 24px;
 }*/
-
-
-main{
-	padding-bottom: 70px;
-	width: 98%;
-	padding-left: 1%;
-	padding-right: 1%;
-	background-color: lightGreen;
-}
-
-footer{
-	position: relative;
-	bottom: 0px;
-	width: 100%;
-	text-align: center;
-	background-color:#9EFEFE;
-	
-}
 
 #codeBtns{
 	height: 68px;
