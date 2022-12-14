@@ -761,16 +761,23 @@ function makeBtnJS(){
 
 function addToSavedCodeObject(){
 	var langToAssignTo = "";
+	var jsKeyText = document.getElementById("jsKey").value;
+	if (jsKeyText == ""){
+		alert("we need a JS key to save this against. Typically a camelCase word that captures what this is (though the Emoji lang uses the relevant emoji)");
+		return;
+	}
 	if (addBtnToLang.value == "Add to new lang"){
 		if (newLangInput.value == ""){
 			alert("Can't add a btn without a lang, but the text box for 'New lang name' seems to be empty, while 'Add to new lang' seems selected.");
 			return;
 		}
 		langToAssignTo = newLangInput.value;
+		savedCodeWithGroupsConcept1[langToAssignTo];//TODO: finish
 	} else {
 		langToAssignTo = addBtnToLang.value;
+		savedCodeWithGroupsConcept1[langToAssignTo] 
 	}
-	console.log("Assigning new btn to: " + langToAssignTo);
+	console.log("Assigned new btn to: " + langToAssignTo);
 	alert("not finished yet");
 }
 
