@@ -148,6 +148,12 @@ button{
 	font-weight: 700;
 }
 
+.Java{
+	background: #ffffff;
+	color: #ec2024;
+	font-weight: 700;
+}
+
 .CSharp{
 	background: linear-gradient(45deg, #189f20 50%, #009404 50%);
 	color: #ffffff;
