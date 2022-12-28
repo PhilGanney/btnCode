@@ -253,7 +253,7 @@ function pageLoad(){
 		console.groupEnd();
 	});
 	loadStyle(); //attempt to load styles into the editable <style> from localStorage
-	overwritePasteEvent('#styleyStyle'); //replaces the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
+	stylerPlainPasteEventOverwrite(); //replaces the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
 	if(loadFromLocalStorage("usePostHog") == "true"){
 		//if PostHog flag is set to "true" show the disable btn
 		applyShowClass("btnPostHogOff");
@@ -695,10 +695,10 @@ function closeFullscreen() {
   }
 }
 
-function overwritePasteEvent(querySelection){
+function stylerPlainPasteEventOverwrite(){
+	//used specifically on the styler, and not currently needed on the editor - confused me when I came back to this codebase after xmas 22, so this function has been renamed and de-generalised from overwritePasteEvent(querySelection);
 	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
-	const target = document.querySelector(querySelection);
-
+	const target = document.querySelector('#styleyStyle'); //document.querySelector(querySelection);
 	target.addEventListener('paste', (event) => {
 		event.preventDefault();
 
