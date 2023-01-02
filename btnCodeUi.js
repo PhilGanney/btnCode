@@ -790,7 +790,7 @@ function addToSavedCodeObject(){
 }
 
 function showSavedCodeObject(){
-	var stringified = JSON.stringify(savedCodeWithGroupsConcept1);
+	var stringified = JSON.stringify(savedCodeWithGroupsConcept1, null, 4); //4 enforces pretty print using 4 spaces
 	stringified = stringified.slice(1, stringified.length - 1);
 	stringified = "(also shown in developer console) \r\n" + stringified;
 	console.log(savedCodeWithGroupsConcept1);
