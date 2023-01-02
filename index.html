@@ -134,7 +134,8 @@
 				<h2>Add buttons - 🚧Work in progress / prototyping🚧</h2>
 				<p>This is in development, with multiple buttons at different stages of working, and several glaringly obvious UX issues that I will be overcoming in due course.</p>
 				<div class="oddStripe">
-					<h2>1 - Simplist prototype: alert out the js for one btn, ready to copy and paste into the source code of btnCode. No facility to add btns to groups through this tool - is simple to do via other text editor/IDE. Functional</h2>
+					<h2>1 - Functionality prototyping:</h2>
+					<p>Prototype 1 Stage a: alert out the js for one btn, ready to copy and paste into the source code of btnCode. No facility to add btns to groups - is simple to do via other text editor/IDE. Functional for btnCodes devs</p>
 					<label for="jsKey">jsKey (use Grp suffix if a group, by convention):</label>
 					<input type="text" id="jsKey" name="jsKey"/>
 					<label for="lvlInt">lvlInt:</label>
@@ -153,6 +154,8 @@
 					<label class="hide" for="textToInsert">Text to be inserted when clicked:</label>
 					<input type="text" id="textToInsert" name="textToInsert" value=""/>
 					<button id="makeBtnJS" onclick="makeBtnJS()">a) SHOW BTN JS OBJECT</button>
+					<p>Prototype 1 Stage b (🚧): insert that into the main JS object within the correct language.  For Phils dev needs, to make this useful for adding batches of new buttons to the code base at a time, also need to be able to toggle showing the entire JS object used for storing code snippets</p>
+					<p>At this stage, (even once stage is complete) this will not save those changes in any permanent way. Will need a stage that uses localStorage</p>
 					<select id="addBtnToLang" onchange="addBtnToLangChange(this)">
 						<option selected>Add to new lang</option>
 					</select>
@@ -160,6 +163,8 @@
 					<input type="text" id="newLangInput" name=""class="show"/>
 					<button id="makeBtnJS" onclick="addToSavedCodeObject()">b)🚧 ADD TO btnCode LOCALLY🚧</button>
 					<button id="showSavedCodeObject" onclick="showSavedCodeObject()">b)🚧 SHOW YOUR CURRENT JS savedCode OBJECT🚧</button>
+					<button id="hideSavedCodeObject" class="hide" onclick="hideSavedCodeObject()">b)Hide your savedCode object</button>
+					<div id="savedCodeObjectDisplay"></div>
 				</div>
 				<h2>Starting notes and assumptions</h2>
 				<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
