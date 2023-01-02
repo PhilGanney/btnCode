@@ -797,10 +797,40 @@ function showSavedCodeObject(){
 	//stick it in savedCodeObjectDisplay
 	document.getElementById("savedCodeObjectDisplay").innerText = stringified;
 	applyShowClass("hideSavedCodeObject");
-	document.getElementById("showSavedCodeObject").innerText = "b) Refresh/reshow the view of your savedCode object";
+	//set up the select for filtering to a given lang
+	document.getElementById("langToShowSavedCodeOf").innerHTML = ""; //remove anything already there to avoid duplicates and out of date options.
+	let selectOptions = [];
+	selectOptions.push("all");
+	let langs = Object.keys(savedCodeWithGroupsConcept1); //Todo: potential code smell here: I have already done getting all the langs into a select (for the dropdown for which lang to add it to)  but a)that only became apparent enough after I had finished writing this bit here and b) that code does not feel easily to hand!
+	for (const lang in langs) {
+		selectOptions.push(langs[lang]);
+	}
+	addToSelect(selectOptions, "langToShowSavedCodeOf"); //fill
+	applyShowClass("langToShowSavedCodeOf"); //show
+
+	document.getElementById("showSavedCodeObject").innerText = "b) Refresh/reshow the view of your savedCode object";//alter button text for correct grammatical tense, and improved UX
+}
+function showLangJSON(){
+	let lang = document.getElementById("langToShowSavedCodeOf").value;
+	if (lang == "all"){ //special case
+		var stringified = JSON.stringify(savedCodeWithGroupsConcept1, null, 4); //4 enforces pretty print using 4 spaces
+		stringified = stringified.slice(1, stringified.length - 1);
+		stringified = "(also shown in developer console) \r\n" + stringified;
+		console.log(savedCodeWithGroupsConcept1);
+		//stick it in savedCodeObjectDisplay
+		document.getElementById("savedCodeObjectDisplay").innerText = stringified;
+		return;
+	}
+	var stringified = JSON.stringify(savedCodeWithGroupsConcept1[lang], null, 4); //4 enforces pretty print using 4 spaces - should match number in equivalent line in function showSavedCodeObject()
+	stringified = stringified.slice(1, stringified.length - 1);
+	stringified = "(also shown in developer console) \r\n" + stringified;
+	console.log(savedCodeWithGroupsConcept1[lang]);
+	//stick it in savedCodeObjectDisplay
+	document.getElementById("savedCodeObjectDisplay").innerText = stringified;
 }
 function hideSavedCodeObject(){
 	applyHideClass("hideSavedCodeObject");
+	applyHideClass("langToShowSavedCodeOf");
 	document.getElementById("savedCodeObjectDisplay").innerText = "";
 }
 
