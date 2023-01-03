@@ -790,12 +790,7 @@ function addToSavedCodeObject(){
 }
 
 function showSavedCodeObject(){
-	var stringified = JSON.stringify(savedCodeWithGroupsConcept1, null, 4); //4 enforces pretty print using 4 spaces
-	stringified = stringified.slice(1, stringified.length - 1);
-	stringified = "(also shown in developer console) \r\n" + stringified;
-	console.log(savedCodeWithGroupsConcept1);
-	//stick it in savedCodeObjectDisplay
-	document.getElementById("savedCodeObjectDisplay").innerText = stringified;
+	coreShowJson(savedCodeWithGroupsConcept1);
 	applyShowClass("hideSavedCodeObject");
 	//set up the select for filtering to a given lang
 	document.getElementById("langToShowSavedCodeOf").innerHTML = ""; //remove anything already there to avoid duplicates and out of date options.
@@ -812,19 +807,17 @@ function showSavedCodeObject(){
 }
 function showLangJSON(){
 	let lang = document.getElementById("langToShowSavedCodeOf").value;
-	if (lang == "all"){ //special case
-		var stringified = JSON.stringify(savedCodeWithGroupsConcept1, null, 4); //4 enforces pretty print using 4 spaces
-		stringified = stringified.slice(1, stringified.length - 1);
-		stringified = "(also shown in developer console) \r\n" + stringified;
-		console.log(savedCodeWithGroupsConcept1);
-		//stick it in savedCodeObjectDisplay
-		document.getElementById("savedCodeObjectDisplay").innerText = stringified;
+	if (lang == "all"){ //special case where we want to show the full set
+		coreShowJson(savedCodeWithGroupsConcept1);
 		return;
 	}
-	var stringified = JSON.stringify(savedCodeWithGroupsConcept1[lang], null, 4); //4 enforces pretty print using 4 spaces - should match number in equivalent line in function showSavedCodeObject()
+	coreShowJson(savedCodeWithGroupsConcept1[lang]);
+}
+function coreShowJson(json){ //Here to be DRY and make it easier to keep things consistent between showSavedCodeObject() and showLangJSON()
+	var stringified = JSON.stringify(json, null, 4); //4 enforces pretty print using 4 spaces
 	stringified = stringified.slice(1, stringified.length - 1);
 	stringified = "(also shown in developer console) \r\n" + stringified;
-	console.log(savedCodeWithGroupsConcept1[lang]);
+	console.log(json);
 	//stick it in savedCodeObjectDisplay
 	document.getElementById("savedCodeObjectDisplay").innerText = stringified;
 }
