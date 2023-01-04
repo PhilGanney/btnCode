@@ -157,10 +157,14 @@
 					<p>Prototype 1 Stage b (🚧): insert that into the main JS object within the correct language.  For Phils dev needs, to make this useful for adding batches of new buttons to the code base at a time, also need to be able to toggle showing the entire JS object used for storing code snippets</p>
 					<p>At this stage, (even once stage is complete) this will not save those changes in any permanent way. Will need a stage that uses localStorage</p>
 					<select id="addBtnToLang" onchange="addBtnToLangChange(this)">
-						<option selected>Add to new lang</option>
+						
 					</select>
 					<label id="newLangInputlbl" for="newLangInput" class="show">New lang name:</label>
 					<input type="text" id="newLangInput" name=""class="show"/>
+					<select id="addBtnToGrp" onchange="addBtnToGrpChange(this)">
+						<option selected>Add to root of the lang</option>
+						<!--<option>Add to new group</option> <!-- a more advanced dev step than I want to be worrying about right now (Todo)-->
+					</select>
 					<button id="makeBtnJS" onclick="addToSavedCodeObject()">b)🚧 ADD TO btnCode LOCALLY🚧</button>
 					<button id="showSavedCodeObject" onclick="showSavedCodeObject()">b)SHOW YOUR CURRENT JS savedCode OBJECT</button>
 					<button id="hideSavedCodeObject" class="hide" onclick="hideSavedCodeObject()">b)Hide your savedCode object</button>

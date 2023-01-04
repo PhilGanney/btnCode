@@ -725,8 +725,11 @@ function showBtnMkr(){
 	applyShowClass("btnMkr");
 	togglePanelSwitcherBtns("btnCreateBtn");
 	
+	let langChoices = ["Add to new lang"];
 	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
-	addToSelect(allLangs,"addBtnToLang");
+	langChoices = langChoices.concat(allLangs);
+	document.getElementById("addBtnToLang").innerHTML = ""; //wipe before filling, to prevent adding a copy of the list to an existing copies each time user switches tab
+	addToSelect(langChoices,"addBtnToLang");
 }
 
 function addBtnToLangChange(el){
