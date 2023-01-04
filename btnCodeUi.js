@@ -219,6 +219,9 @@ var savedCodeWithGroupsConcept1 = {
 		"digits": [0, "codeBtn", "digits", "0123456789"],
 		"alphabet": [0, "codeBtn", "english alphabet", "abcdefghijklmnopqrstuvwxyz"],
 		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+	},
+	"AddBtnsToMe": {
+		"langName": "🚧Add&nbsp;to&nbsp;me🚧",
 	},/*,	
 
 	"MySQL": {

@@ -136,23 +136,23 @@
 				<div class="oddStripe">
 					<h2>1 - Functionality prototyping:</h2>
 					<p>Prototype 1 Stage a: alert out the js for one btn, ready to copy and paste into the source code of btnCode. No facility to add btns to groups - is simple to do via other text editor/IDE. Functional for btnCodes devs</p>
-					<label for="jsKey">jsKey (use Grp suffix if a group, by convention):</label>
-					<input type="text" id="jsKey" name="jsKey"/>
 					<label for="lvlInt">lvlInt:</label>
 					<select id="lvlInt">
-						<option selected value="0">0 (top)</option>
-						<option value="1">1 (in a group)</option>
+						<option selected value="0">0 (shown on lang load)</option>
+						<option value="1">1 (in a group or hidden)</option>
 					</select>
 					<label for="btnType">btnType:</label>
 					<select id="btnType">
 						<option selected>group</option>
 						<option>codeBtn</option>
 					</select>
-					<label for="btnTextInput">Text to go on the btn:</label>
+					<label for="btnTextInput">Text on the btn:</label>
 					<input type="text" id="btnTextInput" name="btnTextInput"/>
 					<label class="show" for="textToInsert">If this is a codeBtn, put the text to be inserted when clicked here (for now btns must be added into groups manually):</label>
 					<label class="hide" for="textToInsert">Text to be inserted when clicked:</label>
-					<input type="text" id="textToInsert" name="textToInsert" value=""/>
+					<input type="text" id="textToInsert" name="textToInsert" value=""/><br/>
+					<label for="jsKey">jsKey (use Grp suffix if a group, by convention):</label>
+					<input type="text" id="jsKey" name="jsKey"/>
 					<button id="makeBtnJS" onclick="makeBtnJS()">a) SHOW BTN JS OBJECT</button>
 					<p>Prototype 1 Stage b (🚧): insert that into the main JS object within the correct language.  For Phils dev needs, to make this useful for adding batches of new buttons to the code base at a time, also need to be able to toggle showing the entire JS object used for storing code snippets</p>
 					<p>At this stage, (even once stage is complete) this will not save those changes in any permanent way. Will need a stage that uses localStorage</p>
