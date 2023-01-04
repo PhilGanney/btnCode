@@ -992,15 +992,6 @@ function saveToLocalStorage(key,value){
 	}
 }
 
-function loadFromLocalStorage(key){ //general purpose localStorage loading function (it is often more useful to have more specific functions for loading particular keys)
-	let value = localStorage.getItem(key);
-	if(value == ""){
-		console.log(`tried to load: ${key} but found nothing`);
-		return "";
-	} else {
-		return value;
-	}
-}
 
 function enablePostHog(){
 	//This is run either when users start the enable post hog process, or they might come back to finish the process if say they had to save some stuff before the page reload
