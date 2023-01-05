@@ -333,8 +333,8 @@ function showLangTop(lang){
 	console.log(savedCodeWithGroupsConcept1[lang]);
 	
 	var btnKey = "";
-	var btnType = "";
-	var btnClass = "";
+	//var btnType = ""; //todo: linter shows these never get used. Presumably was thinking of using them in the loop for some purpose, but I have no idea right now!
+	//var btnClass = "";
 	for (val in langDescendantKeys) {
 		btnKey = langDescendantKeys[val];
 		console.log(savedCodeWithGroupsConcept1[lang][btnKey]);
@@ -725,23 +725,30 @@ function showBtnMkr(){
 	applyShowClass("btnMkr");
 	togglePanelSwitcherBtns("btnCreateBtn");
 	
-	let langChoices = ["Add to new lang"];
-	const allLangs = Object.keys(savedCodeWithGroupsConcept1);
-	langChoices = langChoices.concat(allLangs);
-	document.getElementById("addBtnToLang").innerHTML = ""; //wipe before filling, to prevent adding a copy of the list to an existing copies each time user switches tab
-	addToSelect(langChoices,"addBtnToLang");
+	setupSelect("addBtnToLang", ["Add to new lang"], Object.keys(savedCodeWithGroupsConcept1)); //todo: fragile code! if "Add to new lang" altered, you must update function addBtnToLangChange to match!
 }
-
+function setupSelect(selectID, defaultOptions, extraOptions){
+	let langChoices = defaultOptions;
+	langChoices = langChoices.concat(extraOptions);
+	document.getElementById(selectID).innerHTML = ""; //wipe before filling, to prevent adding a copy of the list to an existing copies each time user switches tab
+	addToSelect(langChoices, selectID);
+}
 function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 
 	console.log(el.value);
-	if (el.value == "Add to new lang"){
+	if (el.value == "Add to new lang"){ //todo: fragile code! This line must match a corresponding value in the select. If the UI is altered, so must this line, or else this if will not trigger
 		applyShowClass("newLangInputlbl");
 		applyShowClass("newLangInput");
-	} else {
+	} else { //chosen an existing lang
 		applyHideClass("newLangInputlbl");
 		applyHideClass("newLangInput");
+		let groups = getGroups(el.value);
+		setupSelect("addBtnToGrp", ["Add to root of the lang"], groups);
 	}
+}
+function getGroups(lang){
+	console.log("getGroups not finished")
+	return [];
 }
 
 function makeBtnJS(){
