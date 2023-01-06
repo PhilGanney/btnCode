@@ -780,7 +780,10 @@ function getGroups(lang){
 	return groups;
 }
 
-function makeBtnJS(){
+/**
+ * Makes the array for a new btn, from the inputs. Originally (in early prototyping) alerted out the result for pasting into the codebase.
+ */
+function makeBtnDataArray(){
 	//groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]
 	//codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]
 	/*	Some examples of what we are making:
@@ -788,7 +791,7 @@ function makeBtnJS(){
 	
 	*/
 	//.replace(/[<]/g,"&lt;")
-	var outputObj = {};
+	
 	var textOnBtn = btnTextInput.value; //need to process input: no < or >
 	
 	textOnBtn = textOnBtn.replace(/[<]/g,"&lt;");
@@ -803,9 +806,12 @@ function makeBtnJS(){
 		alert("code pathway not found for that value of btnType");
 	}
 
-	outputObj[jsKey.value] = [parseInt(lvlInt.value), btnType.value, textOnBtn, lastPart];
-	
-	var stringified = JSON.stringify(outputObj);
+	return [parseInt(lvlInt.value), btnType.value, textOnBtn, lastPart];
+}
+function alertBtnJS(){
+	let btnObj = {};
+	btnObj[jsKey.value] = makeBtnDataArray();
+	var stringified = JSON.stringify(btnObj);
 	alert(stringified.slice(1, stringified.length - 1));
 }
 
@@ -816,19 +822,20 @@ function addToSavedCodeObject(){
 		alert("we need a JS key to save this against. Typically a camelCase word that captures what this is (though the Emoji lang uses the relevant emoji)");
 		return;
 	}
+	console.log(makeBtnDataArray());
 	if (addBtnToLang.value == "Add to new lang"){
 		if (newLangInput.value == ""){
 			alert("Can't add a btn without a lang, but the text box for 'New lang name' seems to be empty, while 'Add to new lang' seems selected.");
 			return;
 		}
 		langToAssignTo = newLangInput.value;
-		savedCodeWithGroupsConcept1[langToAssignTo];//TODO: finish
+		//savedCodeWithGroupsConcept1[langToAssignTo] //TODO: WORKING HERE
 	} else {
 		langToAssignTo = addBtnToLang.value;
-		savedCodeWithGroupsConcept1[langToAssignTo] 
 	}
+	savedCodeWithGroupsConcept1[langToAssignTo][jsKeyText] = makeBtnDataArray();
 	console.log("Assigned new btn to: " + langToAssignTo);
-	alert("not finished yet");
+	//alert("not finished yet");
 }
 
 function showSavedCodeObject(){
