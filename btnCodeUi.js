@@ -512,6 +512,11 @@ function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSu
 	console.groupEnd();
 }
 
+/**
+ * Finds a select element by ID and adds options from the strings passed in items. DOES NOT EMPTY FIRST. Consider setupSelect if that is needed. 
+ * @param {Array<string>} items 
+ * @param {ID} selectId 
+ */
 function addToSelect(items, selectId){
 	//Pasted in from my tearounder codebase
 //<option value="item">item</option>
@@ -520,6 +525,18 @@ function addToSelect(items, selectId){
     for (indexes in items){
         selectElement.innerHTML += "<option value=\"" + items[indexes] + "\">" + items[indexes] + "</option>" ;
     }
+}
+/**
+ * Finds a select element by ID, empties it, and refills with defaultOptions showing first, followed by extraOptions
+ * @param {id} selectID 
+ * @param {Array<string>} defaultOptions 
+ * @param {Array<string>} extraOptions 
+ */
+function setupSelect(selectID, defaultOptions, extraOptions){
+	let options = defaultOptions;
+	options = options.concat(extraOptions);
+	document.getElementById(selectID).innerHTML = ""; //wipe before filling, to prevent adding a copy of the list to an existing copies each time user switches tab
+	addToSelect(options, selectID);
 }
 
 function makeCode(key){
@@ -726,18 +743,6 @@ function showBtnMkr(){
 	togglePanelSwitcherBtns("btnCreateBtn");
 	
 	setupSelect("addBtnToLang", ["Add to new lang"], Object.keys(savedCodeWithGroupsConcept1)); //todo: fragile code! if "Add to new lang" altered, you must update function addBtnToLangChange to match!
-}
-/**
- * Finds a select element by ID, empties it, and refills with defaultOptions showing first, followed by extraOptions
- * @param {id} selectID 
- * @param {Array<string>} defaultOptions 
- * @param {Array<string>} extraOptions 
- */
-function setupSelect(selectID, defaultOptions, extraOptions){
-	let options = defaultOptions;
-	options = options.concat(extraOptions);
-	document.getElementById(selectID).innerHTML = ""; //wipe before filling, to prevent adding a copy of the list to an existing copies each time user switches tab
-	addToSelect(options, selectID);
 }
 function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 
