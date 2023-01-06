@@ -727,11 +727,17 @@ function showBtnMkr(){
 	
 	setupSelect("addBtnToLang", ["Add to new lang"], Object.keys(savedCodeWithGroupsConcept1)); //todo: fragile code! if "Add to new lang" altered, you must update function addBtnToLangChange to match!
 }
+/**
+ * Finds a select element by ID, empties it, and refills with defaultOptions showing first, followed by extraOptions
+ * @param {id} selectID 
+ * @param {Array<string>} defaultOptions 
+ * @param {Array<string>} extraOptions 
+ */
 function setupSelect(selectID, defaultOptions, extraOptions){
-	let langChoices = defaultOptions;
-	langChoices = langChoices.concat(extraOptions);
+	let options = defaultOptions;
+	options = options.concat(extraOptions);
 	document.getElementById(selectID).innerHTML = ""; //wipe before filling, to prevent adding a copy of the list to an existing copies each time user switches tab
-	addToSelect(langChoices, selectID);
+	addToSelect(options, selectID);
 }
 function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 
