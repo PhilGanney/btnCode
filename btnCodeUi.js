@@ -735,7 +735,7 @@ function setupSelect(selectID, defaultOptions, extraOptions){
 }
 function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 
-	console.log(el.value);
+	//console.log(el.value);
 	if (el.value == "Add to new lang"){ //todo: fragile code! This line must match a corresponding value in the select. If the UI is altered, so must this line, or else this if will not trigger
 		applyShowClass("newLangInputlbl");
 		applyShowClass("newLangInput");
@@ -747,8 +747,26 @@ function addBtnToLangChange(el){
 	}
 }
 function getGroups(lang){
-	console.log("getGroups not finished")
-	return [];
+	//console.log(savedCodeWithGroupsConcept1[lang]); //shows everything inside the given lang
+	//get the buttons for lang - Note that without wrapping in Object.keys you get the value of each key instead. This var previously called langBtns but that became horribly confusing as context changed
+	var langDescendantKeys = Object.keys(savedCodeWithGroupsConcept1[lang]);
+	//console.log(langDescendantKeys);
+	//console.log(savedCodeWithGroupsConcept1[lang]);
+	
+	var btnKey = "";
+	let groups = [];
+	
+	for (val in langDescendantKeys) {
+		btnKey = langDescendantKeys[val];
+		
+		//we store what type of btn it is in index 1 of the btns outer array
+		//so just need to look there for the string "group"
+		if(savedCodeWithGroupsConcept1[lang][btnKey][1] == "group"){
+			//console.log("group found: " + langDescendantKeys[val]);
+			groups.push(langDescendantKeys[val]); //todo: there is probably a fancier or faster way of doing this.
+		}
+	}
+	return groups;
 }
 
 function makeBtnJS(){
