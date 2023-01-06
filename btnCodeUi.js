@@ -754,7 +754,7 @@ function addBtnToLangChange(el){
 		applyHideClass("newLangInputlbl");
 		applyHideClass("newLangInput");
 		let groups = getGroups(el.value);
-		setupSelect("addBtnToGrp", ["Add to root of the lang"], groups);
+		setupSelect("addBtnToGrp", ["don't add to a group"], groups);
 	}
 }
 function getGroups(lang){
