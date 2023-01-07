@@ -748,11 +748,15 @@ function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 
 	//console.log(el.value);
 	if (el.value == "Add to new lang"){ //todo: fragile code! This line must match a corresponding value in the select. If the UI is altered, so must this line, or else this if will not trigger
-		applyShowClass("newLangInputlbl");
-		applyShowClass("newLangInput");
+		applyShowClass("newLangsLangNameInputLbl");
+		applyShowClass("newLangsLangNameInput");
+		applyShowClass("newLangsKeyInputLbl");
+		applyShowClass("newLangsKeyInput");
 	} else { //chosen an existing lang
-		applyHideClass("newLangInputlbl");
-		applyHideClass("newLangInput");
+		applyHideClass("newLangsLangNameInputLbl");
+		applyHideClass("newLangsLangNameInput");
+		applyHideClass("newLangsKeyInputLbl");
+		applyHideClass("newLangsKeyInput");
 		let groups = getGroups(el.value);
 		setupSelect("addBtnToGrp", ["don't add to a group"], groups);
 	}
@@ -824,18 +828,19 @@ function addToSavedCodeObject(){
 	}
 	console.log(makeBtnDataArray());
 	if (addBtnToLang.value == "Add to new lang"){
-		if (newLangInput.value == ""){
-			alert("Can't add a btn without a lang, but the text box for 'New lang name' seems to be empty, while 'Add to new lang' seems selected.");
+		if (newLangsLangNameInput.value == "" || newLangsKeyInput.value == ""){
+			alert("Can't add a btn without a lang, but at least one text box for 'New lang name' seems to be empty, while 'Add to new lang' seems selected.");
 			return;
 		}
-		langToAssignTo = newLangInput.value;
-		//savedCodeWithGroupsConcept1[langToAssignTo] //TODO: WORKING HERE
+		langToAssignTo = newLangsKeyInput.value; //TODO: validation!! I believe this has been done before within adding btns
+
+		savedCodeWithGroupsConcept1[langToAssignTo] = {};
+		savedCodeWithGroupsConcept1[langToAssignTo]["langName"] = newLangsLangNameInput.value; 
 	} else {
 		langToAssignTo = addBtnToLang.value;
 	}
 	savedCodeWithGroupsConcept1[langToAssignTo][jsKeyText] = makeBtnDataArray();
 	console.log("Assigned new btn to: " + langToAssignTo);
-	//alert("not finished yet");
 }
 
 function showSavedCodeObject(){
