@@ -221,8 +221,12 @@ var savedCodeWithGroupsConcept1 = {
 		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
 	},
 	"AddBtnsToMe": {
-		"langName": "🚧Add&nbsp;to&nbsp;me🚧",
-	},/*,	
+        "langName": "🚧Add&nbsp;to&nbsp;me🚧"
+    },
+    "foo": {
+        "langName": "foo🚧",
+        "barGrp": [0,"group","bar",[]]
+    }/*,	
 
 	"MySQL": {
 		
@@ -280,12 +284,15 @@ function showLangBtns(){
 	
 	document.getElementById("codeBtns").innerHTML = "";
 	
+	let btnID = "";
 	for (i in allLangs){
 		console.log(savedCodeWithGroupsConcept1[allLangs[i]]["langName"]);
 		
-		//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-		addButtons("languageChange", allLangs[i], [savedCodeWithGroupsConcept1[allLangs[i]]["langName"]], "btn", "", document.getElementById("codeBtns"));
-		
+		//for ref from createLangDescendantBtn
+		//drawBtn("btn" + lang + btnKey, btnClass, btnText, langDescendantClick, [btnKey], position, elRelativeTo)
+
+		btnID = "btn" + allLangs[i];
+		drawBtn(btnID, allLangs[i], savedCodeWithGroupsConcept1[allLangs[i]]["langName"], languageChange, [allLangs[i]], "beforeend", document.getElementById("codeBtns"));
 	}
 	console.groupEnd;
 }
@@ -305,12 +312,6 @@ function languageChange(lang){
 
 	if(lang == "General"){
 		showLangTop("General");
-	} else if (lang == "C%23"){ //C#
-		showLangTop("General");
-		showLangTop("CSharp");
-	} else if (lang == "Misc%20Snippets"){//Misc Snippets
-		showLangTop("General");
-		showLangTop("MiscSnippets");
 	} else {//all the langs that have not been given special cases		
 		showLangTop("General");
 		showLangTop(lang);
@@ -443,16 +444,29 @@ function runEvent(callback, args){
 	callback.apply(this, args);
 }
 
-/* About the "position" param below - 
-	There are four acceptable inputs, directly from the Element Web API, basically setting which side of the opening or closing tags of the element you are placing the new btn in relation to:
-		'beforebegin': Before the element in elRelativeTo itself.
-		'afterbegin': Just inside the element in elRelativeTo, before its first child.
-		'beforeend': Just inside the element in elRelativeTo, after its last child.
-		'afterend': After the element in elRelativeTo itself.
-	The key to understanding that param is understanding insertAdjacentElement()
-	https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
-
-*/
+/**
+ * Draws a btn, in a position defined in the position param in relation to an element in the elRelativeTo param
+ * @param {string} id <button id=""
+ * @param {string} btnClass <button class=""
+ * @param {string} btnText innerHTML
+ * @param {*} clickFunc function to run in the click event
+ * @param {array} clickArgs args for the function, in an array
+ * @param {string} position 
+ *  There are four acceptable inputs for the "position" param, directly from the Element Web API, setting which side of the opening or closing tag of the element you are placing the new btn in relation to:
+ * 
+ *  	'beforebegin': Before the element in elRelativeTo itself. ("before" the "begin" tag)
+ * 		<newBtn></newBtn><elRelativeTo></elRelativeTo>
+ *
+ *  	'afterbegin': Just inside the element in elRelativeTo, before its first child. ("after" the "begin" tag)
+ * 		<elRelativeTo><newBtn></newBtn><siblingOfNewBtn/></elRelativeTo>
+ *
+ *  	'beforeend': Just inside the element in elRelativeTo, after its last child. ("before" the "end" tag)
+ * 		<elRelativeTo><siblingOfNewBtn/><newBtn></newBtn></elRelativeTo>
+ * 	
+ *  	'afterend': After the element in elRelativeTo itself. ("after" the "end" tag)
+ * 		<elRelativeTo></elRelativeTo><newBtn></newBtn>
+ * @param {element} elRelativeTo an element to position the new btn next to or within
+ */
 function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelativeTo){
 	console.groupCollapsed("drawBtn");
 	let btn = document.createElement("button");
@@ -1081,5 +1095,23 @@ function disablePostHog(){
 		location.reload();
 	} else {
 		alert("PostHog will not run next time you reload the page or in new browser tabs of btnCode, but will continue here for now. Thanks again for letting me see how you use btnCode!");
+	}
+}
+
+/**
+ * returns true if key is a key of jsonObject
+ * possibly not in use, left in here in case it becomes useful later
+ * - was written to be called within function languageChange(lang) as part of a more flexible workaround for langs that need langNames different to their keys
+ * - committed as part of "hardcoded langName conversion not needed" on 7th Jan 2023
+ * - but during that work I realised I did not need to go that approach, as I could pass the key into the function instead of the langName by altering the code for langBtn generation
+ * @param {string} key 
+ * @param {JSON} jsonObject 
+ * @returns boolean
+ */
+function isKeyOfJsonObject(key, jsonObject){ //todo: (after say 7th July 2023), check if this func is in use yet, and remove from codebase if not
+	if (Object.keys(jsonObject).contains(key)){
+		return true;
+	} else {
+		return false;
 	}
 }

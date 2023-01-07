@@ -109,9 +109,6 @@ button{ /*all buttons*/
 	font-family: Flux-Regular;
 	src: url("fonts/FluxRegular.otf") format("opentype");
 }
-#btnpython{ /*style the main button for Python (id is lowercase throughout because it is generated based on the button text which is based on the Python logo)*/
-	font-size: 1.2em; /*Even with the extra size from the class, it still looked small compared with buttons next to it (perhaps due to being lowercase next to uppercase as well as the font. Cannot use 1.2em in the entire class though, otherwise the text on some buttons overflows vertically)*/
-}
 .python{ /*Style all the elements for coding Python. Lowercase throughout*/
 	/*Styling taken from python.org homepage*/
 	background: #1c3b56;
