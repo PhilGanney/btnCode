@@ -550,7 +550,7 @@ function setupSelect(selectID, defaultOptions, extraOptions){
 function makeCode(key){
 	console.group("makeCode: " + key);
 	//get the button that was clicked
-	var btnClicked = event.target || event.srcElement; //linter in VS Code marks parts of this line as deprecated: event is still in use according to MDN and I believe the || event.srcElement part is there for backwards compatibility with IE, probably not strictlye necy for btnCode since there is no real requirement for IE support, but I don't think this line can hurt
+	var btnClicked = event.target || event.srcElement; //linter in VS Code marks parts of this line as deprecated: event is still in use according to MDN and I believe the || event.srcElement part is there for backwards compatibility with IE, probably not strictly necy for btnCode since there is no real requirement for IE support, but I don't think this line can hurt
 	//get the lang from the class
 	console.log(btnClicked.className);
 	//get the text
@@ -561,8 +561,6 @@ function makeCode(key){
 	
 	console.groupEnd();
 }
-
-
 /**
  * inserts text to where the cursor is inside a text area (possibly inputs as well, but that is untested)
  * preserves coding indentation provided that indentation is consistent per line (ie either spaces or tabs but not a mix)
@@ -655,7 +653,7 @@ function insertTextAtCursor(el, text) {
 }
 
 
-function copyText(){
+function copyText(){ //TODO: NEXT, CLEAR UP THIS MESS OF CODE!
 	console.group("copyText");
 	console.log("Attempting to copy:");
 	console.log(codeTA.value);
@@ -706,6 +704,9 @@ function emptyEditor(){
 	}
 }
 
+/**
+ * toggles the browser between full screen and not full screen
+ */
 function toggleFullscreen(){
 	if(is_fullscreen()){
 		closeFullscreen();
@@ -713,13 +714,19 @@ function toggleFullscreen(){
 		openFullscreen();
 	}
 }
-
+/**
+ * shorthand for document.fullscreenElement != null
+ * true if fullscreen
+ * false if not fullscreen
+ * @returns 
+ */
 function is_fullscreen(){
     return document.fullscreenElement != null;
 }
-
+/**
+ * opens the browser in full screen - particularly wanted on mobile so that we have a bit more screen to work with
+ */
 function openFullscreen() {
-//opens the browser in full screen - particularly wanted on mobile so that we have a bit more screen to work with
 //found on https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_fullscreen
 	var elem = document.getElementById("btnCodeHTML");
 	if (elem.requestFullscreen) {
@@ -730,6 +737,10 @@ function openFullscreen() {
 		elem.msRequestFullscreen();
 	}
 }
+/**
+ * Makes the browser exit from full screen.
+ * Limitation: only works if opened to full screen via our JS and not via f11
+ */
 function closeFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
@@ -740,8 +751,13 @@ function closeFullscreen() {
   }
 }
 
+/**
+ * used specifically on the styler, and not currently needed on the editor,
+ *	- makes sure that any pasting is done as plain text
+ *	- old name confused me when I came back to this codebase after xmas 22,
+ *		- so this function has been renamed and de-generalised from overwritePasteEvent(querySelection);
+ */
 function stylerPlainPasteEventOverwrite(){
-	//used specifically on the styler, and not currently needed on the editor - confused me when I came back to this codebase after xmas 22, so this function has been renamed and de-generalised from overwritePasteEvent(querySelection);
 	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
 	const target = document.querySelector('#styleyStyle'); //document.querySelector(querySelection);
 	target.addEventListener('paste', (event) => {
