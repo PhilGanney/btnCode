@@ -274,7 +274,6 @@ function pageLoad(){
 	}
 	console.groupEnd();
 }
-
 //Coder beware: This func (and the UX change it was added to help create) introduces a new meaning of "LangBtn": a button with a name of a coding language on it that triggers showing the code btns (previouslty called LangBtns) for that particular language.
 function showLangBtns(){
 	console.groupCollapsed("showLangBtns");
@@ -439,11 +438,6 @@ function createLangDescendantBtn(lang, btnKey, position, elRelativeTo){
 
 }
 
-//used in eventlisteners for elements created via JS, to get round the issue of passing functions in at element creation, with their params, but without calling those functions at the moment.
-function runEvent(callback, args){
-	callback.apply(this, args);
-}
-
 /**
  * Draws a btn, in a position defined in the position param in relation to an element in the elRelativeTo param
  * @param {string} id <button id=""
@@ -485,18 +479,9 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
 	
 	console.groupEnd();
 }
-
-function removeElementById(id){
-	console.groupCollapsed("removeElementById: " + id);
-	if (!!document.getElementById(id)){
-		console.log("Found element with id: " + id + " removing it now.");
-		document.getElementById(id).remove();
-	} else {
-		console.warn("Could not find element with id: " + id);
-	}
-	console.groupEnd();
-}
-
+/**
+ * Deprecating due to inflexibility, use drawBtn instead
+ */
 function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv){
     console.group("addButtons");
 	//Logging the arguments TODO: remove this debug code
@@ -525,6 +510,15 @@ function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSu
     }
 	console.groupEnd();
 }
+/**
+ * used in eventlisteners for elements created via JS, to get round the issue of passing functions in at element creation, with their params, but without calling those functions at the moment.
+ * @param {*} callback 
+ * @param {*} args 
+ */
+function runEvent(callback, args){
+	callback.apply(this, args);
+}
+
 
 /**
  * Finds a select element by ID and adds options from the strings passed in items. DOES NOT EMPTY FIRST. Consider setupSelect if that is needed. 
@@ -569,19 +563,25 @@ function makeCode(key){
 }
 
 
-/*I had no idea how to find the cursor so searched online and got an entire function for inserting text at a cursor, it didn't account for code whitespace conventions though:
-https://stackoverflow.com/questions/7404366/how-do-i-insert-some-text-where-the-cursor-is
-
-Notes:
-Seems that this solution has to account for browser differences - this is what the top level if test is about
-
-Stuff I did not recognise:
-ownerDocument: https://www.w3schools.com/jsref/prop_node_ownerdocument.asp
-selectionStart
-
-*/
+/**
+ * inserts text to where the cursor is inside a text area (possibly inputs as well, but that is untested)
+ * preserves coding indentation provided that indentation is consistent per line (ie either spaces or tabs but not a mix)
+ * @param {*} el 
+ * @param {*} text 
+ */
 function insertTextAtCursor(el, text) {
-    console.log(el);
+    /*I had no idea how to find the cursor so searched online and got an entire function for inserting text at a cursor, it didn't account for code whitespace conventions though:
+	https://stackoverflow.com/questions/7404366/how-do-i-insert-some-text-where-the-cursor-is
+
+	Notes:
+	Seems that this solution has to account for browser differences - this is what the top level if test is about
+
+	Stuff I did not recognise:
+	ownerDocument: https://www.w3schools.com/jsref/prop_node_ownerdocument.asp
+	selectionStart
+
+	*/
+	console.log(el);
     console.log(text);
 	var val = el.value, endIndex, range, doc = el.ownerDocument;
     if (typeof el.selectionStart == "number"
@@ -688,6 +688,17 @@ function addAllLangBtns(){
 	}
 }
 
+
+function removeElementById(id){
+	console.groupCollapsed("removeElementById: " + id);
+	if (!!document.getElementById(id)){
+		console.log("Found element with id: " + id + " removing it now.");
+		document.getElementById(id).remove();
+	} else {
+		console.warn("Could not find element with id: " + id);
+	}
+	console.groupEnd();
+}
 function emptyEditor(){
 	//this confirm wrapper is here because every now and then I would miss-click on the empty editor button when meaning to go back to the editor from another panel. Todo: it may be better to have a facility for saving the contents of the editor temporarily and switching the empty editor button for a restore contents button until there are say twenty characters in the editor, instead of or as well as the confirm.
 	if(confirm("Empty editor?")){
@@ -797,13 +808,12 @@ function getGroups(lang){
 	}
 	return groups;
 }
-
 /**
  * Makes the array for a new btn, from the inputs. Originally (in early prototyping) alerted out the result for pasting into the codebase.
- */
+ * groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]
+ * codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]
+ * */
 function makeBtnDataArray(){
-	//groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]
-	//codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]
 	/*	Some examples of what we are making:
 	"Span": [1, "codeBtn", "&lt;span&gt;", "<span></span>"],
 	
@@ -900,23 +910,16 @@ function showEditor(){
 	applyShowClass("codeTA");
 	togglePanelSwitcherBtns("btnShowEditor");
 }
-
 function showWebDisplayer(){
 	hideBottomStuff();
 	applyShowClass("webDisplayer");
 	togglePanelSwitcherBtns("btnShowWebDisplayer");
 }
-
 function showContactInfo(){
 	hideBottomStuff();
 	applyShowClass("contactInfo");
 	togglePanelSwitcherBtns("btnContactInfo");
 }
-
-function displayInDiv(){
-	webDisplayDiv.innerHTML = codeTA.value;
-}
-
 function togglePanelSwitcherBtns(hideBtnID){
 	let panelSwitchers = ["btnShowEditor", "btnCreateBtn", "btnContactInfo", "btnStyleBtns", "btnShowWebDisplayer"];
 	let showThese = panelSwitchers.filter(item => item !== hideBtnID);
@@ -944,16 +947,6 @@ function applyHideClass(id){
 function applyShowClass(id){
   document.getElementById(id).classList.remove("hide");
   document.getElementById(id).classList.add("show");
-}
-
-function isRunningLocally(){
-	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
-		console.log("Detected running locally");
-		return true;
-	} else {
-		console.log("btnCode seems to be running from a server");
-		return false;
-	}
 }
 
 function createDownloadFile(){
@@ -1030,7 +1023,6 @@ function loadStyle(){
 	}
 	document.getElementById("styleyStyle").innerText = value;
 }
-
 function pickStyle(styleName){
 	console.log(`style picked: ${styleName}`);
 
@@ -1047,8 +1039,13 @@ function pickStyle(styleName){
 	document.getElementById("styleyStyle").innerText = value;
 }
 
+/**
+ * Checks if browser supports Storage, and if it does, sets one Local Storage Key and Value
+ * @param {string} key 
+ * @param {string} value 
+ * @returns true if storage was successful, false (and alerts) if no web storage
+ */
 function saveToLocalStorage(key,value){ 
-	/*Checks if browser supports Storage, and if it does, sets one Local Storage Key and Value*/
 	//checking browser support for Storage (covers both localStorage and sessionStorage)
 	if (typeof(Storage) !== "undefined") { //Storage is there, so we'll save it
 		localStorage.setItem(key, value);
@@ -1059,7 +1056,12 @@ function saveToLocalStorage(key,value){
 		return false; //For use in functions that called this function
 	}
 }
-function loadFromLocalStorage(key){ //general purpose localStorage loading function (it is often more useful to have more specific functions for loading particular keys)
+/**
+ * general purpose localStorage loading function (it is often more useful to have more specific functions for loading particular keys)
+ * @param {string} key 
+ * @returns {string} the value matching the key, or an empty string if cannot find the key (also logs to console if that is the case)
+ */
+function loadFromLocalStorage(key){
 	let value = localStorage.getItem(key);
 	if(value == ""){
 		console.log(`tried to load: ${key} but found nothing`);
@@ -1100,7 +1102,7 @@ function disablePostHog(){
 
 /**
  * returns true if key is a key of jsonObject
- * possibly not in use, left in here in case it becomes useful later
+ * at last check was not in use, left in here in case it becomes useful later
  * - was written to be called within function languageChange(lang) as part of a more flexible workaround for langs that need langNames different to their keys
  * - committed as part of "hardcoded langName conversion not needed" on 7th Jan 2023
  * - but during that work I realised I did not need to go that approach, as I could pass the key into the function instead of the langName by altering the code for langBtn generation
@@ -1114,4 +1116,28 @@ function isKeyOfJsonObject(key, jsonObject){ //todo: (after say 7th July 2023), 
 	} else {
 		return false;
 	}
+}
+/**
+ * returns true if running locally.
+ * at last check was not in use, left in here in case it becomes useful later
+ * checked 8th Jan 2023
+ * I believe this was written for pageLoad to know if it should draw the "Copy all text" btn, and then replaced with code that detects if the copy permission is granted instead
+ * would be marginally useful to call for not attempting PostHog, but the effort to get that to work well would not be worth the tiny benefit
+ * @returns boolean
+ */
+function isRunningLocally(){
+	if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === ""){
+		console.log("Detected running locally");
+		return true;
+	} else {
+		console.log("btnCode seems to be running from a server");
+		return false;
+	}
+}
+/** An early basic prototype for displaying HTML of code that the user has written
+ * at last check was not in use, commented call to it in index.html, left in here in case I ever decide to re-add that form of displaying HTML
+ * todo: check if this is likely to ever be used
+ */
+function displayInDiv(){
+	webDisplayDiv.innerHTML = codeTA.value;
 }
