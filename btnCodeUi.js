@@ -277,7 +277,19 @@ function pageLoad(){
 	}
 
 	//replace the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
-	stylerPlainPasteEventOverwrite(); //TODO: (next commit) I wonder if this function could be just be done here??, seems to only be done once
+	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
+	const target = document.querySelector('#styleyStyle'); //document.querySelector(querySelection);
+	target.addEventListener('paste', (event) => {
+		event.preventDefault();
+
+		let paste = (event.clipboardData || window.clipboardData).getData('text/plain'); //NOTE WHERE THE BRACKETS ARE!!
+		const selection = window.getSelection();
+		if (!selection.rangeCount) return;
+		selection.deleteFromDocument();
+		selection.getRangeAt(0).insertNode(document.createTextNode(paste));
+		selection.collapseToEnd();
+	});
+
 	console.groupEnd();
 }
 //Coder beware: This func (and the UX change it was added to help create) introduces a new meaning of "LangBtn": a button with a name of a coding language on it that triggers showing the code btns (previouslty called LangBtns) for that particular language.
@@ -300,26 +312,6 @@ function showLangBtns(){
 		drawBtn(btnID, allLangs[i], savedCodeWithGroupsConcept1[allLangs[i]]["langName"], languageChange, [allLangs[i]], "beforeend", document.getElementById("codeBtns"));
 	}
 	console.groupEnd;
-}
-/**
- * used specifically on the styler, and not currently needed on the editor,
- *	- makes sure that any pasting is done as plain text
- *	- old name confused me when I came back to this codebase after xmas 22,
- *		- so this function has been renamed and de-generalised from overwritePasteEvent(querySelection);
- */
- function stylerPlainPasteEventOverwrite(){
-	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
-	const target = document.querySelector('#styleyStyle'); //document.querySelector(querySelection);
-	target.addEventListener('paste', (event) => {
-		event.preventDefault();
-
-		let paste = (event.clipboardData || window.clipboardData).getData('text/plain'); //NOTE WHERE THE BRACKETS ARE!!
-		const selection = window.getSelection();
-		if (!selection.rangeCount) return;
-		selection.deleteFromDocument();
-		selection.getRangeAt(0).insertNode(document.createTextNode(paste));
-		selection.collapseToEnd();
-	});
 }
 
 function languageChange(lang){
