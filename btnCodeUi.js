@@ -247,20 +247,23 @@ var controlBtns = {
 function pageLoad(){
 	console.groupCollapsed("page load");
 	
+	//make btns for all of the langs
 	showLangBtns();
 	
+	//if the clipboard permission is there, draw a btn for Copy all from editor
 	console.log("Checking permissions for clipboard-write:");
 	navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
 		console.log(result);
 		console.log("Permission: " + result.state);
 		if(result.state === "granted"){
-			//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-			addButtons("copyText", "", ["Copy all text"], "btn", "", document.getElementById("otherControlBtns"));	
+			drawBtn("btnCopyAllFromEditor", "", "Copy all from editor", elValueToClipboard, ["codeTA"], "afterbegin", document.getElementById("otherControlBtns"))
 		}
 		console.groupEnd();
 	});
+
 	loadStyle(); //attempt to load styles into the editable <style> from localStorage
-	stylerPlainPasteEventOverwrite(); //replaces the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
+	
+	//Check if PostHog has been allowed, and show the relevant button and message
 	if(loadFromLocalStorage("usePostHog") == "true"){
 		//if PostHog flag is set to "true" show the disable btn
 		applyShowClass("btnPostHogOff");
@@ -272,6 +275,9 @@ function pageLoad(){
 		//show the default message about PostHog
 		applyShowClass("pleaseUsePostHogText");
 	}
+
+	//replace the paste event for the styler with one that pastes plain text. Done here so that it is only done once without needing to remove it or store that we have done it.
+	stylerPlainPasteEventOverwrite(); //TODO: (next commit) I wonder if this function could be just be done here??, seems to only be done once
 	console.groupEnd();
 }
 //Coder beware: This func (and the UX change it was added to help create) introduces a new meaning of "LangBtn": a button with a name of a coding language on it that triggers showing the code btns (previouslty called LangBtns) for that particular language.
@@ -294,6 +300,26 @@ function showLangBtns(){
 		drawBtn(btnID, allLangs[i], savedCodeWithGroupsConcept1[allLangs[i]]["langName"], languageChange, [allLangs[i]], "beforeend", document.getElementById("codeBtns"));
 	}
 	console.groupEnd;
+}
+/**
+ * used specifically on the styler, and not currently needed on the editor,
+ *	- makes sure that any pasting is done as plain text
+ *	- old name confused me when I came back to this codebase after xmas 22,
+ *		- so this function has been renamed and de-generalised from overwritePasteEvent(querySelection);
+ */
+ function stylerPlainPasteEventOverwrite(){
+	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
+	const target = document.querySelector('#styleyStyle'); //document.querySelector(querySelection);
+	target.addEventListener('paste', (event) => {
+		event.preventDefault();
+
+		let paste = (event.clipboardData || window.clipboardData).getData('text/plain'); //NOTE WHERE THE BRACKETS ARE!!
+		const selection = window.getSelection();
+		if (!selection.rangeCount) return;
+		selection.deleteFromDocument();
+		selection.getRangeAt(0).insertNode(document.createTextNode(paste));
+		selection.collapseToEnd();
+	});
 }
 
 function languageChange(lang){
@@ -443,7 +469,7 @@ function createLangDescendantBtn(lang, btnKey, position, elRelativeTo){
  * @param {string} id <button id=""
  * @param {string} btnClass <button class=""
  * @param {string} btnText innerHTML
- * @param {*} clickFunc function to run in the click event
+ * @param {Function} clickFunc function to run in the click event (pass the actual function, not the string of the name)
  * @param {array} clickArgs args for the function, in an array
  * @param {string} position 
  *  There are four acceptable inputs for the "position" param, directly from the Element Web API, setting which side of the opening or closing tag of the element you are placing the new btn in relation to:
@@ -484,11 +510,11 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
  */
 function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv){
     console.group("addButtons");
-	//Logging the arguments TODO: remove this debug code
-	console.group("arguments");
+	//Logging the arguments 
+	/*console.group("arguments");
 	for (let i = 0; i < arguments.length; i++) {
 		console.log(arguments[i]);
-	}
+	}*/
 	console.groupEnd();
 	/*Yoinked from TeaRounder, with added idPrefix param. Note that it maybe is not the best code for doing this, but it does work. Todo: see if you can improve this to use proper eventlistener syntax, and if that actually makes things better
 
@@ -547,6 +573,20 @@ function setupSelect(selectID, defaultOptions, extraOptions){
 	addToSelect(options, selectID);
 }
 
+/**
+ * Takes the value of an element (such as the value of a textarea), and adds to clipboard
+ * Requires the 'clipboard-write' permission, but we check for that in pageLoad before drawing any button that calls this
+ * 
+*/
+function elValueToClipboard(elementID){
+	//Todo: could use this for more copy to clipboard buttons, say on the styler or the add btn JSON viewer
+	//console.group("Attempting to copy:");
+	//console.log(document.getElementById(id));
+	//console.log(id);
+	//console.log(document.getElementById(id).value);
+	navigator.clipboard.writeText(document.getElementById(elementID).value);
+	//console.groupEnd();
+}
 function makeCode(key){
 	console.group("makeCode: " + key);
 	//get the button that was clicked
@@ -652,41 +692,6 @@ function insertTextAtCursor(el, text) {
     }
 }
 
-
-function copyText(){ //TODO: NEXT, CLEAR UP THIS MESS OF CODE!
-	console.group("copyText");
-	console.log("Attempting to copy:");
-	console.log(codeTA.value);
-	
-	console.log("Checking permissions:");
-	navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
-		console.log(result);
-		console.log("Permission: " + result.state);
-	});
-	
-	navigator.clipboard.writeText(codeTA.value);
-	
-	/*navigator.permissions.query({ name: 'clipboard-write' }).then((result) => {
-		//in the case of the permissions API the main thing in result is result.state which can have the value "granted", "prompt" or "denied" depending on if the user has already granted permission, denied it or has not been asked. more info at https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API/Using_the_Permissions_API
-		if (result.state === 'granted') {
-			navigator.clipboard.writeText(codeTA.value);
-		} else if (result.state === 'prompt') {
-			conf
-		} else if (result.state === 'denied') {
-			
-		}
-	}*/
-
-	console.groupEnd();
-}
-
-function addAllLangBtns(){
-	for (const lang in savedCode) {
-		addLangBtns(lang);
-	}
-}
-
-
 function removeElementById(id){
 	console.groupCollapsed("removeElementById: " + id);
 	if (!!document.getElementById(id)){
@@ -751,33 +756,12 @@ function closeFullscreen() {
   }
 }
 
-/**
- * used specifically on the styler, and not currently needed on the editor,
- *	- makes sure that any pasting is done as plain text
- *	- old name confused me when I came back to this codebase after xmas 22,
- *		- so this function has been renamed and de-generalised from overwritePasteEvent(querySelection);
- */
-function stylerPlainPasteEventOverwrite(){
-	//adapted from the example at https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
-	const target = document.querySelector('#styleyStyle'); //document.querySelector(querySelection);
-	target.addEventListener('paste', (event) => {
-		event.preventDefault();
-
-		let paste = (event.clipboardData || window.clipboardData).getData('text/plain'); //NOTE WHERE THE BRACKETS ARE!!
-		const selection = window.getSelection();
-		if (!selection.rangeCount) return;
-		selection.deleteFromDocument();
-		selection.getRangeAt(0).insertNode(document.createTextNode(paste));
-		selection.collapseToEnd();
-	});
-}
 
 function showStyler(){
 	hideBottomStuff();
 	applyShowClass("styler");
 	togglePanelSwitcherBtns("btnStyleBtns");
 }
-
 function showBtnMkr(){
 	hideBottomStuff();
 	applyShowClass("btnMkr");
