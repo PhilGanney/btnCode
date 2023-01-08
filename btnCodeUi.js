@@ -321,8 +321,7 @@ function languageChange(lang){
 	codeBtns.innerHTML = "";
 	
 	//Add a button that can show the languages again
-	//addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv)
-	addButtons("showLangBtns", "PickLang", ["Change Lang"], "btn", "", codeBtns)
+	drawBtn("btnChangeLang", "PickLang", "Change Lang", showLangBtns, [], "afterbegin", codeBtns)
 
 	//remove any 🚧 (used to signify to users the language only has a limited amount of btns in btnCode)
 	lang = lang.replaceAll("%uD83D%uDEA7", "");
@@ -495,37 +494,6 @@ function drawBtn(id, btnClass, btnText, clickFunc, clickArgs, position, elRelati
 	
 	elRelativeTo.insertAdjacentElement(position, btn)
 	
-	console.groupEnd();
-}
-/**
- * Deprecating due to inflexibility, use drawBtn instead
- */
-function addButtons(clickEventName, buttonClass, buttonTextArray, idPrefix, idSuffix, containerDiv){
-    console.group("addButtons");
-	//Logging the arguments 
-	/*console.group("arguments");
-	for (let i = 0; i < arguments.length; i++) {
-		console.log(arguments[i]);
-	}*/
-	console.groupEnd();
-	/*Yoinked from TeaRounder, with added idPrefix param. Note that it maybe is not the best code for doing this, but it does work. Todo: see if you can improve this to use proper eventlistener syntax, and if that actually makes things better
-
-	To make:
-		<button onclick="presetAddDrink('Hot Chocolate')">Hot Chocolate</button>
-		inside an element called "categoriesContainer"
-	   Pass in:
-		("presetAddDrink", ["Hot Chocolate"],document.getElementById("categoriesContainer"))  
-	*/  
-    /*
-	Creating id's based on similar concept to the one used in adding drinks to the list
-	var attemptDrinkID = escape(attemptDrink);
-	*/
-	
-	
-    var indexes;
-    for (indexes in buttonTextArray){
-        containerDiv.innerHTML += "<button id=\"" + idPrefix + escape(buttonTextArray[indexes]) + idSuffix +"\" class=\"" + buttonClass + "\" onclick=\"" + clickEventName+ "('" + escape(buttonTextArray[indexes]) + idSuffix + "')\">" + buttonTextArray[indexes] + "</button>"
-    }
 	console.groupEnd();
 }
 /**
