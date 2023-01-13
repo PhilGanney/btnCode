@@ -142,21 +142,6 @@ var savedCodeWithGroupsConcept1 = {
 		"TextColour": [1, "codeBtn", "color (text)", "color: Tomato;"],
 		"Comment": [0, "codeBtn", "/*Comment*/", "/* Comment */"],
 	},
-	"Java": {
-		"langName": "🚧Java🚧",
-		"infoLine": "",
-		"class":[0,"codeBtn","public class MyClass","public class MyClass {\r\n    \r\n\r\n}"],
-		"main":[0,"codeBtn","public static void main","public static void main(String... args) {\r\n\t\r\n}"],
-		"println":[0,"codeBtn","System.out.println","System.out.println(\"Hello, World!\");"]
-	},
-	"Ada": {
-		"langName": "🚧Ada🚧",
-		"infoLine": "(Phil is adding this gradually as he learns this language)",
-		"withGrp":[0,"group","with",["withText_IO"]],
-		"withText_IO":[1,"codeBtn","with Ada.Text_IO;","with Ada.Text_IO;"],
-		"procedure":[0,"codeBtn","procedure","procedure Hello is\r\nbegin\r\n\t\t\r\nend Hello;"],
-		"Put_Line":[0,"codeBtn","Put_Line","Put_Line (\"Hello, World!\");"]
-	},
 	"python": {
 		"langName": "🚧python🚧",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
@@ -189,11 +174,27 @@ var savedCodeWithGroupsConcept1 = {
 		"Error":[1,"group","Error",[]],
 		"🎨": [1, "codeBtn", "🎨", "🎨"],
 	},
+	"Java": {
+		"langName": "🚧Java🚧",
+		"infoLine": "",
+		"class":[0,"codeBtn","public class MyClass","public class MyClass {\r\n    \r\n\r\n}"],
+		"main":[0,"codeBtn","public static void main","public static void main(String... args) {\r\n\t\r\n}"],
+		"println":[0,"codeBtn","System.out.println","System.out.println(\"Hello, World!\");"]
+	},
 	"CSharp": {
 		"langName": "🚧C#🚧",
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
 		"HelloWorld":[0,"codeBtn","Console.WriteLine Hello World","Console.WriteLine(\"Hello World!\");"],
 	},
+	/* commented to limit the number of work in progress langs on the UI
+	"Ada": {
+		"langName": "🚧Ada🚧",
+		"infoLine": "(Phil is adding this gradually as he learns this language)",
+		"withGrp":[0,"group","with",["withText_IO"]],
+		"withText_IO":[1,"codeBtn","with Ada.Text_IO;","with Ada.Text_IO;"],
+		"procedure":[0,"codeBtn","procedure","procedure Hello is\r\nbegin\r\n\t\t\r\nend Hello;"],
+		"Put_Line":[0,"codeBtn","Put_Line","Put_Line (\"Hello, World!\");"]
+	},*/
 	"Emoji": {
 		/* because why not?*/
 		"langName": "Emoji",
@@ -219,13 +220,11 @@ var savedCodeWithGroupsConcept1 = {
 		"digits": [0, "codeBtn", "digits", "0123456789"],
 		"alphabet": [0, "codeBtn", "english alphabet", "abcdefghijklmnopqrstuvwxyz"],
 		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
+		"userStory": [0, "codeBtn", "As a user I&nbsp;want&nbsp;...", "As a user I want to be able to xyz so that I can ..."],
+		"userStoryMarkdown":[0,"codeBtn","User Story (markdown)","### User Story\r\nAs a abc I want to be able to xyz so that I can ...\r\n\r\n### Definition of done\r\n - \r\n - "],
 	},
 	"AddBtnsToMe": {
         "langName": "🚧Add&nbsp;to&nbsp;me🚧"
-    },
-    "foo": {
-        "langName": "foo🚧",
-        "barGrp": [0,"group","bar",[]]
     }/*,	
 
 	"MySQL": {
