@@ -35,7 +35,7 @@ footer{
     margin: 2px;
 }
 
-button, .HTML,.JS, .CSS, .python, .php, .CSharp, .Emoji{ /*all buttons and even overriding most lang settings*/
+button, .HTML,.JS, .CSS, .python, .php, .Java, .CSharp, .Emoji{ /*all buttons and even overriding most lang settings*/
     height: 66px;
     border-radius: 0px;
     border-width: 0px;
