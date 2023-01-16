@@ -142,6 +142,16 @@ var savedCodeWithGroupsConcept1 = {
 		"TextColour": [1, "codeBtn", "color (text)", "color: Tomato;"],
 		"Comment": [0, "codeBtn", "/*Comment*/", "/* Comment */"],
 	},
+	"React": {
+        "langName": "🚧React🚧",
+		"ComponentsGrp":[0,"group","Components",["ClassExtendsReactComponent"]],
+        "ClassExtendsReactComponent": [
+            1,
+            "codeBtn",
+            "Class extends React.Component",
+            "//From the official tutorial\r\nclass ShoppingList extends React.Component {\r\n   render() {\r\n     return (\r\n       <div className=\"shopping-list\">\r\n         <h1>Shopping List for {this.props.name}</h1>\r\n         <ul>\r\n           <li>Instagram</li>\r\n           <li>WhatsApp</li>\r\n           <li>Oculus</li>\r\n         </ul>\r\n       </div>\r\n     );\r\n   }\r\n}\r\n  // Example usage: <ShoppingList name=\"Mark\" />"
+        ]
+    },
 	"python": {
 		"langName": "🚧python🚧",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
