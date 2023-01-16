@@ -308,7 +308,7 @@ function showLangBtns(){
 		//drawBtn("btn" + lang + btnKey, btnClass, btnText, langDescendantClick, [btnKey], position, elRelativeTo)
 
 		btnID = "btn" + allLangs[i];
-		drawBtn(btnID, allLangs[i], savedCodeWithGroupsConcept1[allLangs[i]]["langName"], languageChange, [allLangs[i]], "beforeend", document.getElementById("codeBtns"));
+		drawBtn(btnID, allLangs[i] + " langBtn", savedCodeWithGroupsConcept1[allLangs[i]]["langName"], languageChange, [allLangs[i]], "beforeend", document.getElementById("codeBtns"));
 	}
 	console.groupEnd;
 }

@@ -35,7 +35,7 @@ footer{
     margin: 2px;
 }
 
-button, .HTML,.JS, .CSS, .python, .php, .Java, .CSharp, .Emoji{ /*all buttons and even overriding most lang settings*/
+button, .langBtn, .group, .openGroup, .codeBtn { /*all buttons including those with specific rules - using these classes rather than classes named after langs, to cover any new langs or changes to lang names*/
     height: 66px;
     border-radius: 0px;
     border-width: 0px;
