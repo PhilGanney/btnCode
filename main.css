@@ -95,10 +95,10 @@ button{
 #btnJS{
 	font-size: 1em;
 }
-.JS{
-	background-color: DodgerBlue;
-	/*w3C logo colour is #005a9c but I prefer my initial choice personally*/
+.JS{/*All of the buttons/elements for coding JS*/
+	background-color: #f7e018;  /*this colour was taken from an unofficial (but fairly widely used) logo by Chris Williams. w3C logo colour is #005a9c, previous default was DodgerBlue - changed because the yellow version of the logo looks better IMHO*/
 	color: #000000;
+	font-weight: 700;
 }
 .CSS{
 	background-image: linear-gradient(to top, green, blue);
