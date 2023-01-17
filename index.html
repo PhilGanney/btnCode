@@ -133,7 +133,7 @@
 			<div id="btnMkr" class="hide">
 				<h2>Add buttons - 🚧Work in progress / prototyping🚧</h2>
 				<p>This is in development, with multiple buttons at different stages of working, and several glaringly obvious UX issues that I will be overcoming in due course.</p>
-				<div class="oddStripe">
+				<div id="btnMkrProto1" class="oddStripe">
 					<h2>1 - Functionality prototyping:</h2>
 					<p>Prototype 1 Stage a: alert out the js for one btn, ready to copy and paste into the source code of btnCode. No facility to add btns to groups - is simple to do via other text editor/IDE. Functional for btnCodes devs</p>
 					<label for="lvlInt">lvlInt:</label>
@@ -174,22 +174,24 @@
 					</select>
 					<pre id="savedCodeObjectDisplay"></pre>
 				</div>
-				<h2>Starting notes and assumptions</h2>
-				<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
-				<p>There are two variations of the format:<br/>groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]<br/>
-				codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]</p>
-				<p>
-				lvlInt should be set to 0 if you want this btn showing when the lang has been chosen. For showing only when a groupBtn has been tapped, any other value could be used, but by convention I use 1. At least by current implementation, at time of writing (and seems unlikely to change), lvlInt is only checked when a lang is chosen (as a way of knowing which btns need to be shown). If we were to have nested groups, that could probably be achieved by simply setting the nested group btns to lvlInt 1 (or any lvlInt that isnt 0) and listing the nested group keys in their parent group, just like any codeBtn in that group
-				</p>
-				<p>Though there are only really two btn types in the codeBtn div at the moment, I have thoughts for this btnMkr doing more than those types in the maybe not so distant future. </p>
-				<h2>First prototype learnings, thoughts, verdict</h2>
-				<p>I initially tested this prototype by using it to create a couple of group btns as well as a few btns during dev. This prototype doesn't really inspire much usage - I immediately wish this did a bunch at a time, then later on I started to mull that maybe one at a time could be alright if they were immediately in the UI. It feels non-optimal to do one at a time and it is still a long, clunky process to get a lang really fleshed out. It is an improvement over making them in notepad++ but a less clear cut win over making btns in Google sheets, which is great for bulk text conversion, when formulaes work as thought.
-				</p>
-				<p>Prototype 2 will look into an editable table approach, but before I start on that I will add a bit more to prototype 1 so that I can try out adding to the JS object powering btnCode directly. Another insight that seems intuitive at this point, is that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. There's adding a lang in terms of adding another top level key in the JS object, and then theres adding a lang in terms of adding a big collection of btns under the name of one language. 
-				</p>
-				<h3>"prototype 1b", adding and showing the btnCode js object</h3>
-				<p>This will let me, and anyone else, temporarily add btns to the current instance of btnCode, and then be able to copy all of those btns, for either pasting into the codebase to permanently add a batch of btns after they have been tested, or potentially allow other people to email me / message me with their suggestions.</p>
-				
+				<button id="showDevNotes" onclick="toggleHideShowClass('publicDevNotes', this, 'show dev notes below', 'hide dev notes')">show dev notes below</button>
+				<div id="publicDevNotes" class="hide">
+					<h2>Starting notes and assumptions</h2>
+					<p>Overall we need inputs for each of the parts of the JS object used for btns</p>
+					<p>There are two variations of the format:<br/>groups use "jsKey": [lvlInt, "group", "Text to go on the btn", ["jsKeyForBtn1", "jsKeyForBtn2" etc]]<br/>
+					codeBtns use "jsKey": [lvlInt, "codeBtn", "Text to go on the btn", "text to insert"]</p>
+					<p>
+					lvlInt should be set to 0 if you want this btn showing when the lang has been chosen. For showing only when a groupBtn has been tapped, any other value could be used, but by convention I use 1. At least by current implementation, at time of writing (and seems unlikely to change), lvlInt is only checked when a lang is chosen (as a way of knowing which btns need to be shown). If we were to have nested groups, that could probably be achieved by simply setting the nested group btns to lvlInt 1 (or any lvlInt that isnt 0) and listing the nested group keys in their parent group, just like any codeBtn in that group
+					</p>
+					<p>Though there are only really two btn types in the codeBtn div at the moment, I have thoughts for this btnMkr doing more than those types in the maybe not so distant future. </p>
+					<h2>First prototype learnings, thoughts, verdict</h2>
+					<p>I initially tested this prototype by using it to create a couple of group btns as well as a few btns during dev. This prototype doesn't really inspire much usage - I immediately wish this did a bunch at a time, then later on I started to mull that maybe one at a time could be alright if they were immediately in the UI. It feels non-optimal to do one at a time and it is still a long, clunky process to get a lang really fleshed out. It is an improvement over making them in notepad++ but a less clear cut win over making btns in Google sheets, which is great for bulk text conversion, when formulaes work as thought.
+					</p>
+					<p>Prototype 2 will look into an editable table approach, but before I start on that I will add a bit more to prototype 1 so that I can try out adding to the JS object powering btnCode directly. Another insight that seems intuitive at this point, is that adding a lang to btnCode is an extension of adding btns, in terms of markup and JS scripts needed to make that happen. There's adding a lang in terms of adding another top level key in the JS object, and then theres adding a lang in terms of adding a big collection of btns under the name of one language. 
+					</p>
+					<h3>"prototype 1b", adding and showing the btnCode js object</h3>
+					<p>This will let me, and anyone else, temporarily add btns to the current instance of btnCode, and then be able to copy all of those btns, for either pasting into the codebase to permanently add a batch of btns after they have been tested, or potentially allow other people to email me / message me with their suggestions.</p>
+				</div>
 			</div>
 			<div id="newLangScrn" class="hide">
 				<h3>New lang screen: 🚧dev work on this feature not started🚧</h3>

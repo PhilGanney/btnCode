@@ -917,6 +917,30 @@ function applyShowClass(id){
   document.getElementById(id).classList.remove("hide");
   document.getElementById(id).classList.add("show");
 }
+/**
+ * 
+ * @param {string} idToToggle id of the element to be shown/hidden
+ * @param {Element} togglerEl (optional) button or other element that triggered this, if applicable and if you wish to use this to alter the innerHTML
+ * @param {string} togglerHideInner (optional) what to set the inner of togglerEl when toggling hide
+ * @param {string} togglerShowInner (optional) what to set the inner of togglerEl when toggling show
+ */
+function toggleHideShowClass(idToToggle, togglerEl = false, togglerHideInner = "", togglerShowInner = ""){
+	//console.log(togglerEl);
+	if(document.getElementById(idToToggle).classList.contains("hide")){ //is hidden, so toggling to show
+		//would be slightly more maintainable to call applyHideClass / applyShowClass, but my feeling right now is it does not make much difference either way, and this is slightly more performant
+		document.getElementById(idToToggle).classList.remove("hide");
+		document.getElementById(idToToggle).classList.add("show");
+		if(togglerEl){
+			togglerEl.innerHTML = togglerShowInner;
+		}
+	} else { //is showing, so toggling to hide
+		document.getElementById(idToToggle).classList.remove("show");
+		document.getElementById(idToToggle).classList.add("hide");
+		if(togglerEl){
+			togglerEl.innerHTML = togglerHideInner;
+		}
+	}
+}
 
 function createDownloadFile(){
 	var fileName = "renameMe.txt"; //using a default fileName since users can easily spot that and edit it later, and it might be intentional to not think about the filename before download
