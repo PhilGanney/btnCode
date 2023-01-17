@@ -122,6 +122,12 @@ button{
 	background-color: #3c790a;
 	color: white;
 }
+
+.React{
+	background-color: #282c34;
+	color: #61dafb;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; /*font-family that www.reactjs.org uses*/
+}
 @font-face {
     font-family: Flux-Regular;
     src: url("fonts/FluxRegular.otf") format("opentype");
