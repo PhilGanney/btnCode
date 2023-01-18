@@ -178,9 +178,9 @@
 				<button id="showBtnMkrProto2" onclick="toggleHideShowClass('btnMkrProto2', this, 'show prototype 2 below', 'hide prototype 2')">show prototype 2 below</button>
 				<div id="btnMkrProto2" class="proto hide">
 					<h2>2 - Good user experience, take 1: guiding user through the process</h2>
-					<p>🚧 UI outline, no actual button or lang creation yet 🚧</p>
+					<p>🚧 UI outline, no actual button or lang creation in this prototype yet 🚧</p>
 					<p></p>
-					<div>
+					<div id="btnMkrProto2Steps">
 						<div id="btnMkrProto2Step1">
 							<button onclick="btnMkrProto2GoToView('btnMkrProto2NewLangView')">New Lang</button>
 							<button onclick="btnMkrProto2GoToView('btnMkrProto2ExistingLangView')">Existing Lang</button>
@@ -196,18 +196,22 @@
 							<p>The fancy name will be shown on the corresponding button. </p>
 							<p>The "code-proof name" is used for: a CSS class for all of its buttons, part of the HTML id for the top level button ("btn" + codeProofName) & the JSON key for the lang</p>
 							<p>If the fancy name happens to be code-proof (suitable for both a JSON key and a CSS class) then you can just copy it down</p>
-							<button style="
+							<button onclick="btnMkrProto2GoToView('btnMkrProto2LangOverviewView')" style="
 							right: 7px;
 							position: absolute;
-							">🚧Next</button>
+							">🚧Next</button> <!--Todo: this is not the prettiest code I have written. It could be worse though!-->
 						</div>
 						<div id="btnMkrProto2ExistingLangView" class="hide">
 							<h3>Which lang do you wish to edit or add to?</h3>
 							<select id="btnMkrProto2EditLangChoice"></select>
-							<button style="
+							<button onclick="btnMkrProto2GoToView('btnMkrProto2LangOverviewView')" style="
 							right: 7px;
 							position: absolute;
-							">🚧Next</button>
+							">Next</button> <!--Todo: I said the code could be worse, and look I was correct! a duplicate of the previous ugly code, but somehow this time, the button is incorrectly vertically aligned! -->
+						</div>
+						<div id="btnMkrProto2LangOverviewView" class="hide">
+							<h3>🚧Lang name here</h3>
+							<p>🚧(this is as far as I have got with designing this guide through at the current time, check back in a few days and there should be progress)</p>
 						</div>
 						<button id="btnMkrProto2StartAgain" class="hide" onclick="btnMkrProto2GoToView('btnMkrProto2Step1')">Start again</button>
 					</div>

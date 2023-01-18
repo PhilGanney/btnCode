@@ -749,7 +749,13 @@ function showBtnMkr(){
  * @param {string} viewID
  */
 function btnMkrProto2GoToView(viewID){
-	let views = ["btnMkrProto2Step1", "btnMkrProto2NewLangView", "btnMkrProto2ExistingLangView"];
+	//get all the view divs (relies on me sticking to the good nesting pattern in the HTML, but that seems more likely than me remembering to update a hardcoded list of view IDs)
+	let views = [];
+	const nodeList = document.querySelectorAll("#btnMkrProto2Steps div");
+	for (let i = 0; i < nodeList.length; i++) {
+		views.push(nodeList[i].id);
+	}
+	
 	let hideIDs = views.filter(item => item !== viewID);
 	let showIDs = [viewID];
 	if (viewID != "btnMkrProto2Step1"){
