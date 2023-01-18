@@ -134,7 +134,7 @@
 				<h2>Add buttons - 🚧Work in progress / prototyping🚧</h2>
 				<p>This is in development, being prototyped. Prototype 1 covers some of the obvious functionality of making this work. Prototype 2 is focused on being intuitive and nice to use, but will take longer to build.</p>
 				<button id="showBtnMkrProto1" onclick="toggleHideShowClass('btnMkrProto1', this, 'show prototype 1 below', 'hide prototype 1')">show prototype 1 below</button>
-				<div id="btnMkrProto1" class="oddStripe hide">
+				<div id="btnMkrProto1" class="proto hide">
 					<h2>1 - Functionality prototyping:</h2>
 					<p>Prototype 1 Stage a: alert out the js for one btn, ready to copy and paste into the source code of btnCode. No facility to add btns to groups - is simple to do via other text editor/IDE. Functional for btnCodes devs</p>
 					<label for="lvlInt">lvlInt:</label>
@@ -176,21 +176,40 @@
 					<pre id="savedCodeObjectDisplay"></pre>
 				</div>
 				<button id="showBtnMkrProto2" onclick="toggleHideShowClass('btnMkrProto2', this, 'show prototype 2 below', 'hide prototype 2')">show prototype 2 below</button>
-				<div id="btnMkrProto2" class="hide">
-					<h2>2 - Good user experience: take 1</h2>
+				<div id="btnMkrProto2" class="proto hide">
+					<h2>2 - Good user experience, take 1: guiding user through the process</h2>
 					<p>🚧 UI outline, no actual button or lang creation yet 🚧</p>
+					<p></p>
 					<div>
 						<div id="btnMkrProto2Step1">
-							<button onclick="goToView('btnMkrProto2NewLangView')">New Lang</button>
-							<button onclick="goToView('btnMkrProto2ExistingLangView')">Existing lang</button>
+							<button onclick="btnMkrProto2GoToView('btnMkrProto2NewLangView')">New Lang</button>
+							<button onclick="btnMkrProto2GoToView('btnMkrProto2ExistingLangView')">Existing Lang</button>
+							<p>Existing langs are:</p>
+							<p>(🚧lang list here: lang1 lang2 lang3 etc)</p>
 						</div>
 						<div id="btnMkrProto2NewLangView" class="hide">
-							<h3>New Lang</h3>
+							<h3>What are we calling this lang?</h3>
+							<label for="btnMkrProto2LangFancy">Fancy name (Eg. C#)</label> <!-- (Used on the button. In the JSON under the hood, this will be stored as the value for this langs "langName")-->
+							<input id="btnMkrProto2LangFancy"/><br/>
+							<label for="btnMkrProto2LangCodeProof">Code-proof name (Eg: CSharp)</label> <!-- (Used for its CSS class and for its key in the JSON)-->
+							<input id="btnMkrProto2LangCodeProof"/>
+							<p>The fancy name will be shown on the corresponding button. </p>
+							<p>The "code-proof name" is used for: a CSS class for all of its buttons, part of the HTML id for the top level button ("btn" + codeProofName) & the JSON key for the lang</p>
+							<p>If the fancy name happens to be code-proof (suitable for both a JSON key and a CSS class) then you can just copy it down</p>
+							<button style="
+							right: 7px;
+							position: absolute;
+							">🚧Next</button>
 						</div>
 						<div id="btnMkrProto2ExistingLangView" class="hide">
-							<h3>Which lang do you wish to edit?</h3>
+							<h3>Which lang do you wish to edit or add to?</h3>
+							<select id="btnMkrProto2EditLangChoice"></select>
+							<button style="
+							right: 7px;
+							position: absolute;
+							">🚧Next</button>
 						</div>
-						<button class="hide" onclick="goToView('btnMkrProto2Step1')">Start again</button>
+						<button id="btnMkrProto2StartAgain" class="hide" onclick="btnMkrProto2GoToView('btnMkrProto2Step1')">Start again</button>
 					</div>
 				</div>
 				<button id="showDevNotes" onclick="toggleHideShowClass('publicDevNotes', this, 'show dev notes below', 'hide dev notes')">show dev notes below</button>

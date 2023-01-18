@@ -732,11 +732,44 @@ function showStyler(){
 	togglePanelSwitcherBtns("btnStyleBtns");
 }
 function showBtnMkr(){
+	//the standard main view change stuff
 	hideBottomStuff();
 	applyShowClass("btnMkr");
 	togglePanelSwitcherBtns("btnCreateBtn");
-	
+
+	//Prototype 1
 	setupSelect("addBtnToLang", ["Add to new lang"], Object.keys(savedCodeWithGroupsConcept1)); //todo: fragile code! if "Add to new lang" altered, you must update function addBtnToLangChange to match!
+
+	//Prototype 2
+	setupSelect("btnMkrProto2EditLangChoice", [], Object.keys(savedCodeWithGroupsConcept1));
+}
+/**
+ * made for onclicks within btnMkrProto2 that "take users to" the next "view" of the prototype guiding them through making btns. 
+ * ie show the next step, hide the previous step, do any loading thats needs to be done between
+ * @param {string} viewID
+ */
+function btnMkrProto2GoToView(viewID){
+	let views = ["btnMkrProto2Step1", "btnMkrProto2NewLangView", "btnMkrProto2ExistingLangView"];
+	let hideIDs = views.filter(item => item !== viewID);
+	let showIDs = [viewID];
+	if (viewID != "btnMkrProto2Step1"){
+		showIDs[1] = "btnMkrProto2StartAgain";
+	} else {
+		hideIDs.push("btnMkrProto2StartAgain");
+	}
+	hideShow(hideIDs, showIDs);
+}
+/**
+ * @param {array<string>} hideIDs ids of elements to hide
+ * @param {array<string>} showIDs ids of elements to show
+ */
+function hideShow(hideIDs, showIDs){
+	for(index in hideIDs){
+		applyHideClass(hideIDs[index]);
+	}
+	for(index in showIDs){
+		applyShowClass(showIDs[index]);
+	}
 }
 function addBtnToLangChange(el){
 	//the function that runs when the onchange event fires for the select addBtnToLang 

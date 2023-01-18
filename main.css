@@ -88,8 +88,8 @@ button{
 	border-radius: 8px;
 }
 
-.oddStripe{
-	background-color: #9999FF;
+.proto{ /*areas of the screen that are prototypes, eg while Phil is developing the btn maker*/
+	border: #282c34 2px solid;
 }
 
 #btnJS{
