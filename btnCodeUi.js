@@ -145,14 +145,19 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"React": {
         "langName": "🚧React🚧",
-		"ComponentsGrp":[0,"group","Components",["ClassExtendsReactComponent"]],
-        "ClassExtendsReactComponent": [
+		"OfficialTutorialGrp":[0,"group","reactjs.org tutorial",["tutorialSnippet1", "tutorialSnippet2", "tutorialSnippet3", "tutorialSnippet4", "tutorialSnippet5", "tutorialSnippet5"]],
+        "tutorialSnippet1": [
             1,
             "codeBtn",
-            "Class extends React.Component",
-            "//From the official tutorial\r\nclass ShoppingList extends React.Component {\r\n   render() {\r\n     return (\r\n       <div className=\"shopping-list\">\r\n         <h1>Shopping List for {this.props.name}</h1>\r\n         <ul>\r\n           <li>Instagram</li>\r\n           <li>WhatsApp</li>\r\n           <li>Oculus</li>\r\n         </ul>\r\n       </div>\r\n     );\r\n   }\r\n}\r\n  // Example usage: <ShoppingList name=\"Mark\" />"
-        ]
-    },
+            "Class ... extends React.Component render html",
+            "//From the official tutorial at https://reactjs.org/tutorial/tutorial.html\r\nclass ShoppingList extends React.Component {\r\n   render() {\r\n     return (\r\n       <div className=\"shopping-list\">\r\n         <h1>Shopping List for {this.props.name}</h1>\r\n         <ul>\r\n           <li>Instagram</li>\r\n           <li>WhatsApp</li>\r\n           <li>Oculus</li>\r\n         </ul>\r\n       </div>\r\n     );\r\n   }\r\n}\r\n  // Example usage: <ShoppingList name=\"Mark\" />"
+        ],
+		"tutorialSnippet2":[1,"codeBtn","return React.createElement ...","return React.createElement('div', {className: 'shopping-list'},   React.createElement('h1', /* ... h1 children ... */),   React.createElement('ul', /* ... ul children ... */) );"],
+		"tutorialSnippet3":[1,"codeBtn","pass a prop called&nbsp;value to Square","return <Square value={i} />;"],
+		"tutorialSnippet4":[1,"codeBtn","{this.props.value}","{this.props.value}"],
+		"tutorialSnippet5":[1,"codeBtn","onClick","onClick={function() { console.log('click'); }}"],
+		"tutorialSnippet6":[1,"codeBtn","onClick arrow syntax","onClick={() => console.log('click')}"], 
+	},
 	"python": {
 		"langName": "🚧python🚧",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
