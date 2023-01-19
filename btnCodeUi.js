@@ -145,7 +145,7 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"React": {
         "langName": "🚧React🚧",
-		"OfficialTutorialGrp":[0,"group","reactjs.org tutorial",["tutorialSnippet1", "tutorialSnippet2", "tutorialSnippet3", "tutorialSnippet4", "tutorialSnippet5", "tutorialSnippet5"]],
+		"OfficialTutorialGrp":[0,"group","reactjs.org tutorial",["tutorialSnippet1", "tutorialSnippet2", "tutorialSnippet3", "tutorialSnippet4", "tutorialSnippet5", "tutorialSnippet6"]],
         "tutorialSnippet1": [
             1,
             "codeBtn",
