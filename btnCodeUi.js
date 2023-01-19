@@ -1,7 +1,7 @@
 
 /* Replacement for savedCode, which has a format that does not allow for groups within langs or any other data. It also created some limitations on the button text that are probably not ideal
 
-concept 1: all codeBtns and codeGroupBtns of a lang (including codeBtns only to be shown after clicking a codeGroupBtn) are nested right in the lang with keys that do not need to have meaning within code. Values are always an array [int displayNestLevel, str codeBtn/Group, str displayText, either str insertValue OR [codeBtnKeys]]
+concept 1: all codeBtns and codeGroupBtns of a lang (including codeBtns only to be shown after clicking a codeGroupBtn) are nested directly in the lang with keys that do not need to have meaning within code. Values are always an array [int displayNestLevel, str codeBtn/Group, str displayText, either str insertValue OR [codeBtnKeys]]
 opened groups would probably need to have a flag in the data to show that it is open - not sure if groups would need that to begin with and set flag to false or just use lack of flag as false
 */
 var savedCodeWithGroupsConcept1 = {
@@ -9,9 +9,10 @@ var savedCodeWithGroupsConcept1 = {
 		"langName": "General",
 		"Tab": [0, "codeBtn", "Tab", "	"],
 		"NewLine": [0, "codeBtn", "New<br/>Line", "\r\n"],
-		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol", "copyrightSymbol"]],
+		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "backTick", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol", "copyrightSymbol"]],
 		"singleQuote": [1, "codeBtn", "'", "'"],
 		"doubleQuote": [1, "codeBtn", "\"", "\""],
+		"backTick": [1, "codeBtn", "`", "`"],
 		"at": [1, "codeBtn", "@", "@"],
 		"lessThanSymbol": [1, "codeBtn", "<", "<"],
 		"moreThanSymbol": [1, "codeBtn", ">", ">"],

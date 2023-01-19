@@ -210,7 +210,37 @@
 							">Next</button> <!--Todo: I said the code could be worse, and look I was correct! a duplicate of the previous ugly code, but somehow this time, the button is incorrectly vertically aligned! -->
 						</div>
 						<div id="btnMkrProto2LangOverviewView" class="hide">
-							<h3>🚧Lang name here</h3>
+							<h3>🚧Lang name here (eg HTML)</h3>
+							<table>
+								<!--
+								"Tab": [0, "codeBtn", "Tab", "	"]
+								-->
+								<tr>
+									<th>internal key</th>
+									<th>Initially hide?</th>
+									<th>btn type</th>
+									<th>Text on btn</th>
+									<th>Snippet (if codeBtn)</th>
+									<th>keys of btns to show (if group)</th>
+								</tr>
+								<tr><!--"BoilerplateTemplatesGrp":[0,"group","Boilerplate & Templates",["BoilerplateBasic", "OneFileBoilerplate", "FreeCodeCamp"]],-->
+									<td>BoilerplateTemplatesGrp</td>
+									<td>False <input type="checkbox"/></td>
+									<td>group</td>
+									<td>Boilerplate & Templates</td>
+									<td></td>
+									<td>["BoilerplateBasic", "OneFileBoilerplate", "FreeCodeCamp"]</td>
+								</tr>
+								<tr><!--"BoilerplateBasic": [1, "codeBtn", "Minimal Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset=\"utf-8\">\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n	</body>\r\n</html>"]-->
+									<td>BoilerplateBasic</td>
+									<td>True <input type="checkbox" checked/></td>
+									<td>codeBtn</td> 
+									<td>Minimal Boilerplate</td>
+									<td>(This snippet is long enough that I would probably want this to just have a sample and something to tap to expand the area maybe open a modal maybe expand and center, or a resizable edit box?)</td>
+									<td></td>
+								</tr>
+							</table>
+							<button>🚧Add button</button>
 							<p>🚧(this is as far as I have got with designing this guide through at the current time, check back in a few days and there should be progress)</p>
 						</div>
 						<button id="btnMkrProto2StartAgain" class="hide" onclick="btnMkrProto2GoToView('btnMkrProto2Step1')">Start again</button>
@@ -235,7 +265,20 @@
 					<p>This will let me, and anyone else, temporarily add btns to the current instance of btnCode, and then be able to copy all of those btns, for either pasting into the codebase to permanently add a batch of btns after they have been tested, or potentially allow other people to email me / message me with their suggestions.</p>
 					<h2>Prototype 2</h2>
 					<h3>Start notes</h3>
-					<p>I am starting prototype 2 before prototype 1b is finished, as the UX of prototype 1 is pretty terrible now (even after some minor QoL changes)</p>
+					<p>I am starting prototype 2 before prototype 1b is finished, as I have done enough there to envision a good UX for this, and UX is the best thing to guide what needs to be built. If I "finished" prototype 1 before starting on prototype 2, I may work on details that end up not being needed for the full thing.</p>
+					<p>I had said previously that prototype 2 would look into an editable table approach, but that might not be needed for this to be a good UI, and that might take quite a bit of work to build.</p>
+					<p>Instead I am prototyping a guide through process. Taking the user through the process of improving a lang:</p>
+					<ol>
+						<li>Start - decide if they are creating a new lang, or altering an existing one. Show the list of existing langs, so that it is clear what we mean by "lang" and they can double check if the lang they are thinking of exists</li>
+						<li>
+							<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+								<li>New lang: They name the lang. Langs effectively have two names: the key and the nice looking name for the button. We should get them to put them both in on the same screen and make the difference clear.</li>
+								<li>Existing lang: Choose the lang to alter</li>
+							</ol>
+							It would be good if these converge back to the same next step - both for development scope needs, and for consistency for the user
+						</li>
+						<li>Maybe this stage does need an editable table, for displaying all of the groups and codeBtns</li>
+					</ol>
 				</div>
 			</div>
 			<div id="newLangScrn" class="hide">
