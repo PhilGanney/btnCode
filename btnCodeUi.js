@@ -156,7 +156,6 @@ var savedCodeWithGroupsConcept1 = {
 		"tutorialSnippet3":[1,"codeBtn","pass a prop called&nbsp;value to Square","return <Square value={i} />;"],
 		"tutorialSnippet4":[1,"codeBtn","{this.props.value}","{this.props.value}"],
 		"tutorialSnippet5":[1,"codeBtn","onClick","onClick={function() { console.log('click'); }}"],
-		/*todo: check snippet 6, think it is fixed had some random react code pasted in the middle of the word "onClick", text was: "this.props.onClick()" */
 		"tutorialSnippet6":[1,"codeBtn","onClick arrow syntax","onClick={() => console.log('click')}"], 
 		"tutorialSnippet7":[1,"codeBtn","constructor to initialize state","  constructor(props) {\r\n     super(props);\r\n     this.state = {\r\n       value: null,\r\n     };\r\n   }"],
 		"tutorialSnippet8":[1,"codeBtn","this.state.value","this.state.value"],
