@@ -145,7 +145,7 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"React": {
         "langName": "🚧React🚧",
-		"OfficialTutorialGrp":[0,"group","reactjs.org tutorial",["tutorialSnippet1", "tutorialSnippet2", "tutorialSnippet3", "tutorialSnippet4", "tutorialSnippet5", "tutorialSnippet6"]],
+		"OfficialTutorialGrp":[0,"group","reactjs.org tutorial",["tutorialSnippet1","tutorialSnippet2","tutorialSnippet3","tutorialSnippet4","tutorialSnippet5","tutorialSnippet6","tutorialSnippet7","tutorialSnippet8","tutorialSnippet9","tutorialSnippet10","tutorialSnippet11","tutorialSnippet12","tutorialSnippet13","tutorialSnippet14","tutorialSnippet15","tutorialSnippet16","tutorialSnippet17","tutorialSnippet18","tutorialSnippet19","tutorialSnippet20","tutorialSnippet21","tutorialSnippet22"]],
         "tutorialSnippet1": [
             1,
             "codeBtn",
@@ -156,7 +156,25 @@ var savedCodeWithGroupsConcept1 = {
 		"tutorialSnippet3":[1,"codeBtn","pass a prop called&nbsp;value to Square","return <Square value={i} />;"],
 		"tutorialSnippet4":[1,"codeBtn","{this.props.value}","{this.props.value}"],
 		"tutorialSnippet5":[1,"codeBtn","onClick","onClick={function() { console.log('click'); }}"],
+		/*todo: check snippet 6, think it is fixed had some random react code pasted in the middle of the word "onClick", text was: "this.props.onClick()" */
 		"tutorialSnippet6":[1,"codeBtn","onClick arrow syntax","onClick={() => console.log('click')}"], 
+		"tutorialSnippet7":[1,"codeBtn","constructor to initialize state","  constructor(props) {\r\n     super(props);\r\n     this.state = {\r\n       value: null,\r\n     };\r\n   }"],
+		"tutorialSnippet8":[1,"codeBtn","this.state.value","this.state.value"],
+		"tutorialSnippet9":[1,"codeBtn","onClick ... setState","onClick={() => this.setState({value: 'X'})}"],
+		"tutorialSnippet10":[1,"codeBtn","lift state to Board&nbsp;component","  constructor(props) {\r\n     super(props);\r\n     this.state = {\r\n       squares: Array(9).fill(null),\r\n     };\r\n   }"],
+		"tutorialSnippet11":[1,"codeBtn","modify Boards renderSquare&nbsp;method to read from squares","  return <Square value={this.state.squares[i]} />;"],
+		"tutorialSnippet12":[1,"codeBtn","onClick={() =&gt; this.handleClick(i)}","onClick={() => this.handleClick(i)}"],
+		"tutorialSnippet13":[1,"codeBtn","this.props.onClick()","this.props.onClick()"],
+		"tutorialSnippet14":[1,"codeBtn","handleClick","  handleClick(i) {\r\n     const squares = this.state.squares.slice();\r\n     squares[i] = 'X';\r\n     this.setState({squares: squares});\r\n   }"],
+		"tutorialSnippet15":[1,"codeBtn","function component","function Square(props) {\r\n   return (\r\n     <button className=\"square\" onClick={props.onClick}>\r\n       {props.value}\r\n     </button>\r\n   );\r\n }"],
+		"tutorialSnippet16":[1,"codeBtn","xIsNext: true,","xIsNext: true,"],
+		"tutorialSnippet17":[1,"codeBtn","X or O depends on&nbsp;xIsNext","squares[i] = this.state.xIsNext ? 'X' : 'O';"],
+		"tutorialSnippet18":[1,"codeBtn","flip&nbsp;value of xIsNext","xIsNext: !this.state.xIsNext,"],
+		"tutorialSnippet19":[1,"codeBtn","Next player message","const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');"],
+		"tutorialSnippet20":[1,"codeBtn","calculateWinner helper function","function calculateWinner(squares) {\r\n  const lines = [\r\n    [0, 1, 2],\r\n    [3, 4, 5],\r\n    [6, 7, 8],\r\n    [0, 3, 6],\r\n    [1, 4, 7],\r\n    [2, 5, 8],\r\n    [0, 4, 8],\r\n    [2, 4, 6],\r\n  ];\r\n  for (let i = 0; i < lines.length; i++) {\r\n    const [a, b, c] = lines[i];\r\n    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {\r\n      return squares[a];\r\n    }\r\n  }\r\n  return null;\r\n"],
+		"tutorialSnippet21":[1,"codeBtn","display&nbsp;winner or next text","    const winner = calculateWinner(this.state.squares);\r\n    let status;\r\n    if (winner) {\r\n      status = 'Winner: ' + winner;\r\n    } else {\r\n      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');\r\n    }"],
+		"tutorialSnippet22":[1,"codeBtn","ignore clicks after&nbsp;game&nbsp;won or&nbsp;square&nbsp;filled ","    if (calculateWinner(squares) || squares[i]) {\r\n      return;\r\n    }"],
+		/*Todo: snippets for the "Adding Time Travel" section. (I decided after getting to snippet 22 that everything else was outside of scope for the current day - this is enough to make the working tic tac toe game, and probably the biggest batch of btns I have ever done)*/
 	},
 	"python": {
 		"langName": "🚧python🚧",
