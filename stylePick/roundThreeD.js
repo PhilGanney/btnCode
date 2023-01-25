@@ -25,7 +25,7 @@ footer{
 
 .stylerBtns{/*Styler btns*/
 	width: 100px;
-	float: left;
+	float: right;
 	margin: 2px;
 }
 
@@ -112,7 +112,7 @@ button{ /*all buttons*/
 	src: url("fonts/FluxRegular.otf") format("opentype");
 }
 #btnpython{ /*style the main button for Python (id is lowercase throughout because it is generated based on the button text which is based on the Python logo)*/
-	font-size: 1.2em; /*Even with the extra size from the class, it still looked small compared with buttons next to it (perhaps due to being lowercase next to uppercase as well as the font. Cannot use 1.2em in the entire class though, otherwise the text on some buttons overflows vertically)*/
+    font-size: 1em; /*while it has 🚧 symbols font size needs to be 1em to fit in the height of the btn - the emoji are a little taller than regular chars and they also make the text three lines tall*/
 }
 .python{ /*Style all the elements for coding Python.*/
 	/*Styling taken from python.org homepage*/

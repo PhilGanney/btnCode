@@ -10,7 +10,7 @@
 		<script src="btnCodeUi.js?20230116" async></script><!--The main js file.-->
 		<!-- stylePick scripts just have a JS variable holding the CSS for that style, to be copied into the styler if the user tries out that style
 				As such, it is safe for them to be async-->
-		<script src="stylePick\default.js?20221207" async></script>
+		<script src="stylePick\outline.js?20221207" async></script>
 		<script src="stylePick\rectangular.js?20221207" async></script>
 		<script src="stylePick\roundThreeD.js?20221207" async></script>
 		<script src="stylePick\greenOnBlack.js?20221207" async></script>
@@ -69,7 +69,7 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<button id="defaultStyle" class="stylerBtns" onclick="pickStyle('default')">default style</button>
+				<button id="outlineStyle" class="stylerBtns" onclick="pickStyle('outline')">outline style</button>
 				<button id="rectangular" class="stylerBtns" onclick="pickStyle('rectangular')">rectangular style</button>
 				<button id="roundThreeD" class="stylerBtns" onclick="pickStyle('roundThreeD')">round & 3D style</button>
 				<button id="greenOnBlack" class="stylerBtns" onclick="pickStyle('greenOnBlack')">Green Text on Black</button>
@@ -240,7 +240,8 @@
 									<td></td>
 								</tr>
 							</table>
-							<button>🚧Add button</button>
+							<button>🚧Add group</button>
+							<button>🚧Add codeBtn</button>
 							<p>🚧(this is as far as I have got with designing this guide through at the current time, check back in a few days and there should be progress)</p>
 						</div>
 						<button id="btnMkrProto2StartAgain" class="hide" onclick="btnMkrProto2GoToView('btnMkrProto2Step1')">Start again</button>

@@ -109,6 +109,9 @@ button{ /*all buttons*/
 	font-family: Flux-Regular;
 	src: url("fonts/FluxRegular.otf") format("opentype");
 }
+#btnpython{ /*style the main button for Python (id is lowercase throughout because it is generated based on the button text which is based on the Python logo)*/
+    font-size: 1em; /*while it has 🚧 symbols font size needs to be 1em to fit in the height of the btn - the emoji are a little taller than regular chars and they also make the text three lines tall*/
+}
 .python{ /*Style all the elements for coding Python. Lowercase throughout*/
 	/*Styling taken from python.org homepage*/
 	background: #1c3b56;
