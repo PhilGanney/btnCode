@@ -32,10 +32,12 @@ footer{
     filter: blur(0.5px); /*just part of the ghostly charm!*/
 }
 
-
+#stylerBtnsContainer{/*a div with all the stylerBtns inside*/
+	float: right;
+}
 .stylerBtns{/*Styler btns*/
     width: 100px;
-    float: right;
+    float: left;
     margin: 2px;
     border-radius: 32% 32% 0px 0px;
     box-shadow: 5px 0px 6px black;

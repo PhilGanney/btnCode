@@ -69,14 +69,16 @@
 			<div id="vars"></div>
 			<textarea id="codeTA" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
 			<div id="styler" class="hide">
-				<button id="outlineStyle" class="stylerBtns" onclick="pickStyle('outline')">outline style</button>
-				<button id="rectangular" class="stylerBtns" onclick="pickStyle('rectangular')">rectangular style</button>
-				<button id="roundThreeD" class="stylerBtns" onclick="pickStyle('roundThreeD')">round & 3D style</button>
-				<button id="greenOnBlack" class="stylerBtns" onclick="pickStyle('greenOnBlack')">Green Text on Black</button>
-				<button id="greenOnBlackExtreme" class="stylerBtns" onclick="pickStyle('greenOnBlackExtreme')">Green Text on Black Extreme</button>
-				<button id="pinkOnBlackStyle" class="stylerBtns" onclick="pickStyle('pinkOnBlack')">Pink Text on Black</button>				
-				<button id="ghostly" class="stylerBtns" onclick="pickStyle('ghostly')">Ghostly</button>	
-				<button id="saveStyle" class="stylerBtns" onclick="saveStyle()">Save to local storage</button>
+				<div id="stylerBtnsContainer">
+					<button id="rectangular" class="stylerBtns" onclick="pickStyle('rectangular')">rectangular (default style)</button>
+					<button id="outlineStyle" class="stylerBtns" onclick="pickStyle('outline')">outline</button>
+					<button id="roundThreeD" class="stylerBtns" onclick="pickStyle('roundThreeD')">round & 3D</button>
+					<button id="greenOnBlack" class="stylerBtns" onclick="pickStyle('greenOnBlack')">Green Text on Black</button>
+					<button id="greenOnBlackExtreme" class="stylerBtns" onclick="pickStyle('greenOnBlackExtreme')">Green Text on Black Extreme</button>
+					<button id="pinkOnBlackStyle" class="stylerBtns" onclick="pickStyle('pinkOnBlack')">Pink Text on Black</button>				
+					<button id="ghostly" class="stylerBtns" onclick="pickStyle('ghostly')">Ghostly</button>	
+					<button id="saveStyle" class="stylerBtns" onclick="saveStyle()">Save to local storage</button>
+				</div>
 				<p id="stylerExplainer">Below is a contenteditable style element, styled via style attribute to display: block,  - you can overwrite most CSS on btnCode by finding the relevant rule and changing values, but removing rules will not remove default rules</p>
 				
 				<style id="styleyStyle" contenteditable spellcheck="false" style="display: block; height: 300px; width: 100%; white-space: pre; overflow: scroll; resize: both;">

@@ -28,10 +28,12 @@ var greenOnBlackStylez = `
         color:green;
     }
     
-    
+    #stylerBtnsContainer{/*a div with all the stylerBtns inside*/
+	    float: right;
+    }
     .stylerBtns{/*Styler btns*/
         width: 100px;
-        float: right;
+        float: left;
         margin: 2px;
     }
     

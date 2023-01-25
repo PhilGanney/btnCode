@@ -75,9 +75,11 @@ footer{
 	height: 86px;
 }
 
+#stylerBtnsContainer{/*a div with all the stylerBtns inside*/
+	float: right;
+}
 .stylerBtns{/*Styler btns*/
 	width: 100px;
-	float: right;
 	margin: 2px;
 }
 
