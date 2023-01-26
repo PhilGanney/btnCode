@@ -266,3 +266,9 @@ tbody tr td{
 	}
 
 }
+/**Prevent styler explainer text from looking weird at certain screen sizes, from an effect of stylerBtnsContainer floating next to it */
+@media only screen and (min-width: 867px) and (max-width: 1018px){
+	#stylerBtnsContainer  {
+		width: 98%;
+	}
+}
