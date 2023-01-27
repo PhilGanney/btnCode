@@ -189,8 +189,8 @@ var savedCodeWithGroupsConcept1 = {
 		"letsreactWithoutNpm2": [
 			1,
 			"codeBtn",
-			"import React library",
-			"<!-- Load React Libraries -->\r\n<!-- Note: when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>"
+			"import&nbsp;React library (version 17)",
+			"<!-- Load React Libraries -->\r\n<!-- Note: 1) React version numbers in this snippet match tutorial not latest avaiable 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>"
 		],
 		"letsreactWithoutNpm3": [
 			1,
@@ -221,7 +221,13 @@ var savedCodeWithGroupsConcept1 = {
 			"codeBtn",
 			"Complete HTML Document",
 			"<html>\r\n    <head>\r\n        <title>Let's React without npm</title>\r\n        <!– Load React Libraries –>\r\n        <!– Note: when deploying, replace \"development.js\" with \"production.min.js\". –>\r\n        <script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n        <script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>\r\n    </head>\r\n    <body>\r\n        <div id=\"root\"></div>\r\n        <!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n        <script>\r\n            window.onload = function()\r\n            {\r\n                class HelloClass extends React.Component\r\n                {\r\n                    render()\r\n                    {\r\n                        return React.createElement('div', null, 'React without npm');\r\n                    }\r\n                }\r\n                ReactDOM.render(\r\n                    React.createElement(HelloClass, null, null),\r\n                    document.getElementById('root')\r\n                );\r\n            };\r\n        </script>\r\n    </body>\r\n</html>"
-		]
+		],
+		"importReact": [
+			0,
+			"codeBtn",
+			"import&nbsp;React library (version 18)",
+			"<!-- Load React Libraries -->\r\n<!-- Note: 1) Check version numbers 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@18/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\" crossorigin></script>"
+		],
 	},
 	"python": {
 		"langName": "🚧python🚧",
