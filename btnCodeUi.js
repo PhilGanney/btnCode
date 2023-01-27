@@ -184,43 +184,43 @@ var savedCodeWithGroupsConcept1 = {
 			1,
 			"codeBtn",
 			"simple HTML file",
-			"<html>\r\n    <head>\r\n        <title>Let’s React without npm</title>\r\n        \r\n    </head>\r\n    <body>\r\n        \r\n    </body>\r\n</html>"
+			"<html>\r\n    <head>\r\n        <title>Let's React without npm</title>\r\n        \r\n    </head>\r\n    <body>\r\n        \r\n    </body>\r\n</html>"
 		],
 		"letsreactWithoutNpm2": [
 			1,
 			"codeBtn",
 			"import React library",
-			"<!– Load React Libraries –>\r\n<!– Note: when deploying, replace “development.js” with “production.min.js”. –>\r\n<script src=“https://unpkg.com/react@17/umd/react.development.js” crossorigin></script>\r\n<script src=“https://unpkg.com/react-dom@17/umd/react-dom.development.js” crossorigin></script>"
+			"<!-- Load React Libraries -->\r\n<!-- Note: when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>"
 		],
 		"letsreactWithoutNpm3": [
 			1,
 			"codeBtn",
 			"Placeholder root div",
-			"<div id=“root”></div>"
+			"<div id=\"root\"></div>"
 		],
 		"letsreactWithoutNpm3b": [
 			1,
 			"codeBtn",
 			"(extra&nbsp;snippet) body&#8209;end&nbsp;script&nbsp;tag for&nbsp;steps&nbsp;4+5&nbsp;to&nbsp;go",
-			"<!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n<script>\r\n    window.onload = function()\r\n    {\r\n        //next steps will go here\r\n    };\r\n</script>"
+			"<!-- This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file -->\r\n<script>\r\n    window.onload = function()\r\n    {\r\n        //next steps will go here\r\n    };\r\n</script>"
 		],
 		"letsreactWithoutNpm4": [
 			1,
 			"codeBtn",
 			"Create a React Component",
-			"class HelloClass extends React.Component\r\n{\r\n    render()\r\n    {\r\n        return React.createElement(‘div’, null, ‘React without npm’);\r\n    }\r\n}"
+			"class HelloClass extends React.Component\r\n{\r\n    render()\r\n    {\r\n        return React.createElement('div', null, 'React without npm');\r\n    }\r\n}"
 		],
 		"letsreactWithoutNpm5": [
 			1,
 			"codeBtn",
 			"Call React Component",
-			"ReactDOM.render(\r\n    React.createElement(HelloClass, null, null),\r\n    document.getElementById(‘root’)\r\n);"
+			"ReactDOM.render(\r\n    React.createElement(HelloClass, null, null),\r\n    document.getElementById('root')\r\n);"
 		],
 		"letsreactWithoutNpm6": [
 			1,
 			"codeBtn",
 			"Complete HTML Document",
-			"<html>\r\n    <head>\r\n        <title>Let’s React without npm</title>\r\n        <!– Load React Libraries –>\r\n        <!– Note: when deploying, replace “development.js” with “production.min.js”. –>\r\n        <script src=“https://unpkg.com/react@17/umd/react.development.js” crossorigin></script>\r\n        <script src=“https://unpkg.com/react-dom@17/umd/react-dom.development.js” crossorigin></script>\r\n    </head>\r\n    <body>\r\n        <div id=“root”></div>\r\n        <!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n        <script>\r\n            window.onload = function()\r\n            {\r\n                class HelloClass extends React.Component\r\n                {\r\n                    render()\r\n                    {\r\n                        return React.createElement(‘div’, null, ‘React without npm’);\r\n                    }\r\n                }\r\n                ReactDOM.render(\r\n                    React.createElement(HelloClass, null, null),\r\n                    document.getElementById(‘root’)\r\n                );\r\n            };\r\n        </script>\r\n    </body>\r\n</html>"
+			"<html>\r\n    <head>\r\n        <title>Let's React without npm</title>\r\n        <!– Load React Libraries –>\r\n        <!– Note: when deploying, replace \"development.js\" with \"production.min.js\". –>\r\n        <script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n        <script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>\r\n    </head>\r\n    <body>\r\n        <div id=\"root\"></div>\r\n        <!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n        <script>\r\n            window.onload = function()\r\n            {\r\n                class HelloClass extends React.Component\r\n                {\r\n                    render()\r\n                    {\r\n                        return React.createElement('div', null, 'React without npm');\r\n                    }\r\n                }\r\n                ReactDOM.render(\r\n                    React.createElement(HelloClass, null, null),\r\n                    document.getElementById('root')\r\n                );\r\n            };\r\n        </script>\r\n    </body>\r\n</html>"
 		]
 	},
 	"python": {
