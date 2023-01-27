@@ -174,6 +174,54 @@ var savedCodeWithGroupsConcept1 = {
 		"tutorialSnippet21":[1,"codeBtn","display&nbsp;winner or next text","    const winner = calculateWinner(this.state.squares);\r\n    let status;\r\n    if (winner) {\r\n      status = 'Winner: ' + winner;\r\n    } else {\r\n      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');\r\n    }"],
 		"tutorialSnippet22":[1,"codeBtn","ignore clicks after&nbsp;game&nbsp;won or&nbsp;square&nbsp;filled ","    if (calculateWinner(squares) || squares[i]) {\r\n      return;\r\n    }"],
 		/*Todo: snippets for the "Adding Time Travel" section. (I decided after getting to snippet 22 that everything else was outside of scope for the current day - this is enough to make the working tic tac toe game, and probably the biggest batch of btns I have ever done)*/
+		"letsreactWithoutNpm": [
+			0,
+			"group",
+			"letsreact.org React app without&nbsp;npm",
+			["letsreactWithoutNpm1","letsreactWithoutNpm2","letsreactWithoutNpm3","letsreactWithoutNpm3b","letsreactWithoutNpm4","letsreactWithoutNpm5","letsreactWithoutNpm6"]
+		],
+		"letsreactWithoutNpm1": [
+			1,
+			"codeBtn",
+			"simple HTML file",
+			"<html>\r\n    <head>\r\n        <title>Let’s React without npm</title>\r\n        \r\n    </head>\r\n    <body>\r\n        \r\n    </body>\r\n</html>"
+		],
+		"letsreactWithoutNpm2": [
+			1,
+			"codeBtn",
+			"import React library",
+			"<!– Load React Libraries –>\r\n<!– Note: when deploying, replace “development.js” with “production.min.js”. –>\r\n<script src=“https://unpkg.com/react@17/umd/react.development.js” crossorigin></script>\r\n<script src=“https://unpkg.com/react-dom@17/umd/react-dom.development.js” crossorigin></script>"
+		],
+		"letsreactWithoutNpm3": [
+			1,
+			"codeBtn",
+			"Placeholder root div",
+			"<div id=“root”></div>"
+		],
+		"letsreactWithoutNpm3b": [
+			1,
+			"codeBtn",
+			"(extra&nbsp;snippet) body&#8209;end&nbsp;script&nbsp;tag for&nbsp;steps&nbsp;4+5&nbsp;to&nbsp;go",
+			"<!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n<script>\r\n    window.onload = function()\r\n    {\r\n        //next steps will go here\r\n    };\r\n</script>"
+		],
+		"letsreactWithoutNpm4": [
+			1,
+			"codeBtn",
+			"Create a React Component",
+			"class HelloClass extends React.Component\r\n{\r\n    render()\r\n    {\r\n        return React.createElement(‘div’, null, ‘React without npm’);\r\n    }\r\n}"
+		],
+		"letsreactWithoutNpm5": [
+			1,
+			"codeBtn",
+			"Call React Component",
+			"ReactDOM.render(\r\n    React.createElement(HelloClass, null, null),\r\n    document.getElementById(‘root’)\r\n);"
+		],
+		"letsreactWithoutNpm6": [
+			1,
+			"codeBtn",
+			"Complete HTML Document",
+			"<html>\r\n    <head>\r\n        <title>Let’s React without npm</title>\r\n        <!– Load React Libraries –>\r\n        <!– Note: when deploying, replace “development.js” with “production.min.js”. –>\r\n        <script src=“https://unpkg.com/react@17/umd/react.development.js” crossorigin></script>\r\n        <script src=“https://unpkg.com/react-dom@17/umd/react-dom.development.js” crossorigin></script>\r\n    </head>\r\n    <body>\r\n        <div id=“root”></div>\r\n        <!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n        <script>\r\n            window.onload = function()\r\n            {\r\n                class HelloClass extends React.Component\r\n                {\r\n                    render()\r\n                    {\r\n                        return React.createElement(‘div’, null, ‘React without npm’);\r\n                    }\r\n                }\r\n                ReactDOM.render(\r\n                    React.createElement(HelloClass, null, null),\r\n                    document.getElementById(‘root’)\r\n                );\r\n            };\r\n        </script>\r\n    </body>\r\n</html>"
+		]
 	},
 	"python": {
 		"langName": "🚧python🚧",
