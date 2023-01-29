@@ -228,6 +228,12 @@ var savedCodeWithGroupsConcept1 = {
 			"import&nbsp;React library (version 18)",
 			"<!-- Load React Libraries -->\r\n<!-- Note: 1) Check version numbers 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@18/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\" crossorigin></script>"
 		],
+		"babelStandalone": [
+			0,
+			"codeBtn",
+			"Babel Standalone (convert&nbsp;JSX&nbsp;in&nbsp;browser)",
+			"<!-- Load @babel/standalone - a way to have Babel running in the browser rather than needing to build every time, https://babeljs.io/docs/en/babel-standalone#docsNav -->\r\n<script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>"
+		]
 	},
 	"python": {
 		"langName": "🚧python🚧",
