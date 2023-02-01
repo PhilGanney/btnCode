@@ -144,8 +144,8 @@ var savedCodeWithGroupsConcept1 = {
 		"Comment": [0, "codeBtn", "/*Comment*/", "/* Comment */"],
 	},
 	"React": {
-        "langName": "🚧React🚧",
-		"OfficialTutorialGrp":[0,"group","reactjs.org tutorial",["tutorialSnippet1","tutorialSnippet2","tutorialSnippet3","tutorialSnippet4","tutorialSnippet5","tutorialSnippet6","tutorialSnippet7","tutorialSnippet8","tutorialSnippet9","tutorialSnippet10","tutorialSnippet11","tutorialSnippet12","tutorialSnippet13","tutorialSnippet14","tutorialSnippet15","tutorialSnippet16","tutorialSnippet17","tutorialSnippet18","tutorialSnippet19","tutorialSnippet20","tutorialSnippet21","tutorialSnippet22"]],
+        "langName": "React",
+		"OfficialTutorialGrp":[0,"group","reactjs.org tic&#8209;tac&#8209;toe tutorial",["tutorialSnippet1","tutorialSnippet2", "tutorialSnippetStarterCodeJS", "tutorialSnippetStarterHTML","tutorialSnippetStarterCSS","tutorialSnippet3","tutorialSnippet4","tutorialSnippet5","tutorialSnippet6","tutorialSnippet7","tutorialSnippet8","tutorialSnippet9","tutorialSnippet10","tutorialSnippet11","tutorialSnippet12","tutorialSnippet13","tutorialSnippet14","tutorialSnippet15","tutorialSnippet16","tutorialSnippet17","tutorialSnippet18","tutorialSnippet19","tutorialSnippet20","tutorialSnippet21","tutorialSnippet22"]],
         "tutorialSnippet1": [
             1,
             "codeBtn",
@@ -153,6 +153,24 @@ var savedCodeWithGroupsConcept1 = {
             "//From the official tutorial at https://reactjs.org/tutorial/tutorial.html\r\nclass ShoppingList extends React.Component {\r\n   render() {\r\n     return (\r\n       <div className=\"shopping-list\">\r\n         <h1>Shopping List for {this.props.name}</h1>\r\n         <ul>\r\n           <li>Instagram</li>\r\n           <li>WhatsApp</li>\r\n           <li>Oculus</li>\r\n         </ul>\r\n       </div>\r\n     );\r\n   }\r\n}\r\n  // Example usage: <ShoppingList name=\"Mark\" />"
         ],
 		"tutorialSnippet2":[1,"codeBtn","return React.createElement ...","return React.createElement('div', {className: 'shopping-list'},   React.createElement('h1', /* ... h1 children ... */),   React.createElement('ul', /* ... ul children ... */) );"],
+		"tutorialSnippetStarterCodeJS": [
+			1,
+			"codeBtn",
+			"JS/React Starter Code",
+			"class Square extends React.Component {\n  render() {\n    return (\n      <button className=\"square\">\n        {/* TODO */}\n      </button>\n    );\n  }\n}\n\nclass Board extends React.Component {\n  renderSquare(i) {\n    return <Square />;\n  }\n\n  render() {\n    const status = 'Next player: X';\n\n    return (\n      <div>\n        <div className=\"status\">{status}</div>\n        <div className=\"board-row\">\n          {this.renderSquare(0)}\n          {this.renderSquare(1)}\n          {this.renderSquare(2)}\n        </div>\n        <div className=\"board-row\">\n          {this.renderSquare(3)}\n          {this.renderSquare(4)}\n          {this.renderSquare(5)}\n        </div>\n        <div className=\"board-row\">\n          {this.renderSquare(6)}\n          {this.renderSquare(7)}\n          {this.renderSquare(8)}\n        </div>\n      </div>\n    );\n  }\n}\n\nclass Game extends React.Component {\n  render() {\n    return (\n      <div className=\"game\">\n        <div className=\"game-board\">\n          <Board />\n        </div>\n        <div className=\"game-info\">\n          <div>{/* status */}</div>\n          <ol>{/* TODO */}</ol>\n        </div>\n      </div>\n    );\n  }\n}\n\n// ========================================\n\nconst root = ReactDOM.createRoot(document.getElementById(\"root\"));\nroot.render(<Game />);\n"
+		],
+		"tutorialSnippetStarterHTML": [
+			1,
+			"codeBtn",
+			"Starter HTML ",
+			"<div id=\"errors\" style=\"\n  background: #c00;\n  color: #fff;\n  display: none;\n  margin: -20px -20px 20px;\n  padding: 20px;\n  white-space: pre-wrap;\n\"></div>\n<div id=\"root\"></div>\n<script>\nwindow.addEventListener('mousedown', function(e) {\n  document.body.classList.add('mouse-navigation');\n  document.body.classList.remove('kbd-navigation');\n});\nwindow.addEventListener('keydown', function(e) {\n  if (e.keyCode === 9) {\n    document.body.classList.add('kbd-navigation');\n    document.body.classList.remove('mouse-navigation');\n  }\n});\nwindow.addEventListener('click', function(e) {\n  if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {\n    e.preventDefault();\n  }\n});\nwindow.onerror = function(message, source, line, col, error) {\n  var text = error ? error.stack || error : message + ' (at ' + source + ':' + line + ':' + col + ')';\n  errors.textContent += text + '\\n';\n  errors.style.display = '';\n};\nconsole.error = (function(old) {\n  return function error() {\n    errors.textContent += Array.prototype.slice.call(arguments).join(' ') + '\\n';\n    errors.style.display = '';\n    old.apply(this, arguments);\n  }\n})(console.error);\n</script>"
+		],
+		"tutorialSnippetStarterCSS": [
+			1,
+			"codeBtn",
+			"Starter CSS",
+			"body {\n  font: 14px \"Century Gothic\", Futura, sans-serif;\n  margin: 20px;\n}\n\nol, ul {\n  padding-left: 30px;\n}\n\n.board-row:after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\n.status {\n  margin-bottom: 10px;\n}\n\n.square {\n  background: #fff;\n  border: 1px solid #999;\n  float: left;\n  font-size: 24px;\n  font-weight: bold;\n  line-height: 34px;\n  height: 34px;\n  margin-right: -1px;\n  margin-top: -1px;\n  padding: 0;\n  text-align: center;\n  width: 34px;\n}\n\n.square:focus {\n  outline: none;\n}\n\n.kbd-navigation .square:focus {\n  background: #ddd;\n}\n\n.game {\n  display: flex;\n  flex-direction: row;\n}\n\n.game-info {\n  margin-left: 20px;\n}\n"
+		],
 		"tutorialSnippet3":[1,"codeBtn","pass a prop called&nbsp;value to Square","return <Square value={i} />;"],
 		"tutorialSnippet4":[1,"codeBtn","{this.props.value}","{this.props.value}"],
 		"tutorialSnippet5":[1,"codeBtn","onClick","onClick={function() { console.log('click'); }}"],
