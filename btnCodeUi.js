@@ -8,7 +8,7 @@ var savedCodeWithGroupsConcept1 = {
 	"General": {
 		"langName": "General",
 		"Tab": [0, "codeBtn", "Tab", "	"],
-		"NewLine": [0, "codeBtn", "New<br/>Line", "\r\n"],
+		"NewLine": [0, "codeBtn", "New<br/>Line", "\n"],
 		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "backTick", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol", "copyrightSymbol"]],
 		"singleQuote": [1, "codeBtn", "'", "'"],
 		"doubleQuote": [1, "codeBtn", "\"", "\""],
@@ -27,9 +27,9 @@ var savedCodeWithGroupsConcept1 = {
 	"HTML": {
 		"langName": "HTML",
 		"BoilerplateTemplatesGrp":[0,"group","Boilerplate & Templates",["BoilerplateBasic", "OneFileBoilerplate", "FreeCodeCamp"]],
-		"BoilerplateBasic": [1, "codeBtn", "Minimal Boilerplate", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset=\"utf-8\">\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n	</body>\r\n</html>"],
-		"OneFileBoilerplate": [1, "codeBtn", "Minimal + JS & CSS in body", "<!DOCTYPE html>\r\n<html>\r\n	<head>\r\n		<meta charset=\"utf-8\">\r\n		<title>Page Title</title>\r\n	</head>\r\n	<body>\r\n		\r\n		<script>\r\n			\r\n		</script>\r\n		<style>\r\n			\r\n		</style>\r\n	</body>\r\n</html>"],
-		"FreeCodeCamp": [1, "codeBtn", "FreeCodeCamp Boilerplate", "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>HTML 5 Boilerplate</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\">\r\n  </head>\r\n  <body>\r\n	<script src=\"index.js\"></script>\r\n  </body>\r\n</html>"],
+		"BoilerplateBasic": [1, "codeBtn", "Minimal Boilerplate", "<!DOCTYPE html>\n<html>\n	<head>\n		<meta charset=\"utf-8\">\n		<title>Page Title</title>\n	</head>\n	<body>\n		\n	</body>\n</html>"],
+		"OneFileBoilerplate": [1, "codeBtn", "Minimal + JS & CSS in body", "<!DOCTYPE html>\n<html>\n	<head>\n		<meta charset=\"utf-8\">\n		<title>Page Title</title>\n	</head>\n	<body>\n		\n		<script>\n			\n		</script>\n		<style>\n			\n		</style>\n	</body>\n</html>"],
+		"FreeCodeCamp": [1, "codeBtn", "FreeCodeCamp Boilerplate", "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>HTML 5 Boilerplate</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n  </head>\n  <body>\n	<script src=\"index.js\"></script>\n  </body>\n</html>"],
 		"HeadElementsGrp": [0, "group", "Head<br/>Elements", ["Stylesheet", "Script", "Title", "LinkBase", "MetaOther", "MetaCharset", "MetaViewport", "MetaThemeColor", "MetaThemeColorDark", "MetaRobotsNoIndex"]],
 		"Title": [1, "codeBtn", "&lt;title&gt; (of the Tab/Page)", "<title>Title</title>"],
 		"Stylesheet": [1, "codeBtn", "&lt;link&gt; stylesheet", "<link rel=\"stylesheet\" href=\"main.css\"> </link>"],
@@ -37,22 +37,22 @@ var savedCodeWithGroupsConcept1 = {
 		"LinkBase": [1, "codeBtn", "&lt;base&gt;(for all links)", "<base href=\"\" target=\"_blank\">"],
 		"MetaCharset": [1, "codeBtn", "&lt;meta&gt;<br/>charset", "<meta charset=\"UTF-8\">"],
 		"MetaViewport": [1, "codeBtn", "&lt;meta&gt;<br/>viewport", "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"],
-		"MetaOther": [1, "codeBtn", "&lt;meta&gt; desc,<br/>keywords, author", "<meta name=\"description\" content=\"\">\r\n<meta name=\"keywords\" content=\"HTML, CSS, JavaScript\">\r\n<meta name=\"author\" content=\"Grace Hopper\">"],
+		"MetaOther": [1, "codeBtn", "&lt;meta&gt; desc,<br/>keywords, author", "<meta name=\"description\" content=\"\">\n<meta name=\"keywords\" content=\"HTML, CSS, JavaScript\">\n<meta name=\"author\" content=\"Grace Hopper\">"],
 		"MetaThemeColor": [1, "codeBtn", "&lt;meta&gt; theme&#8209;color", "<meta name=\"theme-color\" content=\"#4285f4\" />"],
 		"MetaRobotsNoIndex": [1, "codeBtn", "&lt;meta&gt; robots noindex", "<meta name=\"robots\" content=\"noindex\">"],
-		"MetaThemeColorDark": [1, "codeBtn", "&lt;meta&gt; theme&#8209;color light/dark&nbsp;modes", "<meta name=\"theme-color\" media=\"(prefers-color-scheme: light)\" content=\"cyan\" />\r\n<meta name=\"theme-color\" media=\"(prefers-color-scheme: dark)\" content=\"black\" />"],
+		"MetaThemeColorDark": [1, "codeBtn", "&lt;meta&gt; theme&#8209;color light/dark&nbsp;modes", "<meta name=\"theme-color\" media=\"(prefers-color-scheme: light)\" content=\"cyan\" />\n<meta name=\"theme-color\" media=\"(prefers-color-scheme: dark)\" content=\"black\" />"],
 		"LayoutGrp": [0, "group", "Layout", ["Header", "MainElem", "Footer", "Div", "Span"]],
-		"Header": [1, "codeBtn", "&lt;header&gt;", "<header>\r\n	\r\n</header>"],
-		"MainElem": [1, "codeBtn", "&lt;main&gt;", "<main>\r\n	\r\n</main>"],
-		"Footer": [1, "codeBtn", "&lt;footer&gt;", "<footer>\r\n	\r\n</footer>"],
-		"Div": [1, "codeBtn", "&lt;div&gt;", "<div>\r\n	\r\n</div>"],
+		"Header": [1, "codeBtn", "&lt;header&gt;", "<header>\n	\n</header>"],
+		"MainElem": [1, "codeBtn", "&lt;main&gt;", "<main>\n	\n</main>"],
+		"Footer": [1, "codeBtn", "&lt;footer&gt;", "<footer>\n	\n</footer>"],
+		"Div": [1, "codeBtn", "&lt;div&gt;", "<div>\n	\n</div>"],
 		"Span": [1, "codeBtn", "&lt;span&gt;", "<span></span>"],
 		"TextGrp": [0, "group", "Text", ["Heading1","Heading2","Heading3","Heading6","Paragraph"]],
-		"Heading1": [1, "codeBtn", "&lt;h1&gt;", "<h1>Heading</h1>\r\n"],
-		"Heading2": [1, "codeBtn", "&lt;h2&gt;", "<h2>Heading</h2>\r\n"],
-		"Heading3": [1, "codeBtn", "&lt;h3&gt;", "<h3>Heading</h3>\r\n"],
-		"Heading6": [1, "codeBtn", "&lt;h6&gt;", "<h6>Heading</h6>\r\n"],
-		"Paragraph": [1, "codeBtn", "\r\n&lt;p&gt;", "<p>text</p>\r\n"],
+		"Heading1": [1, "codeBtn", "&lt;h1&gt;", "<h1>Heading</h1>\n"],
+		"Heading2": [1, "codeBtn", "&lt;h2&gt;", "<h2>Heading</h2>\n"],
+		"Heading3": [1, "codeBtn", "&lt;h3&gt;", "<h3>Heading</h3>\n"],
+		"Heading6": [1, "codeBtn", "&lt;h6&gt;", "<h6>Heading</h6>\n"],
+		"Paragraph": [1, "codeBtn", "\n&lt;p&gt;", "<p>text</p>\n"],
 		"LinksGrp": [0, "group", "Links", ["Link", "LinkNewTab", "ImageLink"]],
 		"Link": [1, "codeBtn", "&lt;a&gt; (regular link)", "<a href=\"\">visible text</a>"],
 		"LinkNewTab": [1, "codeBtn", "&lt;a&nbsp;_blank&gt; (link new tab)", "<a href=\"url\" target=\"_blank\">link text</a>"],
@@ -60,22 +60,22 @@ var savedCodeWithGroupsConcept1 = {
 		"FormsUIGrp": [0, "group", "Forms & UI", ["Label","Input", "Datalist", "Button", "Select", "Option", "OptionSelected"]],
 		"Label": [1, "codeBtn", "&lt;label&gt;", "<label for=\"controlID\">Label text here</label>"],
 		"Input": [1, "codeBtn", "&lt;input&gt; type=\"text\"", "<input type=\"text\" id=\"\" name=\"\"/>"],
-		"Datalist":[1,"codeBtn","&lt;datalist&gt; ","<datalist id=\"\">\r\n	<option value=\"val1\"></option>\r\n	<option value=\"val2\"></option>\r\n</datalist>"],
+		"Datalist":[1,"codeBtn","&lt;datalist&gt; ","<datalist id=\"\">\n	<option value=\"val1\"></option>\n	<option value=\"val2\"></option>\n</datalist>"],
 		"Button": [1, "codeBtn", "&lt;button&gt;", "<button id=\"\">Text</button>"],
-		"Select": [1, "codeBtn", "&lt;select&gt;", "<select id=\"\">\r\n	\r\n</select>"],
-		"Option": [1, "codeBtn", "&lt;option&gt;", "<option></option>\r\n"],
-		"OptionSelected": [1, "codeBtn", "&lt;option selected&gt;", "<option selected></option>\r\n"],
+		"Select": [1, "codeBtn", "&lt;select&gt;", "<select id=\"\">\n	\n</select>"],
+		"Option": [1, "codeBtn", "&lt;option&gt;", "<option></option>\n"],
+		"OptionSelected": [1, "codeBtn", "&lt;option selected&gt;", "<option selected></option>\n"],
 		"ImagesGrp":[0,"group","Images &<br/>Graphics",["img", "CanvasTag", "CanvasRect"]],
 		"img":[1,"codeBtn","&lt;img&gt;","<img src=\"filepath\" alt=\"Text to show, if cannot show image\">"],
-		"CanvasTag":[1,"codeBtn","&lt;canvas&gt;","<canvas id=\"myCanvas\">Your browser does not support the canvas tag.</canvas>\r\n<script>\r\n</script>"],
-		"CanvasRect":[1,"codeBtn","&lt;canvas&gt; (with rectangle)","<canvas id=\"myCanvas\">Your browser does not support the canvas tag.</canvas>\r\n<script>\r\n var c = document.getElementById(\"myCanvas\");\r\n var ctx = c.getContext(\"2d\");\r\n ctx.fillStyle = \"#23FF23\";\r\n ctx.fillRect(0, 34, 80, 100);\r\n</script>"],
+		"CanvasTag":[1,"codeBtn","&lt;canvas&gt;","<canvas id=\"myCanvas\">Your browser does not support the canvas tag.</canvas>\n<script>\n</script>"],
+		"CanvasRect":[1,"codeBtn","&lt;canvas&gt; (with rectangle)","<canvas id=\"myCanvas\">Your browser does not support the canvas tag.</canvas>\n<script>\n var c = document.getElementById(\"myCanvas\");\n var ctx = c.getContext(\"2d\");\n ctx.fillStyle = \"#23FF23\";\n ctx.fillRect(0, 34, 80, 100);\n</script>"],
 		"ProgrammingGrp":[0,"group","Programming",["HtmlComment","ScriptTag", "NoscriptTag", "NoscriptBrowserWarn"]],
-		"ScriptTag":[1,"codeBtn","&lt;script&gt;","<script>\r\n</script>"],
+		"ScriptTag":[1,"codeBtn","&lt;script&gt;","<script>\n</script>"],
 		"NoscriptTag":[1,"codeBtn","&lt;noscript&gt; (tag only)","<noscript></noscript>"],
 		"NoscriptBrowserWarn":[1,"codeBtn","&lt;noscript&gt; (scripts needed text)","<noscript>Looks like scripts are disabled, some functionality will not be able to work</noscript>"],
 		"HtmlComment":[1,"codeBtn","&lt;!-- html comment --&gt;","<!-- comment -->"],
 		"TableGrp":[0,"group","Tables",["Table"]],
-		"Table":[1,"codeBtn","&lt;table&gt;","<table>\r\n\t<tr>\r\n\t\t<th>header1</th>\r\n\t\t<th>header2</th>\r\n\t\t<th>header3</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>row1 col1</td>\r\n\t\t<td>row1 col2</td>\r\n\t\t<td>row1 col3</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>row2 col1</td>\r\n\t\t<td>row2 col2</td>\r\n\t\t<td>row2 col3</td> \r\n\t</tr>\r\n\t\r\n</table>"],
+		"Table":[1,"codeBtn","&lt;table&gt;","<table>\n\t<tr>\n\t\t<th>header1</th>\n\t\t<th>header2</th>\n\t\t<th>header3</th>\n\t</tr>\n\t<tr>\n\t\t<td>row1 col1</td>\n\t\t<td>row1 col2</td>\n\t\t<td>row1 col3</td>\n\t</tr>\n\t<tr>\n\t\t<td>row2 col1</td>\n\t\t<td>row2 col2</td>\n\t\t<td>row2 col3</td> \n\t</tr>\n\t\n</table>"],
 		"AttributesGrp": [0, "group", "Attributes", ["id", "class", "value", "onclick", "onchange", "placeholder", "List", "LangEnGB"]],
 		"id": [1, "codeBtn", "id=", "id=\"\""],
 		"class": [1, "codeBtn", "class=", "class=\"\""],
@@ -95,48 +95,48 @@ var savedCodeWithGroupsConcept1 = {
 	"JS": {
 		"langName": "JS",
 		"Core":[0,"group","Core",["Function", "Variable", "Let", "Constant", "IfElse", "SwitchCase"]],
-		"Function": [1, "codeBtn", "Function", "function changeMe1(){\r\n	\r\n}"],
+		"Function": [1, "codeBtn", "Function", "function changeMe1(){\n	\n}"],
 		"Variable": [1, "codeBtn", "var variable", "var someVar = 0;"],
 		"Let": [1, "codeBtn", "let variable", "let blahblah = 0;"],
 		"Constant": [1, "codeBtn", "const constant", "const changeMe1;"],
-		"IfElse": [1, "codeBtn", "if else", "if(){\r\n	\r\n} else {\r\n	\r\n}"],
-		"SwitchCase": [1, "codeBtn", "switch case", "switch(expression) {\r\n	case x:\r\n		\r\n		break;\r\n	case y:\r\n		\r\n		break;\r\n	default:\r\n	\r\n}"],
-		"For": [1, "codeBtn", "For", "for (let i = 0; i < someAmount; i++) {\r\n	\r\n}"],
-		"ForKeyInObject": [1, "codeBtn", "ForKeyInObject", "for (keyName in objectName) {\r\n	\r\n}"],
+		"IfElse": [1, "codeBtn", "if else", "if(){\n	\n} else {\n	\n}"],
+		"SwitchCase": [1, "codeBtn", "switch case", "switch(expression) {\n	case x:\n		\n		break;\n	case y:\n		\n		break;\n	default:\n	\n}"],
+		"For": [1, "codeBtn", "For", "for (let i = 0; i < someAmount; i++) {\n	\n}"],
+		"ForKeyInObject": [1, "codeBtn", "ForKeyInObject", "for (keyName in objectName) {\n	\n}"],
 		"Break": [1, "codeBtn", "Break", "break;"],
 		"GetElByID": [0, "codeBtn", "getElement ById", "document.getElementById(\"codeBtns\")"],
 		"Logging":[0,"group","Logging & Commenting",["ConsoleGroup", "ConsoleLog", "/*Comment*/", "//Comment"]],
-		"ConsoleGroup": [1, "codeBtn", "ConsoleGroup", "console.group(\"\");\r\nconsole.groupEnd();"],
+		"ConsoleGroup": [1, "codeBtn", "ConsoleGroup", "console.group(\"\");\nconsole.groupEnd();"],
 		"ConsoleLog": [1, "codeBtn", "ConsoleLog", "console.log();"],
 		"/*Comment*/": [1, "codeBtn", "/*Comment*/", "/* Comment */"],
 		"//Comment": [1, "codeBtn", "//Comment", "//Comment"],
 		"JSONKeyValue": [0, "codeBtn", "JSONKeyValue", "\"key\": \"value\""],
-		"JSONKeyObject": [0, "codeBtn", "JSONKeyObject", "\"key\": {\r\n	\r\n	\r\n}"],
+		"JSONKeyObject": [0, "codeBtn", "JSONKeyObject", "\"key\": {\n	\n	\n}"],
 		"LocalStorageGrp":[0,"group","Local Storage",["SaveToLocalStorageFunc"]],
-		"SaveToLocalStorageFunc":[1,"codeBtn","function: saveToLocalStorage","function saveToLocalStorage(key,value){ \r\n\t/*Returns true if successful, alerts if not*/\r\n\t//Before using web storage, check browser support for Storage (covers both localStorage and sessionStorage)\r\n\tif (typeof(Storage) !== \"undefined\") {\r\n\t//Storage is there, so we'll save it\r\n\t\tlocalStorage.setItem(key, value);\r\n\t\treturn true; //lets us display a relevant success message or carry on doing things\r\n\t} else {//No Web Storage support\r\n\t\t//TODO: is this a good experience??\r\n\t\talert(\"couldn't save, browser doesn't support local storage\");\r\n\t\treturn false;\r\n\t}\r\n}"],
+		"SaveToLocalStorageFunc":[1,"codeBtn","function: saveToLocalStorage","function saveToLocalStorage(key,value){ \n\t/*Returns true if successful, alerts if not*/\n\t//Before using web storage, check browser support for Storage (covers both localStorage and sessionStorage)\n\tif (typeof(Storage) !== \"undefined\") {\n\t//Storage is there, so we'll save it\n\t\tlocalStorage.setItem(key, value);\n\t\treturn true; //lets us display a relevant success message or carry on doing things\n\t} else {//No Web Storage support\n\t\t//TODO: is this a good experience??\n\t\talert(\"couldn't save, browser doesn't support local storage\");\n\t\treturn false;\n\t}\n}"],
 	},
 	"CSS": {
 		"langName": "CSS",
 		"mediaQueriesGrp":[0,"group","Media Queries",["MqMinwidth576px", "MqMinwidth768px", "MqMinwidth992px", "MqMinwidth1200px", "PointerFine"]],
-		"MqMinwidth576px": [1, "codeBtn", "screen width 576px", "@media only screen and (min-width: 576px) {\r\n	\r\n}\r\n"],
-		"MqMinwidth768px": [1, "codeBtn", "screen width 768px", "@media only screen and (min-width: 768px) {\r\n	\r\n}\r\n"],
-		"MqMinwidth992px": [1, "codeBtn", "screen width 992px", "@media only screen and (min-width: 992px) {\r\n	\r\n}\r\n"],
-		"MqMinwidth1200px": [1, "codeBtn", "screen width 1200px", "@media only screen and (min-width: 1200px) {\r\n	\r\n}\r\n"],
-		"PointerFine":[1,"codeBtn","pointer: fine","@media (pointer: fine) {\r\n	\r\n}\r\n"],
+		"MqMinwidth576px": [1, "codeBtn", "screen width 576px", "@media only screen and (min-width: 576px) {\n	\n}\n"],
+		"MqMinwidth768px": [1, "codeBtn", "screen width 768px", "@media only screen and (min-width: 768px) {\n	\n}\n"],
+		"MqMinwidth992px": [1, "codeBtn", "screen width 992px", "@media only screen and (min-width: 992px) {\n	\n}\n"],
+		"MqMinwidth1200px": [1, "codeBtn", "screen width 1200px", "@media only screen and (min-width: 1200px) {\n	\n}\n"],
+		"PointerFine":[1,"codeBtn","pointer: fine","@media (pointer: fine) {\n	\n}\n"],
 		"SelectorsGrp":[0,"group","Selectors",["P", "Button", "Class", "ClassesAnd", "ClassesOr", "NestedClasses", "ByID", "LiNthChild", "LiOddChild", "LiEvenChild", "LiFormula", "LiLastChild", "All"]],
-		"P": [1, "codeBtn", "p", "p {\r\n	\r\n	\r\n}\r\n"],
-		"Button": [1, "codeBtn", "button", "button {\r\n	\r\n	\r\n}\r\n"],
-		"Class": [1, "codeBtn", ".class", ".className {\r\n	\r\n	\r\n}\r\n"],
-		"ClassesAnd": [1, "codeBtn", ".class1.class2 (both)", ".class1.class2 {\r\n	\r\n	\r\n}\r\n"],
-		"ClassesOr": [1, "codeBtn", ".class1, .class2 (either)", ".class1, .class2 {\r\n	\r\n	\r\n}\r\n"],
-		"NestedClasses": [1, "codeBtn", ".classParent .classChild (nested)", ".classParent .classChild {\r\n	\r\n	\r\n}\r\n"],
-		"ByID": [1, "codeBtn", "#ID", "#elementID {\r\n	\r\n	\r\n}\r\n"],
-		"LiNthChild":[1,"codeBtn","li:nth-child(2) (2nd li in list)","li:nth-child(2) {\r\n	\r\n}\r\n"],
-		"LiOddChild":[1,"codeBtn","li:nth-child(odd) (odd numbered)","li:nth-child(odd) {\r\n	\r\n}\r\n"],
-		"LiEvenChild":[1,"codeBtn","li:nth-child(even) (even numbered)","li:nth-child(even) {\r\n	\r\n}\r\n"],
-		"LiFormula":[1,"codeBtn","li:nth-child(3n + 1) (by formula)","li:nth-child(3n + 1) {\r\n\t\r\n}\r\n"],
-		"LiLastChild":[1,"codeBtn","li:last-child (last li)","li:last-child {\r\n\t\r\n}\r\n"],
-		"All":[1,"codeBtn","* (wildcard all)","* {\r\n\t\r\n}\r\n"],
+		"P": [1, "codeBtn", "p", "p {\n	\n	\n}\n"],
+		"Button": [1, "codeBtn", "button", "button {\n	\n	\n}\n"],
+		"Class": [1, "codeBtn", ".class", ".className {\n	\n	\n}\n"],
+		"ClassesAnd": [1, "codeBtn", ".class1.class2 (both)", ".class1.class2 {\n	\n	\n}\n"],
+		"ClassesOr": [1, "codeBtn", ".class1, .class2 (either)", ".class1, .class2 {\n	\n	\n}\n"],
+		"NestedClasses": [1, "codeBtn", ".classParent .classChild (nested)", ".classParent .classChild {\n	\n	\n}\n"],
+		"ByID": [1, "codeBtn", "#ID", "#elementID {\n	\n	\n}\n"],
+		"LiNthChild":[1,"codeBtn","li:nth-child(2) (2nd li in list)","li:nth-child(2) {\n	\n}\n"],
+		"LiOddChild":[1,"codeBtn","li:nth-child(odd) (odd numbered)","li:nth-child(odd) {\n	\n}\n"],
+		"LiEvenChild":[1,"codeBtn","li:nth-child(even) (even numbered)","li:nth-child(even) {\n	\n}\n"],
+		"LiFormula":[1,"codeBtn","li:nth-child(3n + 1) (by formula)","li:nth-child(3n + 1) {\n\t\n}\n"],
+		"LiLastChild":[1,"codeBtn","li:last-child (last li)","li:last-child {\n\t\n}\n"],
+		"All":[1,"codeBtn","* (wildcard all)","* {\n\t\n}\n"],
 		"ColoursBackgroundsGrp":[0,"group","colours & backgrounds",["BackgroundColour", "BackgroundLinearGradient", "TextColour"]],
 		"BackgroundColour": [1, "codeBtn", "background-color", "background-color: DodgerBlue;"],
 		"BackgroundLinearGradient":[1,"codeBtn","background-image: linear-gradient","background-image: linear-gradient(to top, green, blue);"],
@@ -150,7 +150,7 @@ var savedCodeWithGroupsConcept1 = {
             1,
             "codeBtn",
             "Class ... extends React.Component render html",
-            "//From the official tutorial at https://reactjs.org/tutorial/tutorial.html\r\nclass ShoppingList extends React.Component {\r\n   render() {\r\n     return (\r\n       <div className=\"shopping-list\">\r\n         <h1>Shopping List for {this.props.name}</h1>\r\n         <ul>\r\n           <li>Instagram</li>\r\n           <li>WhatsApp</li>\r\n           <li>Oculus</li>\r\n         </ul>\r\n       </div>\r\n     );\r\n   }\r\n}\r\n  // Example usage: <ShoppingList name=\"Mark\" />"
+            "//From the official tutorial at https://reactjs.org/tutorial/tutorial.html\nclass ShoppingList extends React.Component {\n   render() {\n     return (\n       <div className=\"shopping-list\">\n         <h1>Shopping List for {this.props.name}</h1>\n         <ul>\n           <li>Instagram</li>\n           <li>WhatsApp</li>\n           <li>Oculus</li>\n         </ul>\n       </div>\n     );\n   }\n}\n  // Example usage: <ShoppingList name=\"Mark\" />"
         ],
 		"tutorialSnippet2":[1,"codeBtn","return React.createElement ...","return React.createElement('div', {className: 'shopping-list'},   React.createElement('h1', /* ... h1 children ... */),   React.createElement('ul', /* ... ul children ... */) );"],
 		"tutorialSnippetStarterCodeJS": [
@@ -175,22 +175,22 @@ var savedCodeWithGroupsConcept1 = {
 		"tutorialSnippet4":[1,"codeBtn","{this.props.value}","{this.props.value}"],
 		"tutorialSnippet5":[1,"codeBtn","onClick","onClick={function() { console.log('click'); }}"],
 		"tutorialSnippet6":[1,"codeBtn","onClick arrow syntax","onClick={() => console.log('click')}"], 
-		"tutorialSnippet7":[1,"codeBtn","constructor to initialize state","  constructor(props) {\r\n     super(props);\r\n     this.state = {\r\n       value: null,\r\n     };\r\n   }"],
+		"tutorialSnippet7":[1,"codeBtn","constructor to initialize state","  constructor(props) {\n     super(props);\n     this.state = {\n       value: null,\n     };\n   }"],
 		"tutorialSnippet8":[1,"codeBtn","this.state.value","this.state.value"],
 		"tutorialSnippet9":[1,"codeBtn","onClick ... setState","onClick={() => this.setState({value: 'X'})}"],
-		"tutorialSnippet10":[1,"codeBtn","lift state to Board&nbsp;component","  constructor(props) {\r\n     super(props);\r\n     this.state = {\r\n       squares: Array(9).fill(null),\r\n     };\r\n   }"],
+		"tutorialSnippet10":[1,"codeBtn","lift state to Board&nbsp;component","  constructor(props) {\n     super(props);\n     this.state = {\n       squares: Array(9).fill(null),\n     };\n   }"],
 		"tutorialSnippet11":[1,"codeBtn","modify Boards renderSquare&nbsp;method to read from squares","  return <Square value={this.state.squares[i]} />;"],
 		"tutorialSnippet12":[1,"codeBtn","onClick={() =&gt; this.handleClick(i)}","onClick={() => this.handleClick(i)}"],
 		"tutorialSnippet13":[1,"codeBtn","this.props.onClick()","this.props.onClick()"],
-		"tutorialSnippet14":[1,"codeBtn","handleClick","  handleClick(i) {\r\n     const squares = this.state.squares.slice();\r\n     squares[i] = 'X';\r\n     this.setState({squares: squares});\r\n   }"],
-		"tutorialSnippet15":[1,"codeBtn","function component","function Square(props) {\r\n   return (\r\n     <button className=\"square\" onClick={props.onClick}>\r\n       {props.value}\r\n     </button>\r\n   );\r\n }"],
+		"tutorialSnippet14":[1,"codeBtn","handleClick","  handleClick(i) {\n     const squares = this.state.squares.slice();\n     squares[i] = 'X';\n     this.setState({squares: squares});\n   }"],
+		"tutorialSnippet15":[1,"codeBtn","function component","function Square(props) {\n   return (\n     <button className=\"square\" onClick={props.onClick}>\n       {props.value}\n     </button>\n   );\n }"],
 		"tutorialSnippet16":[1,"codeBtn","xIsNext: true,","xIsNext: true,"],
 		"tutorialSnippet17":[1,"codeBtn","X or O depends on&nbsp;xIsNext","squares[i] = this.state.xIsNext ? 'X' : 'O';"],
 		"tutorialSnippet18":[1,"codeBtn","flip&nbsp;value of xIsNext","xIsNext: !this.state.xIsNext,"],
 		"tutorialSnippet19":[1,"codeBtn","Next player message","const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');"],
-		"tutorialSnippet20":[1,"codeBtn","calculateWinner helper function","function calculateWinner(squares) {\r\n  const lines = [\r\n    [0, 1, 2],\r\n    [3, 4, 5],\r\n    [6, 7, 8],\r\n    [0, 3, 6],\r\n    [1, 4, 7],\r\n    [2, 5, 8],\r\n    [0, 4, 8],\r\n    [2, 4, 6],\r\n  ];\r\n  for (let i = 0; i < lines.length; i++) {\r\n    const [a, b, c] = lines[i];\r\n    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {\r\n      return squares[a];\r\n    }\r\n  }\r\n  return null;\r\n"],
-		"tutorialSnippet21":[1,"codeBtn","display&nbsp;winner or next text","    const winner = calculateWinner(this.state.squares);\r\n    let status;\r\n    if (winner) {\r\n      status = 'Winner: ' + winner;\r\n    } else {\r\n      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');\r\n    }"],
-		"tutorialSnippet22":[1,"codeBtn","ignore clicks after&nbsp;game&nbsp;won or&nbsp;square&nbsp;filled ","    if (calculateWinner(squares) || squares[i]) {\r\n      return;\r\n    }"],
+		"tutorialSnippet20":[1,"codeBtn","calculateWinner helper function","function calculateWinner(squares) {\n  const lines = [\n    [0, 1, 2],\n    [3, 4, 5],\n    [6, 7, 8],\n    [0, 3, 6],\n    [1, 4, 7],\n    [2, 5, 8],\n    [0, 4, 8],\n    [2, 4, 6],\n  ];\n  for (let i = 0; i < lines.length; i++) {\n    const [a, b, c] = lines[i];\n    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {\n      return squares[a];\n    }\n  }\n  return null;\n"],
+		"tutorialSnippet21":[1,"codeBtn","display&nbsp;winner or next text","    const winner = calculateWinner(this.state.squares);\n    let status;\n    if (winner) {\n      status = 'Winner: ' + winner;\n    } else {\n      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');\n    }"],
+		"tutorialSnippet22":[1,"codeBtn","ignore clicks after&nbsp;game&nbsp;won or&nbsp;square&nbsp;filled ","    if (calculateWinner(squares) || squares[i]) {\n      return;\n    }"],
 		/*Todo: snippets for the "Adding Time Travel" section. (I decided after getting to snippet 22 that everything else was outside of scope for the current day - this is enough to make the working tic tac toe game, and probably the biggest batch of btns I have ever done)*/
 		"letsreactWithoutNpm": [
 			0,
@@ -202,13 +202,13 @@ var savedCodeWithGroupsConcept1 = {
 			1,
 			"codeBtn",
 			"simple HTML file",
-			"<html>\r\n    <head>\r\n        <title>Let's React without npm</title>\r\n        \r\n    </head>\r\n    <body>\r\n        \r\n    </body>\r\n</html>"
+			"<html>\n    <head>\n        <title>Let's React without npm</title>\n        \n    </head>\n    <body>\n        \n    </body>\n</html>"
 		],
 		"letsreactWithoutNpm2": [
 			1,
 			"codeBtn",
 			"import&nbsp;React library (version 17)",
-			"<!-- Load React Libraries -->\r\n<!-- Note: 1) React version numbers in this snippet match tutorial not latest avaiable 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>"
+			"<!-- Load React Libraries -->\n<!-- Note: 1) React version numbers in this snippet match tutorial not latest avaiable 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\n<script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\n<script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>"
 		],
 		"letsreactWithoutNpm3": [
 			1,
@@ -220,43 +220,43 @@ var savedCodeWithGroupsConcept1 = {
 			1,
 			"codeBtn",
 			"(extra&nbsp;snippet) body&#8209;end&nbsp;script&nbsp;tag for&nbsp;steps&nbsp;4+5&nbsp;to&nbsp;go",
-			"<!-- This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file -->\r\n<script>\r\n    window.onload = function()\r\n    {\r\n        //next steps will go here\r\n    };\r\n</script>"
+			"<!-- This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file -->\n<script>\n    window.onload = function()\n    {\n        //next steps will go here\n    };\n</script>"
 		],
 		"letsreactWithoutNpm4": [
 			1,
 			"codeBtn",
 			"Create a React Component",
-			"class HelloClass extends React.Component\r\n{\r\n    render()\r\n    {\r\n        return React.createElement('div', null, 'React without npm');\r\n    }\r\n}"
+			"class HelloClass extends React.Component\n{\n    render()\n    {\n        return React.createElement('div', null, 'React without npm');\n    }\n}"
 		],
 		"letsreactWithoutNpm5": [
 			1,
 			"codeBtn",
 			"Call React Component",
-			"ReactDOM.render(\r\n    React.createElement(HelloClass, null, null),\r\n    document.getElementById('root')\r\n);"
+			"ReactDOM.render(\n    React.createElement(HelloClass, null, null),\n    document.getElementById('root')\n);"
 		],
 		"letsreactWithoutNpm6": [
 			1,
 			"codeBtn",
 			"Complete HTML Document",
-			"<html>\r\n    <head>\r\n        <title>Let's React without npm</title>\r\n        <!– Load React Libraries –>\r\n        <!– Note: when deploying, replace \"development.js\" with \"production.min.js\". –>\r\n        <script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\r\n        <script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>\r\n    </head>\r\n    <body>\r\n        <div id=\"root\"></div>\r\n        <!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\r\n        <script>\r\n            window.onload = function()\r\n            {\r\n                class HelloClass extends React.Component\r\n                {\r\n                    render()\r\n                    {\r\n                        return React.createElement('div', null, 'React without npm');\r\n                    }\r\n                }\r\n                ReactDOM.render(\r\n                    React.createElement(HelloClass, null, null),\r\n                    document.getElementById('root')\r\n                );\r\n            };\r\n        </script>\r\n    </body>\r\n</html>"
+			"<html>\n    <head>\n        <title>Let's React without npm</title>\n        <!– Load React Libraries –>\n        <!– Note: when deploying, replace \"development.js\" with \"production.min.js\". –>\n        <script src=\"https://unpkg.com/react@17/umd/react.development.js\" crossorigin></script>\n        <script src=\"https://unpkg.com/react-dom@17/umd/react-dom.development.js\" crossorigin></script>\n    </head>\n    <body>\n        <div id=\"root\"></div>\n        <!– This is embedded JavaScript (for the end of the body tag). You could also place this in a separate .js file –>\n        <script>\n            window.onload = function()\n            {\n                class HelloClass extends React.Component\n                {\n                    render()\n                    {\n                        return React.createElement('div', null, 'React without npm');\n                    }\n                }\n                ReactDOM.render(\n                    React.createElement(HelloClass, null, null),\n                    document.getElementById('root')\n                );\n            };\n        </script>\n    </body>\n</html>"
 		],
 		"importReact": [
 			0,
 			"codeBtn",
 			"import&nbsp;React library (version 18)",
-			"<!-- Load React Libraries -->\r\n<!-- Note: 1) Check version numbers 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\r\n<script src=\"https://unpkg.com/react@18/umd/react.development.js\" crossorigin></script>\r\n<script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\" crossorigin></script>"
+			"<!-- Load React Libraries -->\n<!-- Note: 1) Check version numbers 2)when deploying, replace \"development.js\" with \"production.min.js\". -->\n<script src=\"https://unpkg.com/react@18/umd/react.development.js\" crossorigin></script>\n<script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\" crossorigin></script>"
 		],
 		"babelStandalone": [
 			0,
 			"codeBtn",
 			"Babel Standalone (convert&nbsp;JSX&nbsp;in&nbsp;browser)",
-			"<!-- Load @babel/standalone - a way to have Babel running in the browser rather than needing to build every time, https://babeljs.io/docs/en/babel-standalone#docsNav -->\r\n<script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>"
+			"<!-- Load @babel/standalone - a way to have Babel running in the browser rather than needing to build every time, https://babeljs.io/docs/en/babel-standalone#docsNav -->\n<script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>"
 		]
 	},
 	"python": {
 		"langName": "🚧python🚧",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
-		"DefFunction": [0, "codeBtn", "def my_function():", "def my_function():\r\n    "],
+		"DefFunction": [0, "codeBtn", "def my_function():", "def my_function():\n    "],
 		"Print": [0, "codeBtn", "output print()", "print(\"\")"],
 		"Class": [0, "codeBtn", "class", "class MyClass"],
 		"ArithmeticOperators": [0, "group", "Arithmetic Operators", ["Divide", "Remainder", "FloorDivision", "ToThePowerOf"]],
@@ -264,13 +264,13 @@ var savedCodeWithGroupsConcept1 = {
 		"Remainder": [1, "codeBtn", "remainder", " % "],
 		"FloorDivision": [1, "codeBtn", "floor division", " // "],
 		"ToThePowerOf": [1, "codeBtn", "to the power of", " ** "],
-		"MultilineString": [0, "codeBtn", "\"\"\"Multiline String\"\"\"", "\"\"\"\r\n\r\n\"\"\""],
+		"MultilineString": [0, "codeBtn", "\"\"\"Multiline String\"\"\"", "\"\"\"\n\n\"\"\""],
 		"Slice": [0, "codeBtn", "Slice [x:y]", "[x:y]"]
 	},
 	"php": {
 		"langName": "🚧php🚧",
 		/* logo uses lowercase php, wheras elsewhere they use PHP */
-		"PHPTag":[0,"codeBtn","&lt;?php  ?&gt;","<?php\r\n\r\n?>"],
+		"PHPTag":[0,"codeBtn","&lt;?php  ?&gt;","<?php\n\n?>"],
 		"Echo":[0,"codeBtn","echo \"Hello World!\";","echo \"Hello World!\";"],
 		"DoubleSlashComment":[0,"codeBtn","//single-line comment","//"],
 		"HashComment":[0,"codeBtn","#single-line comment","#"],
@@ -288,8 +288,8 @@ var savedCodeWithGroupsConcept1 = {
 	"Java": {
 		"langName": "🚧Java🚧",
 		"infoLine": "",
-		"class":[0,"codeBtn","public class MyClass","public class MyClass {\r\n    \r\n\r\n}"],
-		"main":[0,"codeBtn","public static void main","public static void main(String... args) {\r\n\t\r\n}"],
+		"class":[0,"codeBtn","public class MyClass","public class MyClass {\n    \n\n}"],
+		"main":[0,"codeBtn","public static void main","public static void main(String... args) {\n\t\n}"],
 		"println":[0,"codeBtn","System.out.println","System.out.println(\"Hello, World!\");"]
 	},
 	"CSharp": {
@@ -303,7 +303,7 @@ var savedCodeWithGroupsConcept1 = {
 		"infoLine": "(Phil is adding this gradually as he learns this language)",
 		"withGrp":[0,"group","with",["withText_IO"]],
 		"withText_IO":[1,"codeBtn","with Ada.Text_IO;","with Ada.Text_IO;"],
-		"procedure":[0,"codeBtn","procedure","procedure Hello is\r\nbegin\r\n\t\t\r\nend Hello;"],
+		"procedure":[0,"codeBtn","procedure","procedure Hello is\nbegin\n\t\t\nend Hello;"],
 		"Put_Line":[0,"codeBtn","Put_Line","Put_Line (\"Hello, World!\");"]
 	},*/
 	"Emoji": {
@@ -327,12 +327,12 @@ var savedCodeWithGroupsConcept1 = {
 		"langName": "Misc Snippets",
 		"LoremIpsum": [0, "codeBtn", "Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."],
 		"QuickBrownFox": [0, "codeBtn", "Quick brown fox", "The quick brown fox jumps over the lazy dog."],
-		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15        16\r\n1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
+		"CharRuler": [0, "codeBtn", "Char ruler", "         1         2         3         4         5         6         7         8         9        10        11        12        13        14        15        16\n1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"],
 		"digits": [0, "codeBtn", "digits", "0123456789"],
 		"alphabet": [0, "codeBtn", "english alphabet", "abcdefghijklmnopqrstuvwxyz"],
 		"ALPHABET": [0, "codeBtn", "english ALPHABET", "ABCDEFGHIJKLMNOPQRSTUVWXYZ"],
 		"userStory": [0, "codeBtn", "As a user I&nbsp;want&nbsp;...", "As a user I want to be able to xyz so that I can ..."],
-		"userStoryMarkdown":[0,"codeBtn","User Story (markdown)","### User Story\r\nAs a abc I want to be able to xyz so that I can ...\r\n\r\n### Definition of done\r\n - \r\n - "],
+		"userStoryMarkdown":[0,"codeBtn","User Story (markdown)","### User Story\nAs a abc I want to be able to xyz so that I can ...\n\n### Definition of done\n - \n - "],
 	},
 	"AddBtnsToMe": {
         "langName": "🚧Add&nbsp;to&nbsp;me🚧"
@@ -708,7 +708,7 @@ function insertTextAtCursor(el, text) {
 		
 		//indentation
 		var indentString = "";
-		//1) find the last newline - textarea value has newlines as \n not \r\n
+		//1) find the last newline - textarea value has newlines as \n now, used to be \r\n 
 		const searchTerm = '\n';
 		console.log(`The index of the first "${searchTerm}" from the end is ${beforeCursor.lastIndexOf(searchTerm)}`);
 		var lastNewLinePos = beforeCursor.lastIndexOf(searchTerm);
@@ -745,7 +745,7 @@ function insertTextAtCursor(el, text) {
 			console.log("spaces found:" + spacesFromNewLine);
 		}
 		//add tabs/spaces into the text we are about to insert
-		text = text.replaceAll("\r\n", "\r\n" + indentString);
+		text = text.replaceAll("\n", "\n" + indentString);
 		
         el.value = beforeCursor + text + val.slice(endIndex);
 		el.focus();
@@ -1003,7 +1003,7 @@ function showLangJSON(){
 function coreShowJson(json){ //Here to be DRY and make it easier to keep things consistent between showSavedCodeObject() and showLangJSON()
 	var stringified = JSON.stringify(json, null, 4); //4 enforces pretty print using 4 spaces
 	stringified = stringified.slice(1, stringified.length - 1);
-	stringified = "(also shown in developer console) \r\n" + stringified;
+	stringified = "(also shown in developer console) \n" + stringified;
 	console.log(json);
 	//stick it in savedCodeObjectDisplay
 	document.getElementById("savedCodeObjectDisplay").innerText = stringified;
