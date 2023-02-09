@@ -94,26 +94,31 @@ var savedCodeWithGroupsConcept1 = {
 	},
 	"JS": {
 		"langName": "JS",
-		"Core":[0,"group","Core",["Function", "Variable", "Let", "Constant", "IfElse", "SwitchCase"]],
+		"Core":[0,"group","Core",["Function", "arrowFunc", "Variable", "Let", "Constant", "IfElse", "SwitchCase", "GetElByID", "querySelector"]],
 		"Function": [1, "codeBtn", "Function", "function changeMe1(){\n	\n}"],
+		"arrowFunc": [1,"codeBtn","Arrow Function","//define arrow function\nlet hello = \"\";\nhello = (param) => {\n\treturn \"Hello \" + param;\n}\n\n//call the arrow function\ndocument.getElementById(\"demo\").innerHTML = hello(\"world!\");"],
 		"Variable": [1, "codeBtn", "var variable", "var someVar = 0;"],
-		"Let": [1, "codeBtn", "let variable", "let blahblah = 0;"],
-		"Constant": [1, "codeBtn", "const constant", "const changeMe1;"],
+		"Let": [1, "codeBtn", "let variable", "let yourVar = 0;"],
+		"Constant": [1, "codeBtn", "constant", "const changeMe1;"],
 		"IfElse": [1, "codeBtn", "if else", "if(){\n	\n} else {\n	\n}"],
 		"SwitchCase": [1, "codeBtn", "switch case", "switch(expression) {\n	case x:\n		\n		break;\n	case y:\n		\n		break;\n	default:\n	\n}"],
 		"For": [1, "codeBtn", "For", "for (let i = 0; i < someAmount; i++) {\n	\n}"],
 		"ForKeyInObject": [1, "codeBtn", "ForKeyInObject", "for (keyName in objectName) {\n	\n}"],
 		"Break": [1, "codeBtn", "Break", "break;"],
-		"GetElByID": [0, "codeBtn", "getElement ById", "document.getElementById(\"codeBtns\")"],
-		"Logging":[0,"group","Logging & Commenting",["ConsoleGroup", "ConsoleLog", "/*Comment*/", "//Comment"]],
+		"GetElByID": [1, "codeBtn", "getElement ById", "document.getElementById(\"codeBtns\")"],
+		"querySelector":[1,"codeBtn","querySelector(selector)","document.querySelector(\"selector\")"],
+		"Logging":[0,"group","Logging & Commenting",["ConsoleGroup", "ConsoleLog", "jsDocBasic", "/*Comment*/", "//Comment"]],
 		"ConsoleGroup": [1, "codeBtn", "ConsoleGroup", "console.group(\"\");\nconsole.groupEnd();"],
 		"ConsoleLog": [1, "codeBtn", "ConsoleLog", "console.log();"],
+		"jsDocBasic":[1,"codeBtn","JSDoc description","/** description */"],
 		"/*Comment*/": [1, "codeBtn", "/*Comment*/", "/* Comment */"],
 		"//Comment": [1, "codeBtn", "//Comment", "//Comment"],
-		"JSONKeyValue": [0, "codeBtn", "JSONKeyValue", "\"key\": \"value\""],
-		"JSONKeyObject": [0, "codeBtn", "JSONKeyObject", "\"key\": {\n	\n	\n}"],
-		"LocalStorageGrp":[0,"group","Local Storage",["SaveToLocalStorageFunc"]],
-		"SaveToLocalStorageFunc":[1,"codeBtn","function: saveToLocalStorage","function saveToLocalStorage(key,value){ \n\t/*Returns true if successful, alerts if not*/\n\t//Before using web storage, check browser support for Storage (covers both localStorage and sessionStorage)\n\tif (typeof(Storage) !== \"undefined\") {\n\t//Storage is there, so we'll save it\n\t\tlocalStorage.setItem(key, value);\n\t\treturn true; //lets us display a relevant success message or carry on doing things\n\t} else {//No Web Storage support\n\t\t//TODO: is this a good experience??\n\t\talert(\"couldn't save, browser doesn't support local storage\");\n\t\treturn false;\n\t}\n}"],
+		"jsonGrp":[0,"group","JSON",["JSONKeyValue", "JSONKeyObject"]],
+		"JSONKeyValue": [1, "codeBtn", "JSON Key:Value", "\"key\": \"value\""],
+		"JSONKeyObject": [1, "codeBtn", "JSON Key{Object}", "\"key\": {\n	\n	\n}"],
+		"LocalStorageGrp":[0,"group","Local Storage",["saveToLocalStorageFunc", "loadFromLocalStorageFunc"]],
+		"saveToLocalStorageFunc":[1,"codeBtn","function saveToLocalStorage","/**\n * Checks if browser supports Storage, and if it does, sets one Local Storage Key and Value\n * @param {string} key \n * @param {string} value \n * @returns true if storage was successful, false (and alerts) if no web storage\n */\nfunction saveToLocalStorage(key,value){ \n\t//checking browser support for Storage (covers both localStorage and sessionStorage)\n\tif (typeof(Storage) !== \"undefined\") { //Storage is there, so we'll save it\n\t\tlocalStorage.setItem(key, value);\n\t\treturn true; //For use in functions that called this function\n\t} else {//No Web Storage support\n\t\t//TODO: is this a good experience??\n\t\talert(\"couldn't save, browser doesn't support local storage\");\n\t\treturn false; //For use in functions that called this function\n\t}\n}"],
+		"loadFromLocalStorageFunc":[1,"codeBtn","function: loadFromLocalStorage","/**\n * general purpose localStorage loading function (it is often more useful to have more specific functions for loading particular keys)\n * @param {string} key the string to search for in local storage\n * @returns {string} the value that corresponds with the key, or an empty string if cannot find the key (also logs to console if that is the case)\n */\nfunction loadFromLocalStorage(key){\n\tlet value = localStorage.getItem(key);\n\tif(value == \"\"){\n\t\tconsole.log(`tried to load: ${key} but found nothing`);\n\t\treturn \"\";\n\t} else {\n\t\treturn value;\n\t}\n}"],
 	},
 	"CSS": {
 		"langName": "CSS",
@@ -295,7 +300,13 @@ var savedCodeWithGroupsConcept1 = {
 	"CSharp": {
 		"langName": "🚧C#🚧",
 		"🚧": [0, "codeBtn", "🚧", "🚧"],
-		"HelloWorld":[0,"codeBtn","Console.WriteLine Hello World","Console.WriteLine(\"Hello World!\");"],
+		"MSTutorial": [
+			0,
+			"group",
+			"Snippets&nbsp;from Official Tutorial",
+			["MSTutorial1",]
+		],
+		"MSTutorial1":[1,"codeBtn","Console.WriteLine Hello World","Console.WriteLine(\"Hello World!\");"],
 	},
 	/* commented to limit the number of work in progress langs on the UI
 	"Ada": {
@@ -1191,8 +1202,8 @@ function saveToLocalStorage(key,value){
 }
 /**
  * general purpose localStorage loading function (it is often more useful to have more specific functions for loading particular keys)
- * @param {string} key 
- * @returns {string} the value matching the key, or an empty string if cannot find the key (also logs to console if that is the case)
+ * @param {string} key the string to search for in local storage
+ * @returns {string} the value that corresponds with the key, or an empty string if cannot find the key (also logs to console if that is the case)
  */
 function loadFromLocalStorage(key){
 	let value = localStorage.getItem(key);
