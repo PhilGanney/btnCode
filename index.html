@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"></link>
 		<link rel="stylesheet" href="main.css?20221120"> </link>
-		<script src="btnCodeUi.js?20230210" async></script><!--The main js file. On 3g connections, we could shave ~ a tenth of a second off that files download time by minimizing it, should we need a performance gain. For now though I am happy with load times and do not particularly want to have to minimise that file every update-->
+		<script src="btnCodeUi.js?20230210" async></script><!--The main js file. On 3g connections, we could shave ~ a tenth of a second off that files download time by minimizing it, should we need a performance gain. For now though I am happy with load times and do not particularly want to have to minimise that file every update. If I where using a build process I could automate code minimization into that-->
 		<!-- stylePick scripts just have a JS variable holding the CSS for that style, to be copied into the styler if the user tries out that style
 				As such, it is safe for them to be async-->
 		<script src="stylePick\outline.js?20221207" async></script>
@@ -33,9 +33,8 @@
 		<main>
 			<div id="intro">
 				Welcome to btnCode, a pet project by Ipswich based developer Phil Ganney. 
-				I started work on it in October 2022, inspired by the idea that this UI concept could solve a couple of web dev bugbears of mine. 
-				It is, intentionally, a very different way of creating code - another tool in the software developers toolkit. 
-				If it makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>. 
+				I started work on it in October 2022, inspired by the idea that this UI concept could aid coding in certain situations: 1) on tablets/phones, snippet buttons = less typing, therefor might actually be practical.  2)When you know concepts but still learning keywords/syntax of a given language/framework, it could be faster to code with snippet buttons, since you can click/tap buttons that fit concepts and get editable code stubs.
+				If btnCode makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>. 
 				<span id="pleaseUsePostHogText" class="hide">If you'd like to do me a favour and let me see how you use this (via PostHog Cloud EU) use the button marked Enable PostHog product Analysis.</span>
 				<span id="thanksForUsingPostHogText" class="hide">Thankyou for opting in for PostHog product analysis on btnCode!</span>
 				<br/><!-- Todo: actual padding/margin here-->
