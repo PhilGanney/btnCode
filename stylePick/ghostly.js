@@ -40,7 +40,7 @@ footer{
     float: left;
     margin: 2px;
     border-radius: 32% 32% 0px 0px;
-    box-shadow: 5px 0px 6px black;
+    box-shadow: 5px 0px 6px #131212;
 }
 
 button{ /*all buttons*/
@@ -53,6 +53,7 @@ button{ /*all buttons*/
     color: #999299;
     font-size: 1.07em;
     font-family: "Times New Roman", Times, serif;
+    box-shadow: 8px 6px 18px #122334;
 }
 #controlBtns{ /*The container div for the row of buttons with controls like Full screen, Empty Editor etc*/
     height: 88px;
