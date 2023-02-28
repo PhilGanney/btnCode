@@ -1026,6 +1026,10 @@ function hideSavedCodeObject(){
 	document.getElementById("savedCodeObjectDisplay").innerText = "";
 }
 
+function showMenu(){
+	document.getElementById("mainMenu").showModal(); 
+}
+
 function showEditor(){
 	hideBottomStuff();
 	applyShowClass("codeTA");

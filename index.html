@@ -27,9 +27,30 @@
 	</head>
 	<body onload="pageLoad()">
 		<header>
-			<!--<button id="btnCodeLogo" class="HTML">btnCode</button>-->
-			<h1>btnCode - Button Code, by Phil Ganney</h1>
+			<span>
+				<!--<button id="btnCodeLogo" class="HTML">btnCode</button>-->
+				<button id="menuOpenBtn" onclick="showMenu()">≡</button>
+				<h1>btnCode - Button Code, by Phil Ganney</h1>
+			</span>
 		</header>
+		<dialog id="mainMenu">
+			<span id="mainMenuClose" onclick="document.getElementById('mainMenu').close()" >&times;</span>
+			<h2>Main page views:</h2>
+			<button id="mainMenuBtnStyle" onclick="showStyler()">Styler 🎨</button>
+			<button id="mainMenuBtnFollowMe" onclick="showContactInfo()">Follow / contact</button>
+			<button id="mainMenuBtnShowEditor" onclick="showEditor()">Editor</button>
+			<h2>Other pages:</h2>
+			<p><a href="Examples/epicFalling/index.html" target="_blank">epicFalling web animation demo</a>
+				(🚧work in progress🚧)
+			</p>
+			<p><a href="Examples/GPTGame/index.html" target="_blank">Page that ChatGPT created when prompted about web based games</a>
+				(Best result Phil got from trying a bunch of prompts - still would need some work to actually make it playable, but Phil is impressed by the source code ChatGPT produced, it has an uncanny resemblance to code that you might think would work. Possibly just needs to listen for key presses, and a bit of bug fixing.) 
+			</p>
+			<p><a href="Examples/Reactwithoutnpm/index.html" target="_blank">Finished tutorial: letsreact.org React app without npm</a>
+
+			</p>
+			<p>(Blog coming soon)</p>
+		</dialog>
 		<main>
 			<div id="intro">
 				Welcome to btnCode, a pet project by Ipswich based developer Phil Ganney. 

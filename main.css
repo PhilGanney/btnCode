@@ -21,6 +21,9 @@ header{
 	background-color: #FFFFFFF1;
 	z-index: 2;
 }
+header span *{
+	display: inline;
+}
 main{
 	padding-bottom: 70px;
 	width: 98%;
@@ -46,6 +49,14 @@ footer{
 	font-size: 32pt;
 	border-radius: 24px;
 }*/
+
+#menuOpenBtn{ /* The button for making the menu show */
+	height: 32px;
+	width: 32px;
+	margin-right: 10px;
+	font-weight: 300;
+	font-size: larger;
+}
 
 #codeBtns{
 	height: 68px;
