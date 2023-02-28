@@ -7,25 +7,25 @@
 	<body>
 		<main>
 			<div id="R">
-				<p>PHIL</p>
+				<p>You</p>
 			</div>
 			<div id="O">
-				
+				<p>should</p>
 			</div>
 			<div id="Y">
-				
+				<p>hire</p>
 			</div>
 			<div id="G">
-				
+				<p>Phil</p>
 			</div>
 			<div id="B">
-				
+				<p>Ganney</p>
 			</div>
 			<div id="I">
-				
+				<p>as a</p>
 			</div>
 			<div id="V">
-				
+				<p>Web Developer</p>
 			</div>
 		</main>
 		<script>
@@ -42,67 +42,105 @@
 			div{
 				position: fixed;
 				text-align: center;
-				vertical-align:bottom;
 			}
-			p{
-				position: relative;
-				bottom: -26%;
-			}
+
 			@keyframes example {
 				0% {
 					background-color: red;
 					color: yellow;
-					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
-						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
-						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
-						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
-						100% 100%,/* bottom right, to stay in place*/
-						0% 100%/* bottom left, to stay in place*/
-				    );
-					
-					top: -30%;
+
+					height:100%;
+					bottom: 30%;
 					border-radius: 50%;
                 }
-				40%{
+				16%{
 					background-color: red;
 					
-					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
-						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
-						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
-						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
-						100% 100%,/* bottom right, to stay in place*/
-						0% 100%/* bottom left, to stay in place*/
-				    );
-					top:0%;
-					border-radius: 50%;
+
+					bottom:0%;
+					
 				}
                 100% {
 					background-color: yellow;
 					color:red;
-					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
-						40% 100%,/*far left and at the top, add to each to make this point move down to the right*/
-						44% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
-						48% 100%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
-						100% 100%,/* bottom right, to stay in place*/
-						0% 100%/* bottom left, to stay in place*/
-				    );
+					height: 0px;
 					border-radius: 0%;
-					top:0%;
+					bottom:0%;
 				}
             }
 			#R{
 				width: 100%;
 				height: 100%;
 				background-color: red;
-				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
-					0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
-					46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
-					100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
-					100% 100%,/* bottom right, to stay in place*/
-					0% 100%/* bottom left, to stay in place*/
-				);
+
 				animation-name: example;
 				animation-duration: 4s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+			}
+			#O{
+				width: 100%;
+				height: 100%;
+				background-color: orange;
+
+				animation-name: example;
+				animation-duration: 4s;
+				animation-delay:2s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+			}
+			#Y{
+				width: 100%;
+				height: 100%;
+				background-color: yellow;
+
+				animation-name: example;
+				animation-duration: 4s;
+				animation-delay:6s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+			}
+			#G{
+				width: 100%;
+				height: 100%;
+				background-color: green;
+
+				animation-name: example;
+				animation-duration: 4s;
+				animation-delay:8s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+			}
+			#B{
+				width: 100%;
+				height: 100%;
+				background-color: blue;
+
+				animation-name: example;
+				animation-duration: 4s;
+				animation-delay:10s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+			}
+			#I{
+				width: 100%;
+				height: 100%;
+				background-color: indigo;
+
+				animation-name: example;
+				animation-duration: 4s;
+				animation-delay:10s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-in;
+			}
+			#V{
+				width: 100%;
+				height: 100%;
+				background-color: violet;
+
+				animation-name: example;
+				animation-duration: 4s;
+				animation-delay:10s;
 				animation-iteration-count: infinite;
 				animation-timing-function: ease-in;
 			}
