@@ -1027,7 +1027,18 @@ function hideSavedCodeObject(){
 }
 
 function showMenu(){
-	document.getElementById("mainMenu").showModal(); 
+	document.getElementById("mainMenuModal").showModal();
+	//console.log(window.onclick);
+	window.onclick = function(event) {
+		//console.log(event.target.id);
+		if(event.target.id == "mainMenuModal"){ //if the element clicked is the modal frame and not the modal content area or something with the modal content area
+			closeMenu();
+		}
+	}
+}
+function closeMenu(){
+	document.getElementById('mainMenuModal').close();
+	window.onclick = "";
 }
 
 function showEditor(){
