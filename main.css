@@ -21,6 +21,9 @@ header{
 	background-color: #FFFFFFF1;
 	z-index: 2;
 }
+header span{
+	margin-left: 38px; /*Prevents being overlapped by the main menu button*/
+}
 header span *{
 	display: inline;
 }
@@ -50,12 +53,29 @@ footer{
 	border-radius: 24px;
 }*/
 
-#menuOpenBtn{ /* The button for making the menu show */
-	height: 32px;
-	width: 32px;
+#menuOpenBtn, #mainMenuClose{ /* button for making the menu show, and the button within the main menu modal for closing it */
+	height: 36px;
+	width: 36px;
 	margin-right: 10px;
 	font-weight: 300;
 	font-size: larger;
+	position: absolute;
+}
+#menuOpenBtn{/*Just the button for making the menu show*/
+	left: 1%;
+}
+#mainMenuClose{/*Just the button within the main menu modal for closing it*/
+	right: 0px;
+}
+#mainMenuModal{/*includes the mostly seethrough layer that stops clicks going to contents behind*/
+	padding: 0px;
+}
+#mainMenuContents{/*Everything shown in the modal. Todo: fix a bug that eludes me (at least 40min spent trying to fix so far) where there is a slight gap top and bottom around #mainMenuContents that that triggers the close action but visually looks like it is the edge of the content area, does not appear to be padding or margin!*/
+	/*background-color: red;*/
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+	min-height: 100%;
 }
 
 #codeBtns{
