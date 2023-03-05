@@ -6,8 +6,8 @@
 		<meta name="description" content="btnCode: a very different UI for coding"></meta>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"></link>
-		<link rel="stylesheet" href="main.css?20221120"> </link>
-		<script src="btnCodeUi.js?20230210" async></script><!--The main js file. On 3g connections, we could shave ~ a tenth of a second off that files download time by minimizing it, should we need a performance gain. For now though I am happy with load times and do not particularly want to have to minimise that file every update. If I where using a build process I could automate code minimization into that-->
+		<link rel="stylesheet" href="main.css?20230305"> </link>
+		<script src="btnCodeUi.js?20230305" async></script><!--The main js file. On 3g connections, we could shave ~ a tenth of a second off that files download time by minimizing it, should we need a performance gain. For now though I am happy with load times and do not particularly want to have to minimise that file every update. If I where using a build process I could automate code minimization into that-->
 		<!-- stylePick scripts just have a JS variable holding the CSS for that style, to be copied into the styler if the user tries out that style
 				As such, it is safe for them to be async-->
 		<script src="stylePick\outline.js?20221207" async></script>
@@ -35,11 +35,11 @@
 		</header>
 		<dialog id="mainMenuModal">
 			<div id="mainMenuContents">
-				<button id="mainMenuClose" onclick="closeMenu()" >&times;</button>
+				<button id="mainMenuClose" onclick="closeMenu()" >×</button>
 				<h2>Main page views:</h2>
-				<button id="mainMenuBtnStyle" onclick="showStyler()">Styler 🎨</button>
-				<button id="mainMenuBtnFollowMe" onclick="showContactInfo()">Follow / contact</button>
-				<button id="mainMenuBtnShowEditor" onclick="showEditor()">Editor</button>
+				<button id="mainMenuBtnShowEditor" onclick="showEditor(); closeMenu()">Editor ✏️</button>
+				<button id="mainMenuBtnStyle" onclick="showStyler(); closeMenu()">Styler 🎨</button>
+				<button id="mainMenuBtnFollowMe" onclick="showContactInfo(); closeMenu()">Follow / contact</button>
 				<h2>Other pages:</h2>
 				<p><a href="Examples/epicFalling/index.html" target="_blank">epicFalling web animation demo</a>
 					(🚧work in progress🚧)
@@ -75,10 +75,10 @@
 					</span>
 					<button id="btnFullScreen" onclick="toggleFullscreen()">FullScreen</button>
 					<button id="btnEmptyEditor" onclick="emptyEditor()">Empty editor</button>
-					<button id="btnShowEditor" class="hide" onclick="showEditor()">Show Editor</button>
-					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">Show / download</button>
+					<button id="btnShowEditor" class="hide" onclick="showEditor()">Show Editor✏️</button>
+					<button id="btnShowWebDisplayer" onclick="showWebDisplayer()">Show / download 🚀</button>
 					<button id="btnCreateBtn" onclick="showBtnMkr()">Add&nbsp;buttons<br/>(🚧work&nbsp;in progress)</button>
-					<button id="btnStyleBtns" onclick="showStyler()">Style&nbsp;btnCode 🎨 (NEW&nbsp;in&nbsp;Dec&nbsp;22)</button>
+					<button id="btnStyleBtns" onclick="showStyler()">Style&nbsp;btnCode 🎨</button>
 					<button id="btnContactInfo" onclick="showContactInfo()">Follow me / contact me</button>
 					<!-- during pageLoad, we switch one of these two PostHog buttons class to "show"-->
 					<button id="btnPostHogOn" class="hide" onclick="enablePostHog()">Enable PostHog product analysis</button>

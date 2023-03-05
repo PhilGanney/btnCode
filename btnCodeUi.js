@@ -9,20 +9,22 @@ var savedCodeWithGroupsConcept1 = {
 		"langName": "General",
 		"Tab": [0, "codeBtn", "Tab", "	"],
 		"NewLine": [0, "codeBtn", "New<br/>Line", "\n"],
-		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "backTick", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "poundSymbol", "euroSymbol", "yenSymbol", "copyrightSymbol"]],
+		"Symbols": [0, "group", "@<<br/>>$", ["singleQuote", "doubleQuote", "backTick", "at", "lessThanSymbol", "moreThanSymbol", "fslashSymbol", "bslashSymbol", "dollarSymbol", "£", "€", "¥", "©", "≡","×"]],
 		"singleQuote": [1, "codeBtn", "'", "'"],
-		"doubleQuote": [1, "codeBtn", "\"", "\""],
+		"doubleQuote": [1, "codeBtn", "\"", "\""], /*just one double quote character (backslashes needed to "escape" the double quote character) */
 		"backTick": [1, "codeBtn", "`", "`"],
 		"at": [1, "codeBtn", "@", "@"],
 		"lessThanSymbol": [1, "codeBtn", "<", "<"],
 		"moreThanSymbol": [1, "codeBtn", ">", ">"],
 		"fslashSymbol": [1, "codeBtn", "/", "/"],
-		"bslashSymbol": [1, "codeBtn", "\\", "\\"],
+		"bslashSymbol": [1, "codeBtn", "\\", "\\"],/*just one backslash (extra one in the codebase each time to "escape" the character)*/
 		"dollarSymbol": [1, "codeBtn", "$", "$"],
-		"poundSymbol": [1, "codeBtn", "£", "£"],
-		"euroSymbol": [1, "codeBtn", "€", "€"],
-		"yenSymbol": [1, "codeBtn", "¥", "¥"],
-		"copyrightSymbol": [1, "codeBtn", "©", "©"],
+		"£": [1, "codeBtn", "£", "£"],
+		"€": [1, "codeBtn", "€", "€"],
+		"¥": [1, "codeBtn", "¥", "¥"],
+		"©": [1, "codeBtn", "©", "©"],
+		"≡":[1,"codeBtn","≡","≡"], /*A mathematical called the "triple bar" or "tribar". Phil has used this within btnCode for the text on the menu open button since it looks exactly like a "hamburger menu" icon.*/
+		"×":[1,"codeBtn","×","×"], /*Times symbol. Phil has used this within btnCode for the button text on the menu close button since it looks exactly like a close cross icon.*/
 	},
 	"HTML": {
 		"langName": "HTML",
@@ -334,6 +336,7 @@ var savedCodeWithGroupsConcept1 = {
 		"⚙️": [0, "codeBtn", "⚙️", "⚙️"],
 		"💾": [0, "codeBtn", "💾", "💾"],
 		"😄": [0, "codeBtn", "😄", "😄"],
+		"🚀":[0,"codeBtn","🚀","🚀"],
 	},
 	"MiscSnippets": {
 		"langName": "Misc Snippets",
