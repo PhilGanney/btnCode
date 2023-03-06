@@ -40,6 +40,8 @@
 				<button id="mainMenuBtnShowEditor" onclick="showEditor(); closeMenu()">Editor ✏️</button>
 				<button id="mainMenuBtnStyle" onclick="showStyler(); closeMenu()">Styler 🎨</button>
 				<button id="mainMenuBtnFollowMe" onclick="showContactInfo(); closeMenu()">Follow / contact</button>
+				<br>
+				<button onclick="toggleHideShowClass('intro'); closeMenu()">hide/show intro text</button>
 				<h2>Other pages:</h2>
 				<p><a href="Examples/epicFalling/index.html" target="_blank">epicFalling web animation demo</a>
 					(🚧work in progress🚧)
@@ -60,15 +62,14 @@
 				If btnCode makes no sense, <a href="https://github.com/PhilGanney/btnCode/blob/main/README.md" target="_blank">view the readme</a>. 
 				<span id="pleaseUsePostHogText" class="hide">If you'd like to do me a favour and let me see how you use this (via PostHog Cloud EU) use the button marked Enable PostHog product Analysis.</span>
 				<span id="thanksForUsingPostHogText" class="hide">Thankyou for opting in for PostHog product analysis on btnCode!</span>
+				
 				<br/><!-- Todo: actual padding/margin here-->
-				<br/>
 				<div id="assets" class="hide">
 					<!-- This div exists so that assets will be downloaded and cached at page load -->
 					<img border="0" alt="" src="arrow.png" width="0" height="0">
 					<img border="0" alt="" src="arrowDwn.png" width="0" height="0">
 				</div>
 			</div>
-
 			<div id="btnsOuter">
 				<div id="controlBtns">
 					<span id="otherControlBtns">
