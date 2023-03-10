@@ -232,7 +232,7 @@
 					
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
-						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						42% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
 						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
@@ -245,13 +245,28 @@
 					color:yellow;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						40% 100%,/*far left and at the top, add to each to make this point move down to the right*/
-						44% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						43% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
 						48% 100%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
 					border-radius: 0%;
 					top:0%;
+				}
+				90%{
+					background-color: yellow;
+					color: blue;
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
+						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					
+					top: -30%;
+					border-radius: 40%;
+					display: block;
 				}
 			}
 			#Y{
@@ -274,8 +289,49 @@
 			}
 			@keyframes gBall {
 				0% {
-					background-color: yellow;
-					color: blue;
+					background-color: green;
+					color: indigo;
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
+						54% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					
+					top: -30%;
+					border-radius: 40%;
+					display: block;
+                }
+				4%{
+					background-color: green;
+					
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
+						52% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					top:0%;
+					border-radius: 20%;
+				}
+                10% {
+					background-color: indigo;
+					color:green;
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						40% 100%,/*far left and at the top, add to each to make this point move down to the right*/
+						44% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						48% 100%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					border-radius: 0%;
+					top:0%;
+				}
+				90%{
+					background-color: green;
+					color: indigo;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
 						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -287,32 +343,6 @@
 					top: -30%;
 					border-radius: 40%;
 					display: block;
-                }
-				4%{
-					background-color: blue;
-					
-					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
-						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
-						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
-						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
-						100% 100%,/* bottom right, to stay in place*/
-						0% 100%/* bottom left, to stay in place*/
-				    );
-					top:0%;
-					border-radius: 20%;
-				}
-                10% {
-					background-color: blue;
-					color:yellow;
-					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
-						40% 100%,/*far left and at the top, add to each to make this point move down to the right*/
-						44% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
-						48% 100%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
-						100% 100%,/* bottom right, to stay in place*/
-						0% 100%/* bottom left, to stay in place*/
-				    );
-					border-radius: 0%;
-					top:0%;
 				}
 			}
 			#G{
@@ -375,6 +405,21 @@
 					border-radius: 0%;
 					top:0%;
 				}
+				90%{
+					background-color: yellow;
+					color: blue;
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
+						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					
+					top: -30%;
+					border-radius: 40%;
+					display: block;
+				}
 			}
 			#B{
 				width: 100%;
@@ -396,8 +441,8 @@
 			}
 			@keyframes iBall {
 				0% {
-					background-color: yellow;
-					color: blue;
+					background-color: indigo;
+					color: red;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
 						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -411,7 +456,7 @@
 					display: block;
                 }
 				4%{
-					background-color: blue;
+					background-color: red;
 					
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
@@ -424,8 +469,8 @@
 					border-radius: 20%;
 				}
                 10% {
-					background-color: blue;
-					color:yellow;
+					background-color: red;
+					color:indigo;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						40% 100%,/*far left and at the top, add to each to make this point move down to the right*/
 						44% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -436,11 +481,26 @@
 					border-radius: 0%;
 					top:0%;
 				}
+				90%{
+					background-color: indigo;
+					color: red;
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
+						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					
+					top: -30%;
+					border-radius: 40%;
+					display: block;
+				}
 			}
 			#I{
 				width: 100%;
 				height: 100%;
-				background-color: yellow;
+				background-color: indigo;
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 					0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
 					46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -457,8 +517,8 @@
 			}
 			@keyframes vBall {
 				0% {
-					background-color: yellow;
-					color: blue;
+					background-color: violet;
+					color: orange;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
 						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -472,7 +532,7 @@
 					display: block;
                 }
 				4%{
-					background-color: blue;
+					background-color: orange;
 					
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
@@ -485,8 +545,8 @@
 					border-radius: 20%;
 				}
                 10% {
-					background-color: blue;
-					color:yellow;
+					background-color: orange;
+					color:violet;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						40% 100%,/*far left and at the top, add to each to make this point move down to the right*/
 						44% 100%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -497,11 +557,26 @@
 					border-radius: 0%;
 					top:0%;
 				}
+				90%{
+					background-color: violet;
+					color: orange;
+					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
+						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
+						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
+						100% 0%,/* far right and at the top, reduce x toward 50% and increase y to make this point move left and down*/
+						100% 100%,/* bottom right, to stay in place*/
+						0% 100%/* bottom left, to stay in place*/
+				    );
+					
+					top: -30%;
+					border-radius: 40%;
+					display: block;
+				}
 			}
 			#V{
 				width: 100%;
 				height: 100%;
-				background-color: yellow;
+				background-color: violet;
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 					0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
 					46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
