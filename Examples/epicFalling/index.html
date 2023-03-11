@@ -30,6 +30,16 @@
 		</script>
 		<style>
 			:root {
+				/*Imagine a colour wheel with 12 points at equal distances around it like a manual clock
+				Then 6 divs get 2 colours each to start the animation with
+					- a BackGround colour and a Text colour,
+					- 60 degree differences give contrast within these colours, without clashing
+					- Gives an interesting pattern between the BG colours
+						- alternates between +30 degrees and +90 degrees,
+						- or you could see it as three pairs of BGs, each pair evenly spaced around the colour wheel from the other pairs
+						- Thus giving an almost but not quite rainbow effect, that is visually interesting
+				The animation gradually swaps the BG and Txt colours of each div
+				*/
 				--hue00: hsl(000, 100%, 50%);/*Ball0 BG Colour*/
 				--hue01: hsl(030, 100%, 50%);/*Ball1 BG Colour*/
 				--hue02: hsl(060, 100%, 50%);/*Ball0 Txt Colour*/
@@ -83,9 +93,25 @@
 			}
 			p{
 				position: absolute;
-				top: 52%;
-				right: 50%;
-				transform: translate(50%,-50%);
+				right: 50%; top: 52%;
+			}
+			#ball0 p{
+				transform: translate(50%,-40%);
+			}
+			#ball1 p{
+				transform: translate(50%,-55%);
+			}
+			#ball2 p{
+				transform: translate(50%,-75%);
+			}
+			#ball3 p{
+				transform: translate(50%,-100%);
+			}
+			#ball4 p{
+				transform: translate(50%,-120%);
+			}
+			#ball5 p{
+				transform: translate(50%,-135%);
 			}
 			@keyframes ballDrop0 {
 				/*
