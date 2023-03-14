@@ -32,6 +32,11 @@
                 alt route d) JavaScript would be able to do it pretty easily. Set both the innerText of each div, and the actual styles at the same time. If I was converting this to something programmatic where all the colours were defined from query string params I would use JS anyway
             6) Used a snippet from CSS tricks to make an outline for the text that contrasts with the text colour, so that text is legible on all colours, whilst having one style for all text
                 Remembered that there was some kind of trick to making outline on text and it was something like a shadow, but couldnt remember precisely off the top of my head. Searching online seemed faster than solving for myself or digging through since I know plenty of people have done that, but I have not recently.
+            7) With fresh eyes the following day, I wasn't completely happy with the outlining or the text readability:
+                a) found a better looking way of doing text outlines in browsers that support it from a video by Kevin Powell https://www.youtube.com/watch?v=Hx1p1vQeHCg
+                b) set those new outlines to a thicker width that also adjusts
+                c) set the font as Arial, as that has a consistent lettering width which helps make the outlines look good (previously left it to default)
+                d) set the font size slightly bigger per viewport width and added a font-size limit based on div heights so that it would not cause issues for wide but short screens
         -->
         <main>
             <div id="hue00">hsl(000, 100%, 50%)</div>
@@ -57,16 +62,20 @@
             main > div{
                 width: 100%;
                 height: 30svh; /*Starts the screen with 3 full divs + one partial to indicate more below fold whilst having good sized colour swatches*/
-                font-size: 8svw; /*always big for the screen this is showing on*/
+                font-size: min(28svh,8.6svw); /*always big for the screen this is showing on, but also never outflowing the height*/
+                font-family: Arial, Helvetica, sans-serif;
                 color: #fff; /*White background with black outline effect helps to make text readable on all these colours, whilst having the same text on every background*/
-                text-shadow: /*https://css-tricks.com/adding-stroke-to-web-text/*/
+                text-shadow: /*fallback for browsers that do not support the more modern -webkit-text-stroke found at https://css-tricks.com/adding-stroke-to-web-text/*/
                     -1px -1px 0 #000,  
                     1px -1px 0 #000,
                     -1px 1px 0 #000,
                     1px 1px 0 #000;
             }
-            main > div::after{
-                content: attr(id);
+            @supports (-webkit-text-stroke: 2px #000){
+                main > div{
+                    text-shadow: none;
+                    -webkit-text-stroke: 0.03em #000; /*Text stroke defined in em rather than px so that it scales*/
+                }
             }
             :root{
                 /*btncode.com snippet "12 Hue, Saturated colour wheel"*/
