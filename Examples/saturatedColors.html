@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Colours: Hues w/ 100%s 50%l</title>
+    </head>
+    <body>
+        <!--This page was created mostly using VSCode with Emmet + a snippet from btnCode for the palette of colours & a snippet from css-tricks
+            Used my current home desk setup: laptop with a monitor plugged in. Took about an hour including testing it looks good in Chrome at a bunch of window and emulated screen sizes and firefox on desktop. Writing up my process in this comment quite possibly (edit: almost certainly) took longer than developing this page, but hey ho, writing up my process makes me think about my process and analyse it a bit, and improving my process is a huge part of the goal of my btnCode project.
+            
+            Process:
+            1) started with a VSCode basic HTML template
+            2) used emmet commands to get the basis of the HTML (I just started with Emmet, and only knew of its existence from mentions in youtube videos here and there, and I am already very impressed)
+                #hue$*12 created the divs, though empty & not quite the numbering I was after
+                    writing this up it occured to me to try #hue$$*12 and that gives numbers in 2 digits but still starts at hue01
+                    and a bit afterward found #hue$$@0*12 has the numbering perfect
+                    #hue$$@0{hsl($$@00, 100%, 50%)}*12 adds in close match to the innerHtml needed, though looking through Emmet documentation I cannot see any way to increment numbers by 30 each time
+                    fixing the numbering from the initial attempt was pretty straightforward and quick: 
+                        I moved what was hue12 to the top of the divs, manually altered 12 to 00, and added 0s to each id between 1-9
+            3) used the btncode snippet "12 Hue, Saturated colour wheel" to quickly get the palette of colours I wanted to use
+                - I put them into the :root CSS rule
+                - (values where added as innerText in the divs later)
+                - I knew the pattern of the values, and even a previous page of mine I could directly copy that set of CSS from, but I knew I had already added this exact palette to btncode, so it was the most immediate way to get all the values
+            4) Applied remainder of CSS for the colour areas pretty easily and quickly,
+                - about 50% to 60% of the maybe 15min to do this bit was choosing how I wanted to display the colours - trying out different div heights and thinking through UX
+                - this step was the first point where there was a web page to display. I think this is the earliest possible stage other than maybe using a no-code tool to mock up
+            5) Added the values to the html innerText. Briefly contemplated adding them in some more fancy way than ctrl+c but honestly, ctrl+c was an easy and pretty time effective way to do that for 12 divs. If it were 100, then sure, go fancy.
+                side note: playing around with fancy potential alternatives afterward, partly out of curiosity, partly because I think I would quite like to make more of these colour charts, and maybe a programmatic chart where I can choose colours or define a pattern.
+                alt route a) using CSS content to add in content. I could get that to add in the ID, or any style added by style attribute, but I can't quite figure out adding in values from CSS
+                alt route b) redo the Emmet extra innerText. Doing #hue$${hsl($$0, 100%, 50%)}*12 gets very close
+                alt route c) Emmet style attributes and CSS content. I can get it to display the var names, and feel close to getting this to work but it is now late in evening and this is making my head hurt. Emmet can set style attributes of each div to have backgrounds that use matching palette vars, and then CSS content can add the style attributes as content, but you get exactly the string in the style attribute and not what the vars map to. I feel like there is probably a bit of extra CSS I could add to CSS content to make it output the value of the variable instead, but I am at my point of needing to stop coding for the night.
+                alt route d) JavaScript would be able to do it pretty easily. Set both the innerText of each div, and the actual styles at the same time. If I was converting this to something programmatic where all the colours were defined from query string params I would use JS anyway
+            6) Used a snippet from CSS tricks to make an outline for the text that contrasts with the text colour, so that text is legible on all colours, whilst having one style for all text
+                Remembered that there was some kind of trick to making outline on text and it was something like a shadow, but couldnt remember precisely off the top of my head. Searching online seemed faster than solving for myself or digging through since I know plenty of people have done that, but I have not recently.
+        -->
+        <main>
+            <div id="hue00">hsl(000, 100%, 50%)</div>
+            <div id="hue01">hsl(030, 100%, 50%)</div>
+            <div id="hue02">hsl(060, 100%, 50%)</div>
+            <div id="hue03">hsl(090, 100%, 50%)</div>
+            <div id="hue04">hsl(120, 100%, 50%)</div>
+            <div id="hue05">hsl(150, 100%, 50%)</div>
+            <div id="hue06">hsl(180, 100%, 50%)</div>
+            <div id="hue07">hsl(210, 100%, 50%)</div>
+            <div id="hue08">hsl(240, 100%, 50%)</div>
+            <div id="hue09">hsl(270, 100%, 50%)</div>
+            <div id="hue10">hsl(300, 100%, 50%)</div>
+            <div id="hue11">hsl(330, 100%, 50%)</div>
+        </main>
+        <script>
+
+        </script>
+        <style>
+            *{
+                margin: 0px;
+            }
+            main > div{
+                width: 100%;
+                height: 30svh; /*Starts the screen with 3 full divs + one partial to indicate more below fold whilst having good sized colour swatches*/
+                font-size: 8svw; /*always big for the screen this is showing on*/
+                color: #fff; /*White background with black outline effect helps to make text readable on all these colours, whilst having the same text on every background*/
+                text-shadow: /*https://css-tricks.com/adding-stroke-to-web-text/*/
+                    -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+            }
+            main > div::after{
+                content: attr(id);
+            }
+            :root{
+                /*btncode.com snippet "12 Hue, Saturated colour wheel"*/
+                /*Imagine a colour wheel with 12 points at equal distances around it like an analogue clock*/
+                --hue00: hsl(000, 100%, 50%);
+                --hue01: hsl(030, 100%, 50%);
+                --hue02: hsl(060, 100%, 50%);
+                --hue03: hsl(090, 100%, 50%);
+                --hue04: hsl(120, 100%, 50%);
+                --hue05: hsl(150, 100%, 50%);
+                --hue06: hsl(180, 100%, 50%);
+                --hue07: hsl(210, 100%, 50%);
+                --hue08: hsl(240, 100%, 50%);
+                --hue09: hsl(270, 100%, 50%);
+                --hue10: hsl(300, 100%, 50%);
+                --hue11: hsl(330, 100%, 50%);
+            }
+            #hue00{
+                background-color: var(--hue00);
+            }
+            #hue01{
+                background-color: var(--hue01);
+            }
+            #hue02{
+                background-color: var(--hue02);
+            }
+            #hue03{
+                background-color: var(--hue03);
+            }
+            #hue04{
+                background-color: var(--hue04);
+            }
+            #hue05{
+                background-color: var(--hue05);
+            }
+            #hue06{
+                background-color: var(--hue06);
+            }
+            #hue07{
+                background-color: var(--hue07);
+            }
+            #hue08{
+                background-color: var(--hue08);
+            }
+            #hue09{
+                background-color: var(--hue09);
+            }
+            #hue10{
+                background-color: var(--hue10);
+            }
+            #hue11{
+                background-color: var(--hue11);
+            }
+        </style>
+    </body>
+</html>
