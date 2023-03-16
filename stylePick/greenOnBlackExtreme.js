@@ -96,17 +96,10 @@ button, .langBtn, .group, .openGroup, .codeBtn { /*all buttons including those w
 .CSS{/*All of the buttons/elements for coding CSS*/
 }
 .CSS.group{ /* .group denotes a group button that is not yet opened*/
-    /*need two background images simultaneously, rather than having the standard .group rules wipe over the .CSS background rules*/
-    background-image:  url("arrow.png");
-
-    background-repeat: no-repeat,;
-    background-position: right;
+    background-image: none;
 }
 .CSS.openGroup{ /*.openGroup denotes a group button that is in open mode (ie the "child" buttons are showing already)*/
-    /*need two background images simultaneously, rather than having the standard .openGroup rules wipe over the .CSS background rules*/
-    background-image:  url("arrowDwn.png");
-    background-repeat: no-repeat;
-    background-position: right;
+    background-image: none;
 }
 
 .HTML{ /*note the full stop to denote class - this styles the btns for the HTML lang*/
@@ -132,6 +125,12 @@ button, .langBtn, .group, .openGroup, .codeBtn { /*all buttons including those w
 
 .CSharp{ /*Style all the elements for coding C# (interestingly we could escape the # with a slash like .C# to get things with class C# but we avoid the # symbol within the JS that applies classes anyway)*/
 
+}
+.CSharp.group{ /* .group denotes a group button that is not yet opened*/
+    background-image: none;
+}
+.CSharp.openGroup{ /*.openGroup denotes a group button that is in open mode (ie the "child" buttons are showing already)*/
+    background-image: none;
 }
 
 #btnEmoji{ /*style the main button for Emoji - if you think having Emoji on here is a travesty you could try display: none to hide the button*/

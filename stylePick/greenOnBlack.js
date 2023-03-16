@@ -138,10 +138,22 @@ var greenOnBlackStylez = `
         font-weight: 700;
     }
     
-    .CSharp{ /*Style all the elements for coding C# (interestingly we could escape the # with a slash like .C\\# to get things with class C# but we avoid the # symbol within the JS that applies classes anyway)*/
-        background-color: #009404;
-        color: #ffffff;
-    }
+.CSharp{ /*Style all the elements for coding C# (interestingly we could escape the # with a slash like .C\\# to get things with class C# but we avoid the # symbol within the JS that applies classes anyway)*/
+	background: linear-gradient(45deg, #189f20 50%, #009404 50%);/*the 1st 50% stops that first colour at 50% and the 2nd starts the 2nd colour at 50%, effectively turning the gradient effect into that sweet sudden two tone effect that the C# logo has. Inspired by https://blog.prototypr.io/css-only-multi-color-backgrounds-4d96a5569a20*/
+	color: #ffffff;
+}
+.CSharp.group{
+	background-image:  url("arrow.png"), linear-gradient(45deg, #189f20 50%, #009404 50%);
+	background-repeat: no-repeat, no-repeat;
+	background-position: right, right;
+	background-size: 19px, 100%;
+}
+.CSharp.openGroup{
+	background-image:  url("arrowDwn.png"), linear-gradient(45deg, #189f20 50%, #009404 50%);
+	background-repeat: no-repeat, no-repeat;
+	background-position: right, right;
+	background-size: 19px, 100%;
+}
     
     #btnEmoji{ /*style the main button for Emoji - if you think having Emoji on here is a travesty you could try display: none to hide the button*/
         font-size: 1em; /* Unlike most of the class Emoji buttons, we don't want bigger characters for this button*/

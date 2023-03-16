@@ -196,8 +196,20 @@ button{
 }
 
 .CSharp{
-	background: linear-gradient(45deg, #189f20 50%, #009404 50%);
+	background: linear-gradient(45deg, #189f20 50%, #009404 50%);/*the 1st 50% stops that first colour at 50% and the 2nd starts the 2nd colour at 50%, effectively turning the gradient effect into that sweet sudden two tone effect that the C# logo has. Inspired by https://blog.prototypr.io/css-only-multi-color-backgrounds-4d96a5569a20*/
 	color: #ffffff;
+}
+.CSharp.group{
+	background-image:  url("arrow.png"), linear-gradient(45deg, #189f20 50%, #009404 50%);
+	background-repeat: no-repeat, repeat;
+	background-position: right, right;
+	background-size: 19px, 100%;
+}
+.CSharp.openGroup{
+	background-image:  url("arrowDwn.png"), linear-gradient(45deg, #189f20 50%, #009404 50%);
+	background-repeat: no-repeat, repeat;
+	background-position: right, right;
+	background-size: 19px, 100%;
 }
 
 .Ada{ /*(Lang coming soon)*/
