@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Colours: Hues+10 100%s 50%l</title>
+    </head>
+    <body>
+        <!-- This page is just a tweaked version of saturatedColors.html for showing a slightly different array of colors-->
+        <main>
+            <div id="hue00">hsl(010, 100%, 50%)</div>
+            <div id="hue01">hsl(040, 100%, 50%)</div>
+            <div id="hue02">hsl(070, 100%, 50%)</div>
+            <div id="hue03">hsl(100, 100%, 50%)</div>
+            <div id="hue04">hsl(130, 100%, 50%)</div>
+            <div id="hue05">hsl(160, 100%, 50%)</div>
+            <div id="hue06">hsl(190, 100%, 50%)</div>
+            <div id="hue07">hsl(220, 100%, 50%)</div>
+            <div id="hue08">hsl(250, 100%, 50%)</div>
+            <div id="hue09">hsl(280, 100%, 50%)</div>
+            <div id="hue10">hsl(310, 100%, 50%)</div>
+            <div id="hue11">hsl(340, 100%, 50%)</div>
+        </main>
+        <script>
+
+        </script>
+        <style>
+            *{
+                margin: 0px;
+            }
+            main > div{
+                width: 100%;
+                height: 30svh; /*Starts the screen with 3 full divs + one partial to indicate more below fold whilst having good sized colour swatches*/
+                font-size: min(28svh,8.6svw); /*always big for the screen this is showing on, but also never outflowing the height*/
+                font-family: Arial, Helvetica, sans-serif;
+                color: #fff; /*White background with black outline effect helps to make text readable on all these colours, whilst having the same text on every background*/
+                text-shadow: /*fallback for browsers that do not support the more modern -webkit-text-stroke found at https://css-tricks.com/adding-stroke-to-web-text/*/
+                    -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+            }
+            @supports (-webkit-text-stroke: 2px #000){
+                main > div{
+                    text-shadow: none;
+                    -webkit-text-stroke: 0.03em #000; /*Text stroke defined in em rather than px so that it scales*/
+                }
+            }
+            :root{
+                /*btncode.com snippet "12 Hue, Saturated colour wheel"*/
+                /*Imagine a colour wheel with 12 points at equal distances around it like an analogue clock*/
+                --hue00: hsl(010, 100%, 50%);
+                --hue01: hsl(040, 100%, 50%);
+                --hue02: hsl(070, 100%, 50%);
+                --hue03: hsl(100, 100%, 50%);
+                --hue04: hsl(130, 100%, 50%);
+                --hue05: hsl(160, 100%, 50%);
+                --hue06: hsl(190, 100%, 50%);
+                --hue07: hsl(220, 100%, 50%);
+                --hue08: hsl(250, 100%, 50%);
+                --hue09: hsl(280, 100%, 50%);
+                --hue10: hsl(310, 100%, 50%);
+                --hue11: hsl(340, 100%, 50%);
+            }
+            #hue00{
+                background-color: var(--hue00);
+            }
+            #hue01{
+                background-color: var(--hue01);
+            }
+            #hue02{
+                background-color: var(--hue02);
+            }
+            #hue03{
+                background-color: var(--hue03);
+            }
+            #hue04{
+                background-color: var(--hue04);
+            }
+            #hue05{
+                background-color: var(--hue05);
+            }
+            #hue06{
+                background-color: var(--hue06);
+            }
+            #hue07{
+                background-color: var(--hue07);
+            }
+            #hue08{
+                background-color: var(--hue08);
+            }
+            #hue09{
+                background-color: var(--hue09);
+            }
+            #hue10{
+                background-color: var(--hue10);
+            }
+            #hue11{
+                background-color: var(--hue11);
+            }
+        </style>
+    </body>
+</html>
