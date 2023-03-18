@@ -182,10 +182,17 @@
         <script>
             function showMore(){
                 let el = this;
-                console.log(this);
-                /*//		document.getElementById(idToToggle).classList.remove("hide");
-		//document.getElementById(idToToggle).classList.add("show");
-                el.classList*/
+                el.classList.remove("preview");
+                el.classList.add("maximize");
+                el.removeEventListener("click", showMore);
+                el.addEventListener("click", showLess);
+            }
+            function showLess(){
+                let el = this;
+                el.classList.remove("maximize");
+                el.classList.add("preview");
+                el.removeEventListener("click", showLess);
+                el.addEventListener("click", showMore);
             }
             document.querySelectorAll("div.preview").forEach(el => {
                 el.addEventListener("click", showMore);
@@ -233,7 +240,10 @@
             main > div.preview{
                 height: 30svh; /*Starts the screen with 3 full divs + one partial to indicate more below fold whilst having good sized colour swatches*/
                 overflow-y: hidden;
-                ;
+            }
+            main > div.maximize{
+                height: 100%;
+                overflow-y: auto;
             }
             main > div:nth-child(1){
                 background-color: var(--hue01);
