@@ -180,7 +180,16 @@
             </div>
         </main>
         <script>
-
+            function showMore(){
+                let el = this;
+                console.log(this);
+                /*//		document.getElementById(idToToggle).classList.remove("hide");
+		//document.getElementById(idToToggle).classList.add("show");
+                el.classList*/
+            }
+            document.querySelectorAll("div.preview").forEach(el => {
+                el.addEventListener("click", showMore);
+            });
         </script>
         <style>
             :root{
