@@ -5,11 +5,15 @@
         <title>BtnCode Blog</title>
     </head>
     <body>
+        <aside>
+            <p id="welcome">Welcome to Phils btnCode blog, where I talk about topics related to web development, tips and tricks for using btnCode, stuff I have built with it, and bits and pieces to do with building it and improving it</p>
+            <p id="instructions">Tap or click anywhere inside an article to expand or collapse it.</p>
+        </aside>
         <main>
             <div class="preview">
                 <article>
                     <h1>Article 1</h1>
-                    <p>tags</p>
+                    <span>tags</span>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit aspernatur ad sint doloribus eum in et. Expedita nesciunt, debitis est numquam ab odio officia quo laborum, exercitationem deleniti perferendis repudiandae.
                     Saepe exercitationem et reiciendis rem fugiat beatae eum ea dolor eaque odio laudantium voluptatum fugit modi recusandae tempora, accusantium assumenda alias expedita dignissimos obcaecati distinctio officiis earum nobis? Expedita, laborum!
                     Quia suscipit et deleniti impedit animi rerum. Nulla totam, quo voluptates beatae vero, eveniet et cum eos nostrum possimus, sunt facilis dicta optio. Voluptates eaque reiciendis nulla incidunt, repellendus cupiditate.
@@ -28,7 +32,7 @@
             <div class="preview">
                 <article>
                     <h1>Article 2</h1>
-                    <p>tags</p>
+                    <span>tags</span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nisi velit soluta quis repudiandae culpa suscipit at accusantium excepturi odio nulla, quidem dolorem temporibus deleniti recusandae provident maiores ea optio.
                     Commodi magni corrupti, obcaecati maxime cum atque quia fuga exercitationem ut, deserunt officia sequi pariatur! Sit eos unde error est magni qui, assumenda eligendi molestias veritatis rerum, nulla nostrum reprehenderit.
                     Molestias hic praesentium quaerat, iusto enim ratione nostrum eum nisi similique laborum ducimus maiores architecto corporis exercitationem eaque culpa quisquam debitis veniam quia. Illum aspernatur nesciunt reiciendis laborum, quasi eligendi.
@@ -57,7 +61,7 @@
             <div class="preview">
                 <article>
                     <h1>Article 3</h1>
-                    <p>tags</p>
+                    <span>tags</span>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem itaque facilis hic dignissimos asperiores, a eius adipisci incidunt voluptatum ipsam modi possimus delectus nam quae sapiente quisquam quod debitis! A.
                     Unde quis earum odio aliquid nihil saepe eveniet magni, dolore amet totam minus fugiat in quia culpa qui expedita debitis esse corporis dolorem. Illum, excepturi? Nemo molestias ipsa necessitatibus autem?
                     Itaque at amet voluptatem libero commodi magnam vel sint et ipsam totam impedit facilis maiores sed fugiat excepturi quisquam, corrupti rem distinctio ex? Consectetur nam consequuntur ex cupiditate consequatur possimus.
@@ -130,7 +134,7 @@
             <div class="preview">
                 <article>
                     <h1>Article 4</h1>
-                    <p>tags</p>
+                    <span>tags</span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ab ad atque mollitia voluptate molestiae deleniti dolor maiores adipisci at perferendis nisi non ducimus blanditiis, accusamus dolore libero. Aut, pariatur.
                     Aspernatur minima cumque, atque reiciendis incidunt ex enim placeat! Voluptatibus, fuga. Ratione libero placeat corrupti id modi consequatur impedit quibusdam adipisci quis distinctio repellendus, maiores minima doloribus, doloremque harum sunt.
                     Veritatis saepe in sapiente facere sed at nesciunt quasi aspernatur harum, quas praesentium eaque, cum neque consectetur, vero iure explicabo architecto aliquid illo impedit animi nihil ut. Praesentium, facere necessitatibus.
@@ -219,6 +223,28 @@
             *{
                 margin: 0px;
             }
+            p{
+                margin: 2px;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            }
+            h1{
+                margin-left: 1em;
+            }
+
+            aside{
+                position: fixed;
+
+                width: 20%;
+                height: 100%;
+                background-color: aquamarine;
+            }
+
+            main{
+                width: 80%;
+                position: absolute;
+                right: 0px;
+            }
             main > div{
                 width: 100%;
                 
@@ -241,6 +267,14 @@
                 height: 30svh; /*Starts the screen with 3 full divs + one partial to indicate more below fold whilst having good sized colour swatches*/
                 overflow-y: hidden;
             }
+            /* Experimental
+            main > div.preview::before{
+                vertical-align: bottom;
+                content: "🔽";
+                text-shadow:none;
+                -webkit-text-stroke: unset;
+                font-size:small;
+            }*/
             main > div.maximize{
                 height: 100%;
                 overflow-y: auto;
