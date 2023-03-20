@@ -18,7 +18,8 @@
                     Saepe exercitationem et reiciendis rem fugiat beatae eum ea dolor eaque odio laudantium voluptatum fugit modi recusandae tempora, accusantium assumenda alias expedita dignissimos obcaecati distinctio officiis earum nobis? Expedita, laborum!
                     Quia suscipit et deleniti impedit animi rerum. Nulla totam, quo voluptates beatae vero, eveniet et cum eos nostrum possimus, sunt facilis dicta optio. Voluptates eaque reiciendis nulla incidunt, repellendus cupiditate.
                     Quaerat earum dolorem quisquam. Dolor, modi est voluptatem non eius magni, sequi nihil nulla sapiente omnis laboriosam culpa, quo libero! Numquam modi incidunt harum? Minima sunt neque cumque nesciunt ut.
-                    Minus adipisci, voluptatem perferendis corrupti fugit nihil sunt ipsam labore eveniet doloribus laudantium! Nam magnam nulla minus atque aliquid ipsam voluptate consequatur assumenda labore recusandae perferendis aperiam enim, porro molestiae.
+                    </p>
+                    <p>Minus adipisci, voluptatem perferendis corrupti fugit nihil sunt ipsam labore eveniet doloribus laudantium! Nam magnam nulla minus atque aliquid ipsam voluptate consequatur assumenda labore recusandae perferendis aperiam enim, porro molestiae.
                     Beatae, reprehenderit corrupti qui error perspiciatis sequi mollitia atque in repudiandae voluptatum officiis? Ex labore, aliquid explicabo blanditiis harum sapiente! Ipsam esse facere consequatur numquam, magnam voluptas sint odit perferendis?
                     Provident, error explicabo temporibus voluptatum exercitationem, itaque quaerat quos molestias unde natus ipsa molestiae inventore aspernatur. Quas, facere? Reiciendis optio excepturi nesciunt, sint voluptatum rem ea eaque possimus labore libero.
                     Fugiat voluptatibus, commodi unde beatae est voluptatem ab saepe atque ipsum, architecto obcaecati corrupti esse blanditiis dolorem, explicabo voluptatum aut quidem sunt eius voluptas reiciendis consectetur debitis. Esse, magni fugit.
@@ -36,7 +37,8 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nisi velit soluta quis repudiandae culpa suscipit at accusantium excepturi odio nulla, quidem dolorem temporibus deleniti recusandae provident maiores ea optio.
                     Commodi magni corrupti, obcaecati maxime cum atque quia fuga exercitationem ut, deserunt officia sequi pariatur! Sit eos unde error est magni qui, assumenda eligendi molestias veritatis rerum, nulla nostrum reprehenderit.
                     Molestias hic praesentium quaerat, iusto enim ratione nostrum eum nisi similique laborum ducimus maiores architecto corporis exercitationem eaque culpa quisquam debitis veniam quia. Illum aspernatur nesciunt reiciendis laborum, quasi eligendi.
-                    Ad impedit iste libero molestiae ratione accusamus commodi quam pariatur nemo ut, amet officiis odio, magnam sunt repellendus. Accusantium quia enim esse, voluptate reiciendis odit commodi sed numquam saepe aliquid.
+                    </p>
+                    <p>Ad impedit iste libero molestiae ratione accusamus commodi quam pariatur nemo ut, amet officiis odio, magnam sunt repellendus. Accusantium quia enim esse, voluptate reiciendis odit commodi sed numquam saepe aliquid.
                     Harum similique repellat quas alias quibusdam cum exercitationem placeat? Eaque quae consectetur similique velit expedita, illo est facilis minima fugiat vitae quam perspiciatis at id sint cumque quisquam error explicabo.
                     Veniam quam illo neque modi beatae repudiandae doloribus laudantium id recusandae cumque? Ut quia eligendi facilis suscipit placeat voluptate labore fugit ab quasi. Praesentium fugiat cumque eos dolores, nemo libero?
                     Dolore, cumque voluptatum suscipit id eos cupiditate aspernatur, beatae laudantium porro, maxime laborum aperiam. Earum perspiciatis tenetur porro quas molestiae ipsam aliquid obcaecati soluta! Dignissimos corporis nam dolore non natus.
@@ -204,7 +206,7 @@
         </script>
         <style>
             :root{
-                /*The hue colour wheel starting from 90% so that the first colour on the screen is that nice green*/
+                /*The hue colour wheel starting from 90degrees so that the first colour on the screen is that nice green*/
 
                 --hue01: hsl(090, 100%, 60%);
                 --hue02: hsl(120, 100%, 60%);
@@ -245,21 +247,7 @@
             }
             main > div{
                 width: 100%;
-                
-                background-color: var(attr(id));
-                font-size: 3.6svw; /*always big for the screen this is showing on*/
-                color: #fff; /*White background with black outline effect helps to make text readable on all these colours, whilst having the same text on every background*/
-                text-shadow: /*https://css-tricks.com/adding-stroke-to-web-text/*/
-                    -1px -1px 0 #000,  
-                    1px -1px 0 #000,
-                    -1px 1px 0 #000,
-                    1px 1px 0 #000;
-            }
-            @supports (-webkit-text-stroke: 2px #000){
-                *{
-                    text-shadow: none;
-                    -webkit-text-stroke: 0.02em #000; /*Text stroke defined in em rather than px so that it scales*/
-                }
+                font-size: 3.6svw;
             }
             main > div.preview{
                 height: 30svh; /*Starts the screen with 3 full divs + one partial to indicate more below fold whilst having good sized colour swatches*/
@@ -268,6 +256,18 @@
             main h1{
                 margin-left: 1em;
                 font-size: clamp(24px, 4.8svw, 15svh);
+                color: #fff; /*White background with black outline effect helps to make text readable on all these colours, whilst having the same text on every background*/
+                text-shadow: /*https://css-tricks.com/adding-stroke-to-web-text/ old way, for better browser support*/
+                    -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+            }
+            @supports (-webkit-text-stroke: 2px #000){
+                main h1{
+                    text-shadow: none;
+                    -webkit-text-stroke: 0.02em #000; /*Text stroke defined in em rather than px so that it scales*/
+                }
             }
             main span.topics{
                 font-size: clamp(18px, 2.4svw, 7.5svh);
