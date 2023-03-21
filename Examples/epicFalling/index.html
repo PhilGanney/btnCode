@@ -194,8 +194,6 @@
 				0% {
 					background-color: var(--hue01);
 					color: var(--hue03);
-					width: 100%;
-					height: 100%;
 					clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
 						0% 0%,/*far left and at the top, add to each to make this point move down to the right*/
 						46% 4%,/* middle-ish point slightly dipped down from the top, add to second number to move this point down*/
@@ -259,8 +257,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 46%;
 					display: block;
@@ -281,8 +278,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 42%;
 					display: block;
@@ -338,8 +334,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 42%;
 					display: block;
@@ -360,8 +355,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 38%;
 					display: block;
@@ -417,8 +411,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 38%;
 					display: block;
@@ -439,8 +432,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 34%;
 					display: block;
@@ -496,8 +488,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 34%;
 					display: block;
@@ -518,8 +509,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 30%;
 					display: block;
@@ -575,8 +565,7 @@
 						100% 100%,/* bottom right, to stay in place*/
 						0% 100%/* bottom left, to stay in place*/
 				    );
-					width: 100%;
-					height: 100%;
+					
 					top: -30%;
 					border-radius: 30%;
 					display: block;
@@ -604,16 +593,13 @@
 				animation-timing-function: ease-in;
 				z-index: 10;
 			}
-			#ball1, #ball2, #ball3, #ball4,  #ball5{
-				top: -30%;
-				width: 100%;
-				height: 100%;
-			}
 			#ball1{
 				/*colors from keyframes for reference:
 				ball # 	BG 0% 		Txt0%,	BG 4%, 		BG 10%		Txt10% 		BG80% 		Txt80% 		BG100% 		Txt100%
 				ball 1 = --hue01, --hue03,	--hue01,	--hue03,	--hue01,	--hue01,	--hue03,	--hue01,	--hue03,
 				*/
+				width: 100%;
+				height: 100%;
 				background-color: var(--hue01);
 				color: var(--hue01);
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
@@ -623,7 +609,6 @@
 					100% 100%,/* bottom right, to stay in place*/
 					0% 100%/* bottom left, to stay in place*/
 				);
-				border-radius: 46%;
 				animation-name: ballDrop1;
 				animation-duration: 40s;
 				animation-iteration-count: infinite;
@@ -636,6 +621,8 @@
 				ball # 	BG 0% 		Txt0%,	BG 4%, 		BG 10%		Txt10% 		BG80% 		Txt80% 		BG100% 		Txt100%
 				ball 2 = --hue04, --hue06,	--hue04,	--hue06,	--hue04,	--hue04,	--hue06,	--hue04,	--hue06,
 				*/
+				width: 100%;
+				height: 100%;
 				background-color: var(--hue04);
 				color: var(--hue04);
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
@@ -645,7 +632,6 @@
 					100% 100%,/* bottom right, to stay in place*/
 					0% 100%/* bottom left, to stay in place*/
 				);
-				border-radius: 42%;
 				animation-name: ballDrop2;
 				animation-duration: 40s;
 				animation-iteration-count: infinite;
@@ -658,6 +644,8 @@
 				ball # 	BG 0% 		Txt0%,	BG 4%, 		BG 10%		Txt10% 		BG80% 		Txt80% 		BG100% 		Txt100%
 				ball 3 = --hue05, --hue07,	--hue05,	--hue07,	--hue05,	--hue05,	--hue07,	--hue05,	--hue07,
 				*/
+				width: 100%;
+				height: 100%;
 				background-color: var(--hue05);
 				color: var(--hue05);
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
@@ -667,7 +655,6 @@
 					100% 100%,/* bottom right, to stay in place*/
 					0% 100%/* bottom left, to stay in place*/
 				);
-				border-radius: 38%;
 				animation-name: ballDrop3;
 				animation-duration: 40s;
 				animation-iteration-count: infinite;
@@ -680,6 +667,8 @@
 				ball # 	BG 0% 		Txt0%,	BG 4%, 		BG 10%		Txt10% 		BG80% 		Txt80% 		BG100% 		Txt100%
 				ball 4 = --hue08, --hue10,	--hue08,	--hue10,	--hue08,	--hue08,	--hue10,	--hue08,	--hue10,
 				*/
+				width: 100%;
+				height: 100%;
 				background-color: var(--hue08);
 				color: var(--hue08);
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
@@ -689,7 +678,6 @@
 					100% 100%,/* bottom right, to stay in place*/
 					0% 100%/* bottom left, to stay in place*/
 				);
-				border-radius: 34%;
 				animation-name: ballDrop4;
 				animation-duration: 40s;
 				animation-iteration-count: infinite;
@@ -702,6 +690,8 @@
 				ball # 	BG 0% 		Txt0%,	BG 4%, 		BG 10%		Txt10% 		BG80% 		Txt80% 		BG100% 		Txt100%
 				ball 5 = --hue09, --hue11,	--hue09,	--hue11,	--hue09,	--hue09,	--hue11,	--hue09,	--hue11,
 				*/
+				width: 100%;
+				height: 100%;
 				background-color: var(--hue09);
 				color: var(--hue09);
 				clip-path: polygon(/* polygon draws a shape between each point in order, with last point specified connecting back to the first. First number of each set is x from the left second is y from the top*/
@@ -711,7 +701,6 @@
 					100% 100%,/* bottom right, to stay in place*/
 					0% 100%/* bottom left, to stay in place*/
 				);
-				border-radius: 30%;
 				animation-name: ballDrop5;
 				animation-duration: 40s;
 				animation-iteration-count: infinite;
