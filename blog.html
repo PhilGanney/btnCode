@@ -36,18 +36,18 @@
             </div>
             <div class="preview">
                 <article>
-                    <h1>Easing the React learning curve (pt 1 of ??)</h1>
+                    <h1>Easing Reacts learning curve <span role="doc-subtitle">(1 of ?)</span></h1>
                     <p>One of my major reasons for building btnCode is that in web development, there is always another library, framework or technique that you want to try out, but looking things up regularly slows development.
-                        This year, I decided I am going to learn React - a JavaScript framework with a notoriously steep learning curve. This will let me see how much the snippet buttons help, clarify limitations of them, and maybe point to other things I could add to btnCode.
+                        This year, I decided I am going to learn React - a JavaScript framework with a notoriously steep learning curve. This is not only good for my skillset, but will also let me see exactly how much the snippet buttons help, clarify any limitations of them, and hopefully point to ways to make btnCode even better.
                     </p>
-                    <h2>My limited experience with React before btnCode</h2>
-                    <p>Pre-btnCode, I had already completed the main part of the official tutorial, while I was reviewing it during my TeaRounder project. In that phase of the project, fast development was critical, and I had enough on my plate to learn without new tech in the front end of the app. I judged that learning React at that point in time, would risk missing the first opportunity to demo the ordering app to an indusry insider.</p>
+                    <h2>My experience with React before btnCode</h2>
+                    <p>Pre-btnCode, I had completed the main part of the official tutorial, while reviewing React for a pivot of my TeaRounder project. In that phase of the project, fast development was critical, and I had enough on my plate to learn without new tech in the front end of the app. I judged that learning React at that point in time, would risk missing the first opportunity to demo the ordering app to an indusry insider.</p>
                 </article>
             </div>
             <div class="preview">
                 <article>
-                    <h1>Web developers never "finish learning".</h1>
-                    <p>There's always another technology to look into, a new technique to try, </p>
+                    <h1>3 reasons why there's always something else to learn</h1>
+                    <p>Web devs never "finish learning". There's always another technology to look into, a new technique to try, </p>
                 </article>
             </div>
             <template id="articleTemplate">
@@ -187,7 +187,11 @@
                     -webkit-text-stroke: 0.02em #000; /*Text stroke defined in em rather than px so that it scales*/
                 }
             }
-            main span.topics{
+            [role="doc-subtitle"] { 
+                font-size: clamp(21px, 3.0svw, 9svh); /*SLightly bigger than p*/
+            }
+            main span.topics,
+            main h2{
                 font-size: clamp(18px, 2.4svw, 7.5svh);
                 padding-top: 0.1em;
                 padding-bottom: 0.1em;
