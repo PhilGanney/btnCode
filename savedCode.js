@@ -291,9 +291,39 @@ savedCodeWithGroupsConcept1 = {
 		"HashComment":[0,"codeBtn","#single-line comment","#"],
 		"MultilineComment":[0,"codeBtn","/*Multiline comment*/","/* comment */"],
 		"var":[0,"codeBtn","$var","$var_name = '';"],
+		"mySQLConnect": [
+			0,
+			"codeBtn",
+			"connect to MySQL",
+			"$mysqli = mysqli_connect('localhost', 'DATABASE_USERNAME', 'DATABASE_PASSWORD', 'DATABASE_NAME');"
+		],
+		"mySQLCheckConnection": [
+			0,
+			"codeBtn",
+			"test MySQL connection",
+			"if (mysqli_connect_errno()) {\n\texit('Failed to connect to MySQL: ' . mysqli_connect_error());\n}"
+		],
+		"Array":[0,"group","Array",["arrayKeys","arrayKeysValueStrict","arrayKeysValueNonStrict"]],
+		"arrayKeys": [
+			1,
+			"codeBtn",
+			"get all keys of an array array_keys($array)",
+			"array_keys($array)"
+		],
+		"arrayKeysValueStrict": [
+			1,
+			"codeBtn",
+			"get&nbsp;keys&nbsp;with&nbsp;given&nbsp;value (type-strict) array_keys($array, \"value\", true)",
+			"array_keys($array, \"value\", true)"
+		],
+		"arrayKeysValueNonStrict": [
+			1,
+			"codeBtn",
+			"get&nbsp;keys&nbsp;with&nbsp;given&nbsp;value (not type-strict) array_keys($array, \"value\", false)",
+			"array_keys($array, \"value\", false)"
+		],
 		/* Having a "Coming Soon" btn allows btncode to have clearly incomplete languages, without looking ridiculous in the meantime. Gives us a way of saying "don't worry, there is more coming*/
-		"ComingSoon":[0,"group","🚧 Coming Soon",["Array", "Calendar", "Date", "Directory", "Error"]],
-		"Array":[1,"group","Array",[]],
+		"ComingSoon":[0,"group","🚧 Coming Soon",[ "Calendar", "Date", "Directory", "Error"]],
 		"Calendar":[1,"group","Calendar",[]],
 		"Date":[1,"group","Date",[]],
 		"Directory":[1,"group","Directory",[]],
