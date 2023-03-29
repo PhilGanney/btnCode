@@ -163,6 +163,14 @@ button{
 	color: #61dafb;
 	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; /*font-family that www.reactjs.org uses*/
 }
+
+.npm{
+	background-color: #cb0000;
+	color: #ffffff;
+	font-family: consolas, Menlo, Inconsolata, monospace;
+	font-weight: 900;
+}
+
 @font-face {
     font-family: Flux-Regular;
     src: url("fonts/FluxRegular.otf") format("opentype");

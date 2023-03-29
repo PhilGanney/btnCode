@@ -257,6 +257,17 @@ savedCodeWithGroupsConcept1 = {
 			"<!-- Load @babel/standalone - a way to have Babel running in the browser rather than needing to build every time, https://babeljs.io/docs/en/babel-standalone#docsNav -->\n<script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>"
 		]
 	},
+	"npm": {
+        "langName": "npm",
+		"installLatestNpm":[0,"codeBtn","install latest npm (cmd&nbsp;line)","npm install -g npm"],
+        "checkNodeVersion": [
+            0,
+            "codeBtn",
+            "check node version (cmd)",
+            "node -v"
+        ],
+		"checkNpmVersion":[0,"codeBtn","check npm version (cmd)","npm -v"]
+    },
 	"python": {
 		"langName": "🚧python🚧",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],
