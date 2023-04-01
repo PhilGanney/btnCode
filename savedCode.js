@@ -268,6 +268,28 @@ savedCodeWithGroupsConcept1 = {
         ],
 		"checkNpmVersion":[0,"codeBtn","check npm version (cmd)","npm -v"]
     },
+	"commandPrompt": {
+        "langName": "🚧Command Prompt (CMD)",
+        "dirGrp": [
+            0,
+            "group",
+            "show DIRectories dir",
+            ["justDir", "dirCDrive"]
+        ],
+		"justDir": [
+			1,
+			"codeBtn",
+			"current directory \"dir\"",
+			"dir"
+		],
+		"dirCDrive": [
+			1,
+			"codeBtn",
+			"top of C&nbsp;drive \"dir C:\\\"",
+			"dir C:\\"
+		]
+
+    },
 	"python": {
 		"langName": "🚧python🚧",
 		"4Spaces": [0, "codeBtn", "4 spaces", "    "],

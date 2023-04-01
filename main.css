@@ -171,6 +171,33 @@ button{
 	font-weight: 900;
 }
 
+.commandPrompt{
+	background-color: #000000;
+	color: #FFF;
+	font-family: consolas, monospace;
+}
+.commandPrompt.openGroup{
+	background-image:  url("arrowDwn.png"), linear-gradient(to right, #000000 calc(100% - 20px), #DDDDDD 18px);
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 19px;
+}
+.commandPrompt.group{
+	background-image:  url("arrow.png"), linear-gradient(to right, #000000 calc(100% - 20px), #DDDDDD 18px);
+		background-repeat: no-repeat;
+	background-position: right;
+	background-size: 19px;
+}
+
+/* todo (maybe):  A potential way to make more CMD feeling arrows to show open/closed commandPrompt groups - note that this is a potential "rabbit hole" as you do not want to negatively impact optional styles
+.commandPrompt.openGroup::after{
+	content: '\\\/';
+}
+.commandPrompt.group::after{
+	content: '>';
+}
+*/
+
 @font-face {
     font-family: Flux-Regular;
     src: url("fonts/FluxRegular.otf") format("opentype");
