@@ -300,11 +300,29 @@ savedCodeWithGroupsConcept1 = {
 			"Display text ECHO...",
 			"ECHO hello"
 		],
+		"echoTime": [
+			0,
+			"codeBtn",
+			"Display&nbsp;time echo %TIME%",
+			"echo %TIME%"
+		],
 		"pause": [
 			0,
 			"codeBtn",
 			"wait for any&nbsp;key",
 			"PAUSE"
+		],
+		"shutdown": [
+			0,
+			"codeBtn",
+			"shutdown computer",
+			"shutdown"
+		],
+		"chkdsk": [
+			0,
+			"codeBtn",
+			"check disk for&nbsp;problems chkdsk",
+			"chkdsk"
 		]
     },
 	"python": {
