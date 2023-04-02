@@ -287,8 +287,25 @@ savedCodeWithGroupsConcept1 = {
 			"codeBtn",
 			"top of C&nbsp;drive dir C:\\",
 			"dir C:\\"
+		],
+		"echoOff": [
+			0,
+			"codeBtn",
+			"disable display&nbsp;prompt @ECHO&nbsp;OFF",
+			"@ECHO OFF"
+		],
+		"echo": [
+			0,
+			"codeBtn",
+			"Display text ECHO...",
+			"ECHO hello"
+		],
+		"pause": [
+			0,
+			"codeBtn",
+			"wait for any&nbsp;key",
+			"PAUSE"
 		]
-
     },
 	"python": {
 		"langName": "🚧python🚧",
