@@ -115,6 +115,10 @@ button{ /*all buttons*/
     color: white;
 }
 
+.commandPrompt{
+    border: white 1px solid; 
+}
+
 @font-face { /*get that sweet python typeface*/
     font-family: Flux-Regular;
     src: url("fonts/FluxRegular.otf") format("opentype");

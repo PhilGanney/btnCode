@@ -114,6 +114,10 @@ var greenOnBlackStylez = `
         background-color: #3c790a;
         color: white;
     }
+
+    .commandPrompt{
+        border: white 1px solid; 
+    }
     
     @font-face { /*get that sweet python typeface*/
         font-family: Flux-Regular;

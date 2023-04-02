@@ -102,6 +102,13 @@ button, .langBtn, .group, .openGroup, .codeBtn { /*all buttons including those w
     background-image: none;
 }
 
+.commandPrompt.group{ /* .group denotes a group button that is not yet opened*/
+    background-image: none;
+}
+.commandPrompt.openGroup{ /*.openGroup denotes a group button that is in open mode (ie the "child" buttons are showing already)*/
+    background-image: none;
+}
+
 .HTML{ /*note the full stop to denote class - this styles the btns for the HTML lang*/
 }
 
