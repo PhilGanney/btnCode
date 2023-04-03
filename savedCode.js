@@ -312,11 +312,23 @@ savedCodeWithGroupsConcept1 = {
 			"wait for any&nbsp;key",
 			"PAUSE"
 		],
+		"shutdownGrp": [
+            0,
+            "group",
+            "shutdown",
+            ["shutdown", "shutdownAutoLogin"]
+        ],
 		"shutdown": [
-			0,
+			1,
 			"codeBtn",
-			"shutdown computer",
-			"shutdown"
+			"shutdown computer (regular)",
+			"shutdown /s"
+		],
+		"shutdownAutoLogin": [
+			1,
+			"codeBtn",
+			"shutdown computer (next&nbsp;boot&nbsp;autoLogin)",
+			"shutdown /sg"
 		],
 		"chkdsk": [
 			0,
