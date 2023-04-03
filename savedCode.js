@@ -312,6 +312,12 @@ savedCodeWithGroupsConcept1 = {
 			"wait for any&nbsp;key",
 			"PAUSE"
 		],
+		"rem": [
+			0,
+			"codeBtn",
+			"Comment/Remark REM",
+			"REM comment / \"Remark\" here"
+		],
 		"shutdownGrp": [
             0,
             "group",
