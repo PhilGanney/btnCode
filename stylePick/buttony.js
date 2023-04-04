@@ -1,4 +1,4 @@
-var outlineStylez = `
+var buttonyStylez = `
 header{
 	position: relative; /*This rule overruled to "sticky" by a media query when the screen is tall enough to have it onscreen all the time*/
 	top: 0px;
