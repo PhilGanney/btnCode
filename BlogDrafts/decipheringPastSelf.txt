@@ -1,0 +1,27 @@
+#Deciphering past self
+I am drafting this post on the 22nd of April 2024 (editing 23rd). I have come back to this project, and indeed coding generally, after a hiatus that feels like 9-10 months (editors note: last commit to this repo: 13 months ago). 
+I got a job at an insurance company, on the phones -  great for my people skills and better for my wallet than any of my dev projects so far ...
+... nothing to do with coding.
+
+Recently I was reminded of my dev projects by my domain provider, via my bank statement.
+"Ah yeah, I was going to keep on coding as a creative outlet, I started building that btnCode thing in the hopes it would help me dip in and out of coding easily."
+
+Yesterday I had a play around with btnCode on my phone.
+My coding skill was very rusty, so I just did some very beginner level JavaScript stuff and messed around with styles.
+I booted up my laptop, ~4hrs later all the essential updates since its last boot where done.
+
+Today I booted up my laptop again, opened GitHub desktop - "what is all this? What feature was I working on?"
+Three uncommitted files, all new: 
+1) BlogDrafts\motivation.txt
+2) colour.html
+3) Examples\ChatGPTCreations\fallingBlocks.txt
+
+None of those files are related to one another as far as I can tell, and none of them relate to any big function or change for btnCode I might have been working on.
+All of these files appear to be me stirring creative thought. The blog draft was me thinking about why we code, the fallingBlocks file was me playing with the great new tech of the time.
+
+My favourite of those little files though is colour.html   - this is a neat little page based on the contenteditable style tag trick I use in btnCodes styler.
+This simple but clever page invites the visitor to play around with the CSS of the page.
+You could potentially use it to help choose which colours to use in a website theme. I could probably expand on it, improve it, make other versions of the page for different purposes.
+I think that was the idea, the start of a bunch of tools for styling web pages and other kids of projects. I like that idea.
+
+I think the point of deciphering what you where doing last time, is to figure out what best to do next - it probably does not matter much why you where doing something - unless the "why" inspires the next "what".

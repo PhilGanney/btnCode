@@ -1,0 +1,79 @@
+// Set up the game board
+const ROWS = 20;
+const COLS = 10;
+let board = [];
+for (let i = 0; i < ROWS; i++) {
+  board.push(Array(COLS).fill(0));
+}
+
+// Define the game pieces
+const PIECES = [  [ [0,0,0,0], [1,1,1,1], [0,0,0,0], [0,0,0,0] ],  // I piece
+  [ [2,2], [2,2] ],                                // O piece
+  [ [0,2,2], [2,2,0], [0,0,0] ],                   // S piece
+  [ [1,1,0], [0,1,1], [0,0,0] ],                   // Z piece
+  [ [0,1,0], [1,1,1], [0,0,0] ],                   // T piece
+  [ [0,1,1], [1,1,0], [0,0,0] ],                   // J piece
+  [ [1,1,0], [0,1,1], [0,0,0] ]                    // L piece
+];
+const COLORS = [  "cyan", "yellow", "green", "red", "purple", "orange", "blue"];
+
+// Initialize game variables
+let currentPiece = { piece: null, x: 0, y: 0 };
+let nextPiece = generatePiece();
+let score = 0;
+let gameover = false;
+
+// Set up the canvas and draw the initial game board
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const BLOCK_SIZE = canvas.height / ROWS;
+function drawBlock(x, y, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+}
+function drawBoard() {
+  for (let i = 0; i < ROWS; i++) {
+    for (let j = 0; j < COLS; j++) {
+      drawBlock(j, i, COLORS[board[i][j]]);
+    }
+  }
+}
+
+// Generate a random piece
+function generatePiece() {
+  let piece = PIECES[Math.floor(Math.random() * PIECES.length)];
+  return { piece: piece, x: Math.floor(COLS/2)-Math.floor(piece[0].length/2), y: 0 };
+}
+
+// Move the current piece down one row
+function moveDown() {
+  if (!gameover) {
+    if (canMove(currentPiece.piece, currentPiece.x, currentPiece.y+1)) {
+      currentPiece.y++;
+    } else {
+      addPieceToBoard();
+      clearRows();
+      currentPiece = nextPiece;
+      nextPiece = generatePiece();
+      if (!canMove(currentPiece.piece, currentPiece.x, currentPiece.y)) {
+        gameover = true;
+      }
+    }
+  }
+}
+
+// Add the current piece to the game board
+function addPieceToBoard() {
+  let piece = currentPiece.piece;
+  let x = currentPiece.x;
+  let y = currentPiece.y;
+  for (let i = 0; i < piece.length; i++) {
+    for (let j = 0; j < piece[i].length; j++) {
+      if (piece[i][j]) {
+        board[y+i][x+j] = piece[i][j];
+      }
+    }
+  }
+}
+
+// Check if a piece

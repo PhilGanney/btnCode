@@ -1,0 +1,14 @@
+Motivations to code.  (Draft stub, needs fleshing out)
+
+Different people code for different combinations of reasons.
+
+Some of my own personal motivations for working on my own projects over the years have been:
+1) Strong feelings that a particular piece of software should exist. "Why does this not exist already!"
+2) A general feeling of wanting to create. Preferably something useful to a number of people. "I want to make something useful"
+3) Wanting to explore a concept, with an inkling that some good would come out of that exploration. "I wonder if .."
+4) Seeing coding as a route into a good living - the hope that a portfolio might open up an opportunity, or the hope that an app could become profitable.
+"I need money, coding can earn money right?"
+
+I have also had jobs and contracts where I was being paid to build a given thing. Its interesting to think about how my motivation for those projects compare: 
+ the desire to create and hopes of a good living spurred the initial motivation to pursue that path. 
+ Feelings about some projects make some opportunities stand out over others
